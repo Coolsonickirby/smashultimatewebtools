@@ -1,8 +1,6 @@
 <h2>Smash Ultimate Web Tools (Currently supports only Audio)</h2>
 
 <h3><strong>Setup</strong></h3>
-<p>To set this up for it to work correctly follow these instructions. Don't forget to setup the ".env" file, "php
-    artisan migrate", and giving the folders the appropiate permissions.</p>
 
 <ol>
     <li>Download <a href="https://github.com/Thealexbarney/VGAudio/releases">VGAudioCli</a>, <a
