@@ -2,6 +2,8 @@
 
 <h3><strong>Setup</strong></h3>
 
+<h4><strong><a href="https://devmarketer.io/learn/setup-laravel-project-cloned-github-com/">FOLLOW THIS GUIDE FOR SETTING UP THE LARAVEL PROJECT FIRST</a></strong></h4>
+
 <ol>
     <li>Download <a href="https://github.com/Thealexbarney/VGAudio/releases">VGAudioCli</a>, <a
             href="https://github.com/jam1garner/nus3audio-rs/releases">nus3audio</a>, <a
@@ -14,7 +16,6 @@
     <br>
     <li> Extract everything in the SoX zip into the sox folder.</li>
     <br>
-    <li>Create and setup the ".env" file</li>
     <br>
     <li>Run "php artisan migrate && php artisan storage:link" in the Command Line (CMD)/Terminal</li>
     <br>
