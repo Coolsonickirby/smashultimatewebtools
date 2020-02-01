@@ -1,4 +1,4 @@
-<h2><strong>PAQ:</strong></h2>
+<h2><strong>PAQ (Potentially Asked Questions):</strong></h2>
 <h4>What's this for/What's the use for this?</h4>
 <p>If you don't have access to your PC or Discord for jam1garner's discord bot to convert wav, you can use this website
     instead, as it converts the files on the server and sends it back to you. This can be used on school/college
@@ -64,5 +64,5 @@
 <h4>Where can I find this page's source code?</h4>
 <p><a href="https://github.com/Coolsonickirby/smashultimatewebtools">Here.</a></p>
 
-<h4>I have some questions, but they aren't answered here / There's an error in your website.</h4>
+<h4>I have some questions, but they aren't answered here / There's an error in your website. / Can you add _______?</h4>
 <p>Contact me on discord @ Coolsonickirby#4030.</p>

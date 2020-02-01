@@ -52,7 +52,7 @@
                         <small class="form-text text-muted">File Size Limit: 100mb</small>
 
                         <small class="form-text" style="color:red; display:none;" id="fileerror">File too big!</small>
-                        <small class="form-text text-muted">Supported Formats: brstm, idsp, lopus, and anything else VGAudio supports.</small>
+                        <small class="form-text text-muted">Supported Formats: brstm, idsp, and lopus</small>
                         <small class="form-text text-muted">Warning: All brstms will be exported at 48000hz for now.
                             Will add some advanced options later as I'm busy with college.</small>
                         <br>

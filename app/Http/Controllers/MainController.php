@@ -29,6 +29,10 @@ class MainController extends Controller
     }
 
     public function ConvertMusic(Request $request){
+        if($request->file('music') == null){
+            $status = '<p class="card-text">Please upload a file!</p>';
+            return redirect()->back()->with('error', $status);
+        }
         $audio = new Audio;
 
         $file = $request->file('music');
@@ -56,42 +60,51 @@ class MainController extends Controller
     }
 
     public function ConvertBrstm(Request $request){
-        $brstm = new brstm;
+        if($request->file('music') == null){
+            $status = '<p class="card-text">Please upload a file!</p>';
+            return redirect()->back()->with('error', $status);
+        }
 
-        $file = $request->file('music');
+        if($request->file('music')->getClientOriginalExtension() == "brstm" || $request->file('music')->getClientOriginalExtension() == "idsp" || $request->file('music')->getClientOriginalExtension() == "lopus"){
+            $brstm = new brstm;
 
-        $brstm->filename = $file->getClientOriginalName();
+            $file = $request->file('music');
 
-        $brstm->save();
+            $brstm->filename = $file->getClientOriginalName();
 
-        $pathtmp = $file->storeAs('public/normalbrstm/' . $brstm->id, $file->getClientOriginalName());
+            $brstm->save();
 
-        $path = public_path() . '/' . str_replace("public", "storage", $pathtmp);
+            $pathtmp = $file->storeAs('public/normalbrstm/' . $brstm->id, $file->getClientOriginalName());
 
-        $filename = pathinfo($pathtmp, PATHINFO_FILENAME);
+            $path = public_path() . '/' . str_replace("public", "storage", $pathtmp);
 
-        $tmppath1 = shell_exec("echo %CD%/storage/fixedbrstm/{$brstm->id}/");
+            $filename = pathinfo($pathtmp, PATHINFO_FILENAME);
 
-        $tmppath2 = shell_exec("echo %CD%/storage/tmpbrstm/{$brstm->id}/");
+            $tmppath1 = shell_exec("echo %CD%/storage/fixedbrstm/{$brstm->id}/");
 
-        $tmppath2 = str_replace(' ', '', $tmppath2);
+            $tmppath2 = shell_exec("echo %CD%/storage/tmpbrstm/{$brstm->id}/");
 
-        File::makeDirectory($tmppath1, 0777, true, true);
+            $tmppath2 = str_replace(' ', '', $tmppath2);
 
-        File::makeDirectory($tmppath2, 0777, true, true);
+            File::makeDirectory($tmppath1, 0777, true, true);
 
-        $brstm->log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/tmpbrstm/{$brstm->id}/{$filename}.wav\"");
+            File::makeDirectory($tmppath2, 0777, true, true);
 
-        $brstm->log2 = shell_exec("%CD%/convert/sox/sox.exe \"%CD%/storage/tmpbrstm/{$brstm->id}/{$filename}.wav\" -r 48000 \"%CD%/storage/fixedbrstm/{$brstm->id}/{$filename}.wav\"");
+            $brstm->log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/tmpbrstm/{$brstm->id}/{$filename}.wav\"");
 
-        $brstm->save();
+            $brstm->log2 = shell_exec("%CD%/convert/sox/sox.exe \"%CD%/storage/tmpbrstm/{$brstm->id}/{$filename}.wav\" -r 48000 \"%CD%/storage/fixedbrstm/{$brstm->id}/{$filename}.wav\"");
 
-        $status = '<p class="card-text">Music Conversion Complete! You can download it from <a href="/storage/fixedbrstm/' . $brstm->id . '/' . $filename . '.wav">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a href="/details/brstm/' . $brstm->id . '">click here.</a></p>';
+            $brstm->save();
 
-        return redirect()->back()->with('success', $status);
+            $status = '<p class="card-text">Music Conversion Complete! You can download it from <a href="/storage/fixedbrstm/' . $brstm->id . '/' . $filename . '.wav">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a href="/details/brstm/' . $brstm->id . '">click here.</a></p>';
+
+            return redirect()->back()->with('success', $status);
+        }else{
+            $status = '<p class="card-text">Please upload a valid file type (brstm, idsp, lopus)!</p>';
+            return redirect()->back()->with('error', $status);
+        }
+
     }
-
-
 
     public function Createnus3audio($request, $looparray){
         $nus3audio = new AudioNUS3AUDIO();
@@ -136,6 +149,20 @@ class MainController extends Controller
             $nus3audio->save();
 
             $status = '<p class="card-text">'. $log . ' (Use "Convert Song to Compatible wav" in the extras section.)</p>';
+            return redirect()->back()->with('error', $status);
+        }else if($arr[0] == "The" && $arr[1] == "loop"){
+            $nus3audio->log = $log;
+
+            $nus3audio->save();
+
+            $status = '<p class="card-text"><pre>' . $log . '</pre></p>';
+            return redirect()->back()->with('error', $status);
+        }else if($arr[0] == "Error" && $arr[1] == "parsing"){
+            $nus3audio->log = $log;
+
+            $nus3audio->save();
+
+            $status = '<p class="card-text"><pre>' . $log . '</pre></p>';
             return redirect()->back()->with('error', $status);
         }
 
@@ -205,6 +232,20 @@ class MainController extends Controller
 
             $status = '<p class="card-text">' . $log . ' (If you are seeing this, use "Convert Song to Compatible wav" in the extras section.)</p>';
             return redirect()->back()->with('error', $status);
+        }else if($arr[0] == "The" && $arr[1] == "loop"){
+            $lopus->log = $log;
+
+            $lopus->save();
+
+            $status = '<p class="card-text"><pre>' . $log . '</pre></p>';
+            return redirect()->back()->with('error', $status);
+        }else if($arr[0] == "Error" && $arr[1] == "parsing"){
+            $lopus->log = $log;
+
+            $lopus->save();
+
+            $status = '<p class="card-text"><pre>' . $log . '</pre></p>';
+            return redirect()->back()->with('error', $status);
         }
 
         $lopus->log = $log;
@@ -263,6 +304,20 @@ class MainController extends Controller
 
             $status = '<p class="card-text">' . $log . ' (If you are seeing this, use "Convert Song to Compatible wav" in the extras section.)</p>';
             return redirect()->back()->with('error', $status);
+        }else if($arr[0] == "The" && $arr[1] == "loop"){
+            $idsp->log = $log;
+
+            $idsp->save();
+
+            $status = '<p class="card-text"><pre>' . $log . '</pre></p>';
+            return redirect()->back()->with('error', $status);
+        }else if($arr[0] == "Error" && $arr[1] == "parsing"){
+            $idsp->log = $log;
+
+            $idsp->save();
+
+            $status = '<p class="card-text"><pre>' . $log . '</pre></p>';
+            return redirect()->back()->with('error', $status);
         }
 
         $idsp->log = $log;
@@ -280,8 +335,6 @@ class MainController extends Controller
 
         return $nus3audio;
     }
-
-
 
     public function LopusDetails ($id){
         $lopus = AudioLopus::where("id", $id)->first();
@@ -312,36 +365,47 @@ class MainController extends Controller
 
     public function FindType(Request $request)
     {
-        $filetype = $request->input("filetype");
 
-        $looparray = array();
+        if($request->file('music') == null){
+            $status = '<p class="card-text">Please upload a file!</p>';
+            return redirect()->back()->with('error', $status);
+        }
 
-        if($request->input("loop") == "on"){
-            if(!empty($request->input("sampleHZinput"))){
-                $hzconvert = 48000 / floatval($request->input("sampleHZinput"));
+        if($request->file('music')->getClientOriginalExtension() == "wav" || $request->file('music')->getClientOriginalExtension() == "lopus" || $request->file('music')->getClientOriginalExtension() == "idsp" ){
+            $filetype = $request->input("filetype");
 
-                $looparray[0] = intval($request->input("startloop") * $hzconvert);
+            $looparray = array();
 
-                $looparray[1] = intval($request->input("endloop") * $hzconvert);
+            if($request->input("loop") == "on"){
+                if(!empty($request->input("sampleHZinput"))){
+                    $hzconvert = 48000 / floatval($request->input("sampleHZinput"));
+
+                    $looparray[0] = intval($request->input("startloop") * $hzconvert);
+
+                    $looparray[1] = intval($request->input("endloop") * $hzconvert);
+                }else{
+                    $looparray[0] = 0;
+                    $looparray[1] = 1;
+                }
             }else{
                 $looparray[0] = 0;
                 $looparray[1] = 1;
             }
-        }else{
-            $looparray[0] = 0;
-            $looparray[1] = 1;
-        }
 
-        if ($filetype == "nus3audio") {
-            return MainController::Createnus3audio($request, $looparray);
-        } else if ($filetype == "lopus") {
-            return MainController::Createlopus($request, $looparray);
-        } else if ($filetype == "idsp") {
-            return MainController::Createidsp($request, $looparray);
-        } else {
-            $status = '<p class="card-text">Please select a valid file type!</p>';
+            if ($filetype == "nus3audio") {
+                return MainController::Createnus3audio($request, $looparray);
+            } else if ($filetype == "lopus") {
+                return MainController::Createlopus($request, $looparray);
+            } else if ($filetype == "idsp") {
+                return MainController::Createidsp($request, $looparray);
+            } else {
+                $status = '<p class="card-text">Please select a valid file type!</p>';
+                return redirect()->back()->with('error', $status);
+            };
+        }else{
+            $status = '<p class="card-text">Please upload a valid file type (wav, idsp, lopus)!</p>';
             return redirect()->back()->with('error', $status);
-        };
+        }
     }
 
 }
