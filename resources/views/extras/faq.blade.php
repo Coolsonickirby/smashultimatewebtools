@@ -66,3 +66,6 @@
 
 <h4>I have some questions, but they aren't answered here / There's an error in your website. / Can you add _______?</h4>
 <p>Contact me on discord @ Coolsonickirby#4030.</p>
+
+<h2>Update as of 2/2/2020</h2>
+<p>I've added the option of just selecting a brstm file in the main section, so you can just convert the brstm directly to a nus3audio!!!</p>

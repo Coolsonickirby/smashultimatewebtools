@@ -30,6 +30,8 @@ Route::get('/details/wavhzchange/{id}', 'MainController@CompatibleDetails');
 
 Route::get('/details/brstm/{id}', 'MainController@BrstmDetails');
 
+Route::get('/details/brstmtonus3uadio/{id}', 'MainController@BrstmToNus3audioDetails');
+
 
 Route::post('/create', [
     'uses' => 'MainController@FindType'

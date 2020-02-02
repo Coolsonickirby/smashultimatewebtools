@@ -47,7 +47,7 @@
                     <form method="post" action="{{ action('MainController@FindType') }}" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <label for="music">Music File:</label>
-                        <input type="file" class="form-control" id="music" name="music" accept="audio/wav" onchange="AlertFilesize();">
+                        <input type="file" class="form-control" id="music" name="music" accept="audio/wav, .brstm" onchange="AlertFilesize();">
                         <small class="form-text text-muted">File Size Limit: 100mb</small>
                         <small class="form-text" style="color:red; display:none;" id="fileerror">File too big!</small>
                         <small class="form-text" style="color:orange;">Music file needs to be 48000hz sample rate! (Check PAQ for more info!)</small>

@@ -9,6 +9,7 @@ use App\AudioNUS3AUDIO;
 use App\AudioLopus;
 use App\AudioIDSP;
 use App\brstm;
+use App\brstmtonus3audio;
 use File;
 use Validator;
 
@@ -371,7 +372,7 @@ class MainController extends Controller
             return redirect()->back()->with('error', $status);
         }
 
-        if($request->file('music')->getClientOriginalExtension() == "wav" || $request->file('music')->getClientOriginalExtension() == "lopus" || $request->file('music')->getClientOriginalExtension() == "idsp" ){
+        if($request->file('music')->getClientOriginalExtension() == "wav"){
             $filetype = $request->input("filetype");
 
             $looparray = array();
@@ -402,10 +403,117 @@ class MainController extends Controller
                 $status = '<p class="card-text">Please select a valid file type!</p>';
                 return redirect()->back()->with('error', $status);
             };
+        }else if($request->file('music')->getClientOriginalExtension() == "brstm"){
+            $filetype = $request->input("filetype");
+
+            $looparray = array();
+
+            if($request->input("loop") == "on"){
+                if(!empty($request->input("sampleHZinput"))){
+                    $hzconvert = 48000 / floatval($request->input("sampleHZinput"));
+
+                    $looparray[0] = intval($request->input("startloop") * $hzconvert);
+
+                    $looparray[1] = intval($request->input("endloop") * $hzconvert);
+                }else{
+                    $looparray[0] = 0;
+                    $looparray[1] = 1;
+                }
+            }else{
+                $looparray[0] = 0;
+                $looparray[1] = 1;
+            }
+
+            return MainController::CreateNus3audioFromBRSTM($request, $looparray);
         }else{
             $status = '<p class="card-text">Please upload a valid file type (wav, idsp, lopus)!</p>';
             return redirect()->back()->with('error', $status);
+
         }
+    }
+
+    public function CreateNus3audioFromBRSTM($request, $looparray){
+
+
+        $BTN = new brstmtonus3audio();
+
+        $file = $request->file('music');
+
+        $BTN->filename = $file->getClientOriginalName();
+
+        $BTN->save();
+
+        $pathtmp = $file->storeAs('public/normalBTN/' . $BTN->id, $file->getClientOriginalName());
+
+        $path = public_path() . '/' . str_replace("public", "storage", $pathtmp);
+
+        $filename = pathinfo($pathtmp, PATHINFO_FILENAME);
+
+        $tmppath1 = shell_exec("echo %CD%/storage/fixedBTN/{$BTN->id}/");
+
+        $tmppath2 = shell_exec("echo %CD%/storage/tmpBTN/{$BTN->id}/");
+
+        $tmppath2 = str_replace(' ', '', $tmppath2);
+
+        File::makeDirectory($tmppath1, 0777, true, true);
+
+        File::makeDirectory($tmppath2, 0777, true, true);
+
+        $BTN->log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/tmpBTN/{$BTN->id}/{$filename}.wav\"");
+
+        $BTN->log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/tmpBTN/{$BTN->id}/{$filename}.wav\"");
+
+        $BTN->log2 = shell_exec("%CD%/convert/sox/sox.exe \"%CD%/storage/tmpBTN/{$BTN->id}/{$filename}.wav\" -r 48000 \"%CD%/storage/fixedBTN/{$BTN->id}/{$filename}.wav\"");
+
+        $BTN->startloop = $looparray[0];
+
+        $BTN->endloop = $looparray[1];
+
+        $BTN->hz = $request->input("hz");
+
+        $BTN->stage = $request->input("filenameOutput");
+
+        $BTN->save();
+
+        //return "1. " . shell_exec("\"%CD%/convert/VGAudioCli.exe\" -i \"%CD%/{$pathWAV}\" -o \"%CD%/storage/lopusbrstm/{$BTN->id}/output.lopus\"");
+
+        if ($request->input("loop") == "on") {
+            if ($request->input("advanced") == "on") {
+                $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "%CD%/storage/fixedbtn/' . $BTN->id . '/' . $filename . '.wav" -o "%CD%/storage/lopusBTN/' . $BTN->id . '/output.lopus" -l ' . $BTN->startloop . '-' . $BTN->endloop . ' --bitrate "' . $request->input("hz") . '" --CBR --opusheader namco ');
+            } else {
+                $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "%CD%/storage/fixedbtn/' . $BTN->id . '/' . $filename . '.wav" -o "%CD%/storage/lopusBTN/' . $BTN->id . '/output.lopus" -l ' . $BTN->startloop . '-' . $BTN->endloop . ' --bitrate "48000" --CBR --opusheader namco ');
+            }
+        } else {
+            if ($request->input("advanced") == "on") {
+                $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "%CD%/storage/fixedbtn/' . $BTN->id . '/' . $filename . '.wav" -o "%CD%/storage/lopusBTN/' . $BTN->id . '/output.lopus" --bitrate "' . $request->input("hz") . '" --CBR --opusheader namco ');
+            } else {
+                $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "%CD%/storage/fixedbtn/' . $BTN->id . '/' . $filename . '.wav" -o "%CD%/storage/lopusBTN/' . $BTN->id . '/output.lopus" --bitrate "48000" --CBR --opusheader namco ');
+            }
+        }
+
+        $fileOutput = $request->input("filenameOutput");
+
+        $tmppath = shell_exec("echo %CD%/storage/BTN/{$BTN->id}/");
+
+        File::makeDirectory($tmppath, 0777, true, true);
+
+        $log2 = shell_exec("%CD%/convert/nus3audio.exe %CD%/convert/base.nus3audio -r 0 %CD%/storage/lopusBTN/{$BTN->id}/output.lopus -w %CD%/storage/BTN/{$BTN->id}/{$fileOutput}.nus3audio");
+
+        $BTN->log = $log;
+
+        $BTN->log2 = $log2;
+
+        $BTN->save();
+
+        $status = '<p class="card-text">nus3audio Conversion Complete! You can download it from <a href="/storage/BTN/'. $BTN->id . '/' . $fileOutput . '.nus3audio">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a href="/details/brstmtonus3audio/' . $BTN->id . '">click here.</a></p>';
+
+        return redirect()->back()->with('success', $status);
+    }
+
+    public function BrstmToNus3audioDetails($id){
+        $brstmtonus3audio = brstmtonus3audio::where("id", $id)->first();
+
+        return $brstmtonus3audio;
     }
 
 }
