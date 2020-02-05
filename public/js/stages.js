@@ -547,7 +547,18 @@ var FireEmblemSeries = [
     ["Code Name: FE ", "bgm_r95_stm_sodename_fe"],
     ["Lords-A Chance Encounter ", "bgm_r96_stm_lords_kaikou"],
     ["Lords-Showdown ", "bgm_r97_stm_lords_kessen"],
-    ["Story 5 Meeting ", "bgm_w17_fem_fireemblem"]
+    ["Story 5 Meeting ", "bgm_w17_fem_fireemblem"],
+    ["Fire Emblem: Three Houses Main Theme (JP)", "bgm_j41a_fsg_maintheme_jp"],
+    ["Fire Emblem: Three Houses Main Theme", "bgm_j41b_fsg_maintheme_en"],
+    ["Fódlan Winds", "bgm_j42_fsg_fodlanogyoufu"],
+    ["The Edge of Dawn", "bgm_j43a_fsg_hraesvelgrnoshoujo_fuukasetsugetsu"],
+    ["The Edge of Dawn (Seasons of Warfare)", "bgm_j43b_fsg_theedgeofdawn_seasonsofwarfare"],
+    ["Tearing Through Heaven", "bgm_j44_fsg_tensakuryuusei"],
+    ["Chasing Daybreak", "bgm_j45_fsg_yabounochihei"],
+    ["Blue Skies and a Battle", "bgm_j46_fsg_jujishitachinosoukyuu"],
+    ["Between Heaven and Earth", "bgm_j47_fsg_tentochinokyoukai"],
+    ["Apex of the World", "bgm_j48_fsg_konosekainoitadakide"],
+    ["Paths That Will Never Cross", "bgm_j49_fsg_majiwaranumichi"],
 ];
 
 var GameAndWatchSeries = [
@@ -1166,10 +1177,11 @@ var VictoryThemes = [
     ["Hero", "bgm_z98_f_brave"],
     ["Banjo & Kazooie", "bgm_z99_f_buddy"],
     ["Terry", "bgm_zz01_f_dolly"],
+    ["Byleth", "bgm_zz02_f_master"],
     ["Normal Victory Theme", "bgm_crs24_vs_result"]
 ];
 
-window.onload = function() {
+window.onload = function () {
     SetupStageList(SmashSeries);
     SetupStageList(MarioSeries);
     SetupStageList(MarioKartSeries);

@@ -14,10 +14,6 @@
     (Also for me to easily make music mods on my phone). This also makes it easier for me to take pre-existing BRSTMs
     and convert them to a compatible nus3audio for Smash Ultimate.</p>
 
-<h4>Why does the music file need to be at a sample rate of 48000hz?</h4>
-<p>I'm not sure about this myself actually. If you really want to know, you can just go in the Smash Ultimate Modding
-    Discord and ask there.</p>
-
 <h4>Why is the file limit 100mb, and is there a limit on how long files are stored?</h4>
 <p>1. The file limit is 100mb (with a bit of extra breathing space) because I only have 23GB free on the server I'm
     using.<br>
@@ -29,7 +25,8 @@
 <p><a href="https://gamebanana.com/games/6498">Gamebanana.</a></p>
 
 <h4>What does "Convert Song to Compatible wav" do?</h4>
-<p>All it does is take the audio file, resamples it to 48000hz, and exports it as a wav.</p>
+<p>All it does is take the audio file, resamples it to 48000hz, and exports it as a wav. (Not necessary anymore as the
+    main input can now convert any audio file to a compatible wav if it isn't already.)</p>
 
 <h4>Why does "Convert brstm/idsp/lopus to Compatible wav" export the wav file to 48000hz instead of the original?</h4>
 <p>Because I wanted it to automatically convert it to a compatible wav without uploading, downloading, then uploading it
@@ -57,10 +54,6 @@
     My main goal was audio, but the only good domain name I could've thought of was smashultimatetools.com and that
     wasn't taken.</p>
 
-<h4>I can't find the new FE songs and Byleth's victory theme?</h4>
-<p>I'm gonna add the new FE songs and Byleth's victory theme to the list after I move my dump to my pc (or if someone
-    sends me the file names).</p>
-
 <h4>Where can I find this page's source code?</h4>
 <p><a href="https://github.com/Coolsonickirby/smashultimatewebtools">Here.</a></p>
 
@@ -68,4 +61,11 @@
 <p>Contact me on discord @ Coolsonickirby#4030.</p>
 
 <h2>Update as of 2/2/2020</h2>
-<p>I've added the option of just selecting a brstm file in the main section, so you can just convert the brstm directly to a nus3audio!!!</p>
+<p>I've added the option of just selecting a brstm file in the main section, so you can just convert the brstm directly
+    to a nus3audio!!!</p>
+
+<h2>Update as of 2/5/2020</h2>
+<p>I finally merged "Convert song to compatible wav" to the main section! Now you can just select any supported audio
+    file and convert it to a nus3audio, lopus, or idsp.<br>
+    Added Byleth's Victory Theme and the new FE songs to the list (Thanks to VGII &lt;3 and A Mudkip).
+</p>

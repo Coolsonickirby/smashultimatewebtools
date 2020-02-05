@@ -7,7 +7,7 @@
 <ol>
     <li>Download <a href="https://github.com/Thealexbarney/VGAudio/releases">VGAudioCli</a>, <a
             href="https://github.com/jam1garner/nus3audio-rs/releases">nus3audio</a>, <a
-            href="http://sox.sourceforge.net/">SoX</a>, and get a base nus3audio (use CrossArc for this).</li>
+            href="http://sox.sourceforge.net/">SoX</a>, and get a base nus3audio (use CrossArc for this). Also install Python 3.8 (version I used) and add it to the PATH Variable.</li>
     <br>
     <li>Place VGAudioCli.exe, VGAudioCli.dll, nus3audio.exe, and your nus3audio (make sure it's
         "<strong>base</strong>.nus3audio") in "./public/convert/".</li>
@@ -15,7 +15,6 @@
     <li>Create a new folder in there called "sox" ("./public/convert/sox").</li>
     <br>
     <li> Extract everything in the SoX zip into the sox folder.</li>
-    <br>
     <br>
     <li>Run "php artisan migrate && php artisan storage:link" in the Command Line (CMD)/Terminal</li>
     <br>
@@ -61,6 +60,17 @@
         href="https://www.youtube.com/channel/UCaMTWkuqc_W1D5CIPN7DEiw">Spook Rake</a>, <a
         href="https://gamebanana.com/members/1537331">zrksyd</a>
 </h4>
+
+<h4>
+    <a href="https://docs.google.com/document/d/1MSzUOeCxIyCpBRZBuko2wXg84exVt8VM9be0i7eAOcE/edit?usp=sharing">Fire Emblem Three Houses Songs</a> - <a
+        href="https://gamebanana.com/members/1480709">VGIII &lt;3</a>, <a href="https://gamebanana.com/members/1707207">A Mudkip</a>
+</h4>
+
+<h4>
+    <a href="https://cdn.discordapp.com/attachments/516449848057135124/662099184584753152/smashAudio.zip">Python script to convert audio (Used as refrence for getting the sample rate)</a> - 
+    <a href="https://github.com/Genwald">Genwald</a>
+</h4>
+
 <h4>
     Teaching me how to convert samples between sample rates - <a href="https://gamebanana.com/members/1480857">JoeTE</a>
 </h4>

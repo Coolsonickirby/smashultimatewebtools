@@ -30,6 +30,17 @@
         href="https://www.youtube.com/channel/UCaMTWkuqc_W1D5CIPN7DEiw">Spook Rake</a>, <a
         href="https://gamebanana.com/members/1537331">zrksyd</a>
 </h4>
+
+<h4>
+    <a href="https://docs.google.com/document/d/1MSzUOeCxIyCpBRZBuko2wXg84exVt8VM9be0i7eAOcE/edit?usp=sharing">Fire Emblem Three Houses Songs</a> - <a
+        href="https://gamebanana.com/members/1480709">VGIII &lt;3</a>, <a href="https://gamebanana.com/members/1707207">A Mudkip</a>
+</h4>
+
+<h4>
+    <a href="https://cdn.discordapp.com/attachments/516449848057135124/662099184584753152/smashAudio.zip">Python script to convert audio (Used as refrence for getting the sample rate)</a> -
+    <a href="https://github.com/Genwald">Genwald</a>
+</h4>
+
 <h4>
     Teaching me how to convert samples between sample rates - <a href="https://gamebanana.com/members/1480857">JoeTE</a>
 </h4>
