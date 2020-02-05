@@ -7,7 +7,7 @@
 <ol>
     <li>Download <a href="https://github.com/Thealexbarney/VGAudio/releases">VGAudioCli</a>, <a
             href="https://github.com/jam1garner/nus3audio-rs/releases">nus3audio</a>, <a
-            href="http://sox.sourceforge.net/">SoX</a>, and get a base nus3audio (use CrossArc for this). Also install Python 3.8 (version I used) and add it to the PATH Variable.</li>
+            href="http://sox.sourceforge.net/">SoX</a>, and get a base nus3audio (use CrossArc for this). Also install Python 3.8 (version I used) and add it to the PATH Variable, and use pip to install soundfile (pip install soundfile).</li>
     <br>
     <li>Place VGAudioCli.exe, VGAudioCli.dll, nus3audio.exe, and your nus3audio (make sure it's
         "<strong>base</strong>.nus3audio") in "./public/convert/".</li>
