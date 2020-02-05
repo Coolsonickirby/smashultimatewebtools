@@ -30,7 +30,7 @@
 
 <h4>Why does "Convert brstm/idsp/lopus to Compatible wav" export the wav file to 48000hz instead of the original?</h4>
 <p>Because I wanted it to automatically convert it to a compatible wav without uploading, downloading, then uploading it
-    again. I was planning on making an option to directly convert the BRSTM to a nus3audio, but college.</p>
+    again. You can now convert the brstm directly to a nus3audio now.</p>
 
 <h4>Does this work with an unmodded switch?</h4>
 <p>Unfortunatly, we can't add custom music to smash offically yet (looking at you Nintendo). However, there's a great
