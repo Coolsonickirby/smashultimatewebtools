@@ -68,8 +68,10 @@
                         <input type="checkbox" class="checkbox-rounded" id="loop" name="loop"
                             onchange="LoopSamples(this);">
                         <label for="loop">Enable Loop Samples</label>
+
                         <br>
                         <div id="loopsection">
+                        <small class="form-text" style="color:orangered;">Leave the fields empty to loop full song.</small>
                             <label>Samples Rate:</label>
                             <select class="custom-select" id="sampleHZ" onchange="UpdateHZ(this)">
                                 <option value="48">48000hz - Smash Ultimate</option>
