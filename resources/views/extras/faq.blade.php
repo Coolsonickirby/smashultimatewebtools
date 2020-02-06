@@ -60,6 +60,27 @@
 <h4>I have some questions, but they aren't answered here / There's an error in your website. / Can you add _______?</h4>
 <p>Contact me on discord @ Coolsonickirby#4030.</p>
 
+<hr style="border-color:black;">
+
+<h3>Mini-tutorial for converting brstms (from Smash Custom Music) to nus3audio (with loops!)</h3>
+
+<ol>
+    <li>Go to <a href="http://www.smashcustommusic.net/">SmashCustomMusic</a> and look for the game you want the audio from.</li>
+    <li>Once you find the game, click on it and look for the song you want.</li>
+    <li>Click on the song name, then click "Download BRSTM" (blue box in image below). Make sure you note down everything in the highlighted section.</li>
+    <img src="img/mini1.png" alt="Download BRSTM" style="height:512px; width:auto;">
+    <li>Go to <a href="{{Request::root()}}/#music">"Music file"</a> and select the brstm file you downloaded</li>
+    <li>Enable the <a href="#loop"></a>"Loop Samples" checkbox</li>
+    <li>Set the Sampiling Rate to the proper one. (If the one you got from Smash Custom Music 48000hz, then select "48000hz". If it said 44100hz, pick "44100hz". If it wasn't either, then select custom hz and input what the Sampling Rate in the notes are.)</li>
+    <li>Enter the loop samples you got from the notes into the proper fields.</li>
+    <li>Select the song you want to replace.</li>
+    <li>Click "Convert"</li>
+    <li>Profit</li>
+</ol>
+
+<hr style="border-color:black;">
+
+
 <h2>Update as of 2/2/2020</h2>
 <p>I've added the option of just selecting a brstm file in the main section, so you can just convert the brstm directly
     to a nus3audio!!!</p>
