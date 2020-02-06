@@ -396,6 +396,36 @@ class MainController extends Controller
             'hz' => MainController::keepNumbers($request->input("hz")),
         ]);
 
+        if($request->input("filenameOutput") == ""){
+            $request->merge([
+                'filenameOutput' => "output",
+            ]);
+        }
+
+        if($request->input("hz") == ""){
+            $request->merge([
+                'hz' => "48000",
+            ]);
+        }
+
+        if($request->input("sampleHZinput") == ""){
+            $request->merge([
+                'sampleHZinput' => "48000",
+            ]);
+        }
+
+        if($request->input("startloop") == ""){
+            $request->merge([
+                'startloop' => "0",
+            ]);
+        }
+
+        if($request->input("endloop") == ""){
+            $request->merge([
+                'endloop' => "0",
+            ]);
+        }
+
         if($request->input("loop") == "on"){
             if(!empty($request->input("sampleHZinput"))){
                 $hzconvert = 48000 / floatval($request->input("sampleHZinput"));
