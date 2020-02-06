@@ -1237,6 +1237,25 @@ window.onload = function () {
 
     AlertFilesize();
 
+    setInputFilter(document.getElementById("sampleHZinput"), function (value) {
+        return /^-?\d*$/.test(value);
+    });
+
+    setInputFilter(document.getElementById("startloop"), function (value) {
+        return /^-?\d*$/.test(value);
+    });
+
+    setInputFilter(document.getElementById("endloop"), function (value) {
+        return /^-?\d*$/.test(value);
+    });
+
+    setInputFilter(document.getElementById("filenameOutput"), function (value) {
+        return /^[a-zA-Z0-9_]*$/i.test(value);
+    });
+
+    setInputFilter(document.getElementById("hz"), function (value) {
+        return /^-?\d*$/.test(value);
+    });
 }
 
 function LoopSamples(checkbox) {
@@ -1293,4 +1312,27 @@ function UpdateHZ(e) {
     } else {
         document.getElementById("sampleHZdiv").style.display = "block";
     }
+}
+
+
+
+/*
+    Thanks to the Stackoverflow community wiki
+    Source: https://stackoverflow.com/posts/469362/revisions
+*/
+function setInputFilter(textbox, inputFilter) {
+    ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function (event) {
+        textbox.addEventListener(event, function () {
+            if (inputFilter(this.value)) {
+                this.oldValue = this.value;
+                this.oldSelectionStart = this.selectionStart;
+                this.oldSelectionEnd = this.selectionEnd;
+            } else if (this.hasOwnProperty("oldValue")) {
+                this.value = this.oldValue;
+                this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+            } else {
+                this.value = "";
+            }
+        });
+    });
 }

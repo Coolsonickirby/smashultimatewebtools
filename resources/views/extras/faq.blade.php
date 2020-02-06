@@ -78,6 +78,8 @@
     <li>Profit</li>
 </ol>
 
+<p>You can only convert BRSTMs directly to nus3audio using the main converter.</p>
+
 <hr style="border-color:black;">
 
 

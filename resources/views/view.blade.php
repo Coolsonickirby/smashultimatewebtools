@@ -71,7 +71,7 @@
 
                         <br>
                         <div id="loopsection">
-                        <small class="form-text" style="color:orangered;">Leave the fields empty to loop full song.</small>
+                            <small class="form-text" style="color:orangered;">Leave the fields empty to loop full song.</small>
                             <label>Samples Rate:</label>
                             <select class="custom-select" id="sampleHZ" onchange="UpdateHZ(this)">
                                 <option value="48">48000hz - Smash Ultimate</option>
@@ -127,24 +127,24 @@
     <script src="./js/jquery-3.4.1.min.js"></script>
     <script>
         function AlertFilesize(){
-        if(document.getElementById("music").files.length != 0){
-        if(window.ActiveXObject){
-        var fso = new ActiveXObject("Scripting.FileSystemObject");
-        var filepath = document.getElementById('music').value;
-        var thefile = fso.getFile(filepath);
-        var sizeinbytes = thefile.size;
-        }else{
-        var sizeinbytes = document.getElementById('music').files[0].size;
-        }
-        if(sizeinbytes > 100000000){
-        document.getElementById("fileerror").style.display = "block";
-        }else{
-        document.getElementById("fileerror").style.display = "none";
-        }
-        }else{
-        document.getElementById("fileerror").style.display = "none";
-        }
+            if(document.getElementById("music").files.length != 0){
+                if(window.ActiveXObject){
+                    var fso = new ActiveXObject("Scripting.FileSystemObject");
+                    var filepath = document.getElementById('music').value;
+                    var thefile = fso.getFile(filepath);
+                    var sizeinbytes = thefile.size;
+                }else{
+                    var sizeinbytes = document.getElementById('music').files[0].size;
+                }
 
+                if(sizeinbytes > 100000000){
+                    document.getElementById("fileerror").style.display = "block";
+                }else{
+                    document.getElementById("fileerror").style.display = "none";
+                }
+            }else{
+                document.getElementById("fileerror").style.display = "none";
+            }
         }
     </script>
     <script src="./js/stages.js"></script>

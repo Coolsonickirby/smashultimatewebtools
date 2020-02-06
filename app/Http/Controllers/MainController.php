@@ -352,40 +352,66 @@ class MainController extends Controller
 
     public function NUS3AUDIODetails($id)
     {
+        $id = MainController::keepNumbers($id);
         $nus3audio = AudioNUS3AUDIO::where("id", $id)->first();
-
         return $nus3audio;
     }
 
     public function LopusDetails ($id){
+        $id = MainController::keepNumbers($id);
         $lopus = AudioLopus::where("id", $id)->first();
-
         return $lopus;
     }
 
     public function IDSPDetails($id)
     {
+        $id = MainController::keepNumbers($id);
         $idsp = AudioIDSP::where("id", $id)->first();
-
         return $idsp;
     }
 
     public function CompatibleDetails($id)
     {
+        $id = MainController::keepNumbers($id);
         $audio = Audio::where("id", $id)->first();
-
         return $audio;
     }
 
     public function BrstmDetails($id)
     {
+        $id = MainController::keepNumbers($id);
         $brstm = brstm::where("id", $id)->first();
-
         return $brstm;
     }
 
     public function FindType(Request $request)
     {
+        $looparray = array();
+
+        $request->merge([
+            'sampleHZinput' => MainController::keepNumbers($request->input("sampleHZinput")),
+            'startloop' => MainController::keepNumbers($request->input("startloop")),
+            'endloop' => MainController::keepNumbers($request->input("endloop")),
+            'filenameOutput' => MainController::cleanInput($request->input("filenameOutput")),
+            'hz' => MainController::keepNumbers($request->input("hz")),
+        ]);
+
+        if($request->input("loop") == "on"){
+            if(!empty($request->input("sampleHZinput"))){
+                $hzconvert = 48000 / floatval($request->input("sampleHZinput"));
+
+                $looparray[0] = intval($request->input("startloop") * $hzconvert);
+
+                $looparray[1] = intval($request->input("endloop") * $hzconvert);
+            }else{
+                $looparray[0] = 0;
+                $looparray[1] = 1;
+            }
+        }else{
+            $looparray[0] = 0;
+            $looparray[1] = 1;
+        }
+
 
         if($request->file('music') == null){
             $status = '<p class="card-text">Please upload a file!</p>';
@@ -393,47 +419,9 @@ class MainController extends Controller
         }
 
         if($request->file('music')->getClientOriginalExtension() == "brstm"){
-            $filetype = $request->input("filetype");
-
-            $looparray = array();
-
-            if($request->input("loop") == "on"){
-                if(!empty($request->input("sampleHZinput"))){
-                    $hzconvert = 48000 / floatval($request->input("sampleHZinput"));
-
-                    $looparray[0] = intval($request->input("startloop") * $hzconvert);
-
-                    $looparray[1] = intval($request->input("endloop") * $hzconvert);
-                }else{
-                    $looparray[0] = 0;
-                    $looparray[1] = 1;
-                }
-            }else{
-                $looparray[0] = 0;
-                $looparray[1] = 1;
-            }
-
             return MainController::CreateNus3audioFromBRSTM($request, $looparray);
         }else{
             $filetype = $request->input("filetype");
-
-            $looparray = array();
-
-            if($request->input("loop") == "on"){
-                if(!empty($request->input("sampleHZinput"))){
-                    $hzconvert = 48000 / floatval($request->input("sampleHZinput"));
-
-                    $looparray[0] = intval($request->input("startloop") * $hzconvert);
-
-                    $looparray[1] = intval($request->input("endloop") * $hzconvert);
-                }else{
-                    $looparray[0] = 0;
-                    $looparray[1] = 1;
-                }
-            }else{
-                $looparray[0] = 0;
-                $looparray[1] = 1;
-            }
 
             if ($filetype == "nus3audio") {
                 return MainController::Createnus3audio($request, $looparray);
@@ -526,8 +514,8 @@ class MainController extends Controller
     }
 
     public function BrstmToNus3audioDetails($id){
+        $id = MainController::keepNumbers($id);
         $brstmtonus3audio = brstmtonus3audio::where("id", $id)->first();
-
         return $brstmtonus3audio;
     }
 
@@ -553,5 +541,15 @@ class MainController extends Controller
         $sample_length = shell_exec('python python3/sample_length.py "' . $path . '" ');
 
         return $sample_length;
+    }
+
+    public function keepNumbers($string){
+        $string = preg_replace('/[^0-9]/','',$string);
+        return $string;
+    }
+
+    public function cleanInput($string){
+        $string = preg_replace('/[^a-zA-Z0-9_]/', "_", $string);
+        return $string;
     }
 }
