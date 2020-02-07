@@ -1299,11 +1299,6 @@ function UpdateStage(e) {
 }
 
 function UpdateType(e) {
-    if(e.value == "idsp"){
-        document.getElementById("loop_container").style.display = "none";
-    }else{
-        document.getElementById("loop_container").style.display = "block";
-    }
     document.getElementById("filetype").value = e.value;
 }
 

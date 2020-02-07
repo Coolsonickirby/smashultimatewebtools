@@ -325,7 +325,7 @@ class MainController extends Controller
 
         $sample_rate = MainController::sampleCheck($path);
 
-        /*if($request->input("sampleHZinput") == "auto"){
+        if($request->input("sampleHZinput") == "auto"){
             if($request->input("loop") == "on"){
                 $hzconvert = 48000 / floatval($sample_rate);
 
@@ -336,9 +336,9 @@ class MainController extends Controller
                 $idsp->startloop = 0;
                 $idsp->endloop = 0;
             }
-        }*/
+        }
 
-        /*if($file_ext != "wav"){
+        if($file_ext != "wav"){
             $path = MainController::resample48($idsp->id, "idspRE", $path);
         }else if($sample_rate != "48000"){
             $path = MainController::resample48($idsp->id, "idspRE", $path);
@@ -346,11 +346,11 @@ class MainController extends Controller
 
         if($idsp->endloop == 0){
             $idsp->endloop = MainController::getSamples($path);
-        }*/
+        }
 
         $fileOutput = $request->input("filenameOutput");
 
-        /*if ($request->input("loop") == "on") {
+        if ($request->input("loop") == "on") {
             if ($request->input("advanced") == "on") {
                 $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "' . $path . '" -o %CD%/storage/idsp/' . $idsp->id . '/'. $fileOutput . '.idsp -l ' . $idsp->startloop . '-' . $idsp->endloop . ' --bitrate "' . $request->input("hz"). '"');
             } else {
@@ -362,12 +362,6 @@ class MainController extends Controller
             } else {
                 $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "' . $path . '" -o %CD%/storage/idsp/' . $idsp->id . '/'. $fileOutput . '.idsp');
             }
-        }*/
-
-        if ($request->input("advanced") == "on") {
-            $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "' . $path . '" -o %CD%/storage/idsp/' . $idsp->id . '/'. $fileOutput . '.idsp --bitrate "' . $request->input("hz") . '"');
-        } else {
-            $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "' . $path . '" -o %CD%/storage/idsp/' . $idsp->id . '/'. $fileOutput . '.idsp');
         }
 
         $arr = explode(' ', $log);
