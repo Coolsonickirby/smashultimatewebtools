@@ -1299,11 +1299,19 @@ function UpdateStage(e) {
 }
 
 function UpdateType(e) {
+    if(e.value == "idsp"){
+        document.getElementById("loop_container").style.display = "none";
+    }else{
+        document.getElementById("loop_container").style.display = "block";
+    }
     document.getElementById("filetype").value = e.value;
 }
 
 function UpdateHZ(e) {
-    if (e.value == "48") {
+    if (e.value == "auto") {
+        document.getElementById("sampleHZdiv").style.display = "none";
+        document.getElementById("sampleHZinput").value = "auto";
+    } else if (e.value == "48") {
         document.getElementById("sampleHZdiv").style.display = "none";
         document.getElementById("sampleHZinput").value = "48000";
     } else if (e.value == "441") {

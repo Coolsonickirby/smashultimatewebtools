@@ -71,7 +71,7 @@
     <img src="img/mini1.png" alt="Download BRSTM" style="height:512px; width:auto;">
     <li>Go to <a href="{{Request::root()}}/#music">"Music file"</a> and select the brstm file you downloaded</li>
     <li>Enable the <a href="{{Request::root()}}/#loop">"Loop Samples"</a> checkbox</li>
-    <li>Set the Sampling Rate to the proper one. (If the one you got from Smash Custom Music 48000hz, then select "48000hz". If it said 44100hz, pick "44100hz". If it wasn't either, then select custom hz and input what the Sampling Rate in the notes are.)</li>
+    <li>Set the Sampling Rate to the proper one. (Set it to "Auto" if you're not sure.)</li>
     <li>Enter the loop samples you got from the notes into the proper fields.</li>
     <li>Select the song you want to replace.</li>
     <li>Click "Convert"</li>
@@ -92,3 +92,6 @@
     file and convert it to a nus3audio, lopus, or idsp.<br>
     Added Byleth's Victory Theme and the new FE songs to the list (Thanks to VGII &lt;3 and A Mudkip).
 </p>
+
+<h2>Update as of 2/7/2020</h2>
+<p>Disabled looping for idsp as there was some problems with it.</p>

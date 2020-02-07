@@ -133,6 +133,19 @@ class MainController extends Controller
 
         $sample_rate = MainController::sampleCheck($path);
 
+        if($request->input("sampleHZinput") == "auto"){
+            if($request->input("loop") == "on"){
+                $hzconvert = 48000 / floatval($sample_rate);
+
+                $nus3audio->startloop = intval($request->input("startloop") * $hzconvert);
+
+                $nus3audio->endloop = intval($request->input("endloop") * $hzconvert);
+            }else{
+                $nus3audio->startloop = 0;
+                $nus3audio->endloop = 0;
+            }
+        }
+
         if($file_ext != "wav"){
             $path = MainController::resample48($nus3audio->id, "nus3audioRE", $path);
         }else if($sample_rate != "48000"){
@@ -220,6 +233,19 @@ class MainController extends Controller
 
         $sample_rate = MainController::sampleCheck($path);
 
+        if($request->input("sampleHZinput") == "auto"){
+            if($request->input("loop") == "on"){
+                $hzconvert = 48000 / floatval($sample_rate);
+
+                $lopus->startloop = intval($request->input("startloop") * $hzconvert);
+
+                $lopus->endloop = intval($request->input("endloop") * $hzconvert);
+            }else{
+                $lopus->startloop = 0;
+                $lopus->endloop = 0;
+            }
+        }
+
         if($file_ext != "wav"){
             $path = MainController::resample48($lopus->id, "lopusRE", $path);
         }else if($sample_rate != "48000"){
@@ -299,17 +325,32 @@ class MainController extends Controller
 
         $sample_rate = MainController::sampleCheck($path);
 
-        if($file_ext != "wav"){
+        /*if($request->input("sampleHZinput") == "auto"){
+            if($request->input("loop") == "on"){
+                $hzconvert = 48000 / floatval($sample_rate);
+
+                $idsp->startloop = intval($request->input("startloop") * $hzconvert);
+
+                $idsp->endloop = intval($request->input("endloop") * $hzconvert);
+            }else{
+                $idsp->startloop = 0;
+                $idsp->endloop = 0;
+            }
+        }*/
+
+        /*if($file_ext != "wav"){
             $path = MainController::resample48($idsp->id, "idspRE", $path);
-        }
+        }else if($sample_rate != "48000"){
+            $path = MainController::resample48($idsp->id, "idspRE", $path);
+        };
 
         if($idsp->endloop == 0){
             $idsp->endloop = MainController::getSamples($path);
-        }
+        }*/
 
         $fileOutput = $request->input("filenameOutput");
 
-        if ($request->input("loop") == "on") {
+        /*if ($request->input("loop") == "on") {
             if ($request->input("advanced") == "on") {
                 $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "' . $path . '" -o %CD%/storage/idsp/' . $idsp->id . '/'. $fileOutput . '.idsp -l ' . $idsp->startloop . '-' . $idsp->endloop . ' --bitrate "' . $request->input("hz"). '"');
             } else {
@@ -321,6 +362,12 @@ class MainController extends Controller
             } else {
                 $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "' . $path . '" -o %CD%/storage/idsp/' . $idsp->id . '/'. $fileOutput . '.idsp');
             }
+        }*/
+
+        if ($request->input("advanced") == "on") {
+            $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "' . $path . '" -o %CD%/storage/idsp/' . $idsp->id . '/'. $fileOutput . '.idsp --bitrate "' . $request->input("hz") . '"');
+        } else {
+            $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "' . $path . '" -o %CD%/storage/idsp/' . $idsp->id . '/'. $fileOutput . '.idsp');
         }
 
         $arr = explode(' ', $log);
@@ -410,7 +457,7 @@ class MainController extends Controller
 
         if($request->input("sampleHZinput") == ""){
             $request->merge([
-                'sampleHZinput' => "48000",
+                'sampleHZinput' => "auto",
             ]);
         }
 
@@ -426,22 +473,26 @@ class MainController extends Controller
             ]);
         }
 
-        if($request->input("loop") == "on"){
-            if(!empty($request->input("sampleHZinput"))){
-                $hzconvert = 48000 / floatval($request->input("sampleHZinput"));
+        if($request->input("sampleHZinput") != "auto"){
+            if($request->input("loop") == "on"){
+                if(!empty($request->input("sampleHZinput"))){
+                    $hzconvert = 48000 / floatval($request->input("sampleHZinput"));
 
-                $looparray[0] = intval($request->input("startloop") * $hzconvert);
+                    $looparray[0] = intval($request->input("startloop") * $hzconvert);
 
-                $looparray[1] = intval($request->input("endloop") * $hzconvert);
+                    $looparray[1] = intval($request->input("endloop") * $hzconvert);
+                }else{
+                    $looparray[0] = 0;
+                    $looparray[1] = 0;
+                }
             }else{
                 $looparray[0] = 0;
-                $looparray[1] = 1;
+                $looparray[1] = 0;
             }
         }else{
             $looparray[0] = 0;
-            $looparray[1] = 1;
+            $looparray[1] = 0;
         }
-
 
         if($request->file('music') == null){
             $status = '<p class="card-text">Please upload a file!</p>';
@@ -498,6 +549,21 @@ class MainController extends Controller
         $BTN->startloop = $looparray[0];
 
         $BTN->endloop = $looparray[1];
+
+        $sample_rate = MainController::sampleCheck(public_path() . "/storage/tmpBTN/{$BTN->id}/{$filename}.wav");
+
+        if($request->input("sampleHZinput") == "auto"){
+            if($request->input("loop") == "on"){
+                $hzconvert = 48000 / floatval($sample_rate);
+
+                $BTN->startloop = intval($request->input("startloop") * $hzconvert);
+
+                $BTN->endloop = intval($request->input("endloop") * $hzconvert);
+            }else{
+                $BTN->startloop = 0;
+                $BTN->endloop = 0;
+            }
+        }
 
         $BTN->hz = $request->input("hz");
 

@@ -65,33 +65,37 @@
                         <select class="custom-select" id="stages" onchange="UpdateStage(this)"></select>
                         <br>
                         <br>
-                        <input type="checkbox" class="checkbox-rounded" id="loop" name="loop"
-                            onchange="LoopSamples(this);">
-                        <label for="loop">Enable Loop Samples</label>
 
-                        <br>
-                        <div id="loopsection">
-                            <small class="form-text" style="color:orangered;">Leave the fields empty to loop full song.</small>
-                            <label>Samples Rate:</label>
-                            <select class="custom-select" id="sampleHZ" onchange="UpdateHZ(this)">
-                                <option value="48">48000hz - Smash Ultimate</option>
-                                <option value="441">44100hz - Smash Custom Music / Brstm</option>
-                                <option>Custom hz</option>
-                            </select>
+                        <div id="loop_container">
+                            <input type="checkbox" class="checkbox-rounded" id="loop" name="loop"
+                                onchange="LoopSamples(this);">
+                            <label for="loop">Enable Loop Samples</label>
+
                             <br>
-                            <br>
-                            <div id="sampleHZdiv" style="display: none;">
-                                <label for="smapleHZ">Sample HZ:</label>
-                                <input type="text" class="form-control" id="sampleHZinput" name="sampleHZinput">
+                            <div id="loopsection">
+                                <small class="form-text" style="color:orangered;">Leave the fields empty to loop full song.</small>
+                                <label>Samples Rate:</label>
+                                <select class="custom-select" id="sampleHZ" onchange="UpdateHZ(this)">
+                                    <option value="auto">Auto Detect</option>
+                                    <option value="48">48000hz - Smash Ultimate</option>
+                                    <option value="441">44100hz - Smash Custom Music / Brstm</option>
+                                    <option>Custom hz</option>
+                                </select>
                                 <br>
+                                <br>
+                                <div id="sampleHZdiv" style="display: none;">
+                                    <label for="smapleHZ">Sample HZ:</label>
+                                    <input type="text" class="form-control" id="sampleHZinput" name="sampleHZinput">
+                                    <br>
+                                </div>
+                                <label for="startloop">Loop Sample Start:</label>
+                                <input type="text" class="form-control" id="startloop" name="startloop">
+                                <br>
+                                <label for="endloop">Loop Sample End:</label>
+                                <input type="text" class="form-control" name="endloop" id="endloop">
                             </div>
-                            <label for="startloop">Loop Sample Start:</label>
-                            <input type="text" class="form-control" id="startloop" name="startloop">
                             <br>
-                            <label for="endloop">Loop Sample End:</label>
-                            <input type="text" class="form-control" name="endloop" id="endloop">
                         </div>
-                        <br>
                         <input type="checkbox" class="checkbox-rounded" id="advanced" name="advanced"
                             onchange="AdvancedOptions(this);">
                         <label for="loop">Enable Advanced Options</label>
