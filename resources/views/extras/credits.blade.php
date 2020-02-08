@@ -8,7 +8,7 @@
         href="https://github.com/Thealexbarney/">Thealexbarney</a>
 </h4>
 <h4>
-    <a href="https://github.com/jam1garner/nus3audio">nus3audio</a> - <a
+    <a href="https://github.com/jam1garner/nus3audio-rs">nus3audio</a> - <a
         href="https://github.com/jam1garner/">jam1garner</a>
 </h4>
 <h4>

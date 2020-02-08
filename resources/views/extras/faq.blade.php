@@ -92,3 +92,8 @@
     file and convert it to a nus3audio, lopus, or idsp.<br>
     Added Byleth's Victory Theme and the new FE songs to the list (Thanks to VGII &lt;3 and A Mudkip).
 </p>
+
+
+<h2>Update as of 2/8/2020</h2>
+<p>Added a new page to replace nus3audio sound banks with idsp/lopus.</p>
+</p>
