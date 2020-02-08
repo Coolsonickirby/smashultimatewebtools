@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Smash Ultimate Audio (BRSTM Conversion)</title>
     <link rel="stylesheet" href="{{URL::asset('css/bootstrap.min.css')}}">
-    <script src="{{URL::asset('/js/jquery-3.4.1.slim.js')}}"></script>
+    <script src="{{URL::asset('/js/jquery-3.4.1.js')}}"></script>
     <script src="{{URL::asset('/js/popper.min.js')}}"></script>
-    <script src="{{URL::asset('js/bootstrap.min.js')}}">
+    <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
     </script>
 </head>
 
@@ -57,12 +57,9 @@
                     <br>
                 </div>
                 <div class="col-md-6">
-
                     @include('extras/credits')
                     <h2>Extra Stuff:</h2>
-                    <h4><a href="/">Convert Compatible wav to nus3audio/idsp/lopus</a></h4>
-                    <h4><a href="wavhzchange">Convert Song to Compatible wav</a></h4>
-                    <h4><a href="https://discord.gg/ASJyTrZ">Super Smash Bros. Ultimate Modding Discord</a></h4>
+                    @include('extras/extras')
                 </div>
             </div>
         </div>
@@ -71,7 +68,6 @@
 
         @include('extras/faq')
     </div>
-        <script src="./js/jquery-3.4.1.min.js"></script>
         <script>
             function AlertFilesize(){
                 if(document.getElementById("music").files.length != 0){

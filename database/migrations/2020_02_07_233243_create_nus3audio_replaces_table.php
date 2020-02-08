@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAudioIDSPSTable extends Migration
+class CreateNus3audioReplacesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateAudioIDSPSTable extends Migration
      */
     public function up()
     {
-        Schema::create('audio_i_d_s_p_s', function (Blueprint $table) {
+        Schema::create('nus3audio_replaces', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string("filename")->nullable();
-            $table->string("start_loop")->nullable();
-            $table->string("end_loop")->nullable();
-            $table->string("stage")->nullable();
-            $table->string("hz")->nullable();
+            $table->longText("replace_files")->nullable();
+            $table->longText("replace_ids")->nullable();
+            $table->longText("nus3audio_info")->nullable();
             $table->longText("log")->nullable();
+            $table->longText("log2")->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class CreateAudioIDSPSTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('audio_i_d_s_p_s');
+        Schema::dropIfExists('nus3audio_replaces');
     }
 }

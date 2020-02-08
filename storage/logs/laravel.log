@@ -1652,3 +1652,1519 @@ Did you mean one of these?
 #41 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
 #42 {main}
 "} 
+[2020-02-07 14:27:36] local.ERROR: Undefined variable: start_loop {"exception":"[object] (ErrorException(code: 0): Undefined variable: start_loop at C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\app\\Http\\Controllers\\MainController.php:561)
+[stacktrace]
+#0 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\app\\Http\\Controllers\\MainController.php(561): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\app\\Http\\Controllers\\MainController.php(501): App\\Http\\Controllers\\MainController->CreateNus3audioFromBRSTM()
+#2 [internal function]: App\\Http\\Controllers\\MainController->FindType()
+#3 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array()
+#4 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction()
+#5 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#6 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#7 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#8 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#9 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#10 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#11 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(76): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#12 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#13 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#14 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#15 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(56): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#16 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Session\\Middleware\\StartSession->handle()
+#17 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#19 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#21 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#22 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then()
+#23 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack()
+#24 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute()
+#25 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute()
+#26 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch()
+#27 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#28 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#29 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#30 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#31 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#32 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#33 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#34 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#35 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle()
+#36 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#37 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle()
+#38 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#39 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then()
+#40 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#41 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
+#42 {main}
+"} 
+[2020-02-08 00:26:03] local.ERROR: Undefined variable: nus3audio {"exception":"[object] (ErrorException(code: 0): Undefined variable: nus3audio at C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\app\\Http\\Controllers\\MainController.php:636)
+[stacktrace]
+#0 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\app\\Http\\Controllers\\MainController.php(636): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 [internal function]: App\\Http\\Controllers\\MainController->replacement_nus3audio()
+#2 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array()
+#3 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction()
+#4 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#5 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#6 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#7 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#8 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#9 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#10 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(76): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#11 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#12 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#13 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#14 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(56): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#15 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Session\\Middleware\\StartSession->handle()
+#16 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#17 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#18 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#19 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#20 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#21 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then()
+#22 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack()
+#23 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute()
+#24 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute()
+#25 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch()
+#26 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#27 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#28 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#29 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#30 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#31 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#32 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#33 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#34 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle()
+#35 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#36 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle()
+#37 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#38 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then()
+#39 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#40 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
+#41 {main}
+"} 
+[2020-02-08 17:54:19] local.ERROR: Call to a member function getClientOriginalName() on string {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to a member function getClientOriginalName() on string at C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\app\\Http\\Controllers\\MainController.php:651)
+[stacktrace]
+#0 [internal function]: App\\Http\\Controllers\\MainController->replacement_nus3audio()
+#1 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array()
+#2 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction()
+#3 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#4 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#5 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#6 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#7 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#8 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#9 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(76): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#10 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#11 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#12 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#13 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(56): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#14 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Session\\Middleware\\StartSession->handle()
+#15 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#16 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#17 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#19 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then()
+#21 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack()
+#22 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute()
+#23 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute()
+#24 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch()
+#25 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#26 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#27 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#28 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#29 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#30 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#31 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#32 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#33 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle()
+#34 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#35 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle()
+#36 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#37 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then()
+#38 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#39 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
+#40 {main}
+"} 
+[2020-02-08 17:54:45] local.ERROR: Call to a member function getClientOriginalName() on string {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to a member function getClientOriginalName() on string at C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\app\\Http\\Controllers\\MainController.php:651)
+[stacktrace]
+#0 [internal function]: App\\Http\\Controllers\\MainController->replacement_nus3audio()
+#1 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array()
+#2 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction()
+#3 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#4 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#5 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#6 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#7 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#8 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#9 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(76): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#10 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#11 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#12 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#13 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(56): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#14 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Session\\Middleware\\StartSession->handle()
+#15 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#16 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#17 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#19 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then()
+#21 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack()
+#22 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute()
+#23 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute()
+#24 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch()
+#25 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#26 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#27 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#28 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#29 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#30 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#31 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#32 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#33 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle()
+#34 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#35 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle()
+#36 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#37 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then()
+#38 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#39 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
+#40 {main}
+"} 
+[2020-02-08 18:34:06] local.ERROR: Method Illuminate\Http\UploadedFile::getOriginalClientName does not exist. {"exception":"[object] (BadMethodCallException(code: 0): Method Illuminate\\Http\\UploadedFile::getOriginalClientName does not exist. at C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\Macroable.php:103)
+[stacktrace]
+#0 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\app\\Http\\Controllers\\MainController.php(665): Illuminate\\Http\\UploadedFile->__call()
+#1 [internal function]: App\\Http\\Controllers\\MainController->replacement_nus3audio()
+#2 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array()
+#3 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction()
+#4 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#5 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#6 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#7 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#8 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#9 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#10 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(76): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#11 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#12 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#13 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#14 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(56): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#15 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Session\\Middleware\\StartSession->handle()
+#16 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#17 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#18 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#19 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#20 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#21 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then()
+#22 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack()
+#23 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute()
+#24 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute()
+#25 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch()
+#26 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#27 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#28 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#29 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#30 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#31 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#32 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#33 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#34 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle()
+#35 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#36 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle()
+#37 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#38 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then()
+#39 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#40 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
+#41 {main}
+"} 
+[2020-02-08 18:35:28] local.ERROR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'log2' in 'field list' (SQL: update `nus3audio_replaces` set `nus3audio_info` = name: vc_narration_remove, id: 0, filesize: 33136
+name: vc_narration_failure, id: 1, filesize: 26640
+name: vc_narration_gameset, id: 2, filesize: 26176
+name: vc_narration_ready, id: 3, filesize: 31600
+name: vc_narration_go, id: 4, filesize: 30048
+name: vc_narration_timeup, id: 5, filesize: 22992
+name: vc_narration_suddendeath, id: 6, filesize: 39312
+name: vc_narration_five, id: 7, filesize: 24832
+name: vc_narration_four, id: 8, filesize: 23728
+name: vc_narration_three, id: 9, filesize: 27104
+name: vc_narration_two, id: 10, filesize: 19408
+name: vc_narration_one, id: 11, filesize: 23632
+name: vc_narration_player_01, id: 12, filesize: 33472
+name: vc_narration_player_02, id: 13, filesize: 35264
+name: vc_narration_player_03, id: 14, filesize: 36112
+name: vc_narration_player_04, id: 15, filesize: 37152
+name: vc_narration_player_05, id: 16, filesize: 40752
+name: vc_narration_player_06, id: 17, filesize: 37680
+name: vc_narration_player_07, id: 18, filesize: 39776
+name: vc_narration_player_08, id: 19, filesize: 34224
+name: vc_narration_player_com, id: 20, filesize: 42800
+name: vc_narration_defeated, id: 21, filesize: 19184
+name: vc_narration_newrecord, id: 22, filesize: 76672
+name: vc_narration_complete, id: 23, filesize: 36736
+name: vc_narration_player_amiibo, id: 24, filesize: 32224
+name: vc_narration_result_win_singular, id: 25, filesize: 21504
+name: vc_narration_result_win_plural, id: 26, filesize: 21504
+name: vc_menu_narration_teamblue, id: 27, filesize: 46080
+name: vc_menu_narration_teamgreen, id: 28, filesize: 46512
+name: vc_menu_narration_teamred, id: 29, filesize: 48288
+name: vc_menu_narration_teamyellow, id: 30, filesize: 48640
+name: vc_narration_result_victory, id: 31, filesize: 49040
+name: vc_narration_result_lose, id: 32, filesize: 35392
+name: vc_menu_narration_nocontest, id: 33, filesize: 18976
+name: vc_narration_continue, id: 34, filesize: 46768
+name: vc_narration_congratulation, id: 35, filesize: 76256
+name: vc_narration_result_win_allbattle, id: 36, filesize: 21504
+, `log` = 0.idsp
+1.idsp
+2.idsp
+3.idsp
+4.idsp
+5.idsp
+6.idsp
+7.idsp
+8.idsp
+9.idsp
+10.idsp
+11.idsp
+12.idsp
+13.idsp
+14.idsp
+15.idsp
+16.idsp
+17.idsp
+18.idsp
+19.idsp
+20.idsp
+21.idsp
+22.idsp
+23.idsp
+24.idsp
+25.idsp
+26.idsp
+27.idsp
+28.idsp
+29.idsp
+30.idsp
+31.idsp
+32.idsp
+33.idsp
+34.idsp
+35.idsp
+36.idsp
+, `replace_files` = a:2:{i:0;s:7:"20.idsp";i:1;s:7:"34.idsp";}, `replace_ids` = a:2:{i:0;s:1:"1";i:1;s:1:"9";}, `log2` = ?, `nus3audio_replaces`.`updated_at` = 2020-02-08 18:35:28 where `id` = 16) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S22): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'log2' in 'field list' (SQL: update `nus3audio_replaces` set `nus3audio_info` = name: vc_narration_remove, id: 0, filesize: 33136
+name: vc_narration_failure, id: 1, filesize: 26640
+name: vc_narration_gameset, id: 2, filesize: 26176
+name: vc_narration_ready, id: 3, filesize: 31600
+name: vc_narration_go, id: 4, filesize: 30048
+name: vc_narration_timeup, id: 5, filesize: 22992
+name: vc_narration_suddendeath, id: 6, filesize: 39312
+name: vc_narration_five, id: 7, filesize: 24832
+name: vc_narration_four, id: 8, filesize: 23728
+name: vc_narration_three, id: 9, filesize: 27104
+name: vc_narration_two, id: 10, filesize: 19408
+name: vc_narration_one, id: 11, filesize: 23632
+name: vc_narration_player_01, id: 12, filesize: 33472
+name: vc_narration_player_02, id: 13, filesize: 35264
+name: vc_narration_player_03, id: 14, filesize: 36112
+name: vc_narration_player_04, id: 15, filesize: 37152
+name: vc_narration_player_05, id: 16, filesize: 40752
+name: vc_narration_player_06, id: 17, filesize: 37680
+name: vc_narration_player_07, id: 18, filesize: 39776
+name: vc_narration_player_08, id: 19, filesize: 34224
+name: vc_narration_player_com, id: 20, filesize: 42800
+name: vc_narration_defeated, id: 21, filesize: 19184
+name: vc_narration_newrecord, id: 22, filesize: 76672
+name: vc_narration_complete, id: 23, filesize: 36736
+name: vc_narration_player_amiibo, id: 24, filesize: 32224
+name: vc_narration_result_win_singular, id: 25, filesize: 21504
+name: vc_narration_result_win_plural, id: 26, filesize: 21504
+name: vc_menu_narration_teamblue, id: 27, filesize: 46080
+name: vc_menu_narration_teamgreen, id: 28, filesize: 46512
+name: vc_menu_narration_teamred, id: 29, filesize: 48288
+name: vc_menu_narration_teamyellow, id: 30, filesize: 48640
+name: vc_narration_result_victory, id: 31, filesize: 49040
+name: vc_narration_result_lose, id: 32, filesize: 35392
+name: vc_menu_narration_nocontest, id: 33, filesize: 18976
+name: vc_narration_continue, id: 34, filesize: 46768
+name: vc_narration_congratulation, id: 35, filesize: 76256
+name: vc_narration_result_win_allbattle, id: 36, filesize: 21504
+, `log` = 0.idsp
+1.idsp
+2.idsp
+3.idsp
+4.idsp
+5.idsp
+6.idsp
+7.idsp
+8.idsp
+9.idsp
+10.idsp
+11.idsp
+12.idsp
+13.idsp
+14.idsp
+15.idsp
+16.idsp
+17.idsp
+18.idsp
+19.idsp
+20.idsp
+21.idsp
+22.idsp
+23.idsp
+24.idsp
+25.idsp
+26.idsp
+27.idsp
+28.idsp
+29.idsp
+30.idsp
+31.idsp
+32.idsp
+33.idsp
+34.idsp
+35.idsp
+36.idsp
+, `replace_files` = a:2:{i:0;s:7:\"20.idsp\";i:1;s:7:\"34.idsp\";}, `replace_ids` = a:2:{i:0;s:1:\"1\";i:1;s:1:\"9\";}, `log2` = ?, `nus3audio_replaces`.`updated_at` = 2020-02-08 18:35:28 where `id` = 16) at C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:669)
+[stacktrace]
+#0 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback()
+#1 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(495): Illuminate\\Database\\Connection->run()
+#2 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(428): Illuminate\\Database\\Connection->affectingStatement()
+#3 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2703): Illuminate\\Database\\Connection->update()
+#4 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(776): Illuminate\\Database\\Query\\Builder->update()
+#5 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(745): Illuminate\\Database\\Eloquent\\Builder->update()
+#6 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(660): Illuminate\\Database\\Eloquent\\Model->performUpdate()
+#7 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\app\\Http\\Controllers\\MainController.php(678): Illuminate\\Database\\Eloquent\\Model->save()
+#8 [internal function]: App\\Http\\Controllers\\MainController->replacement_nus3audio()
+#9 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array()
+#10 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction()
+#11 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#12 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#13 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#14 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#15 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#16 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#17 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(76): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#19 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#21 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(56): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#22 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Session\\Middleware\\StartSession->handle()
+#23 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#24 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#25 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#26 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#27 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#28 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then()
+#29 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack()
+#30 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute()
+#31 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute()
+#32 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch()
+#33 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#34 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#35 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#36 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#37 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#38 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#39 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#40 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#41 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle()
+#42 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#43 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle()
+#44 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#45 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then()
+#46 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#47 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
+#48 {main}
+
+[previous exception] [object] (PDOException(code: 42S22): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'log2' in 'field list' at C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:484)
+[stacktrace]
+#0 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(484): PDO->prepare()
+#1 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(662): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
+#2 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback()
+#3 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(495): Illuminate\\Database\\Connection->run()
+#4 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(428): Illuminate\\Database\\Connection->affectingStatement()
+#5 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2703): Illuminate\\Database\\Connection->update()
+#6 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(776): Illuminate\\Database\\Query\\Builder->update()
+#7 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(745): Illuminate\\Database\\Eloquent\\Builder->update()
+#8 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(660): Illuminate\\Database\\Eloquent\\Model->performUpdate()
+#9 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\app\\Http\\Controllers\\MainController.php(678): Illuminate\\Database\\Eloquent\\Model->save()
+#10 [internal function]: App\\Http\\Controllers\\MainController->replacement_nus3audio()
+#11 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array()
+#12 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction()
+#13 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#14 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#15 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#16 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#17 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#19 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(76): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#21 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#22 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#23 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(56): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#24 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Session\\Middleware\\StartSession->handle()
+#25 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#26 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#27 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#28 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#29 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#30 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then()
+#31 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack()
+#32 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute()
+#33 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute()
+#34 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch()
+#35 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#36 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#37 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#38 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#39 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#40 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#41 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#42 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#43 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle()
+#44 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#45 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle()
+#46 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#47 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then()
+#48 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#49 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
+#50 {main}
+"} 
+[2020-02-08 18:35:49] local.ERROR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'log2' in 'field list' (SQL: update `nus3audio_replaces` set `nus3audio_info` = name: vc_narration_remove, id: 0, filesize: 33136
+name: vc_narration_failure, id: 1, filesize: 26640
+name: vc_narration_gameset, id: 2, filesize: 26176
+name: vc_narration_ready, id: 3, filesize: 31600
+name: vc_narration_go, id: 4, filesize: 30048
+name: vc_narration_timeup, id: 5, filesize: 22992
+name: vc_narration_suddendeath, id: 6, filesize: 39312
+name: vc_narration_five, id: 7, filesize: 24832
+name: vc_narration_four, id: 8, filesize: 23728
+name: vc_narration_three, id: 9, filesize: 27104
+name: vc_narration_two, id: 10, filesize: 19408
+name: vc_narration_one, id: 11, filesize: 23632
+name: vc_narration_player_01, id: 12, filesize: 33472
+name: vc_narration_player_02, id: 13, filesize: 35264
+name: vc_narration_player_03, id: 14, filesize: 36112
+name: vc_narration_player_04, id: 15, filesize: 37152
+name: vc_narration_player_05, id: 16, filesize: 40752
+name: vc_narration_player_06, id: 17, filesize: 37680
+name: vc_narration_player_07, id: 18, filesize: 39776
+name: vc_narration_player_08, id: 19, filesize: 34224
+name: vc_narration_player_com, id: 20, filesize: 42800
+name: vc_narration_defeated, id: 21, filesize: 19184
+name: vc_narration_newrecord, id: 22, filesize: 76672
+name: vc_narration_complete, id: 23, filesize: 36736
+name: vc_narration_player_amiibo, id: 24, filesize: 32224
+name: vc_narration_result_win_singular, id: 25, filesize: 21504
+name: vc_narration_result_win_plural, id: 26, filesize: 21504
+name: vc_menu_narration_teamblue, id: 27, filesize: 46080
+name: vc_menu_narration_teamgreen, id: 28, filesize: 46512
+name: vc_menu_narration_teamred, id: 29, filesize: 48288
+name: vc_menu_narration_teamyellow, id: 30, filesize: 48640
+name: vc_narration_result_victory, id: 31, filesize: 49040
+name: vc_narration_result_lose, id: 32, filesize: 35392
+name: vc_menu_narration_nocontest, id: 33, filesize: 18976
+name: vc_narration_continue, id: 34, filesize: 46768
+name: vc_narration_congratulation, id: 35, filesize: 76256
+name: vc_narration_result_win_allbattle, id: 36, filesize: 21504
+, `log` = 0.idsp
+1.idsp
+2.idsp
+3.idsp
+4.idsp
+5.idsp
+6.idsp
+7.idsp
+8.idsp
+9.idsp
+10.idsp
+11.idsp
+12.idsp
+13.idsp
+14.idsp
+15.idsp
+16.idsp
+17.idsp
+18.idsp
+19.idsp
+20.idsp
+21.idsp
+22.idsp
+23.idsp
+24.idsp
+25.idsp
+26.idsp
+27.idsp
+28.idsp
+29.idsp
+30.idsp
+31.idsp
+32.idsp
+33.idsp
+34.idsp
+35.idsp
+36.idsp
+, `replace_files` = a:2:{i:0;s:7:"20.idsp";i:1;s:7:"34.idsp";}, `replace_ids` = a:2:{i:0;s:1:"1";i:1;s:1:"9";}, `log2` = ?, `nus3audio_replaces`.`updated_at` = 2020-02-08 18:35:49 where `id` = 17) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S22): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'log2' in 'field list' (SQL: update `nus3audio_replaces` set `nus3audio_info` = name: vc_narration_remove, id: 0, filesize: 33136
+name: vc_narration_failure, id: 1, filesize: 26640
+name: vc_narration_gameset, id: 2, filesize: 26176
+name: vc_narration_ready, id: 3, filesize: 31600
+name: vc_narration_go, id: 4, filesize: 30048
+name: vc_narration_timeup, id: 5, filesize: 22992
+name: vc_narration_suddendeath, id: 6, filesize: 39312
+name: vc_narration_five, id: 7, filesize: 24832
+name: vc_narration_four, id: 8, filesize: 23728
+name: vc_narration_three, id: 9, filesize: 27104
+name: vc_narration_two, id: 10, filesize: 19408
+name: vc_narration_one, id: 11, filesize: 23632
+name: vc_narration_player_01, id: 12, filesize: 33472
+name: vc_narration_player_02, id: 13, filesize: 35264
+name: vc_narration_player_03, id: 14, filesize: 36112
+name: vc_narration_player_04, id: 15, filesize: 37152
+name: vc_narration_player_05, id: 16, filesize: 40752
+name: vc_narration_player_06, id: 17, filesize: 37680
+name: vc_narration_player_07, id: 18, filesize: 39776
+name: vc_narration_player_08, id: 19, filesize: 34224
+name: vc_narration_player_com, id: 20, filesize: 42800
+name: vc_narration_defeated, id: 21, filesize: 19184
+name: vc_narration_newrecord, id: 22, filesize: 76672
+name: vc_narration_complete, id: 23, filesize: 36736
+name: vc_narration_player_amiibo, id: 24, filesize: 32224
+name: vc_narration_result_win_singular, id: 25, filesize: 21504
+name: vc_narration_result_win_plural, id: 26, filesize: 21504
+name: vc_menu_narration_teamblue, id: 27, filesize: 46080
+name: vc_menu_narration_teamgreen, id: 28, filesize: 46512
+name: vc_menu_narration_teamred, id: 29, filesize: 48288
+name: vc_menu_narration_teamyellow, id: 30, filesize: 48640
+name: vc_narration_result_victory, id: 31, filesize: 49040
+name: vc_narration_result_lose, id: 32, filesize: 35392
+name: vc_menu_narration_nocontest, id: 33, filesize: 18976
+name: vc_narration_continue, id: 34, filesize: 46768
+name: vc_narration_congratulation, id: 35, filesize: 76256
+name: vc_narration_result_win_allbattle, id: 36, filesize: 21504
+, `log` = 0.idsp
+1.idsp
+2.idsp
+3.idsp
+4.idsp
+5.idsp
+6.idsp
+7.idsp
+8.idsp
+9.idsp
+10.idsp
+11.idsp
+12.idsp
+13.idsp
+14.idsp
+15.idsp
+16.idsp
+17.idsp
+18.idsp
+19.idsp
+20.idsp
+21.idsp
+22.idsp
+23.idsp
+24.idsp
+25.idsp
+26.idsp
+27.idsp
+28.idsp
+29.idsp
+30.idsp
+31.idsp
+32.idsp
+33.idsp
+34.idsp
+35.idsp
+36.idsp
+, `replace_files` = a:2:{i:0;s:7:\"20.idsp\";i:1;s:7:\"34.idsp\";}, `replace_ids` = a:2:{i:0;s:1:\"1\";i:1;s:1:\"9\";}, `log2` = ?, `nus3audio_replaces`.`updated_at` = 2020-02-08 18:35:49 where `id` = 17) at C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:669)
+[stacktrace]
+#0 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback()
+#1 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(495): Illuminate\\Database\\Connection->run()
+#2 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(428): Illuminate\\Database\\Connection->affectingStatement()
+#3 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2703): Illuminate\\Database\\Connection->update()
+#4 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(776): Illuminate\\Database\\Query\\Builder->update()
+#5 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(745): Illuminate\\Database\\Eloquent\\Builder->update()
+#6 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(660): Illuminate\\Database\\Eloquent\\Model->performUpdate()
+#7 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\app\\Http\\Controllers\\MainController.php(678): Illuminate\\Database\\Eloquent\\Model->save()
+#8 [internal function]: App\\Http\\Controllers\\MainController->replacement_nus3audio()
+#9 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array()
+#10 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction()
+#11 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#12 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#13 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#14 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#15 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#16 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#17 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(76): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#19 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#21 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(56): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#22 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Session\\Middleware\\StartSession->handle()
+#23 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#24 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#25 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#26 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#27 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#28 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then()
+#29 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack()
+#30 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute()
+#31 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute()
+#32 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch()
+#33 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#34 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#35 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#36 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#37 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#38 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#39 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#40 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#41 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle()
+#42 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#43 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle()
+#44 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#45 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then()
+#46 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#47 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
+#48 {main}
+
+[previous exception] [object] (PDOException(code: 42S22): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'log2' in 'field list' at C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:484)
+[stacktrace]
+#0 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(484): PDO->prepare()
+#1 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(662): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
+#2 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback()
+#3 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(495): Illuminate\\Database\\Connection->run()
+#4 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(428): Illuminate\\Database\\Connection->affectingStatement()
+#5 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2703): Illuminate\\Database\\Connection->update()
+#6 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(776): Illuminate\\Database\\Query\\Builder->update()
+#7 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(745): Illuminate\\Database\\Eloquent\\Builder->update()
+#8 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(660): Illuminate\\Database\\Eloquent\\Model->performUpdate()
+#9 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\app\\Http\\Controllers\\MainController.php(678): Illuminate\\Database\\Eloquent\\Model->save()
+#10 [internal function]: App\\Http\\Controllers\\MainController->replacement_nus3audio()
+#11 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array()
+#12 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction()
+#13 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#14 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#15 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#16 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#17 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#19 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(76): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#21 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#22 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#23 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(56): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#24 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Session\\Middleware\\StartSession->handle()
+#25 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#26 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#27 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#28 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#29 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#30 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then()
+#31 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack()
+#32 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute()
+#33 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute()
+#34 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch()
+#35 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#36 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#37 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#38 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#39 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#40 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#41 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#42 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#43 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle()
+#44 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#45 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle()
+#46 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#47 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then()
+#48 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#49 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
+#50 {main}
+"} 
+[2020-02-08 18:36:20] local.ERROR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'log2' in 'field list' (SQL: update `nus3audio_replaces` set `nus3audio_info` = name: vc_narration_remove, id: 0, filesize: 33136
+name: vc_narration_failure, id: 1, filesize: 26640
+name: vc_narration_gameset, id: 2, filesize: 26176
+name: vc_narration_ready, id: 3, filesize: 31600
+name: vc_narration_go, id: 4, filesize: 30048
+name: vc_narration_timeup, id: 5, filesize: 22992
+name: vc_narration_suddendeath, id: 6, filesize: 39312
+name: vc_narration_five, id: 7, filesize: 24832
+name: vc_narration_four, id: 8, filesize: 23728
+name: vc_narration_three, id: 9, filesize: 27104
+name: vc_narration_two, id: 10, filesize: 19408
+name: vc_narration_one, id: 11, filesize: 23632
+name: vc_narration_player_01, id: 12, filesize: 33472
+name: vc_narration_player_02, id: 13, filesize: 35264
+name: vc_narration_player_03, id: 14, filesize: 36112
+name: vc_narration_player_04, id: 15, filesize: 37152
+name: vc_narration_player_05, id: 16, filesize: 40752
+name: vc_narration_player_06, id: 17, filesize: 37680
+name: vc_narration_player_07, id: 18, filesize: 39776
+name: vc_narration_player_08, id: 19, filesize: 34224
+name: vc_narration_player_com, id: 20, filesize: 42800
+name: vc_narration_defeated, id: 21, filesize: 19184
+name: vc_narration_newrecord, id: 22, filesize: 76672
+name: vc_narration_complete, id: 23, filesize: 36736
+name: vc_narration_player_amiibo, id: 24, filesize: 32224
+name: vc_narration_result_win_singular, id: 25, filesize: 21504
+name: vc_narration_result_win_plural, id: 26, filesize: 21504
+name: vc_menu_narration_teamblue, id: 27, filesize: 46080
+name: vc_menu_narration_teamgreen, id: 28, filesize: 46512
+name: vc_menu_narration_teamred, id: 29, filesize: 48288
+name: vc_menu_narration_teamyellow, id: 30, filesize: 48640
+name: vc_narration_result_victory, id: 31, filesize: 49040
+name: vc_narration_result_lose, id: 32, filesize: 35392
+name: vc_menu_narration_nocontest, id: 33, filesize: 18976
+name: vc_narration_continue, id: 34, filesize: 46768
+name: vc_narration_congratulation, id: 35, filesize: 76256
+name: vc_narration_result_win_allbattle, id: 36, filesize: 21504
+, `log` = 0.idsp
+1.idsp
+2.idsp
+3.idsp
+4.idsp
+5.idsp
+6.idsp
+7.idsp
+8.idsp
+9.idsp
+10.idsp
+11.idsp
+12.idsp
+13.idsp
+14.idsp
+15.idsp
+16.idsp
+17.idsp
+18.idsp
+19.idsp
+20.idsp
+21.idsp
+22.idsp
+23.idsp
+24.idsp
+25.idsp
+26.idsp
+27.idsp
+28.idsp
+29.idsp
+30.idsp
+31.idsp
+32.idsp
+33.idsp
+34.idsp
+35.idsp
+36.idsp
+, `replace_files` = a:2:{i:0;s:7:"20.idsp";i:1;s:7:"34.idsp";}, `replace_ids` = a:2:{i:0;s:1:"1";i:1;s:1:"9";}, `log2` = ?, `nus3audio_replaces`.`updated_at` = 2020-02-08 18:36:20 where `id` = 18) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S22): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'log2' in 'field list' (SQL: update `nus3audio_replaces` set `nus3audio_info` = name: vc_narration_remove, id: 0, filesize: 33136
+name: vc_narration_failure, id: 1, filesize: 26640
+name: vc_narration_gameset, id: 2, filesize: 26176
+name: vc_narration_ready, id: 3, filesize: 31600
+name: vc_narration_go, id: 4, filesize: 30048
+name: vc_narration_timeup, id: 5, filesize: 22992
+name: vc_narration_suddendeath, id: 6, filesize: 39312
+name: vc_narration_five, id: 7, filesize: 24832
+name: vc_narration_four, id: 8, filesize: 23728
+name: vc_narration_three, id: 9, filesize: 27104
+name: vc_narration_two, id: 10, filesize: 19408
+name: vc_narration_one, id: 11, filesize: 23632
+name: vc_narration_player_01, id: 12, filesize: 33472
+name: vc_narration_player_02, id: 13, filesize: 35264
+name: vc_narration_player_03, id: 14, filesize: 36112
+name: vc_narration_player_04, id: 15, filesize: 37152
+name: vc_narration_player_05, id: 16, filesize: 40752
+name: vc_narration_player_06, id: 17, filesize: 37680
+name: vc_narration_player_07, id: 18, filesize: 39776
+name: vc_narration_player_08, id: 19, filesize: 34224
+name: vc_narration_player_com, id: 20, filesize: 42800
+name: vc_narration_defeated, id: 21, filesize: 19184
+name: vc_narration_newrecord, id: 22, filesize: 76672
+name: vc_narration_complete, id: 23, filesize: 36736
+name: vc_narration_player_amiibo, id: 24, filesize: 32224
+name: vc_narration_result_win_singular, id: 25, filesize: 21504
+name: vc_narration_result_win_plural, id: 26, filesize: 21504
+name: vc_menu_narration_teamblue, id: 27, filesize: 46080
+name: vc_menu_narration_teamgreen, id: 28, filesize: 46512
+name: vc_menu_narration_teamred, id: 29, filesize: 48288
+name: vc_menu_narration_teamyellow, id: 30, filesize: 48640
+name: vc_narration_result_victory, id: 31, filesize: 49040
+name: vc_narration_result_lose, id: 32, filesize: 35392
+name: vc_menu_narration_nocontest, id: 33, filesize: 18976
+name: vc_narration_continue, id: 34, filesize: 46768
+name: vc_narration_congratulation, id: 35, filesize: 76256
+name: vc_narration_result_win_allbattle, id: 36, filesize: 21504
+, `log` = 0.idsp
+1.idsp
+2.idsp
+3.idsp
+4.idsp
+5.idsp
+6.idsp
+7.idsp
+8.idsp
+9.idsp
+10.idsp
+11.idsp
+12.idsp
+13.idsp
+14.idsp
+15.idsp
+16.idsp
+17.idsp
+18.idsp
+19.idsp
+20.idsp
+21.idsp
+22.idsp
+23.idsp
+24.idsp
+25.idsp
+26.idsp
+27.idsp
+28.idsp
+29.idsp
+30.idsp
+31.idsp
+32.idsp
+33.idsp
+34.idsp
+35.idsp
+36.idsp
+, `replace_files` = a:2:{i:0;s:7:\"20.idsp\";i:1;s:7:\"34.idsp\";}, `replace_ids` = a:2:{i:0;s:1:\"1\";i:1;s:1:\"9\";}, `log2` = ?, `nus3audio_replaces`.`updated_at` = 2020-02-08 18:36:20 where `id` = 18) at C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:669)
+[stacktrace]
+#0 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback()
+#1 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(495): Illuminate\\Database\\Connection->run()
+#2 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(428): Illuminate\\Database\\Connection->affectingStatement()
+#3 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2703): Illuminate\\Database\\Connection->update()
+#4 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(776): Illuminate\\Database\\Query\\Builder->update()
+#5 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(745): Illuminate\\Database\\Eloquent\\Builder->update()
+#6 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(660): Illuminate\\Database\\Eloquent\\Model->performUpdate()
+#7 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\app\\Http\\Controllers\\MainController.php(678): Illuminate\\Database\\Eloquent\\Model->save()
+#8 [internal function]: App\\Http\\Controllers\\MainController->replacement_nus3audio()
+#9 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array()
+#10 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction()
+#11 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#12 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#13 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#14 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#15 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#16 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#17 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(76): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#19 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#21 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(56): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#22 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Session\\Middleware\\StartSession->handle()
+#23 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#24 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#25 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#26 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#27 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#28 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then()
+#29 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack()
+#30 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute()
+#31 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute()
+#32 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch()
+#33 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#34 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#35 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#36 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#37 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#38 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#39 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#40 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#41 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle()
+#42 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#43 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle()
+#44 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#45 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then()
+#46 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#47 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
+#48 {main}
+
+[previous exception] [object] (PDOException(code: 42S22): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'log2' in 'field list' at C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:484)
+[stacktrace]
+#0 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(484): PDO->prepare()
+#1 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(662): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
+#2 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback()
+#3 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(495): Illuminate\\Database\\Connection->run()
+#4 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(428): Illuminate\\Database\\Connection->affectingStatement()
+#5 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2703): Illuminate\\Database\\Connection->update()
+#6 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(776): Illuminate\\Database\\Query\\Builder->update()
+#7 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(745): Illuminate\\Database\\Eloquent\\Builder->update()
+#8 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(660): Illuminate\\Database\\Eloquent\\Model->performUpdate()
+#9 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\app\\Http\\Controllers\\MainController.php(678): Illuminate\\Database\\Eloquent\\Model->save()
+#10 [internal function]: App\\Http\\Controllers\\MainController->replacement_nus3audio()
+#11 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array()
+#12 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction()
+#13 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#14 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#15 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#16 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#17 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#19 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(76): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#21 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#22 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#23 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(56): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#24 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Session\\Middleware\\StartSession->handle()
+#25 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#26 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#27 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#28 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#29 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#30 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then()
+#31 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack()
+#32 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute()
+#33 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute()
+#34 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch()
+#35 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#36 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#37 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#38 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#39 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#40 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#41 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#42 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#43 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle()
+#44 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#45 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle()
+#46 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#47 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then()
+#48 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#49 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
+#50 {main}
+"} 
+[2020-02-08 18:36:39] local.ERROR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'log2' in 'field list' (SQL: update `nus3audio_replaces` set `nus3audio_info` = name: vc_narration_remove, id: 0, filesize: 33136
+name: vc_narration_failure, id: 1, filesize: 26640
+name: vc_narration_gameset, id: 2, filesize: 26176
+name: vc_narration_ready, id: 3, filesize: 31600
+name: vc_narration_go, id: 4, filesize: 30048
+name: vc_narration_timeup, id: 5, filesize: 22992
+name: vc_narration_suddendeath, id: 6, filesize: 39312
+name: vc_narration_five, id: 7, filesize: 24832
+name: vc_narration_four, id: 8, filesize: 23728
+name: vc_narration_three, id: 9, filesize: 27104
+name: vc_narration_two, id: 10, filesize: 19408
+name: vc_narration_one, id: 11, filesize: 23632
+name: vc_narration_player_01, id: 12, filesize: 33472
+name: vc_narration_player_02, id: 13, filesize: 35264
+name: vc_narration_player_03, id: 14, filesize: 36112
+name: vc_narration_player_04, id: 15, filesize: 37152
+name: vc_narration_player_05, id: 16, filesize: 40752
+name: vc_narration_player_06, id: 17, filesize: 37680
+name: vc_narration_player_07, id: 18, filesize: 39776
+name: vc_narration_player_08, id: 19, filesize: 34224
+name: vc_narration_player_com, id: 20, filesize: 42800
+name: vc_narration_defeated, id: 21, filesize: 19184
+name: vc_narration_newrecord, id: 22, filesize: 76672
+name: vc_narration_complete, id: 23, filesize: 36736
+name: vc_narration_player_amiibo, id: 24, filesize: 32224
+name: vc_narration_result_win_singular, id: 25, filesize: 21504
+name: vc_narration_result_win_plural, id: 26, filesize: 21504
+name: vc_menu_narration_teamblue, id: 27, filesize: 46080
+name: vc_menu_narration_teamgreen, id: 28, filesize: 46512
+name: vc_menu_narration_teamred, id: 29, filesize: 48288
+name: vc_menu_narration_teamyellow, id: 30, filesize: 48640
+name: vc_narration_result_victory, id: 31, filesize: 49040
+name: vc_narration_result_lose, id: 32, filesize: 35392
+name: vc_menu_narration_nocontest, id: 33, filesize: 18976
+name: vc_narration_continue, id: 34, filesize: 46768
+name: vc_narration_congratulation, id: 35, filesize: 76256
+name: vc_narration_result_win_allbattle, id: 36, filesize: 21504
+, `log` = 0.idsp
+1.idsp
+2.idsp
+3.idsp
+4.idsp
+5.idsp
+6.idsp
+7.idsp
+8.idsp
+9.idsp
+10.idsp
+11.idsp
+12.idsp
+13.idsp
+14.idsp
+15.idsp
+16.idsp
+17.idsp
+18.idsp
+19.idsp
+20.idsp
+21.idsp
+22.idsp
+23.idsp
+24.idsp
+25.idsp
+26.idsp
+27.idsp
+28.idsp
+29.idsp
+30.idsp
+31.idsp
+32.idsp
+33.idsp
+34.idsp
+35.idsp
+36.idsp
+, `replace_files` = a:2:{i:0;s:7:"20.idsp";i:1;s:7:"34.idsp";}, `replace_ids` = a:2:{i:0;s:1:"1";i:1;s:1:"9";}, `log2` = ?, `nus3audio_replaces`.`updated_at` = 2020-02-08 18:36:39 where `id` = 19) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S22): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'log2' in 'field list' (SQL: update `nus3audio_replaces` set `nus3audio_info` = name: vc_narration_remove, id: 0, filesize: 33136
+name: vc_narration_failure, id: 1, filesize: 26640
+name: vc_narration_gameset, id: 2, filesize: 26176
+name: vc_narration_ready, id: 3, filesize: 31600
+name: vc_narration_go, id: 4, filesize: 30048
+name: vc_narration_timeup, id: 5, filesize: 22992
+name: vc_narration_suddendeath, id: 6, filesize: 39312
+name: vc_narration_five, id: 7, filesize: 24832
+name: vc_narration_four, id: 8, filesize: 23728
+name: vc_narration_three, id: 9, filesize: 27104
+name: vc_narration_two, id: 10, filesize: 19408
+name: vc_narration_one, id: 11, filesize: 23632
+name: vc_narration_player_01, id: 12, filesize: 33472
+name: vc_narration_player_02, id: 13, filesize: 35264
+name: vc_narration_player_03, id: 14, filesize: 36112
+name: vc_narration_player_04, id: 15, filesize: 37152
+name: vc_narration_player_05, id: 16, filesize: 40752
+name: vc_narration_player_06, id: 17, filesize: 37680
+name: vc_narration_player_07, id: 18, filesize: 39776
+name: vc_narration_player_08, id: 19, filesize: 34224
+name: vc_narration_player_com, id: 20, filesize: 42800
+name: vc_narration_defeated, id: 21, filesize: 19184
+name: vc_narration_newrecord, id: 22, filesize: 76672
+name: vc_narration_complete, id: 23, filesize: 36736
+name: vc_narration_player_amiibo, id: 24, filesize: 32224
+name: vc_narration_result_win_singular, id: 25, filesize: 21504
+name: vc_narration_result_win_plural, id: 26, filesize: 21504
+name: vc_menu_narration_teamblue, id: 27, filesize: 46080
+name: vc_menu_narration_teamgreen, id: 28, filesize: 46512
+name: vc_menu_narration_teamred, id: 29, filesize: 48288
+name: vc_menu_narration_teamyellow, id: 30, filesize: 48640
+name: vc_narration_result_victory, id: 31, filesize: 49040
+name: vc_narration_result_lose, id: 32, filesize: 35392
+name: vc_menu_narration_nocontest, id: 33, filesize: 18976
+name: vc_narration_continue, id: 34, filesize: 46768
+name: vc_narration_congratulation, id: 35, filesize: 76256
+name: vc_narration_result_win_allbattle, id: 36, filesize: 21504
+, `log` = 0.idsp
+1.idsp
+2.idsp
+3.idsp
+4.idsp
+5.idsp
+6.idsp
+7.idsp
+8.idsp
+9.idsp
+10.idsp
+11.idsp
+12.idsp
+13.idsp
+14.idsp
+15.idsp
+16.idsp
+17.idsp
+18.idsp
+19.idsp
+20.idsp
+21.idsp
+22.idsp
+23.idsp
+24.idsp
+25.idsp
+26.idsp
+27.idsp
+28.idsp
+29.idsp
+30.idsp
+31.idsp
+32.idsp
+33.idsp
+34.idsp
+35.idsp
+36.idsp
+, `replace_files` = a:2:{i:0;s:7:\"20.idsp\";i:1;s:7:\"34.idsp\";}, `replace_ids` = a:2:{i:0;s:1:\"1\";i:1;s:1:\"9\";}, `log2` = ?, `nus3audio_replaces`.`updated_at` = 2020-02-08 18:36:39 where `id` = 19) at C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:669)
+[stacktrace]
+#0 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback()
+#1 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(495): Illuminate\\Database\\Connection->run()
+#2 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(428): Illuminate\\Database\\Connection->affectingStatement()
+#3 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2703): Illuminate\\Database\\Connection->update()
+#4 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(776): Illuminate\\Database\\Query\\Builder->update()
+#5 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(745): Illuminate\\Database\\Eloquent\\Builder->update()
+#6 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(660): Illuminate\\Database\\Eloquent\\Model->performUpdate()
+#7 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\app\\Http\\Controllers\\MainController.php(678): Illuminate\\Database\\Eloquent\\Model->save()
+#8 [internal function]: App\\Http\\Controllers\\MainController->replacement_nus3audio()
+#9 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array()
+#10 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction()
+#11 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#12 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#13 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#14 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#15 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#16 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#17 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(76): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#19 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#21 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(56): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#22 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Session\\Middleware\\StartSession->handle()
+#23 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#24 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#25 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#26 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#27 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#28 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then()
+#29 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack()
+#30 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute()
+#31 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute()
+#32 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch()
+#33 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#34 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#35 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#36 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#37 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#38 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#39 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#40 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#41 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle()
+#42 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#43 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle()
+#44 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#45 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then()
+#46 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#47 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
+#48 {main}
+
+[previous exception] [object] (PDOException(code: 42S22): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'log2' in 'field list' at C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:484)
+[stacktrace]
+#0 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(484): PDO->prepare()
+#1 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(662): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
+#2 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback()
+#3 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(495): Illuminate\\Database\\Connection->run()
+#4 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(428): Illuminate\\Database\\Connection->affectingStatement()
+#5 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2703): Illuminate\\Database\\Connection->update()
+#6 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(776): Illuminate\\Database\\Query\\Builder->update()
+#7 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(745): Illuminate\\Database\\Eloquent\\Builder->update()
+#8 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(660): Illuminate\\Database\\Eloquent\\Model->performUpdate()
+#9 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\app\\Http\\Controllers\\MainController.php(678): Illuminate\\Database\\Eloquent\\Model->save()
+#10 [internal function]: App\\Http\\Controllers\\MainController->replacement_nus3audio()
+#11 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array()
+#12 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction()
+#13 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#14 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#15 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#16 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#17 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#19 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(76): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#21 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#22 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#23 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(56): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#24 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Session\\Middleware\\StartSession->handle()
+#25 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#26 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#27 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#28 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#29 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#30 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then()
+#31 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack()
+#32 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute()
+#33 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute()
+#34 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch()
+#35 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#36 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#37 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#38 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#39 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#40 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#41 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#42 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#43 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle()
+#44 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#45 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle()
+#46 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#47 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then()
+#48 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#49 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
+#50 {main}
+"} 
+[2020-02-08 19:29:17] local.ERROR: Call to undefined function App\Http\Controllers\link_to_asset() {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to undefined function App\\Http\\Controllers\\link_to_asset() at C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\app\\Http\\Controllers\\MainController.php:680)
+[stacktrace]
+#0 [internal function]: App\\Http\\Controllers\\MainController->replacement_nus3audio()
+#1 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array()
+#2 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction()
+#3 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#4 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#5 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#6 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#7 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#8 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#9 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(76): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#10 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#11 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#12 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#13 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(56): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#14 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Session\\Middleware\\StartSession->handle()
+#15 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#16 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#17 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#19 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then()
+#21 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack()
+#22 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute()
+#23 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute()
+#24 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch()
+#25 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#26 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#27 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#28 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#29 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#30 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#31 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#32 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#33 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle()
+#34 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#35 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle()
+#36 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#37 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then()
+#38 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#39 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
+#40 {main}
+"} 
+[2020-02-08 19:30:14] local.ERROR: Call to undefined function App\Http\Controllers\link_to_asset() {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to undefined function App\\Http\\Controllers\\link_to_asset() at C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\app\\Http\\Controllers\\MainController.php:680)
+[stacktrace]
+#0 [internal function]: App\\Http\\Controllers\\MainController->replacement_nus3audio()
+#1 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array()
+#2 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction()
+#3 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#4 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#5 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#6 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#7 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#8 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#9 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(76): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#10 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#11 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#12 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#13 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(56): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#14 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Session\\Middleware\\StartSession->handle()
+#15 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#16 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#17 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#19 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then()
+#21 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack()
+#22 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute()
+#23 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute()
+#24 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch()
+#25 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#26 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#27 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#28 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#29 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#30 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#31 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#32 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#33 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle()
+#34 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#35 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle()
+#36 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#37 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then()
+#38 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#39 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
+#40 {main}
+"} 
+[2020-02-08 19:31:06] local.ERROR: Class 'App\Http\Controllers\Response' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'App\\Http\\Controllers\\Response' not found at C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\app\\Http\\Controllers\\MainController.php:680)
+[stacktrace]
+#0 [internal function]: App\\Http\\Controllers\\MainController->replacement_nus3audio()
+#1 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array()
+#2 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction()
+#3 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#4 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#5 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#6 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#7 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#8 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#9 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(76): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#10 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#11 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#12 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#13 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(56): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#14 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Session\\Middleware\\StartSession->handle()
+#15 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#16 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#17 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#19 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then()
+#21 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack()
+#22 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute()
+#23 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute()
+#24 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch()
+#25 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#26 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#27 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#28 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#29 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#30 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#31 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#32 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#33 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle()
+#34 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#35 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle()
+#36 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#37 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then()
+#38 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#39 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
+#40 {main}
+"} 
+[2020-02-08 19:37:03] local.ERROR: Class 'App\Http\Controllers\Response' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'App\\Http\\Controllers\\Response' not found at C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\app\\Http\\Controllers\\MainController.php:680)
+[stacktrace]
+#0 [internal function]: App\\Http\\Controllers\\MainController->replacement_nus3audio()
+#1 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array()
+#2 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction()
+#3 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch()
+#4 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#5 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#6 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#7 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#8 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#9 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(76): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#10 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#11 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#12 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#13 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(56): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#14 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Session\\Middleware\\StartSession->handle()
+#15 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#16 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#17 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#19 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then()
+#21 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack()
+#22 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute()
+#23 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute()
+#24 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch()
+#25 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#26 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#27 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#28 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#29 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#30 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#31 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#32 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#33 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle()
+#34 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#35 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle()
+#36 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#37 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then()
+#38 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#39 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
+#40 {main}
+"} 
+[2020-02-08 19:54:17] local.ERROR: Undefined variable: success (View: C:\inetpub\wwwroot\SmashUltimateAudioOnline\resources\views\audio_replacement.blade.php) {"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Undefined variable: success (View: C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\esources\\views\\audio_replacement.blade.php) at C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\esources\\views/audio_replacement.blade.php:47)
+[stacktrace]
+#0 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\esources\\views/audio_replacement.blade.php(47): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(43): include('C:\\\\inetpub\\\\wwwr...')
+#2 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath()
+#3 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\facade\\ignition\\src\\Views\\Engines\\CompilerEngine.php(36): Illuminate\\View\\Engines\\CompilerEngine->get()
+#4 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(143): Facade\\Ignition\\Views\\Engines\\CompilerEngine->get()
+#5 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(126): Illuminate\\View\\View->getContents()
+#6 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(91): Illuminate\\View\\View->renderContents()
+#7 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(42): Illuminate\\View\\View->render()
+#8 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\symfony\\http-foundation\\Response.php(202): Illuminate\\Http\\Response->setContent()
+#9 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(749): Symfony\\Component\\HttpFoundation\\Response->__construct()
+#10 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(721): Illuminate\\Routing\\Router::toResponse()
+#11 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Router->prepareResponse()
+#12 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#13 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#14 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#15 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(76): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#16 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#17 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#19 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(56): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Session\\Middleware\\StartSession->handle()
+#21 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#22 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#23 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#24 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#25 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#26 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then()
+#27 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack()
+#28 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute()
+#29 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute()
+#30 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch()
+#31 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#32 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#33 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#34 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#35 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#36 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#37 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#38 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#39 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle()
+#40 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#41 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle()
+#42 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#43 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then()
+#44 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#45 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
+#46 {main}
+
+[previous exception] [object] (ErrorException(code: 0): Undefined variable: success at C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\storage\\framework\\views\\1d0605bfb3fc4b492cf1d920d4c88ef60b450968.php:48)
+[stacktrace]
+#0 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\storage\\framework\\views\\1d0605bfb3fc4b492cf1d920d4c88ef60b450968.php(48): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(43): include('C:\\\\inetpub\\\\wwwr...')
+#2 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath()
+#3 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\facade\\ignition\\src\\Views\\Engines\\CompilerEngine.php(36): Illuminate\\View\\Engines\\CompilerEngine->get()
+#4 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(143): Facade\\Ignition\\Views\\Engines\\CompilerEngine->get()
+#5 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(126): Illuminate\\View\\View->getContents()
+#6 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(91): Illuminate\\View\\View->renderContents()
+#7 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(42): Illuminate\\View\\View->render()
+#8 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\symfony\\http-foundation\\Response.php(202): Illuminate\\Http\\Response->setContent()
+#9 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(749): Symfony\\Component\\HttpFoundation\\Response->__construct()
+#10 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(721): Illuminate\\Routing\\Router::toResponse()
+#11 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Router->prepareResponse()
+#12 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()
+#13 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#14 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()
+#15 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(76): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#16 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle()
+#17 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#18 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()
+#19 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(56): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#20 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Session\\Middleware\\StartSession->handle()
+#21 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#22 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()
+#23 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#24 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()
+#25 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#26 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then()
+#27 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack()
+#28 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute()
+#29 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute()
+#30 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch()
+#31 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()
+#32 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#33 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#34 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#35 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#36 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#37 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#38 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#39 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle()
+#40 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#41 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle()
+#42 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#43 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then()
+#44 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#45 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
+#46 {main}
+"} 

@@ -1241,11 +1241,11 @@ window.onload = function () {
         return /^-?\d*$/.test(value);
     });
 
-    setInputFilter(document.getElementById("startloop"), function (value) {
+    setInputFilter(document.getElementById("start_loop"), function (value) {
         return /^-?\d*$/.test(value);
     });
 
-    setInputFilter(document.getElementById("endloop"), function (value) {
+    setInputFilter(document.getElementById("end_loop"), function (value) {
         return /^-?\d*$/.test(value);
     });
 

@@ -16,8 +16,8 @@ class CreateBrstmtonus3audiosTable extends Migration
         Schema::create('brstmtonus3audios', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string("filename")->nullable();
-            $table->string("startloop")->nullable();
-            $table->string("endloop")->nullable();
+            $table->string("start_loop")->nullable();
+            $table->string("end_loop")->nullable();
             $table->string("stage")->nullable();
             $table->string("hz")->nullable();
             $table->longText("log")->nullable();

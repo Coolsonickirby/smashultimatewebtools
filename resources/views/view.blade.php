@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Smash Ultimate Audio</title>
     <link rel="stylesheet" href="{{URL::asset('css/bootstrap.min.css')}}">
-    <script src="{{URL::asset('/js/jquery-3.4.1.slim.js')}}"></script>
+    <script src="{{URL::asset('/js/jquery-3.4.1.js')}}"></script>
     <script src="{{URL::asset('/js/popper.min.js')}}"></script>
     <script src="{{URL::asset('js/bootstrap.min.js')}}">
     </script>
@@ -47,15 +47,16 @@
                         <small class="form-text text-muted">File Size Limit: 100mb</small>
                         <small class="form-text" style="color:red; display:none;" id="fileerror">File too big!</small>
                         <small class="form-text" style="color:coral;">Supported Formats: Everything SoX natively supports + mp3, brstm</small>
-                        <br>
-                        <label for="type">Select a file type:</label>
-                        <select class="custom-select" id="type" onchange="UpdateType(this)">
-                            <option value="nus3audio">nus3audio</option>
-                            <option value="lopus">lopus</option>
-                            <option value="idsp">idsp</option>
-                        </select>
-                        <input type="hidden" class="form-control" id="filetype" name="filetype">
-                        <br>
+                        <div id="type_div">
+                            <br>
+                            <label for="type">Select a file type:</label>
+                            <select class="custom-select" id="type" onchange="UpdateType(this)">
+                                <option value="nus3audio">nus3audio</option>
+                                <option value="lopus">lopus</option>
+                                <option value="idsp">idsp</option>
+                            </select>
+                            <input type="hidden" class="form-control" id="filetype" name="filetype">
+                        </div>
                         <br>
                         <label for="stages">Select a song:</label>
                         <select class="custom-select" id="stages" onchange="UpdateStage(this)"></select>
@@ -84,11 +85,11 @@
                                     <input type="text" class="form-control" id="sampleHZinput" name="sampleHZinput">
                                     <br>
                                 </div>
-                                <label for="startloop">Loop Sample Start:</label>
-                                <input type="text" class="form-control" id="startloop" name="startloop">
+                                <label for="start_loop">Loop Sample Start:</label>
+                                <input type="text" class="form-control" id="start_loop" name="start_loop">
                                 <br>
-                                <label for="endloop">Loop Sample End:</label>
-                                <input type="text" class="form-control" name="endloop" id="endloop">
+                                <label for="end_loop">Loop Sample End:</label>
+                                <input type="text" class="form-control" name="end_loop" id="end_loop">
                             </div>
                             <br>
                         </div>
@@ -109,12 +110,9 @@
                     <br>
                 </div>
                 <div class="col-md-6">
-
                     @include('extras/credits')
                     <h2>Extra Stuff:</h2>
-                    <h4><a href="wavhzchange">Convert Song to Compatible wav</a></h4>
-                    <h4><a href="brstmtowav">Convert brstm/idsp/lopus to Compatible wav</a></h4>
-                    <h4><a href="https://discord.gg/ASJyTrZ">Super Smash Bros. Ultimate Modding Discord</a></h4>
+                    @include('extras/extras')
                 </div>
             </div>
         </div>
@@ -124,7 +122,6 @@
         @include('extras/faq')
 
     </div>
-    <script src="./js/jquery-3.4.1.min.js"></script>
     <script>
         function AlertFilesize(){
             if(document.getElementById("music").files.length != 0){
@@ -142,9 +139,18 @@
                 }else{
                     document.getElementById("fileerror").style.display = "none";
                 }
+
+                if(document.getElementById("music").files[0].name.includes(".brstm")){
+                    document.getElementById("type_div").style.display = "none";
+                }else{
+                    document.getElementById("type_div").style.display = "block";
+                }
             }else{
                 document.getElementById("fileerror").style.display = "none";
+                document.getElementById("type_div").style.display = "block";
             }
+
+
         }
     </script>
     <script src="./js/stages.js"></script>
