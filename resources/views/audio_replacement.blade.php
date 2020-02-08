@@ -59,7 +59,6 @@
                 <small class="form-text text-muted">File Size Limit: 100mb</small>
                 <small class="form-text" style="color:red; display:none;" id="fileerror">File too big!</small>
                 <small class="form-text" style="color:coral;">Supported Formats: nus3audio</small>
-                <small class="form-text" style="color:red;">Click "Submit" while leaving the fields empty to retrive a list of everything in the nus3audio.</small>
                 <br>
                 <div id="files">
                     <div id="file_0" class="form-inline">
