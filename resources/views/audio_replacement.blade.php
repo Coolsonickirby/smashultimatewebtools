@@ -63,7 +63,7 @@
                 <div id="files">
                     <div id="file_0" class="form-inline">
                         <label for="id">ID: &nbsp;</label>
-                        <input class="form-control breathing-space" name="files_id[]">
+                        <input class="form-control breathing-space" name="files_id[]" id="files_id_0">
                         <input type="file" class="form-control" name="files[]"
                             accept=".idsp, .lopus">
                     </div>
@@ -125,12 +125,16 @@
                     <button type="button" class="close" aria-label="Close" onclick="remove_field('` + id + `')">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <input class="form-control breathing-space" name="files_id[]" style="display:inline;">
+                    <input class="form-control breathing-space" name="files_id[]" id="files_id_` + id + `" style="display:inline;">
                     <input type="file" class="form-control" style="display:inline;" name="files[]" accept=".idsp, .lopus">
                 </div>
             </div>
             `;
             document.getElementById("files").appendChild(new_input);
+
+            setInputFilter(document.getElementById("files_id_" + id), function (value) {
+                return /^-?\d*$/.test(value);
+            });
 
         }
 
@@ -141,6 +145,10 @@
 
         window.onload = function () {
             AlertFilesize();
+
+            setInputFilter(document.getElementById("files_id_0"), function (value) {
+                return /^-?\d*$/.test(value);
+            });
         }
 
 
