@@ -27,12 +27,6 @@
 <body>
     <br>
     <div class="container">
-        <div class="card text-white bg-warning mb-3">
-            <div class="card-header">WARNING</div>
-            <div class="card-body">
-              <h5 class="card-title">THIS PAGE IS STILL UNDER CONSTRUCTION</h5>
-            </div>
-        </div>
 
         @if (session()->has('success'))
         <div class="card text-white bg-success mb-3">
