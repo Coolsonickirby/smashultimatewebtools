@@ -182,15 +182,15 @@ class MainController extends Controller
 
         if ($request->input("loop") == "on") {
             if ($request->input("advanced") == "on") {
-                $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "' . $path . '" -o %CD%/storage/lopustmp/' . $nus3audio->id . '/output.lopus -l ' . $nus3audio->start_loop . '-' . $nus3audio->end_loop . ' --bitrate "' . $request->input("hz") . '" --CBR --opusheader namco ');
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/lopustmp/{$nus3audio->id}/output.lopus -l {$nus3audio->start_loop}-{$nus3audio->end_loop} --bitrate \"{$request->input("hz")}\" --CBR --opusheader namco ");
             } else {
-                $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "' . $path . '" -o %CD%/storage/lopustmp/' . $nus3audio->id . '/output.lopus -l ' . $nus3audio->start_loop . '-' . $nus3audio->end_loop . ' --bitrate "48000" --CBR --opusheader namco ');
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/lopustmp/{$nus3audio->id}/output.lopus -l {$nus3audio->start_loop}-{$nus3audio->end_loop} --bitrate \"48000\" --CBR --opusheader namco");
             }
         } else {
             if ($request->input("advanced") == "on") {
-                $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "' . $path . '" -o %CD%/storage/lopustmp/' . $nus3audio->id . '/output.lopus --bitrate "' . $request->input("hz") . '" --CBR --opusheader namco ');
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/lopustmp/{$nus3audio->id}/output.lopus --bitrate \"{$request->input("hz")}\" --CBR --opusheader namco ");
             } else {
-                $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "' . $path . '" -o %CD%/storage/lopustmp/' . $nus3audio->id . '/output.lopus --bitrate "48000" --CBR --opusheader namco ');
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/lopustmp/{$nus3audio->id}/output.lopus --bitrate \"48000\" --CBR --opusheader namco ");
             }
         }
 
@@ -302,17 +302,17 @@ class MainController extends Controller
 
         $fileOutput = $request->input("filenameOutput");
 
-        if($request->input("loop") == "on"){
-            if($request->input("advanced") == "on"){
-                $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "' . $path . '" -o %CD%/storage/lopus/' . $lopus->id . '/'. $fileOutput . '.lopus -l ' . $lopus->start_loop . '-' . $lopus->end_loop . ' --bitrate "'. $request->input("hz") .'" --CBR --opusheader namco ');
-            }else{
-                $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "' . $path . '" -o %CD%/storage/lopus/' . $lopus->id . '/' . $fileOutput . '.lopus -l ' . $lopus->start_loop . '-' . $lopus->end_loop . ' --bitrate "48000" --CBR --opusheader namco ');
-            }
-        }else{
+        if ($request->input("loop") == "on") {
             if ($request->input("advanced") == "on") {
-                $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "' . $path . '" -o %CD%/storage/lopus/' . $lopus->id . '/' . $fileOutput . '.lopus --bitrate "' . $request->input("hz") . '" --CBR --opusheader namco ');
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/lopus/{$lopus->id}/{$fileOutput}.lopus -l {$lopus->start_loop}-{$lopus->end_loop} --bitrate \"{$request->input("hz")}\" --CBR --opusheader namco ");
             } else {
-                $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "' . $path . '" -o %CD%/storage/lopus/' . $lopus->id . '/' . $fileOutput . '.lopus --bitrate "48000" --CBR --opusheader namco ');
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/lopus/{$lopus->id}/{$fileOutput}.lopus -l {$lopus->start_loop}-{$lopus->end_loop} --bitrate \"48000\" --CBR --opusheader namco");
+            }
+        } else {
+            if ($request->input("advanced") == "on") {
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/lopus/{$lopus->id}/{$fileOutput}.lopus --bitrate \"{$request->input("hz")}\" --CBR --opusheader namco ");
+            } else {
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/lopus/{$lopus->id}/{$fileOutput}.lopus --bitrate \"48000\" --CBR --opusheader namco ");
             }
         }
 
@@ -416,15 +416,15 @@ class MainController extends Controller
 
         if ($request->input("loop") == "on") {
             if ($request->input("advanced") == "on") {
-                $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "' . $path . '" -o %CD%/storage/idsp/' . $idsp->id . '/'. $fileOutput . '.idsp -l ' . $idsp->start_loop . '-' . $idsp->end_loop . ' --bitrate "' . $request->input("hz"). '"');
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/idsp/{$idsp->id}/{$fileOutput}.idsp\" -l {$idsp->start_loop}-{$idsp->end_loop} --bitrate \"{$request->input("hz")}\"");
             } else {
-                $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "' . $path . '" -o %CD%/storage/idsp/' . $idsp->id . '/'. $fileOutput . '.idsp -l ' . $idsp->start_loop . '-' . $idsp->end_loop);
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/idsp/{$idsp->id}/{$fileOutput}.idsp\" -l {$idsp->start_loop}-{$idsp->end_loop}");
             }
         } else {
             if ($request->input("advanced") == "on") {
-                $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "' . $path . '" -o %CD%/storage/idsp/' . $idsp->id . '/'. $fileOutput . '.idsp --bitrate "' . $request->input("hz") . '"');
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/idsp/{$idsp->id}/{$fileOutput}.idsp\" --bitrate \"{$request->input("hz")}\"");
             } else {
-                $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "' . $path . '" -o %CD%/storage/idsp/' . $idsp->id . '/'. $fileOutput . '.idsp');
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/idsp/{$idsp->id}/{$fileOutput}.idsp\"");
             }
         }
 
@@ -656,15 +656,15 @@ class MainController extends Controller
 
         if ($request->input("loop") == "on") {
             if ($request->input("advanced") == "on") {
-                $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "'. $tmp_path_1 . '/' . $filename . '.wav" -o "%CD%/storage/lopusBTN/' . $BTN->id . '/output.lopus" -l ' . $BTN->start_loop . '-' . $BTN->end_loop . ' --bitrate "' . $request->input("hz") . '" --CBR --opusheader namco ');
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$tmp_path_1}/{$filename}.wav\" -o \"%CD%/storage/lopusBTN/{$BTN->id}/output.lopus\" -l {$BTN->start_loop}-{$BTN->end_loop} --bitrate \"{$request->input("hz")}\" --CBR --opusheader namco ");
             } else {
-                $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "'. $tmp_path_1 . '/' . $filename . '.wav" -o "%CD%/storage/lopusBTN/' . $BTN->id . '/output.lopus" -l ' . $BTN->start_loop . '-' . $BTN->end_loop . ' --bitrate "48000" --CBR --opusheader namco ');
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$tmp_path_1}/{$filename}.wav\" -o \"%CD%/storage/lopusBTN/{$BTN->id}/output.lopus\" -l {$BTN->start_loop}-{$BTN->end_loop} --bitrate \"48000\" --CBR --opusheader namco ");
             }
         } else {
             if ($request->input("advanced") == "on") {
-                $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "'. $tmp_path_1 . '/' . $filename . '.wav" -o "%CD%/storage/lopusBTN/' . $BTN->id . '/output.lopus" --bitrate "' . $request->input("hz") . '" --CBR --opusheader namco ');
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$tmp_path_1}/{$filename}.wav\" -o \"%CD%/storage/lopusBTN/{$BTN->id}/output.lopus\" --bitrate \"{$request->input("hz")}\" --CBR --opusheader namco ");
             } else {
-                $log = shell_exec('%CD%/convert/VGAudioCli.exe -i "'. $tmp_path_1 . '/' . $filename . '.wav" -o "%CD%/storage/lopusBTN/' . $BTN->id . '/output.lopus" --bitrate "48000" --CBR --opusheader namco ');
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$tmp_path_1}/{$filename}.wav\" -o \"%CD%/storage/lopusBTN/{$BTN->id}/output.lopus\" --bitrate \"48000\" --CBR --opusheader namco ");
             }
         }
 
@@ -780,7 +780,7 @@ class MainController extends Controller
     public function sampleCheck($path){
         $sample_rate = shell_exec('python python3/sample.py "' . $path . '" ');
 
-        return $sample_rate;
+        return intval($sample_rate);
     }
 
     public function resample48($id, $name, $path){
@@ -807,7 +807,7 @@ class MainController extends Controller
     public function getSamples($path){
         $sample_length = shell_exec('python python3/sample_length.py "' . $path . '" ');
 
-        return $sample_length;
+        return intval($sample_length);
     }
 
     public function keepNumbers($string){

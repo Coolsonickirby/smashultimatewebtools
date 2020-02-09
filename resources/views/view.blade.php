@@ -65,7 +65,7 @@
 
                         <div id="loop_container">
                             <input type="checkbox" class="checkbox-rounded" id="loop" name="loop"
-                                onchange="LoopSamples(this);">
+                                onchange="LoopSamples(this);" checked>
                             <label for="loop">Enable Loop Samples</label>
 
                             <br>
