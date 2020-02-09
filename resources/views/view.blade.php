@@ -71,6 +71,7 @@
                             <br>
                             <div id="loopsection">
                                 <small class="form-text" style="color:orangered;">Leave the fields empty to loop full song.</small>
+                                <small class="form-text" style="color:red;">Use either samples or MM:SS.ms</small>
                                 <label>Samples Rate:</label>
                                 <select class="custom-select" id="sampleHZ" onchange="UpdateHZ(this)">
                                     <option value="auto">Auto Detect</option>
