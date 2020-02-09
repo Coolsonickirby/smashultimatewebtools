@@ -135,16 +135,35 @@ class MainController extends Controller
 
         $file_ext = pathinfo($path, PATHINFO_EXTENSION);
 
-
-        $sample_rate = MainController::sampleCheck($path);
+        if($file_ext != "wav"){
+            $sample_rate = MainController::sampleCheck(MainController::convert_to_wav($nus3audio->id, "nus3audio_TMP_WAV", $path));
+        }else{
+            $sample_rate = MainController::sampleCheck($path);
+        }
 
         if($request->input("sampleHZinput") == "auto"){
             if($request->input("loop") == "on"){
+
                 $hz_convert = 48000 / floatval($sample_rate);
 
-                $nus3audio->start_loop = intval($request->input("start_loop") * $hz_convert);
+                $start = $request->input("start_loop");
 
-                $nus3audio->end_loop = intval($request->input("end_loop") * $hz_convert);
+                $end = $request->input("end_loop");
+
+                if(strpos($start, ":") !== false){
+                    $start = MainController::time_to_samples($start, $sample_rate);
+                    $nus3audio->start_loop = $start * $hz_convert;
+                }else{
+                    $nus3audio->start_loop = intval(MainController::keepNumbers($start) * $hz_convert);
+                }
+
+                if(strpos($end, ":") !== false){
+                    $end = MainController::time_to_samples($end, $sample_rate);
+                    $nus3audio->end_loop = $end * $hz_convert;
+                }else{
+                    $nus3audio->end_loop = intval(MainController::keepNumbers($end) * $hz_convert);
+                }
+
             }else{
                 $nus3audio->start_loop = 0;
                 $nus3audio->end_loop = 0;
@@ -236,15 +255,35 @@ class MainController extends Controller
 
         $file_ext = pathinfo($path, PATHINFO_EXTENSION);
 
-        $sample_rate = MainController::sampleCheck($path);
+        if($file_ext != "wav"){
+            $sample_rate = MainController::sampleCheck(MainController::convert_to_wav($lopus->id, "lopus_TMP_WAV", $path));
+        }else{
+            $sample_rate = MainController::sampleCheck($path);
+        }
 
         if($request->input("sampleHZinput") == "auto"){
             if($request->input("loop") == "on"){
+
                 $hz_convert = 48000 / floatval($sample_rate);
 
-                $lopus->start_loop = intval($request->input("start_loop") * $hz_convert);
+                $start = $request->input("start_loop");
 
-                $lopus->end_loop = intval($request->input("end_loop") * $hz_convert);
+                $end = $request->input("end_loop");
+
+                if(strpos($start, ":") !== false){
+                    $start = MainController::time_to_samples($start, $sample_rate);
+                    return $lopus->start_loop = $start * $hz_convert;
+                }else{
+                    return $lopus->start_loop = intval(MainController::keepNumbers($start) * $hz_convert);
+                }
+
+                if(strpos($end, ":") !== false){
+                    $end = MainController::time_to_samples($end, $sample_rate);
+                    return $lopus->end_loop = $end * $hz_convert;
+                }else{
+                    return $lopus->end_loop = intval(MainController::keepNumbers($end) * $hz_convert);
+                }
+
             }else{
                 $lopus->start_loop = 0;
                 $lopus->end_loop = 0;
@@ -328,15 +367,35 @@ class MainController extends Controller
 
         $file_ext = pathinfo($path, PATHINFO_EXTENSION);
 
-        $sample_rate = MainController::sampleCheck($path);
+        if($file_ext != "wav"){
+            $sample_rate = MainController::sampleCheck(MainController::convert_to_wav($nus3audio->id, "nus3audio_TMP_WAV", $path));
+        }else{
+            $sample_rate = MainController::sampleCheck($path);
+        }
 
         if($request->input("sampleHZinput") == "auto"){
             if($request->input("loop") == "on"){
+
                 $hz_convert = 48000 / floatval($sample_rate);
 
-                $idsp->start_loop = intval($request->input("start_loop") * $hz_convert);
+                $start = $request->input("start_loop");
 
-                $idsp->end_loop = intval($request->input("end_loop") * $hz_convert);
+                $end = $request->input("end_loop");
+
+                if(strpos($start, ":") !== false){
+                    $start = MainController::time_to_samples($start, $sample_rate);
+                    return $idsp->start_loop = $start * $hz_convert;
+                }else{
+                    return $idsp->start_loop = intval(MainController::keepNumbers($start) * $hz_convert);
+                }
+
+                if(strpos($end, ":") !== false){
+                    $end = MainController::time_to_samples($end, $sample_rate);
+                    return $idsp->end_loop = $end * $hz_convert;
+                }else{
+                    return $idsp->end_loop = intval(MainController::keepNumbers($end) * $hz_convert);
+                }
+
             }else{
                 $idsp->start_loop = 0;
                 $idsp->end_loop = 0;
@@ -438,7 +497,6 @@ class MainController extends Controller
 
     public function FindType(Request $request)
     {
-
         if($request->file('music') == null){
             $status = '<p class="card-text">Please upload a file!</p>';
             return redirect()->back()->with('error', $status);
@@ -448,8 +506,6 @@ class MainController extends Controller
 
         $request->merge([
             'sampleHZinput' => MainController::keepNumbers($request->input("sampleHZinput")),
-            'start_loop' => MainController::keepNumbers($request->input("start_loop")),
-            'end_loop' => MainController::keepNumbers($request->input("end_loop")),
             'filenameOutput' => MainController::cleanInput($request->input("filenameOutput")),
             'hz' => MainController::keepNumbers($request->input("hz")),
         ]);
@@ -560,11 +616,27 @@ class MainController extends Controller
 
         if($request->input("sampleHZinput") == "auto"){
             if($request->input("loop") == "on"){
+
                 $hz_convert = 48000 / floatval($sample_rate);
 
-                $BTN->start_loop = intval($request->input("start_loop") * $hz_convert);
+                $start = $request->input("start_loop");
 
-                $BTN->end_loop = intval($request->input("end_loop") * $hz_convert);
+                $end = $request->input("end_loop");
+
+                if(strpos($start, ":") !== false){
+                    $start = MainController::time_to_samples($start, $sample_rate);
+                    $BTN->start_loop = $start * $hz_convert;
+                }else{
+                    $BTN->start_loop = intval(MainController::keepNumbers($start) * $hz_convert);
+                }
+
+                if(strpos($end, ":") !== false){
+                    $end = MainController::time_to_samples($end, $sample_rate);
+                    $BTN->end_loop = $end * $hz_convert;
+                }else{
+                    $BTN->end_loop = intval(MainController::keepNumbers($end) * $hz_convert);
+                }
+
             }else{
                 $BTN->start_loop = 0;
                 $BTN->end_loop = 0;
@@ -722,6 +794,16 @@ class MainController extends Controller
         return public_path() . "/storage/{$name}/{$id}/output.wav";
     }
 
+    public function convert_to_wav($id, $name, $path){
+        $tmp_path_1 = shell_exec("echo %CD%/storage/{$name}/{$id}/");
+
+        File::makeDirectory($tmp_path_1, 0777, true, true);
+
+        $log = shell_exec("%CD%/convert/sox/sox.exe \"{$path}\" \"%CD%/storage/{$name}/{$id}/output.wav\"");
+
+        return public_path() . "/storage/{$name}/{$id}/output.wav";
+    }
+
     public function getSamples($path){
         $sample_length = shell_exec('python python3/sample_length.py "' . $path . '" ');
 
@@ -736,5 +818,18 @@ class MainController extends Controller
     public function cleanInput($string){
         $string = preg_replace('/[^a-zA-Z0-9_]/', "_", $string);
         return $string;
+    }
+
+    public function time_to_samples($time, $sample_rate){
+
+        $time_mm = intval(explode(':', $time)[0]);
+
+        $time_ss_ms = floatval(explode(':', $time)[1]);
+
+        $time_converted = ($time_mm * 60) + $time_ss_ms;
+
+        $converted_time = floatval($time_converted) * intval($sample_rate);
+
+        return $converted_time;
     }
 }

@@ -1241,12 +1241,13 @@ window.onload = function () {
         return /^-?\d*$/.test(value);
     });
 
-    setInputFilter(document.getElementById("start_loop"), function (value) {
-        return /^-?\d*$/.test(value);
+    setInputFilter(document.getElementById("start_loop"), function(value) {
+        return /^-?\d*[:]?\d*[.,]?\d*$/.test(value);
     });
 
-    setInputFilter(document.getElementById("end_loop"), function (value) {
-        return /^-?\d*$/.test(value);
+
+    setInputFilter(document.getElementById("end_loop"), function(value) {
+        return /^-?\d*[:]?\d*[.,]?\d*$/.test(value);
     });
 
     setInputFilter(document.getElementById("filenameOutput"), function (value) {

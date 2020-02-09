@@ -97,3 +97,7 @@
 <h2>Update as of 2/8/2020</h2>
 <p>Added a new page to replace nus3audio sound banks with idsp/lopus.</p>
 </p>
+
+<h2>Update as of 2/9/2020</h2>
+<p>Added support for <strong>MM:SS.ms (Minutes:Seconds.milliseconds)</strong> in loop samples.</p>
+</p>
