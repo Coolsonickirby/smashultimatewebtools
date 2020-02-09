@@ -47,7 +47,7 @@ class MainController extends Controller
 
         $audio->save();
 
-        $path_tmp = $file->storeAs('public/normal/' . $audio->id, $file->getClientOriginalName());
+        $path_tmp = $file->storeAs('public/normal/' . $audio->id, MainController::keep_english($file->getClientOriginalName()));
 
         $path = public_path() . '/' . str_replace("public", "storage", $path_tmp);
 
@@ -80,7 +80,7 @@ class MainController extends Controller
 
             $brstm->save();
 
-            $path_tmp = $file->storeAs('public/normalbrstm/' . $brstm->id, $file->getClientOriginalName());
+            $path_tmp = $file->storeAs('public/normalbrstm/' . $brstm->id, MainController::keep_english($file->getClientOriginalName()));
 
             $path = public_path() . '/' . str_replace("public", "storage", $path_tmp);
 
@@ -129,7 +129,7 @@ class MainController extends Controller
 
         $nus3audio->save();
 
-        $path_tmp = $file->storeAs('public/nus3audioOG/' . $nus3audio->id, $file->getClientOriginalName());
+        $path_tmp = $file->storeAs('public/nus3audioOG/' . $nus3audio->id, MainController::keep_english($file->getClientOriginalName()));
 
         $path = public_path() . '/' . str_replace("public", "storage", $path_tmp);
 
@@ -212,7 +212,7 @@ class MainController extends Controller
             return redirect()->back()->with('error', $status);
         }
 
-        $fileOutput = $request->input("filenameOutput");
+        $fileOutput = MainController::keep_english($request->input("filenameOutput"));
 
         $tmp_path = shell_exec("echo %CD%/storage/nus3audio/{$nus3audio->id}/");
 
@@ -249,7 +249,7 @@ class MainController extends Controller
 
         $lopus->save();
 
-        $path = $file->storeAs('public/lopusOG/' . $lopus->id, $file->getClientOriginalName());
+        $path = $file->storeAs('public/lopusOG/' . $lopus->id, MainController::keep_english($file->getClientOriginalName()));
 
         $path = public_path() . '/' . str_replace("public", "storage", $path);
 
@@ -300,7 +300,7 @@ class MainController extends Controller
             $lopus->end_loop = MainController::getSamples($path);
         }
 
-        $fileOutput = $request->input("filenameOutput");
+        $fileOutput = MainController::keep_english($request->input("filenameOutput"));
 
         if ($request->input("loop") == "on") {
             if ($request->input("advanced") == "on") {
@@ -361,7 +361,7 @@ class MainController extends Controller
 
         $idsp->save();
 
-        $path = $file->storeAs('public/idspOG/' . $idsp->id, $file->getClientOriginalName());
+        $path = $file->storeAs('public/idspOG/' . $idsp->id, MainController::keep_english($file->getClientOriginalName()));
 
         $path = public_path() . '/' . str_replace("public", "storage", $path);
 
@@ -412,7 +412,7 @@ class MainController extends Controller
             $idsp->end_loop = MainController::getSamples($path);
         }
 
-        $fileOutput = $request->input("filenameOutput");
+        $fileOutput = MainController::keep_english($request->input("filenameOutput"));
 
         if ($request->input("loop") == "on") {
             if ($request->input("advanced") == "on") {
@@ -590,7 +590,7 @@ class MainController extends Controller
 
         $BTN->save();
 
-        $path_tmp = $file->storeAs('public/normalBTN/' . $BTN->id, $file->getClientOriginalName());
+        $path_tmp = $file->storeAs('public/normalBTN/' . $BTN->id, MainController::keep_english($file->getClientOriginalName()));
 
         $path = public_path() . '/' . str_replace("public", "storage", $path_tmp);
 
@@ -668,7 +668,7 @@ class MainController extends Controller
             }
         }
 
-        $fileOutput = $request->input("filenameOutput");
+        $fileOutput = MainController::keep_english($request->input("filenameOutput"));
 
         $tmp_path = shell_exec("echo %CD%/storage/BTN/{$BTN->id}/");
 
@@ -711,7 +711,7 @@ class MainController extends Controller
 
             $nus3audio_replace->save();
 
-            $path_tmp = $file->storeAs('public/nus3audio_replace/' . $nus3audio_replace->id, $file->getClientOriginalName());
+            $path_tmp = $file->storeAs('public/nus3audio_replace/' . $nus3audio_replace->id, MainController::keep_english($file->getClientOriginalName()));
 
             $path = public_path() . '/' . str_replace("public", "storage", $path_tmp);
 
@@ -831,5 +831,9 @@ class MainController extends Controller
         $converted_time = floatval($time_converted) * intval($sample_rate);
 
         return $converted_time;
+    }
+
+    public function keep_english($string){
+        return preg_replace('/[^A-Za-z0-9.-_]/', '', $string);
     }
 }
