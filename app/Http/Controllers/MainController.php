@@ -150,14 +150,14 @@ class MainController extends Controller
 
                 $end = $request->input("end_loop");
 
-                if(strpos($start, ":") !== false){
+                if(strpos($start, ":") !== false || strpos($start, ".") !== false){
                     $start = MainController::time_to_samples($start, $sample_rate);
                     $nus3audio->start_loop = $start * $hz_convert;
                 }else{
                     $nus3audio->start_loop = intval(MainController::keepNumbers($start) * $hz_convert);
                 }
 
-                if(strpos($end, ":") !== false){
+                if(strpos($end, ":") !== false || strpos($end, ".") !== false){
                     $end = MainController::time_to_samples($end, $sample_rate);
                     $nus3audio->end_loop = $end * $hz_convert;
                 }else{
@@ -270,14 +270,14 @@ class MainController extends Controller
 
                 $end = $request->input("end_loop");
 
-                if(strpos($start, ":") !== false){
+                if(strpos($start, ":") !== false || strpos($start, ".") !== false){
                     $start = MainController::time_to_samples($start, $sample_rate);
                     return $lopus->start_loop = $start * $hz_convert;
                 }else{
                     return $lopus->start_loop = intval(MainController::keepNumbers($start) * $hz_convert);
                 }
 
-                if(strpos($end, ":") !== false){
+                if(strpos($end, ":") !== false || strpos($end, ".") !== false){
                     $end = MainController::time_to_samples($end, $sample_rate);
                     return $lopus->end_loop = $end * $hz_convert;
                 }else{
@@ -382,14 +382,14 @@ class MainController extends Controller
 
                 $end = $request->input("end_loop");
 
-                if(strpos($start, ":") !== false){
+                if(strpos($start, ":") !== false || strpos($start, ".") !== false){
                     $start = MainController::time_to_samples($start, $sample_rate);
                     return $idsp->start_loop = $start * $hz_convert;
                 }else{
                     return $idsp->start_loop = intval(MainController::keepNumbers($start) * $hz_convert);
                 }
 
-                if(strpos($end, ":") !== false){
+                if(strpos($end, ":") !== false || strpos($end, ".") !== false){
                     $end = MainController::time_to_samples($end, $sample_rate);
                     return $idsp->end_loop = $end * $hz_convert;
                 }else{
@@ -623,14 +623,14 @@ class MainController extends Controller
 
                 $end = $request->input("end_loop");
 
-                if(strpos($start, ":") !== false){
+                if(strpos($start, ":") !== false || strpos($start, ".") !== false){
                     $start = MainController::time_to_samples($start, $sample_rate);
                     $BTN->start_loop = $start * $hz_convert;
                 }else{
                     $BTN->start_loop = intval(MainController::keepNumbers($start) * $hz_convert);
                 }
 
-                if(strpos($end, ":") !== false){
+                if(strpos($end, ":") !== false || strpos($end, ".") !== false){
                     $end = MainController::time_to_samples($end, $sample_rate);
                     $BTN->end_loop = $end * $hz_convert;
                 }else{
@@ -821,6 +821,10 @@ class MainController extends Controller
     }
 
     public function time_to_samples($time, $sample_rate){
+
+        if(strpos($time, ':') !== true){
+            $time = "0:" . $time;
+        }
 
         $time_mm = intval(explode(':', $time)[0]);
 
