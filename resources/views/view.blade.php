@@ -60,8 +60,8 @@
                         <br>
                         <label for="stages">Select a song:</label>
                         <select class="custom-select" id="stages" onchange="UpdateStage(this)"></select>
-                        <br>
-                        <br>
+                        <br style="margin-bottom:3%;">
+                        <p class="form-text" style="color:green;" id="og_size">Original File Size: </p>
 
                         <div id="loop_container">
                             <input type="checkbox" class="checkbox-rounded" id="loop" name="loop"
