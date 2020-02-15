@@ -21,19 +21,21 @@ Route::get('/brstm_to_wav', 'MainController@viewBrstm');
 Route::get('/nus3audio_idsp', 'MainController@viewSoundBank');
 
 //Details
-Route::get('/details/nus3audio/{id}', 'MainController@NUS3AUDIODetails');
+Route::get('/details/nus3audio/{id}', 'detailsController@NUS3AUDIODetails');
 
-Route::get('/details/lopus/{id}', 'MainController@LopusDetails');
+Route::get('/details/lopus/{id}', 'detailsController@LopusDetails');
 
-Route::get('/details/idsp/{id}', 'MainController@IDSPDetails');
+Route::get('/details/idsp/{id}', 'detailsController@IDSPDetails');
 
-Route::get('/details/wav_hz_change/{id}', 'MainController@CompatibleDetails');
+Route::get('/details/wav_hz_change/{id}', 'detailsController@CompatibleDetails');
 
-Route::get('/details/brstm/{id}', 'MainController@BrstmDetails');
+Route::get('/details/brstm/{id}', 'detailsController@BrstmDetails');
 
-Route::get('/details/brstm_to_nus3audio/{id}', 'MainController@BrstmToNus3audioDetails');
+Route::get('/details/brstm_to_nus3audio/{id}', 'detailsController@BrstmToNus3audioDetails');
 
-Route::get('/details/nus3audio_replace/{id}', 'MainController@replacement_nus3audio_details');
+Route::get('/details/nus3audio_replace/{id}', 'detailsController@replacement_nus3audio_details');
+
+//Route::get('/test', 'MainController@test');
 
 //Post Requests
 Route::post('/create', [
@@ -41,13 +43,13 @@ Route::post('/create', [
 ]);
 
 Route::post('/wav_hz_change/change', [
-    'uses' => 'MainController@ConvertMusic'
+    'uses' => 'miscController@ConvertMusic'
 ]);
 
 Route::post('/brstm_to_wav/change', [
-    'uses' => 'MainController@ConvertBRSTM'
+    'uses' => 'miscController@ConvertBRSTM'
 ]);
 
 Route::post('/nus3audio_idsp/replace', [
-    'uses' => 'MainController@replacement_nus3audio'
+    'uses' => 'miscController@replacement_nus3audio'
 ]);

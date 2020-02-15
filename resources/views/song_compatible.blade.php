@@ -37,6 +37,7 @@
         @endif
 
         <div class="container-fluid">
+            @include("extras/change_style")
             <div class="row">
                 <div class="col-md-6">
 

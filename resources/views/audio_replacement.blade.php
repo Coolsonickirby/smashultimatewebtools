@@ -20,6 +20,10 @@
             margin-left: 5px;
             margin-bottom: 5px;
         }
+
+        hr{
+            border-color:green;
+        }
     </style>
     </script>
 </head>
@@ -49,11 +53,11 @@
         @endif
 
         <div class="container">
-
+            @include("extras/change_style")
 
             <form method="post" action="{{ action('MainController@replacement_nus3audio') }}" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <label for="music">Music File:</label>
+                <label for="music">nus3audio File:</label>
                 <input type="file" class="form-control" id="music" name="music" accept=".nus3audio"
                     onchange="AlertFilesize();">
                 <small class="form-text text-muted">File Size Limit: 100mb</small>

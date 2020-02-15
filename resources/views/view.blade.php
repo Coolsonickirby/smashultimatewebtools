@@ -6,11 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Smash Ultimate Audio</title>
-    <link rel="stylesheet" href="{{URL::asset('css/bootstrap.min.css')}}">
-    <script src="{{URL::asset('/js/jquery-3.4.1.js')}}"></script>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="{{URL::asset('/js/jquery-3.4.1.min.js')}}"></script>
     <script src="{{URL::asset('/js/popper.min.js')}}"></script>
-    <script src="{{URL::asset('js/bootstrap.min.js')}}">
-    </script>
+    <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
+
+    <style>
+        select>option:disabled{
+            color: #fc1735;
+        }
+    </style>
 </head>
 
 <body>
@@ -37,6 +42,7 @@
         @endif
 
         <div class="container-fluid">
+            @include("extras/change_style")
             <div class="row">
                 <div class="col-md-6">
 
@@ -141,17 +147,50 @@
                     document.getElementById("fileerror").style.display = "none";
                 }
 
-                if(document.getElementById("music").files[0].name.includes(".brstm")){
+                file_name = document.getElementById("music").files[0].name;
+
+                if(file_name.includes(".brstm")){
+
                     document.getElementById("type_div").style.display = "none";
-                }else{
+
+                    document.getElementById("loop_container").style.display = "block";
+
+                }else if(file_name.includes(".opus")){
+
+                    document.getElementById("type").options[0].removeAttribute("disabled");
+                    document.getElementById("type").options[1].removeAttribute("disabled");
+                    document.getElementById("type").options[2].setAttribute("disabled","");
+                    document.getElementById("type").selectedIndex = 0;
+
+                    document.getElementById("loop_container").style.display = "none";
+
+                }else if(file_name.includes(".lopus")){
+                    document.getElementById("type").options[0].removeAttribute("disabled");
+                    document.getElementById("type").options[1].setAttribute("disabled", "");
+                    document.getElementById("type").options[2].removeAttribute("disabled");
+                    document.getElementById("type").selectedIndex = 2;
+
+                    document.getElementById("loop_container").style.display = "none";
+                }else if(file_name.includes(".idsp")){
+                    document.getElementById("type").options[0].setAttribute("disabled", "");
+                    document.getElementById("type").options[1].removeAttribute("disabled");
+                    document.getElementById("type").options[2].setAttribute("disabled", "");
+                    document.getElementById("type").selectedIndex = 1;
+
+                    document.getElementById("loop_container").style.display = "none";
+                }
+                else{
                     document.getElementById("type_div").style.display = "block";
+                    document.getElementById("type").options[0].removeAttribute("disabled");
+                    document.getElementById("type").options[1].removeAttribute("disabled");
+                    document.getElementById("type").options[2].removeAttribute("disabled");
+                    document.getElementById("loop_container").style.display = "block";
+
                 }
             }else{
                 document.getElementById("fileerror").style.display = "none";
                 document.getElementById("type_div").style.display = "block";
             }
-
-
         }
     </script>
     <script src="./js/stages.js"></script>
