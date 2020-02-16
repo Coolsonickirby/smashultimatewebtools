@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Smash Ultimate Audio</title>
     <link rel="stylesheet" href="{{URL::asset('css/bootstrap.min.css')}}">
-    <script src="{{URL::asset('/js/jquery-3.4.1.js')}}"></script>
+    <link rel="stylesheet" href="./css/custom.css">
+    <script src="{{URL::asset('/js/jquery-3.4.1.min.js')}}"></script>
     <script src="{{URL::asset('/js/popper.min.js')}}"></script>
     <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
     <style>
@@ -55,7 +56,7 @@
         <div class="container">
             @include("extras/change_style")
 
-            <form method="post" action="{{ action('MainController@replacement_nus3audio') }}" enctype="multipart/form-data">
+            <form method="post" action="{{ action('miscController@replacement_nus3audio') }}" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label for="music">nus3audio File:</label>
                 <input type="file" class="form-control" id="music" name="music" accept=".nus3audio"

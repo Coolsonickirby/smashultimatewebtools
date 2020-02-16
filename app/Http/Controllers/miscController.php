@@ -39,7 +39,7 @@ class miscController extends Controller
         $audio->log = shell_exec("%CD%/convert/sox/sox.exe \"{$path}\" -r 48000 \"%CD%/storage/fixedwav/{$audio->id}/{$filename}.wav\"");
 
         $audio->save();
-        $status = '<p class="card-text">Music Conversion Complete! You can download it from <a href="/storage/fixedwav/' . $audio->id . '/' . $filename .'.wav">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a href="/details/wav_hz_change/' . $audio->id . '">click here.</a></p>';
+        $status = '<p class="card-text">Music Conversion Complete! You can download it from <a class="return_link" href="/storage/fixedwav/' . $audio->id . '/' . $filename .'.wav">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/wav_hz_change/' . $audio->id . '">click here.</a></p>';
 
         return redirect()->back()->with('success', $status);
     }
@@ -81,7 +81,7 @@ class miscController extends Controller
 
             $brstm->save();
 
-            $status = '<p class="card-text">Music Conversion Complete! You can download it from <a href="/storage/fixedbrstm/' . $brstm->id . '/' . $filename . '.wav">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a href="/details/brstm/' . $brstm->id . '">click here.</a></p>';
+            $status = '<p class="card-text">Music Conversion Complete! You can download it from <a class="return_link" href="/storage/fixedbrstm/' . $brstm->id . '/' . $filename . '.wav">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/brstm/' . $brstm->id . '">click here.</a></p>';
 
             return redirect()->back()->with('success', $status);
         }else{
@@ -193,7 +193,7 @@ class miscController extends Controller
 
         $BTN->save();
 
-        $status = '<p class="card-text">brstm to nus3audio Conversion Complete! You can download it from <a href="/storage/BTN/'. $BTN->id . '/' . $fileOutput . '.nus3audio">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a href="/details/brstm_to_nus3audio/' . $BTN->id . '">click here.</a></p>';
+        $status = '<p class="card-text">brstm to nus3audio Conversion Complete! You can download it from <a class="return_link" href="/storage/BTN/'. $BTN->id . '/' . $fileOutput . '.nus3audio">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/brstm_to_nus3audio/' . $BTN->id . '">click here.</a></p>';
 
         return redirect()->back()->with('success', $status);
     }
@@ -268,9 +268,9 @@ class miscController extends Controller
 
             $status = "
             <p class=\"card-text\">
-            Replacment complete! You can download the file from <a href=\"/storage/nus3audio_replace/{$nus3audio_replace->id}/{$nus3audio_replace->filename}\">here!</a>
+            Replacment complete! You can download the file from <a class=\"return_link\" href=\"/storage/nus3audio_replace/{$nus3audio_replace->id}/{$nus3audio_replace->filename}\">here!</a>
             <br>
-            For more information, you can click <a href=\"/details/nus3audio_replace/{$nus3audio_replace->id}\">here!</a>
+            For more information, you can click <a class=\"return_link\" href=\"/details/nus3audio_replace/{$nus3audio_replace->id}\">here!</a>
             </p>";
 
             //return $status;

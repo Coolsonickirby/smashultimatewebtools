@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Smash Ultimate Audio (BRSTM Conversion)</title>
     <link rel="stylesheet" href="{{URL::asset('css/bootstrap.min.css')}}">
-    <script src="{{URL::asset('/js/jquery-3.4.1.js')}}"></script>
+    <link rel="stylesheet" href="./css/custom.css">
+    <script src="{{URL::asset('/js/jquery-3.4.1.min.js')}}"></script>
     <script src="{{URL::asset('/js/popper.min.js')}}"></script>
     <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
     </script>
@@ -41,7 +42,7 @@
             <div class="row">
                 <div class="col-md-6">
 
-                    <form method="post" action="{{ action('MainController@ConvertBRSTM') }}"
+                    <form method="post" action="{{ action('miscController@ConvertBRSTM') }}"
                         enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <label for="music">Music File:</label>

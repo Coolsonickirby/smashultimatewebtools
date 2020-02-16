@@ -67,8 +67,7 @@
 <ol>
     <li>Go to <a href="http://www.smashcustommusic.net/">SmashCustomMusic</a> and look for the game you want the audio from.</li>
     <li>Once you find the game, click on it and look for the song you want.</li>
-    <li>Click on the song name, then click "Download BRSTM" (blue box in image below). Make sure you note down everything in the highlighted section.</li>
-    <img src="img/mini1.png" alt="Download BRSTM" style="height:512px; width:auto;">
+    <li>Click on the song name, then click "Download BRSTM" (blue box in image below). Make sure you note down everything in the highlighted section.<br><img src="img/mini1.png" alt="Download BRSTM" style="height:512px; width:auto;"></li>
     <li>Go to <a href="{{Request::root()}}/#music">"Music file"</a> and select the brstm file you downloaded</li>
     <li>Enable the <a href="{{Request::root()}}/#loop">"Loop Samples"</a> checkbox</li>
     <li>Set the Sampling Rate to the proper one. (Set it to "Auto" if you're not sure.)</li>
@@ -96,8 +95,13 @@
 
 <h2>Update as of 2/8/2020</h2>
 <p>Added a new page to replace nus3audio sound banks with idsp/lopus.</p>
-</p>
 
 <h2>Update as of 2/9/2020</h2>
 <p>Added support for <strong>MM:SS.ms (Minutes:Seconds.milliseconds)</strong> in loop samples.</p>
+
+<h2>Update as of 2/16/2020</h2>
+<p>Added support for:<br>
+    lopus -> nus3audio/idsp<br>
+    idsp -> lopus<br>
+    Also added filters for the stage dropdown
 </p>

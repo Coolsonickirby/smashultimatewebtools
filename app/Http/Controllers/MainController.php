@@ -98,14 +98,34 @@ class MainController extends Controller
             $looparray[1] = 0;
         }
 
+        $ext = $request->file('music')->getClientOriginalExtension();
 
-        if($request->file('music')->getClientOriginalExtension() == "brstm"){
+        $filetype = $request->input("filetype");
+
+        if($ext == "brstm"){
 
             return miscController::CreateNus3audioFromBRSTM($request, $looparray);
 
-        }else{
-            $filetype = $request->input("filetype");
+        }else if($ext == "lopus"){
 
+            if ($filetype == "nus3audio") {
+                return nus3audioController::lopusToNus3audio($request);
+            }else if ($filetype == "idsp") {
+                return idspController::lopusToIDSP($request);
+            } else {
+                $status = '<p class="card-text">Please select a valid file type!</p>';
+                return redirect()->back()->with('error', $status);
+            };
+
+        }else if($ext == "idsp"){
+            if ($filetype == "lopus") {
+                return lopusController::idspToLopus($request, $looparray);
+            } else {
+                $status = '<p class="card-text">Please select a valid file type!</p>';
+                return redirect()->back()->with('error', $status);
+            };
+        }
+        else{
             if ($filetype == "nus3audio") {
                 return nus3audioController::Createnus3audio($request, $looparray);
             } else if ($filetype == "lopus") {

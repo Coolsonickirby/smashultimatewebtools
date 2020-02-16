@@ -116,7 +116,41 @@ class idspController extends Controller
 
         $idsp->save();
 
-        $status = '<p class="card-text">IDSP Conversion Complete! You can download it from <a href="/storage/idsp/' . $idsp->id . '/' . $fileOutput . '.idsp">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a href="/details/idsp/' . $idsp->id . '">click here.</a></p>';
+        $status = '<p class="card-text">IDSP Conversion Complete! You can download it from <a class="return_link" href="/storage/idsp/' . $idsp->id . '/' . $fileOutput . '.idsp">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/idsp/' . $idsp->id . '">click here.</a></p>';
+
+        return redirect()->back()->with('success', $status);
+    }
+
+    public static function lopusToIDSP($request){
+        $idsp = new AudioIDSP;
+
+        $file = $request->file('music');
+
+        $idsp->filename = $file->getClientOriginalName();
+
+        $idsp->start_loop = "lopus";
+
+        $idsp->end_loop = "idsp";
+
+        $idsp->hz = $request->input("hz");
+
+        $idsp->stage = $request->input("filenameOutput");
+
+        $idsp->save();
+
+        $path = $file->storeAs('public/idspOG/' . $idsp->id, extraController::keep_english($file->getClientOriginalName()));
+
+        $path = public_path() . '/' . str_replace("public", "storage", $path);
+
+        $file_ext = pathinfo($path, PATHINFO_EXTENSION);
+
+        $fileOutput = extraController::keep_english($request->input("filenameOutput"));
+
+        $idsp->log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/idsp/{$idsp->id}/{$fileOutput}.idsp\"");
+
+        $idsp->save();
+
+        $status = '<p class="card-text">lopus -> IDSP Conversion Complete! You can download it from <a class="return_link" href="/storage/idsp/' . $idsp->id . '/' . $fileOutput . '.idsp">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/idsp/' . $idsp->id . '">click here.</a></p>';
 
         return redirect()->back()->with('success', $status);
     }

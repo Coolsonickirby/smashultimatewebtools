@@ -1,3 +1,5 @@
+//I'm gonna try and figure out how to store these arrays somewhere else soon.
+
 var SmashSeries = [
     ["Super Smash Bros. Series", "smash"],
     ["Menu - Super Smash Bros. for 3DS / Wii U)", "bgm_crs01_menu", "1452752"],
@@ -1212,52 +1214,11 @@ var VictoryThemes = [
     ["Normal Victory Theme", "bgm_crs24_vs_result", "648488"]
 ];
 
+var series = [SmashSeries, MarioSeries, MarioKartSeries, YoshiSeries, DKSeries, ZeldaSeries, MetroidSeries, KirbySeries, StarFoxSeries, PkmnSeries, FZeroSeries, EarthboundSeries, GameAndWatchSeries, FireEmblemSeries, WarioWareSeries, PikminSeries, AnimalCrossingSeries, WiiFitSeries, PunchOutSeries, XenobladeSeries, SplatoonSeries, MGSSeries, SonicSeries, MegaManSeries, PacManSeries, StreetFighterSeries, FFSeries, BayoSeries, CastleSeries, OtherSeries, PersonaSeries, DQSeries, BanjoSeries, FatalFurySeries, VictoryThemes];
+
 window.onload = function () {
-    SetupStageList(SmashSeries);
-    SetupStageList(MarioSeries);
-    SetupStageList(MarioKartSeries);
-    SetupStageList(YoshiSeries);
 
-    SetupStageList(DKSeries);
-    SetupStageList(ZeldaSeries);
-    SetupStageList(MetroidSeries);
-    SetupStageList(KirbySeries);
-
-    SetupStageList(StarFoxSeries);
-    SetupStageList(PkmnSeries);
-    SetupStageList(FZeroSeries);
-    SetupStageList(EarthboundSeries);
-
-    SetupStageList(GameAndWatchSeries);
-    SetupStageList(FireEmblemSeries);
-    SetupStageList(WarioWareSeries);
-    SetupStageList(PikminSeries);
-
-    SetupStageList(AnimalCrossingSeries);
-    SetupStageList(WiiFitSeries);
-    SetupStageList(PunchOutSeries);
-    SetupStageList(XenobladeSeries);
-
-    SetupStageList(SplatoonSeries);
-    SetupStageList(MGSSeries);
-    SetupStageList(SonicSeries);
-    SetupStageList(MegaManSeries);
-
-
-    SetupStageList(PacManSeries);
-    SetupStageList(StreetFighterSeries);
-    SetupStageList(FFSeries);
-    SetupStageList(BayoSeries);
-
-    SetupStageList(CastleSeries);
-    SetupStageList(OtherSeries);
-    SetupStageList(PersonaSeries);
-    SetupStageList(DQSeries);
-
-    SetupStageList(BanjoSeries);
-    SetupStageList(FatalFurySeries);
-    SetupStageList(VictoryThemes);
-
+    orderBySelected();
 
     LoopSamples(document.getElementById("loop"));
     AdvancedOptions(document.getElementById("advanced"));
@@ -1272,12 +1233,12 @@ window.onload = function () {
         return /^-?\d*$/.test(value);
     });
 
-    setInputFilter(document.getElementById("start_loop"), function(value) {
+    setInputFilter(document.getElementById("start_loop"), function (value) {
         return /^-?\d*[:]?\d*[.,]?\d*$/.test(value);
     });
 
 
-    setInputFilter(document.getElementById("end_loop"), function(value) {
+    setInputFilter(document.getElementById("end_loop"), function (value) {
         return /^-?\d*[:]?\d*[.,]?\d*$/.test(value);
     });
 
@@ -1306,6 +1267,16 @@ function AdvancedOptions(checkbox) {
     }
 }
 
+function displayFilters() {
+    if (document.getElementById("filters").style.display == "none") {
+        document.getElementById("filters").style.display = "block";
+        document.getElementById("more").innerHTML = "Hide Options";
+    } else {
+        document.getElementById("filters").style.display = "none";
+        document.getElementById("more").innerHTML = "More Options";
+    }
+}
+
 function SetupStageList(series) {
     id = "";
     i = 0;
@@ -1322,7 +1293,7 @@ function SetupStageList(series) {
             option.value = element[1];
             option.innerHTML = element[0];
             option.setAttribute('data-size', element[2]);
-            document.getElementById(id).append(option);
+            document.getElementById("stages").append(option);
         };
     });
 }
@@ -1334,11 +1305,11 @@ function UpdateStage(e) {
 
     var song_size_kb = song_size_bytes / 1024;
 
-    if(song_size_kb > 1000){
+    if (song_size_kb > 1000) {
         song_size_mb = song_size_kb / 1024;
 
         document.getElementById("og_size").innerHTML = `Original File Size: <strong>${song_size_mb.toFixed(2)}MB</strong>`;
-    }else{
+    } else {
         document.getElementById("og_size").innerHTML = `Original File Size: <strong>${song_size_kb.toFixed(2)}KB</strong>`;
     }
 }
@@ -1383,4 +1354,113 @@ function setInputFilter(textbox, inputFilter) {
             }
         });
     });
+}
+
+function orderBySizeH2L() {
+    $("#stages").each(function () {
+        $(this).html($(this).children('option').sort(function (a, b) {
+            return ($(a).data('size')) < ($(b).data('size')) ? 1 : -1;
+        }));
+    });
+
+    document.getElementById("h2l").style.display = "none";
+    document.getElementById("l2h").style.display = "inline";
+    document.getElementById("stages").selectedIndex = 0;
+
+    UpdateStage(document.getElementById("stages"));
+
+}
+
+function orderBySizeL2H() {
+    $("#stages").each(function () {
+        $(this).html($(this).children('option').sort(function (a, b) {
+            return ($(b).data('size')) < ($(a).data('size')) ? 1 : -1;
+        }));
+    });
+
+    document.getElementById("l2h").style.display = "none";
+    document.getElementById("h2l").style.display = "inline";
+    document.getElementById("stages").selectedIndex = 0;
+
+    UpdateStage(document.getElementById("stages"));
+}
+
+function orderBySeries() {
+    SetupStageList(SmashSeries);
+    SetupStageList(MarioSeries);
+    SetupStageList(MarioKartSeries);
+    SetupStageList(YoshiSeries);
+
+    SetupStageList(DKSeries);
+    SetupStageList(ZeldaSeries);
+    SetupStageList(MetroidSeries);
+    SetupStageList(KirbySeries);
+
+    SetupStageList(StarFoxSeries);
+    SetupStageList(PkmnSeries);
+    SetupStageList(FZeroSeries);
+    SetupStageList(EarthboundSeries);
+
+    SetupStageList(GameAndWatchSeries);
+    SetupStageList(FireEmblemSeries);
+    SetupStageList(WarioWareSeries);
+    SetupStageList(PikminSeries);
+
+    SetupStageList(AnimalCrossingSeries);
+    SetupStageList(WiiFitSeries);
+    SetupStageList(PunchOutSeries);
+    SetupStageList(XenobladeSeries);
+
+    SetupStageList(SplatoonSeries);
+    SetupStageList(MGSSeries);
+    SetupStageList(SonicSeries);
+    SetupStageList(MegaManSeries);
+
+
+    SetupStageList(PacManSeries);
+    SetupStageList(StreetFighterSeries);
+    SetupStageList(FFSeries);
+    SetupStageList(BayoSeries);
+
+    SetupStageList(CastleSeries);
+    SetupStageList(OtherSeries);
+    SetupStageList(PersonaSeries);
+    SetupStageList(DQSeries);
+
+    SetupStageList(BanjoSeries);
+    SetupStageList(FatalFurySeries);
+    SetupStageList(VictoryThemes);
+}
+
+function orderBySelected() {
+
+    var all = $("#filters :checkbox");
+    var checked = $("div :checkbox:checked").length;
+
+    var check = false;
+
+    document.getElementById("stages").innerHTML = "";
+
+    $(all).each(function(i) {
+        if (this.checked) { SetupStageList(series[i]); check = true }
+    });
+
+    if (check == false) {
+        orderBySeries();
+    }
+}
+
+function resetFilters() {
+    var all = $("#filters :checkbox");
+
+    document.getElementById("stages").innerHTML = "";
+
+    $(all).each(function() {
+        this.checked = false;
+    });
+
+    document.getElementById("l2h").style.display = "none";
+    document.getElementById("h2l").style.display = "inline";
+
+    orderBySeries();
 }

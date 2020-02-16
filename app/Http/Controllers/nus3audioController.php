@@ -129,7 +129,45 @@ class nus3audioController extends Controller
 
         $nus3audio->save();
 
-        $status = '<p class="card-text">nus3audio Conversion Complete! You can download it from <a href="/storage/nus3audio/'. $nus3audio->id . '/' . $fileOutput . '.nus3audio">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a href="/details/nus3audio/' . $nus3audio->id . '">click here.</a></p>';
+        $status = '<p class="card-text">nus3audio Conversion Complete! You can download it from <a class="return_link" href="/storage/nus3audio/'. $nus3audio->id . '/' . $fileOutput . '.nus3audio">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/nus3audio/' . $nus3audio->id . '">click here.</a></p>';
+
+        return redirect()->back()->with('success', $status);
+    }
+
+    public static function lopusToNus3audio($request){
+        $nus3audio = new AudioNUS3AUDIO();
+
+        $file = $request->file('music');
+
+        $nus3audio->filename = $file->getClientOriginalName();
+
+        $nus3audio->start_loop = "lopus";
+
+        $nus3audio->end_loop = "nus3audio";
+
+        $nus3audio->hz = $request->input("hz");
+
+        $nus3audio->stage = $request->input("filenameOutput");
+
+        $nus3audio->save();
+
+        $path = $file->storeAs('public/nus3audioOG/' . $nus3audio->id, extraController::keep_english($file->getClientOriginalName()));
+
+        $path = public_path() . '/' . str_replace("public", "storage", $path);
+
+        $file_ext = pathinfo($path, PATHINFO_EXTENSION);
+
+        $fileOutput = extraController::keep_english($request->input("filenameOutput"));
+
+        $tmp_path = shell_exec("echo %CD%/storage/nus3audio/{$nus3audio->id}/");
+
+        File::makeDirectory($tmp_path, 0777, true, true);
+
+        $nus3audio->log = shell_exec("%CD%/convert/nus3audio.exe \"%CD%/convert/base.nus3audio\" -r 0 \"{$path}\" -w \"%CD%/storage/nus3audio/{$nus3audio->id}/{$fileOutput}.nus3audio\"");
+
+        $nus3audio->save();
+
+        $status = '<p class="card-text">lopus -> nus3audio Conversion Complete! You can download it from <a class="return_link" href="/storage/nus3audio/'. $nus3audio->id . '/' . $fileOutput . '.nus3audio">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/nus3audio/' . $nus3audio->id . '">click here.</a></p>';
 
         return redirect()->back()->with('success', $status);
     }

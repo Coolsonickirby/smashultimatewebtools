@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Smash Ultimate Audio</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/custom.css">
     <script src="{{URL::asset('/js/jquery-3.4.1.min.js')}}"></script>
     <script src="{{URL::asset('/js/popper.min.js')}}"></script>
     <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
@@ -14,6 +15,10 @@
     <style>
         select>option:disabled{
             color: #fc1735;
+        }
+
+        .label_sort{
+            padding-right:2%;
         }
     </style>
 </head>
@@ -64,7 +69,52 @@
                             <input type="hidden" class="form-control" id="filetype" name="filetype">
                         </div>
                         <br>
-                        <label for="stages">Select a song:</label>
+                        <div style="display:inline;">
+                            <label for="stages" style="display:inline;">Select a song:</label>
+                            <a href="javascript:void(0)" style="display:inline; float:right;" id="reset" onclick="resetFilters();">Reset</a>
+                            <a href="javascript:void(0)" style="display:inline; float:right; padding-right:2%;" id="more" onclick="displayFilters();">More Options</a>
+                            <a href="javascript:void(0)" style="display:inline; float:right; padding-right:2%;" id="h2l" onclick="orderBySizeH2L()">Order by Size (H to L)</a>
+                            <a href="javascript:void(0)" style="display:none; float:right; padding-right:2%;;" id="l2h" onclick="orderBySizeL2H()">Order by Size (L to H)</a>
+                        </div>
+                        <br style="margin-bottom:6px;">
+                        <div id="filters" style="display:none;">
+                            <label class="label_sort" for="smash"><input type="checkbox" id="smash" onclick="orderBySelected()"> &nbsp Smash Series</label>
+                            <label class="label_sort" for="mario"><input type="checkbox" id="mario" onclick="orderBySelected()"> &nbsp Mario Series</label>
+                            <label class="label_sort" for="mariok"><input type="checkbox" id="mariok" onclick="orderBySelected()"> &nbsp Mario Kart Series</label>
+                            <label class="label_sort" for="yoshi"><input type="checkbox" id="yoshi" onclick="orderBySelected()"> &nbsp Yoshi Series</label>
+                            <label class="label_sort" for="dk"><input type="checkbox" id="dk" onclick="orderBySelected()"> &nbsp DK Series</label>
+                            <label class="label_sort" for="zelda"><input type="checkbox" id="zelda" onclick="orderBySelected()"> &nbsp Zelda Series</label>
+                            <label class="label_sort" for="metroid"><input type="checkbox" id="metroid" onclick="orderBySelected()"> &nbsp Metroid Series</label>
+                            <label class="label_sort" for="kirby"><input type="checkbox" id="kirby" onclick="orderBySelected()"> &nbsp Kirby Series</label>
+                            <label class="label_sort" for="starfox"><input type="checkbox" id="starfox" onclick="orderBySelected()"> &nbsp Star Fox Series</label>
+                            <label class="label_sort" for="pkmn"><input type="checkbox" id="pkmn" onclick="orderBySelected()"> &nbsp Pokemon Series</label>
+                            <label class="label_sort" for="fzero"><input type="checkbox" id="fzero" onclick="orderBySelected()"> &nbsp F-Zero Series</label>
+                            <label class="label_sort" for="mother"><input type="checkbox" id="mother" onclick="orderBySelected()"> &nbsp Earthbound Series</label>
+                            <label class="label_sort" for="gnw"><input type="checkbox" id="gnw" onclick="orderBySelected()"> &nbsp Game & Watch Series</label>
+                            <label class="label_sort" for="fe"><input type="checkbox" id="fe" onclick="orderBySelected()"> &nbsp Fire Emblem Series</label>
+                            <label class="label_sort" for="wario"><input type="checkbox" id="wario" onclick="orderBySelected()"> &nbsp Wario Series</label>
+                            <label class="label_sort" for="pikmin"><input type="checkbox" id="pikmin" onclick="orderBySelected()"> &nbsp Pikmin Series</label>
+                            <label class="label_sort" for="ac"><input type="checkbox" id="ac" onclick="orderBySelected()"> &nbsp Animal Crossing Series</label>
+                            <label class="label_sort" for="wiifit"><input type="checkbox" id="wiifit" onclick="orderBySelected()"> &nbsp Wii Fit Series</label>
+                            <label class="label_sort" for="punch"><input type="checkbox" id="punch" onclick="orderBySelected()"> &nbsp Punch Out Series</label>
+                            <label class="label_sort" for="xenoblade"><input type="checkbox" id="xenoblade" onclick="orderBySelected()"> &nbsp Xenoblade Series</label>
+                            <label class="label_sort" for="splatoon"><input type="checkbox" id="splatoon" onclick="orderBySelected()"> &nbsp Splatoon Series</label>
+                            <label class="label_sort" for="metalgear"><input type="checkbox" id="metalgear" onclick="orderBySelected()"> &nbsp Metal Gear Series</label>
+                            <label class="label_sort" for="sonic"><input type="checkbox" id="sonic" onclick="orderBySelected()"> &nbsp Sonic Series</label>
+                            <label class="label_sort" for="megaman"><input type="checkbox" id="megaman" onclick="orderBySelected()"> &nbsp Megaman Series</label>
+                            <label class="label_sort" for="pacman"><input type="checkbox" id="pacman" onclick="orderBySelected()"> &nbsp Pac-Man Series</label>
+                            <label class="label_sort" for="sf"><input type="checkbox" id="sf" onclick="orderBySelected()"> &nbsp Street Fighter Series</label>
+                            <label class="label_sort" for="ff"><input type="checkbox" id="ff" onclick="orderBySelected()"> &nbsp Final Fantasy Series</label>
+                            <label class="label_sort" for="bayo"><input type="checkbox" id="bayo" onclick="orderBySelected()"> &nbsp Bayonetta Series</label>
+                            <label class="label_sort" for="castle"><input type="checkbox" id="castle" onclick="orderBySelected()"> &nbsp Castlevania Series</label>
+                            <label class="label_sort" for="other"><input type="checkbox" id="other" onclick="orderBySelected()"> &nbsp Other Series</label>
+                            <label class="label_sort" for="persona"><input type="checkbox" id="persona" onclick="orderBySelected()"> &nbsp Persona Series</label>
+                            <label class="label_sort" for="dq"><input type="checkbox" id="dq" onclick="orderBySelected()"> &nbsp Dragon Quest Series</label>
+                            <label class="label_sort" for="banjo"><input type="checkbox" id="banjo" onclick="orderBySelected()"> &nbsp Banjo & Kazooie Series</label>
+                            <label class="label_sort" for="fatal"><input type="checkbox" id="fatal" onclick="orderBySelected()"> &nbsp Fatal Fury Series</label>
+                            <label class="label_sort" for="victory"><input type="checkbox" id="victory" onclick="orderBySelected()"> &nbsp Victory Themes</label>
+                            <br style="margin-bottom:6px;">
+                        </div>
                         <select class="custom-select" id="stages" onchange="UpdateStage(this)"></select>
                         <br style="margin-bottom:3%;">
                         <p class="form-text" style="color:green;" id="og_size">Original File Size: </p>
@@ -88,7 +138,7 @@
                                 <br>
                                 <br>
                                 <div id="sampleHZdiv" style="display: none;">
-                                    <label for="smapleHZ">Sample HZ:</label>
+                                    <label for="sampleHZ">Sample HZ:</label>
                                     <input type="text" class="form-control" id="sampleHZinput" name="sampleHZinput">
                                     <br>
                                 </div>
@@ -102,7 +152,7 @@
                         </div>
                         <input type="checkbox" class="checkbox-rounded" id="advanced" name="advanced"
                             onchange="AdvancedOptions(this);">
-                        <label for="loop">Enable Advanced Options</label>
+                        <label for="advanced">Enable Advanced Options</label>
                         <br>
                         <div id="advancedoptions">
                             <label for="filenameOutput">Output File Name:</label>
@@ -177,7 +227,7 @@
                     document.getElementById("type").options[2].setAttribute("disabled", "");
                     document.getElementById("type").selectedIndex = 1;
 
-                    document.getElementById("loop_container").style.display = "none";
+                    document.getElementById("loop_container").style.display = "block";
                 }
                 else{
                     document.getElementById("type_div").style.display = "block";
@@ -191,6 +241,8 @@
                 document.getElementById("fileerror").style.display = "none";
                 document.getElementById("type_div").style.display = "block";
             }
+
+            UpdateType(document.getElementById("type"));
         }
     </script>
     <script src="./js/stages.js"></script>
