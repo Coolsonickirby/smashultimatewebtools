@@ -1220,6 +1220,8 @@ window.onload = function () {
 
     orderBySelected();
 
+    AlertFilesize();
+
     LoopSamples(document.getElementById("loop"));
     AdvancedOptions(document.getElementById("advanced"));
 
@@ -1227,7 +1229,6 @@ window.onload = function () {
     UpdateType(document.getElementById("type"));
     UpdateHZ(document.getElementById("sampleHZ"));
 
-    AlertFilesize();
 
     setInputFilter(document.getElementById("sampleHZinput"), function (value) {
         return /^-?\d*$/.test(value);
@@ -1249,6 +1250,7 @@ window.onload = function () {
     setInputFilter(document.getElementById("hz"), function (value) {
         return /^-?\d*$/.test(value);
     });
+
 }
 
 function LoopSamples(checkbox) {
@@ -1430,6 +1432,8 @@ function orderBySeries() {
     SetupStageList(BanjoSeries);
     SetupStageList(FatalFurySeries);
     SetupStageList(VictoryThemes);
+
+    UpdateStage(document.getElementById("stages"));
 }
 
 function orderBySelected() {
@@ -1448,6 +1452,8 @@ function orderBySelected() {
     if (check == false) {
         orderBySeries();
     }
+
+    UpdateStage(document.getElementById("stages"));
 }
 
 function resetFilters() {

@@ -73,4 +73,8 @@ class extraController extends Controller
     public static function keep_english($string){
         return preg_replace('/[^A-Za-z0-9.-_]/', '', $string);
     }
+
+    public static function compareFileSize(){
+        return view('compare');
+    }
 }

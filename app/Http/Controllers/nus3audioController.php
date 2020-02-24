@@ -129,7 +129,7 @@ class nus3audioController extends Controller
 
         $nus3audio->save();
 
-        $status = '<p class="card-text">nus3audio Conversion Complete! You can download it from <a class="return_link" href="/storage/nus3audio/'. $nus3audio->id . '/' . $fileOutput . '.nus3audio">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/nus3audio/' . $nus3audio->id . '">click here.</a></p>';
+        $status = '<p class="card-text">nus3audio Conversion Complete! You can download it from <a class="return_link" href="/storage/nus3audio/'. $nus3audio->id . '/' . $fileOutput . '.nus3audio">here!</a></p> <br> <p class="card-text">Use the <a class="return_link" href="/compare">compare feature</a> to check if your song will fit!</p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/nus3audio/' . $nus3audio->id . '">click here.</a></p>';
 
         return redirect()->back()->with('success', $status);
     }
@@ -167,7 +167,7 @@ class nus3audioController extends Controller
 
         $nus3audio->save();
 
-        $status = '<p class="card-text">lopus -> nus3audio Conversion Complete! You can download it from <a class="return_link" href="/storage/nus3audio/'. $nus3audio->id . '/' . $fileOutput . '.nus3audio">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/nus3audio/' . $nus3audio->id . '">click here.</a></p>';
+        $status = '<p class="card-text">lopus -> nus3audio Conversion Complete! You can download it from <a class="return_link" href="/storage/nus3audio/'. $nus3audio->id . '/' . $fileOutput . '.nus3audio">here!</a></p> <br> <p class="card-text">Use the <a href="/compare">compare feature</a> to check if your song will fit!</p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/nus3audio/' . $nus3audio->id . '">click here.</a></p>';
 
         return redirect()->back()->with('success', $status);
     }

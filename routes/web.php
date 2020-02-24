@@ -35,7 +35,7 @@ Route::get('/details/brstm_to_nus3audio/{id}', 'detailsController@BrstmToNus3aud
 
 Route::get('/details/nus3audio_replace/{id}', 'detailsController@replacement_nus3audio_details');
 
-//Route::get('/test', 'MainController@test');
+Route::get('/compare', 'extraController@compareFileSize');
 
 //Post Requests
 Route::post('/create', [
