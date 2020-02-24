@@ -105,3 +105,6 @@
     idsp -> lopus<br>
     Also added filters for the stage dropdown
 </p>
+
+<h2>Update as of 2/24/2020</h2>
+<p>Fixed a problem with nus3audio replacment when invalid files were encountered. Also wanted to apologize for not being able to update this as frequently as I wanted to, as college exists :(</p>
