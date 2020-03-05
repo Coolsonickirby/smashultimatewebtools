@@ -123,11 +123,6 @@ class miscController extends Controller
 
         $BTN->end_loop = $looparray[1];
 
-        if($request->input("loop_type") == "auto"){
-            $BTN->start_loop = shell_exec("python python3/loop_finder_brstm.py \"{$path}\" start");
-            $BTN->end_loop = shell_exec("python python3/loop_finder_brstm.py \"{$path}\" end");
-        }
-
         $sample_rate = extraController::sampleCheck(public_path() . "/storage/tmpBTN/{$BTN->id}/{$filename}.wav");
 
         if($request->input("sampleHZinput") == "auto"){
@@ -135,9 +130,15 @@ class miscController extends Controller
 
                 $hz_convert = 48000 / floatval($sample_rate);
 
-                $start = $request->input("start_loop");
+                if($request->input("loop_type") == "auto"){
+                    $start = intval(shell_exec("python python3/loop_finder_brstm.py \"{$path}\" start"));
 
-                $end = $request->input("end_loop");
+                    $end = intval(shell_exec("python python3/loop_finder_brstm.py \"{$path}\" end"));
+                }else{
+                    $start = $request->input("start_loop");
+
+                    $end = $request->input("end_loop");
+                }
 
                 if(strpos($start, ":") !== false || strpos($start, ".") !== false){
                     $start = extraController::time_to_samples($start, $sample_rate);
