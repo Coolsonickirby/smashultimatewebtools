@@ -66,7 +66,8 @@ var SmashSeries = [
     ["Menu - Super Smash Bros.", "bgm_t18_sb_menu", "1331280"],
     ["Training Mode", "bgm_t19_sb_trainingmode", "1848808"],
     ["Fighter Selection - Super Smash Bros.", "bgm_t21_sb_characterselect", "193656"],
-    ["Meta Crystal - Bonus Game - Super Smash Bros.", "bgm_t22_sb_metacristalbgm_,bgm_t23_sb_bonusgame", "1368432"],
+    ["Meta Crystal - Super Smash Bros.", "bgm_t22_sb_metacristal", "1579976"],
+    ["Bonus Game - Super Smash Bros.", "bgm_t23_sb_bonusgame", "1368432"],
     ["Duel Zone", "bgm_t24_sb_duelzone", "1248896"],
     ["Final Destination - Super Smash Bros.", "bgm_t25_sb_shuuten", "999408"],
     ["Credits - Super Smash Bros.", "bgm_t27_sb_ending_staffroll", "836240"],
@@ -1222,6 +1223,8 @@ window.onload = function () {
 
     AlertFilesize();
 
+    UpdateLoopSelect(document.getElementById("loop_samples_select"));
+
     LoopSamples(document.getElementById("loop"));
     AdvancedOptions(document.getElementById("advanced"));
 
@@ -1470,3 +1473,4 @@ function resetFilters() {
 
     orderBySeries();
 }
+

@@ -55,7 +55,7 @@ class extraController extends Controller
 
     public static function time_to_samples($time, $sample_rate){
 
-        if(strpos($time, ':') !== true){
+        if(strpos($time, ':') != true){
             $time = "0:" . $time;
         }
 

@@ -123,6 +123,11 @@ class miscController extends Controller
 
         $BTN->end_loop = $looparray[1];
 
+        if($request->input("loop_type") == "auto"){
+            $BTN->start_loop = shell_exec("python python3/loop_finder_brstm.py \"{$path}\" start");
+            $BTN->end_loop = shell_exec("python python3/loop_finder_brstm.py \"{$path}\" end");
+        }
+
         $sample_rate = extraController::sampleCheck(public_path() . "/storage/tmpBTN/{$BTN->id}/{$filename}.wav");
 
         if($request->input("sampleHZinput") == "auto"){

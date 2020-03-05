@@ -13,12 +13,12 @@
     <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
 
     <style>
-        select>option:disabled{
+        select>option:disabled {
             color: #fc1735;
         }
 
-        .label_sort{
-            padding-right:2%;
+        .label_sort {
+            padding-right: 2%;
         }
     </style>
 </head>
@@ -54,10 +54,12 @@
                     <form method="post" action="{{ action('MainController@FindType') }}" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <label for="music">Music File:</label>
-                        <input type="file" class="form-control" id="music" name="music" accept="audio/*, .brstm, .lopus, .idsp" onchange="AlertFilesize();">
+                        <input type="file" class="form-control" id="music" name="music"
+                            accept="audio/*, .brstm, .lopus, .idsp" onchange="AlertFilesize();">
                         <small class="form-text text-muted">File Size Limit: 100mb</small>
                         <small class="form-text" style="color:red; display:none;" id="fileerror">File too big!</small>
-                        <small class="form-text" style="color:coral;">Supported Formats: Everything SoX natively supports + mp3, brstm</small>
+                        <small class="form-text" style="color:coral;">Supported Formats: Everything SoX natively
+                            supports + mp3, brstm</small>
                         <div id="type_div">
                             <br>
                             <label for="type">Select a file type:</label>
@@ -71,10 +73,14 @@
                         <br>
                         <div style="display:inline;">
                             <label for="stages" style="display:inline;">Select a song:</label>
-                            <a href="javascript:void(0)" style="display:inline; float:right;" id="reset" onclick="resetFilters();">Reset</a>
-                            <a href="javascript:void(0)" style="display:inline; float:right; padding-right:2%;" id="more" onclick="displayFilters();">More Options</a>
-                            <a href="javascript:void(0)" style="display:inline; float:right; padding-right:2%;" id="h2l" onclick="orderBySizeH2L()">Order by Size (H to L)</a>
-                            <a href="javascript:void(0)" style="display:none; float:right; padding-right:2%;;" id="l2h" onclick="orderBySizeL2H()">Order by Size (L to H)</a>
+                            <a href="javascript:void(0)" style="display:inline; float:right;" id="reset"
+                                onclick="resetFilters();">Reset</a>
+                            <a href="javascript:void(0)" style="display:inline; float:right; padding-right:2%;"
+                                id="more" onclick="displayFilters();">More Options</a>
+                            <a href="javascript:void(0)" style="display:inline; float:right; padding-right:2%;" id="h2l"
+                                onclick="orderBySizeH2L()">Order by Size (H to L)</a>
+                            <a href="javascript:void(0)" style="display:none; float:right; padding-right:2%;;" id="l2h"
+                                onclick="orderBySizeL2H()">Order by Size (L to H)</a>
                         </div>
                         <br style="margin-bottom:6px;">
                         <div id="filters" style="display:none;">
@@ -92,8 +98,10 @@
 
                             <br>
                             <div id="loopsection">
-                                <small class="form-text" style="color:orangered;">Leave the fields empty to loop full song.</small>
-                                <small class="form-text" style="color:red;">Use either samples, MM:SS.ms, or SS.ms</small>
+                                <small class="form-text" style="color:orangered;">Leave the fields empty to loop full
+                                    song.</small>
+                                <small class="form-text" style="color:red;">Use either samples, MM:SS.ms, or
+                                    SS.ms</small>
                                 <label>Samples Rate:</label>
                                 <select class="custom-select" id="sampleHZ" onchange="UpdateHZ(this)">
                                     <option value="auto">Auto Detect</option>
@@ -108,11 +116,25 @@
                                     <input type="text" class="form-control" id="sampleHZinput" name="sampleHZinput">
                                     <br>
                                 </div>
-                                <label for="start_loop">Loop Sample Start:</label>
-                                <input type="text" class="form-control" id="start_loop" name="start_loop">
-                                <br>
-                                <label for="end_loop">Loop Sample End:</label>
-                                <input type="text" class="form-control" name="end_loop" id="end_loop">
+
+                                <div id="loop_samples_select_container" style="display: none;">
+                                    <label>Loop Samples:</label>
+                                    <select class="custom-select" id="loop_samples_select"
+                                        onchange="UpdateLoopSelect(this)" >
+                                        <option value="auto">Auto Detect (Reads from file)</option>
+                                        <option value="custom">Custom (Input custom loop samples)</option>
+                                    </select>
+                                    <input type="text" name="loop_type" id="loop_type" style="display: none;">
+                                    <br>
+                                    <br>
+                                </div>
+                                <div id="loop_samples">
+                                    <label for="start_loop">Loop Sample Start:</label>
+                                    <input type="text" class="form-control" id="start_loop" name="start_loop">
+                                    <br>
+                                    <label for="end_loop">Loop Sample End:</label>
+                                    <input type="text" class="form-control" name="end_loop" id="end_loop">
+                                </div>
                             </div>
                             <br>
                         </div>
@@ -146,66 +168,85 @@
 
     </div>
     <script>
-        function AlertFilesize(){
-            if(document.getElementById("music").files.length != 0){
-                if(window.ActiveXObject){
+        function UpdateLoopSelect(e){
+            if(e.value == "auto" && document.getElementById("loop_samples_select_container").style.display != "none"){
+                document.getElementById("loop_samples").style.display = "none";
+                document.getElementById("loop_type").value = "auto";
+            }else{
+                document.getElementById("loop_samples").style.display = "block";
+                document.getElementById("loop_type").value = "custom";
+            }
+        }
+
+        function AlertFilesize() {
+            if (document.getElementById("music").files.length != 0) {
+                if (window.ActiveXObject) {
                     var fso = new ActiveXObject("Scripting.FileSystemObject");
                     var filepath = document.getElementById('music').value;
                     var thefile = fso.getFile(filepath);
                     var sizeinbytes = thefile.size;
-                }else{
+                } else {
                     var sizeinbytes = document.getElementById('music').files[0].size;
                 }
 
-                if(sizeinbytes > 100000000){
+                if (sizeinbytes > 100000000) {
                     document.getElementById("fileerror").style.display = "block";
-                }else{
+                } else {
                     document.getElementById("fileerror").style.display = "none";
                 }
 
                 file_name = document.getElementById("music").files[0].name;
 
-                if(file_name.includes(".brstm")){
+                if (file_name.includes(".brstm")) {
 
                     document.getElementById("type_div").style.display = "none";
 
                     document.getElementById("loop_container").style.display = "block";
 
-                }else if(file_name.includes(".opus")){
+                    document.getElementById("loop_samples_select_container").style.display = "block";
+
+                } else if (file_name.includes(".opus")) {
 
                     document.getElementById("type").options[0].removeAttribute("disabled");
                     document.getElementById("type").options[1].removeAttribute("disabled");
-                    document.getElementById("type").options[2].setAttribute("disabled","");
+                    document.getElementById("type").options[2].setAttribute("disabled", "");
                     document.getElementById("type").selectedIndex = 0;
 
                     document.getElementById("loop_container").style.display = "none";
 
-                }else if(file_name.includes(".lopus")){
+                } else if (file_name.includes(".lopus")) {
                     document.getElementById("type").options[0].removeAttribute("disabled");
                     document.getElementById("type").options[1].setAttribute("disabled", "");
                     document.getElementById("type").options[2].removeAttribute("disabled");
                     document.getElementById("type").selectedIndex = 2;
 
                     document.getElementById("loop_container").style.display = "none";
-                }else if(file_name.includes(".idsp")){
+                } else if (file_name.includes(".idsp")) {
                     document.getElementById("type").options[0].setAttribute("disabled", "");
                     document.getElementById("type").options[1].removeAttribute("disabled");
                     document.getElementById("type").options[2].setAttribute("disabled", "");
                     document.getElementById("type").selectedIndex = 1;
 
                     document.getElementById("loop_container").style.display = "block";
+                    document.getElementById("loop_samples_select_container").style.display = "none";
                 }
-                else{
+                else {
                     document.getElementById("type_div").style.display = "block";
                     document.getElementById("type").options[0].removeAttribute("disabled");
                     document.getElementById("type").options[1].removeAttribute("disabled");
                     document.getElementById("type").options[2].removeAttribute("disabled");
                     document.getElementById("loop_container").style.display = "block";
+                    document.getElementById("loop_samples").style.display = "block";
+                    document.getElementById("loop_samples_select_container").style.display = "none";
 
                 }
-            }else{
+
+                UpdateLoopSelect(document.getElementById("loop_samples_select"));
+            } else {
                 document.getElementById("fileerror").style.display = "none";
                 document.getElementById("type_div").style.display = "block";
+                document.getElementById("loop_samples").style.display = "block";
+                UpdateLoopSelect(document.getElementById("loop_samples_select"));
             }
 
             UpdateType(document.getElementById("type"));
