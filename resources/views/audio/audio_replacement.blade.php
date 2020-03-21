@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Smash Ultimate Audio</title>
-    <link rel="stylesheet" href="{{URL::asset('css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="./css/custom.css">
-    <script src="{{URL::asset('/js/jquery-3.4.1.min.js')}}"></script>
-    <script src="{{URL::asset('/js/popper.min.js')}}"></script>
-    <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
+    <link rel="stylesheet" href="{{URL::asset('../css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="../css/custom.css">
+    <script src="{{URL::asset('..//js/jquery-3.4.1.min.js')}}"></script>
+    <script src="{{URL::asset('..//js/popper.min.js')}}"></script>
+    <script src="{{URL::asset('../js/bootstrap.min.js')}}"></script>
     <style>
         .margin-custom{
             margin-top:10px;
