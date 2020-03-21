@@ -67,7 +67,7 @@
 <ol>
     <li>Go to <a href="http://www.smashcustommusic.net/">SmashCustomMusic</a> and look for the game you want the audio from.</li>
     <li>Once you find the game, click on it and look for the song you want.</li>
-    <li>Click on the song name, then click "Download BRSTM" (blue box in image below). Make sure you note down everything in the highlighted section.<br><img src="img/mini1.png" alt="Download BRSTM" style="height:512px; width:auto;"></li>
+    <li>Click on the song name, then click "Download BRSTM" (blue box in image below). Make sure you note down everything in the highlighted section.<br><img src="../img/mini1.png" alt="Download BRSTM" style="height:512px; width:auto;"></li>
     <li>Go to <a href="{{Request::root()}}/audio/#music">"Music file"</a> and select the brstm file you downloaded</li>
     <li>Enable the <a href="{{Request::root()}}/audio/#loop">"Loop Samples"</a> checkbox</li>
     <li>Set the Sampling Rate to the proper one. (Set it to "Auto" if you're not sure.)</li>
