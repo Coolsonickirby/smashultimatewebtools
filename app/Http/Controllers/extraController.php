@@ -75,6 +75,6 @@ class extraController extends Controller
     }
 
     public static function compareFileSize(){
-        return view('compare');
+        return view('audio/compare');
     }
 }
