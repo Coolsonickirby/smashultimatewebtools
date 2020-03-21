@@ -17,19 +17,19 @@ class MainController extends Controller
 
 
     public function viewPage(){
-        return view('view');
+        return view('audio/view');
     }
 
     public function viewConvert(){
-        return view('song_compatible');
+        return view('audio/song_compatible');
     }
 
     public function viewBrstm(){
-        return view('brstm_to_wav');
+        return view('audio/brstm_to_wav');
     }
 
     public function viewSoundBank(){
-        return view('audio_replacement');
+        return view('audio/audio_replacement');
     }
 
     public function FindType(Request $request)

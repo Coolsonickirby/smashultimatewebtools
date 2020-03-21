@@ -30,7 +30,7 @@ class nus3audioController extends Controller
 
         $nus3audio->save();
 
-        $path_tmp = $file->storeAs('public/nus3audioOG/' . $nus3audio->id, extraController::keep_english($file->getClientOriginalName()));
+        $path_tmp = $file->storeAs('public/audio/nus3audioOG/' . $nus3audio->id, extraController::keep_english($file->getClientOriginalName()));
 
         $path = public_path() . '/' . str_replace("public", "storage", $path_tmp);
 
@@ -83,15 +83,15 @@ class nus3audioController extends Controller
 
         if ($request->input("loop") == "on") {
             if ($request->input("advanced") == "on") {
-                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/lopustmp/{$nus3audio->id}/output.lopus -l {$nus3audio->start_loop}-{$nus3audio->end_loop} --bitrate \"{$request->input("hz")}\" --CBR --opusheader namco ");
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/audio/lopustmp/{$nus3audio->id}/output.lopus -l {$nus3audio->start_loop}-{$nus3audio->end_loop} --bitrate \"{$request->input("hz")}\" --CBR --opusheader namco ");
             } else {
-                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/lopustmp/{$nus3audio->id}/output.lopus -l {$nus3audio->start_loop}-{$nus3audio->end_loop} --bitrate \"48000\" --CBR --opusheader namco");
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/audio/lopustmp/{$nus3audio->id}/output.lopus -l {$nus3audio->start_loop}-{$nus3audio->end_loop} --bitrate \"48000\" --CBR --opusheader namco");
             }
         } else {
             if ($request->input("advanced") == "on") {
-                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/lopustmp/{$nus3audio->id}/output.lopus --bitrate \"{$request->input("hz")}\" --CBR --opusheader namco ");
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/audio/lopustmp/{$nus3audio->id}/output.lopus --bitrate \"{$request->input("hz")}\" --CBR --opusheader namco ");
             } else {
-                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/lopustmp/{$nus3audio->id}/output.lopus --bitrate \"48000\" --CBR --opusheader namco ");
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/audio/lopustmp/{$nus3audio->id}/output.lopus --bitrate \"48000\" --CBR --opusheader namco ");
             }
         }
 
@@ -115,11 +115,11 @@ class nus3audioController extends Controller
 
         $fileOutput = extraController::keep_english($request->input("filenameOutput"));
 
-        $tmp_path = shell_exec("echo %CD%/storage/nus3audio/{$nus3audio->id}/");
+        $tmp_path = shell_exec("echo %CD%/storage/audio/nus3audio/{$nus3audio->id}/");
 
         File::makeDirectory($tmp_path, 0777, true, true);
 
-        $log2 = shell_exec("%CD%/convert/nus3audio.exe %CD%/convert/base.nus3audio -r 0 %CD%/storage/lopustmp/{$nus3audio->id}/output.lopus -w %CD%/storage/nus3audio/{$nus3audio->id}/{$fileOutput}.nus3audio");
+        $log2 = shell_exec("%CD%/convert/nus3audio.exe %CD%/convert/base.nus3audio -r 0 %CD%/storage/audio/lopustmp/{$nus3audio->id}/output.lopus -w %CD%/storage/audio/nus3audio/{$nus3audio->id}/{$fileOutput}.nus3audio");
 
         $nus3audio->log = $log;
 
@@ -127,7 +127,7 @@ class nus3audioController extends Controller
 
         $nus3audio->save();
 
-        $status = '<p class="card-text">nus3audio Conversion Complete! You can download it from <a class="return_link" href="/storage/nus3audio/'. $nus3audio->id . '/' . $fileOutput . '.nus3audio">here!</a></p> <br> <p class="card-text">Use the <a class="return_link" href="/compare">compare feature</a> to check if your song will fit!</p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/nus3audio/' . $nus3audio->id . '">click here.</a></p>';
+        $status = '<p class="card-text">nus3audio Conversion Complete! You can download it from <a class="return_link" href="/storage/audio/nus3audio/'. $nus3audio->id . '/' . $fileOutput . '.nus3audio">here!</a></p> <br> <p class="card-text">Use the <a class="return_link" href="/compare">compare feature</a> to check if your song will fit!</p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/nus3audio/' . $nus3audio->id . '">click here.</a></p>';
 
         return redirect()->back()->with('success', $status);
     }
@@ -149,7 +149,7 @@ class nus3audioController extends Controller
 
         $nus3audio->save();
 
-        $path = $file->storeAs('public/nus3audioOG/' . $nus3audio->id, extraController::keep_english($file->getClientOriginalName()));
+        $path = $file->storeAs('public/audio/nus3audioOG/' . $nus3audio->id, extraController::keep_english($file->getClientOriginalName()));
 
         $path = public_path() . '/' . str_replace("public", "storage", $path);
 
@@ -157,15 +157,15 @@ class nus3audioController extends Controller
 
         $fileOutput = extraController::keep_english($request->input("filenameOutput"));
 
-        $tmp_path = shell_exec("echo %CD%/storage/nus3audio/{$nus3audio->id}/");
+        $tmp_path = shell_exec("echo %CD%/storage/audio/nus3audio/{$nus3audio->id}/");
 
         File::makeDirectory($tmp_path, 0777, true, true);
 
-        $nus3audio->log = shell_exec("%CD%/convert/nus3audio.exe \"%CD%/convert/base.nus3audio\" -r 0 \"{$path}\" -w \"%CD%/storage/nus3audio/{$nus3audio->id}/{$fileOutput}.nus3audio\"");
+        $nus3audio->log = shell_exec("%CD%/convert/nus3audio.exe \"%CD%/convert/base.nus3audio\" -r 0 \"{$path}\" -w \"%CD%/storage/audio/nus3audio/{$nus3audio->id}/{$fileOutput}.nus3audio\"");
 
         $nus3audio->save();
 
-        $status = '<p class="card-text">lopus -> nus3audio Conversion Complete! You can download it from <a class="return_link" href="/storage/nus3audio/'. $nus3audio->id . '/' . $fileOutput . '.nus3audio">here!</a></p> <br> <p class="card-text">Use the <a href="/compare">compare feature</a> to check if your song will fit!</p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/nus3audio/' . $nus3audio->id . '">click here.</a></p>';
+        $status = '<p class="card-text">lopus -> nus3audio Conversion Complete! You can download it from <a class="return_link" href="/storage/audio/nus3audio/'. $nus3audio->id . '/' . $fileOutput . '.nus3audio">here!</a></p> <br> <p class="card-text">Use the <a href="/compare">compare feature</a> to check if your song will fit!</p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/nus3audio/' . $nus3audio->id . '">click here.</a></p>';
 
         return redirect()->back()->with('success', $status);
     }

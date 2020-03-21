@@ -22,23 +22,23 @@ class extraController extends Controller
 
     public static function resample48($id, $name, $path){
 
-        $tmp_path_1 = shell_exec("echo %CD%/storage/{$name}/{$id}/");
+        $tmp_path_1 = shell_exec("echo %CD%/storage/audio/{$name}/{$id}/");
 
         File::makeDirectory($tmp_path_1, 0777, true, true);
 
-        $log = shell_exec("%CD%/convert/sox/sox.exe \"{$path}\" -r 48000 \"%CD%/storage/{$name}/{$id}/output.wav\"");
+        $log = shell_exec("%CD%/convert/sox/sox.exe \"{$path}\" -r 48000 \"%CD%/storage/audio/{$name}/{$id}/output.wav\"");
 
-        return public_path() . "/storage/{$name}/{$id}/output.wav";
+        return public_path() . "/storage/audio/{$name}/{$id}/output.wav";
     }
 
     public static function convert_to_wav($id, $name, $path){
-        $tmp_path_1 = shell_exec("echo %CD%/storage/{$name}/{$id}/");
+        $tmp_path_1 = shell_exec("echo %CD%/storage/audio/{$name}/{$id}/");
 
         File::makeDirectory($tmp_path_1, 0777, true, true);
 
-        $log = shell_exec("%CD%/convert/sox/sox.exe \"{$path}\" \"%CD%/storage/{$name}/{$id}/output.wav\"");
+        $log = shell_exec("%CD%/convert/sox/sox.exe \"{$path}\" \"%CD%/storage/audio/{$name}/{$id}/output.wav\"");
 
-        return public_path() . "/storage/{$name}/{$id}/output.wav";
+        return public_path() . "/storage/audio/{$name}/{$id}/output.wav";
     }
 
 

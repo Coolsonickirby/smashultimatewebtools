@@ -11,45 +11,76 @@
 |
 */
 
-//Views
-Route::get('/', 'MainController@ViewPage');
+//Main Section
+Route::get('/', function(){
+    return redirect('/audio');
+});
 
-Route::get('/wav_hz_change', 'MainController@viewConvert');
+//Audio Section
+Route::prefix('audio')->group(function () {
+    //Views
+    Route::get('/', 'MainController@ViewPage');
 
-Route::get('/brstm_to_wav', 'MainController@viewBrstm');
+    Route::get('/wav_hz_change', 'MainController@viewConvert');
 
-Route::get('/nus3audio_idsp', 'MainController@viewSoundBank');
+    Route::get('/brstm_to_wav', 'MainController@viewBrstm');
 
-//Details
-Route::get('/details/nus3audio/{id}', 'detailsController@NUS3AUDIODetails');
+    Route::get('/nus3audio_idsp', 'MainController@viewSoundBank');
 
-Route::get('/details/lopus/{id}', 'detailsController@LopusDetails');
+    //Details
+    Route::get('/details/nus3audio/{id}', 'detailsController@NUS3AUDIODetails');
 
-Route::get('/details/idsp/{id}', 'detailsController@IDSPDetails');
+    Route::get('/details/lopus/{id}', 'detailsController@LopusDetails');
 
-Route::get('/details/wav_hz_change/{id}', 'detailsController@CompatibleDetails');
+    Route::get('/details/idsp/{id}', 'detailsController@IDSPDetails');
 
-Route::get('/details/brstm/{id}', 'detailsController@BrstmDetails');
+    Route::get('/details/wav_hz_change/{id}', 'detailsController@CompatibleDetails');
 
-Route::get('/details/brstm_to_nus3audio/{id}', 'detailsController@BrstmToNus3audioDetails');
+    Route::get('/details/brstm/{id}', 'detailsController@BrstmDetails');
 
-Route::get('/details/nus3audio_replace/{id}', 'detailsController@replacement_nus3audio_details');
+    Route::get('/details/brstm_to_nus3audio/{id}', 'detailsController@BrstmToNus3audioDetails');
 
-Route::get('/compare', 'extraController@compareFileSize');
+    Route::get('/details/nus3audio_replace/{id}', 'detailsController@replacement_nus3audio_details');
 
-//Post Requests
-Route::post('/create', [
-    'uses' => 'MainController@FindType'
-]);
+    Route::get('/compare', 'extraController@compareFileSize');
 
-Route::post('/wav_hz_change/change', [
-    'uses' => 'miscController@ConvertMusic'
-]);
+    //Post Requests
+    Route::post('/create', [
+        'uses' => 'MainController@FindType'
+    ]);
 
-Route::post('/brstm_to_wav/change', [
-    'uses' => 'miscController@ConvertBRSTM'
-]);
+    Route::post('/wav_hz_change/change', [
+        'uses' => 'miscController@ConvertMusic'
+    ]);
 
-Route::post('/nus3audio_idsp/replace', [
-    'uses' => 'miscController@replacement_nus3audio'
-]);
+    Route::post('/brstm_to_wav/change', [
+        'uses' => 'miscController@ConvertBRSTM'
+    ]);
+
+    Route::post('/nus3audio_idsp/replace', [
+        'uses' => 'miscController@replacement_nus3audio'
+    ]);
+});
+
+//MSBT Section
+Route::prefix('msbt')->group(function () {
+    Route::get('/{id?}', function ($id = null) {
+        return view('msbt/msbt_view');
+    });
+
+
+    Route::post('/openMSBT', [
+        'uses' => 'MSBTController@StoreMSBT'
+    ]);
+
+    Route::post('/saveMSBT', [
+        'uses' => 'MSBTController@JSONtoMSBT'
+    ]);
+});
+
+
+
+//Cheap api that could probably break fast
+Route::prefix('api')->group(function () {
+    Route::get("/jsonMSBT/{id}", "MSBTController@GetJSON");
+});

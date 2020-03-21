@@ -27,7 +27,7 @@ class lopusController extends Controller
 
         $lopus->save();
 
-        $path = $file->storeAs('public/lopusOG/' . $lopus->id, extraController::keep_english($file->getClientOriginalName()));
+        $path = $file->storeAs('public/audio/lopusOG/' . $lopus->id, extraController::keep_english($file->getClientOriginalName()));
 
         $path = public_path() . '/' . str_replace("public", "storage", $path);
 
@@ -82,15 +82,15 @@ class lopusController extends Controller
 
         if ($request->input("loop") == "on") {
             if ($request->input("advanced") == "on") {
-                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/lopus/{$lopus->id}/{$fileOutput}.lopus -l {$lopus->start_loop}-{$lopus->end_loop} --bitrate \"{$request->input("hz")}\" --CBR --opusheader namco ");
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/audio/lopus/{$lopus->id}/{$fileOutput}.lopus -l {$lopus->start_loop}-{$lopus->end_loop} --bitrate \"{$request->input("hz")}\" --CBR --opusheader namco ");
             } else {
-                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/lopus/{$lopus->id}/{$fileOutput}.lopus -l {$lopus->start_loop}-{$lopus->end_loop} --bitrate \"48000\" --CBR --opusheader namco");
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/audio/lopus/{$lopus->id}/{$fileOutput}.lopus -l {$lopus->start_loop}-{$lopus->end_loop} --bitrate \"48000\" --CBR --opusheader namco");
             }
         } else {
             if ($request->input("advanced") == "on") {
-                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/lopus/{$lopus->id}/{$fileOutput}.lopus --bitrate \"{$request->input("hz")}\" --CBR --opusheader namco ");
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/audio/lopus/{$lopus->id}/{$fileOutput}.lopus --bitrate \"{$request->input("hz")}\" --CBR --opusheader namco ");
             } else {
-                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/lopus/{$lopus->id}/{$fileOutput}.lopus --bitrate \"48000\" --CBR --opusheader namco ");
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/audio/lopus/{$lopus->id}/{$fileOutput}.lopus --bitrate \"48000\" --CBR --opusheader namco ");
             }
         }
 
@@ -116,7 +116,7 @@ class lopusController extends Controller
 
         $lopus->save();
 
-        $status = '<p class="card-text">Lopus Conversion Complete! You can download it from <a class="return_link" href="/storage/lopus/' . $lopus->id . '/' . $fileOutput . '.lopus">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/lopus/'. $lopus->id . '">click here.</a></p>';
+        $status = '<p class="card-text">Lopus Conversion Complete! You can download it from <a class="return_link" href="/storage/audio/lopus/' . $lopus->id . '/' . $fileOutput . '.lopus">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/lopus/'. $lopus->id . '">click here.</a></p>';
 
         return redirect()->back()->with('success', $status);
     }
@@ -138,15 +138,15 @@ class lopusController extends Controller
 
         $lopus->save();
 
-        $path = $file->storeAs('public/lopusOG/' . $lopus->id, extraController::keep_english($file->getClientOriginalName()));
+        $path = $file->storeAs('public/audio/lopusOG/' . $lopus->id, extraController::keep_english($file->getClientOriginalName()));
 
         $path = public_path() . '/' . str_replace("public", "storage", $path);
 
         $file_ext = pathinfo($path, PATHINFO_EXTENSION);
 
-        shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/lopustmp/{$lopus->id}/output.wav\" ");
+        shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/audio/lopustmp/{$lopus->id}/output.wav\" ");
 
-        $path = public_path() . "/storage/lopustmp/{$lopus->id}/output.wav";
+        $path = public_path() . "/storage/audio/lopustmp/{$lopus->id}/output.wav";
 
         $sample_rate = extraController::sampleCheck($path);
 
@@ -191,15 +191,15 @@ class lopusController extends Controller
 
         if ($request->input("loop") == "on") {
             if ($request->input("advanced") == "on") {
-                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/lopus/{$lopus->id}/{$fileOutput}.lopus -l {$lopus->start_loop}-{$lopus->end_loop} --bitrate \"{$request->input("hz")}\" --CBR --opusheader namco ");
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/audio/lopus/{$lopus->id}/{$fileOutput}.lopus -l {$lopus->start_loop}-{$lopus->end_loop} --bitrate \"{$request->input("hz")}\" --CBR --opusheader namco ");
             } else {
-                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/lopus/{$lopus->id}/{$fileOutput}.lopus -l {$lopus->start_loop}-{$lopus->end_loop} --bitrate \"48000\" --CBR --opusheader namco");
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/audio/lopus/{$lopus->id}/{$fileOutput}.lopus -l {$lopus->start_loop}-{$lopus->end_loop} --bitrate \"48000\" --CBR --opusheader namco");
             }
         } else {
             if ($request->input("advanced") == "on") {
-                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/lopus/{$lopus->id}/{$fileOutput}.lopus --bitrate \"{$request->input("hz")}\" --CBR --opusheader namco ");
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/audio/lopus/{$lopus->id}/{$fileOutput}.lopus --bitrate \"{$request->input("hz")}\" --CBR --opusheader namco ");
             } else {
-                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/lopus/{$lopus->id}/{$fileOutput}.lopus --bitrate \"48000\" --CBR --opusheader namco ");
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/audio/lopus/{$lopus->id}/{$fileOutput}.lopus --bitrate \"48000\" --CBR --opusheader namco ");
             }
         }
 
@@ -225,7 +225,7 @@ class lopusController extends Controller
 
         $lopus->save();
 
-        $status = '<p class="card-text">IDSP -> Lopus Conversion Complete! You can download it from <a class="return_link" href="/storage/lopus/' . $lopus->id . '/' . $fileOutput . '.lopus">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/lopus/'. $lopus->id . '">click here.</a></p>';
+        $status = '<p class="card-text">IDSP -> Lopus Conversion Complete! You can download it from <a class="return_link" href="/storage/audio/lopus/' . $lopus->id . '/' . $fileOutput . '.lopus">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/lopus/'. $lopus->id . '">click here.</a></p>';
 
         return redirect()->back()->with('success', $status);
     }

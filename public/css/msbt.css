@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    /* overflow: hidden; */
+}
+
+.main {
+    display: flex;
+    margin-top: .3rem;
+}
+
+.main div {
+    flex: 1;
+}
+
+.find {
+    display: none;
+}
+
+.find div {
+    flex: 1;
+}
+
+#searchInput {
+    width: 27rem;
+    height: 2.5rem;
+    font-size: 2.2rem;
+    margin-top: .45rem
+}
+
+#searchBtn {
+    margin-top: 1.5rem;
+    width: 5rem;
+    height: 2rem;
+    font-size: 1.2rem;
+}
+
+.credits {
+    position: absolute;
+    bottom: 0px;
+}
+
+.listbox_holder {
+    max-height: 95vh;
+    width: 20rem;
+    font-size: 1.5rem;
+}
+
+.mid {
+    margin-left: 1rem;
+}
+
+#textarea {
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 96rem;
+    height: 20rem;
+    resize: none;
+}
+
+.header {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: RGBA(0, 0, 255, 0.75);
+}

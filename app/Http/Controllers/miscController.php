@@ -26,20 +26,20 @@ class miscController extends Controller
 
         $audio->save();
 
-        $path_tmp = $file->storeAs('public/normal/' . $audio->id, extraController::keep_english($file->getClientOriginalName()));
+        $path_tmp = $file->storeAs('public/audio/normal/' . $audio->id, extraController::keep_english($file->getClientOriginalName()));
 
         $path = public_path() . '/' . str_replace("public", "storage", $path_tmp);
 
         $filename = pathinfo($path_tmp, PATHINFO_FILENAME);
 
-        $tmp_path_1 = shell_exec("echo %CD%/storage/fixedwav/{$audio->id}/");
+        $tmp_path_1 = shell_exec("echo %CD%/storage/audio/fixedwav/{$audio->id}/");
 
         File::makeDirectory($tmp_path_1, 0777, true, true);
 
-        $audio->log = shell_exec("%CD%/convert/sox/sox.exe \"{$path}\" -r 48000 \"%CD%/storage/fixedwav/{$audio->id}/{$filename}.wav\"");
+        $audio->log = shell_exec("%CD%/convert/sox/sox.exe \"{$path}\" -r 48000 \"%CD%/storage/audio/fixedwav/{$audio->id}/{$filename}.wav\"");
 
         $audio->save();
-        $status = '<p class="card-text">Music Conversion Complete! You can download it from <a class="return_link" href="/storage/fixedwav/' . $audio->id . '/' . $filename .'.wav">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/wav_hz_change/' . $audio->id . '">click here.</a></p>';
+        $status = '<p class="card-text">Music Conversion Complete! You can download it from <a class="return_link" href="/storage/audio/fixedwav/' . $audio->id . '/' . $filename .'.wav">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/wav_hz_change/' . $audio->id . '">click here.</a></p>';
 
         return redirect()->back()->with('success', $status);
     }
@@ -59,15 +59,15 @@ class miscController extends Controller
 
             $brstm->save();
 
-            $path_tmp = $file->storeAs('public/normalbrstm/' . $brstm->id, extraController::keep_english($file->getClientOriginalName()));
+            $path_tmp = $file->storeAs('public/audio/normalbrstm/' . $brstm->id, extraController::keep_english($file->getClientOriginalName()));
 
             $path = public_path() . '/' . str_replace("public", "storage", $path_tmp);
 
             $filename = pathinfo($path_tmp, PATHINFO_FILENAME);
 
-            $tmp_path_1 = shell_exec("echo %CD%/storage/fixedbrstm/{$brstm->id}/");
+            $tmp_path_1 = shell_exec("echo %CD%/storage/audio/fixedbrstm/{$brstm->id}/");
 
-            $tmp_path_2 = shell_exec("echo %CD%/storage/tmpbrstm/{$brstm->id}/");
+            $tmp_path_2 = shell_exec("echo %CD%/storage/audio/tmpbrstm/{$brstm->id}/");
 
             $tmp_path_2 = str_replace(' ', '', $tmp_path_2);
 
@@ -75,13 +75,13 @@ class miscController extends Controller
 
             File::makeDirectory($tmp_path_2, 0777, true, true);
 
-            $brstm->log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/tmpbrstm/{$brstm->id}/{$filename}.wav\"");
+            $brstm->log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/audio/tmpbrstm/{$brstm->id}/{$filename}.wav\"");
 
-            $brstm->log2 = shell_exec("%CD%/convert/sox/sox.exe \"%CD%/storage/tmpbrstm/{$brstm->id}/{$filename}.wav\" -r 48000 \"%CD%/storage/fixedbrstm/{$brstm->id}/{$filename}.wav\"");
+            $brstm->log2 = shell_exec("%CD%/convert/sox/sox.exe \"%CD%/storage/audio/tmpbrstm/{$brstm->id}/{$filename}.wav\" -r 48000 \"%CD%/storage/audio/fixedbrstm/{$brstm->id}/{$filename}.wav\"");
 
             $brstm->save();
 
-            $status = '<p class="card-text">Music Conversion Complete! You can download it from <a class="return_link" href="/storage/fixedbrstm/' . $brstm->id . '/' . $filename . '.wav">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/brstm/' . $brstm->id . '">click here.</a></p>';
+            $status = '<p class="card-text">Music Conversion Complete! You can download it from <a class="return_link" href="/storage/audio/fixedbrstm/' . $brstm->id . '/' . $filename . '.wav">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/brstm/' . $brstm->id . '">click here.</a></p>';
 
             return redirect()->back()->with('success', $status);
         }else{
@@ -101,29 +101,29 @@ class miscController extends Controller
 
         $BTN->save();
 
-        $path_tmp = $file->storeAs('public/normalBTN/' . $BTN->id, extraController::keep_english($file->getClientOriginalName()));
+        $path_tmp = $file->storeAs('public/audio/normalBTN/' . $BTN->id, extraController::keep_english($file->getClientOriginalName()));
 
         $path = public_path() . '/' . str_replace("public", "storage", $path_tmp);
 
         $filename = pathinfo($path_tmp, PATHINFO_FILENAME);
 
-        $tmp_path_1 = public_path() . "/storage/fixedBTN/{$BTN->id}/";
+        $tmp_path_1 = public_path() . "/storage/audio/fixedBTN/{$BTN->id}/";
 
-        $tmp_path_2 = public_path() . "/storage/tmpBTN/{$BTN->id}/";
+        $tmp_path_2 = public_path() . "/storage/audio/tmpBTN/{$BTN->id}/";
 
         File::makeDirectory($tmp_path_1, 0777, true, true);
 
         File::makeDirectory($tmp_path_2, 0777, true, true);
 
-        $BTN->log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/tmpBTN/{$BTN->id}/{$filename}.wav\"");
+        $BTN->log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/audio/tmpBTN/{$BTN->id}/{$filename}.wav\"");
 
-        $BTN->log2 = shell_exec("%CD%/convert/sox/sox.exe \"%CD%/storage/tmpBTN/{$BTN->id}/{$filename}.wav\" -r 48000 \"%CD%/storage/fixedBTN/{$BTN->id}/{$filename}.wav\"");
+        $BTN->log2 = shell_exec("%CD%/convert/sox/sox.exe \"%CD%/storage/audio/tmpBTN/{$BTN->id}/{$filename}.wav\" -r 48000 \"%CD%/storage/audio/fixedBTN/{$BTN->id}/{$filename}.wav\"");
 
         $BTN->start_loop = $looparray[0];
 
         $BTN->end_loop = $looparray[1];
 
-        $sample_rate = extraController::sampleCheck(public_path() . "/storage/tmpBTN/{$BTN->id}/{$filename}.wav");
+        $sample_rate = extraController::sampleCheck(public_path() . "/storage/audio/tmpBTN/{$BTN->id}/{$filename}.wav");
 
         if($request->input("sampleHZinput") == "auto"){
             if($request->input("loop") == "on"){
@@ -166,32 +166,32 @@ class miscController extends Controller
 
 
         if($BTN->end_loop == 0){
-            $BTN->end_loop = extraController::getSamples(public_path() . "/storage/fixedBTN/{$BTN->id}/{$filename}.wav");
+            $BTN->end_loop = extraController::getSamples(public_path() . "/storage/audio/fixedBTN/{$BTN->id}/{$filename}.wav");
         }
 
         $BTN->save();
 
         if ($request->input("loop") == "on") {
             if ($request->input("advanced") == "on") {
-                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$tmp_path_1}/{$filename}.wav\" -o \"%CD%/storage/lopusBTN/{$BTN->id}/output.lopus\" -l {$BTN->start_loop}-{$BTN->end_loop} --bitrate \"{$request->input("hz")}\" --CBR --opusheader namco ");
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$tmp_path_1}/{$filename}.wav\" -o \"%CD%/storage/audio/lopusBTN/{$BTN->id}/output.lopus\" -l {$BTN->start_loop}-{$BTN->end_loop} --bitrate \"{$request->input("hz")}\" --CBR --opusheader namco ");
             } else {
-                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$tmp_path_1}/{$filename}.wav\" -o \"%CD%/storage/lopusBTN/{$BTN->id}/output.lopus\" -l {$BTN->start_loop}-{$BTN->end_loop} --bitrate \"48000\" --CBR --opusheader namco ");
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$tmp_path_1}/{$filename}.wav\" -o \"%CD%/storage/audio/lopusBTN/{$BTN->id}/output.lopus\" -l {$BTN->start_loop}-{$BTN->end_loop} --bitrate \"48000\" --CBR --opusheader namco ");
             }
         } else {
             if ($request->input("advanced") == "on") {
-                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$tmp_path_1}/{$filename}.wav\" -o \"%CD%/storage/lopusBTN/{$BTN->id}/output.lopus\" --bitrate \"{$request->input("hz")}\" --CBR --opusheader namco ");
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$tmp_path_1}/{$filename}.wav\" -o \"%CD%/storage/audio/lopusBTN/{$BTN->id}/output.lopus\" --bitrate \"{$request->input("hz")}\" --CBR --opusheader namco ");
             } else {
-                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$tmp_path_1}/{$filename}.wav\" -o \"%CD%/storage/lopusBTN/{$BTN->id}/output.lopus\" --bitrate \"48000\" --CBR --opusheader namco ");
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$tmp_path_1}/{$filename}.wav\" -o \"%CD%/storage/audio/lopusBTN/{$BTN->id}/output.lopus\" --bitrate \"48000\" --CBR --opusheader namco ");
             }
         }
 
         $fileOutput = extraController::keep_english($request->input("filenameOutput"));
 
-        $tmp_path = shell_exec("echo %CD%/storage/BTN/{$BTN->id}/");
+        $tmp_path = shell_exec("echo %CD%/storage/audio/BTN/{$BTN->id}/");
 
         File::makeDirectory($tmp_path, 0777, true, true);
 
-        $log2 = shell_exec("%CD%/convert/nus3audio.exe %CD%/convert/base.nus3audio -r 0 %CD%/storage/lopusBTN/{$BTN->id}/output.lopus -w %CD%/storage/BTN/{$BTN->id}/{$fileOutput}.nus3audio");
+        $log2 = shell_exec("%CD%/convert/nus3audio.exe %CD%/convert/base.nus3audio -r 0 %CD%/storage/audio/lopusBTN/{$BTN->id}/output.lopus -w %CD%/storage/audio/BTN/{$BTN->id}/{$fileOutput}.nus3audio");
 
         $BTN->log = $log;
 
@@ -199,7 +199,7 @@ class miscController extends Controller
 
         $BTN->save();
 
-        $status = '<p class="card-text">brstm to nus3audio Conversion Complete! You can download it from <a class="return_link" href="/storage/BTN/'. $BTN->id . '/' . $fileOutput . '.nus3audio">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/brstm_to_nus3audio/' . $BTN->id . '">click here.</a></p>';
+        $status = '<p class="card-text">brstm to nus3audio Conversion Complete! You can download it from <a class="return_link" href="/storage/audio/BTN/'. $BTN->id . '/' . $fileOutput . '.nus3audio">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/brstm_to_nus3audio/' . $BTN->id . '">click here.</a></p>';
 
         return redirect()->back()->with('success', $status);
     }
@@ -222,11 +222,11 @@ class miscController extends Controller
 
             $nus3audio_replace->save();
 
-            $path_tmp = $file->storeAs('public/nus3audio_replace/' . $nus3audio_replace->id, extraController::keep_english($file->getClientOriginalName()));
+            $path_tmp = $file->storeAs('public/audio/nus3audio_replace/' . $nus3audio_replace->id, extraController::keep_english($file->getClientOriginalName()));
 
             $path = public_path() . '/' . str_replace("public", "storage", $path_tmp);
 
-            $folder_path = public_path() . "/storage/nus3audio_replace/{$nus3audio_replace->id}/output";
+            $folder_path = public_path() . "/storage/audio/nus3audio_replace/{$nus3audio_replace->id}/output";
 
             File::MakeDirectory($path, 0777, true, true);
 
@@ -243,14 +243,14 @@ class miscController extends Controller
             foreach($request->file("files") as $file_input){
                 $file_id = extraController::keepNumbers($request->input("files_id")[$i]);
 
-                $check = "public/nus3audio_replace/{$nus3audio_replace->id}/output/{$file_id}.{$file_input->getClientOriginalExtension()}";
+                $check = "public/audio/nus3audio_replace/{$nus3audio_replace->id}/output/{$file_id}.{$file_input->getClientOriginalExtension()}";
 
                 if(Storage::exists($check)){
                     Storage::delete($check);
                 }
 
                 if($file_input->getClientOriginalExtension() == "idsp" || $file_input->getClientOriginalExtension() == "lopus"){
-                    $tmp = $file_input->storeAs('public/nus3audio_replace/' . $nus3audio_replace->id . '/output', $file_id.".".$file_input->getClientOriginalExtension());
+                    $tmp = $file_input->storeAs('public/audio/nus3audio_replace/' . $nus3audio_replace->id . '/output', $file_id.".".$file_input->getClientOriginalExtension());
 
                     array_push($files_name, $file_input->getClientOriginalName());
 
@@ -274,7 +274,7 @@ class miscController extends Controller
 
             $status = "
             <p class=\"card-text\">
-            Replacment complete! You can download the file from <a class=\"return_link\" href=\"/storage/nus3audio_replace/{$nus3audio_replace->id}/{$nus3audio_replace->filename}\">here!</a>
+            Replacment complete! You can download the file from <a class=\"return_link\" href=\"/storage/audio/nus3audio_replace/{$nus3audio_replace->id}/{$nus3audio_replace->filename}\">here!</a>
             <br>
             For more information, you can click <a class=\"return_link\" href=\"/details/nus3audio_replace/{$nus3audio_replace->id}\">here!</a>
             </p>";

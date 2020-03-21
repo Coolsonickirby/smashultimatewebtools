@@ -27,7 +27,7 @@ class idspController extends Controller
 
         $idsp->save();
 
-        $path = $file->storeAs('public/idspOG/' . $idsp->id, extraController::keep_english($file->getClientOriginalName()));
+        $path = $file->storeAs('public/audio/idspOG/' . $idsp->id, extraController::keep_english($file->getClientOriginalName()));
 
         $path = public_path() . '/' . str_replace("public", "storage", $path);
 
@@ -82,15 +82,15 @@ class idspController extends Controller
 
         if ($request->input("loop") == "on") {
             if ($request->input("advanced") == "on") {
-                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/idsp/{$idsp->id}/{$fileOutput}.idsp\" -l {$idsp->start_loop}-{$idsp->end_loop} --bitrate \"{$request->input("hz")}\"");
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/audio/idsp/{$idsp->id}/{$fileOutput}.idsp\" -l {$idsp->start_loop}-{$idsp->end_loop} --bitrate \"{$request->input("hz")}\"");
             } else {
-                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/idsp/{$idsp->id}/{$fileOutput}.idsp\" -l {$idsp->start_loop}-{$idsp->end_loop}");
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/audio/idsp/{$idsp->id}/{$fileOutput}.idsp\" -l {$idsp->start_loop}-{$idsp->end_loop}");
             }
         } else {
             if ($request->input("advanced") == "on") {
-                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/idsp/{$idsp->id}/{$fileOutput}.idsp\" --bitrate \"{$request->input("hz")}\"");
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/audio/idsp/{$idsp->id}/{$fileOutput}.idsp\" --bitrate \"{$request->input("hz")}\"");
             } else {
-                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/idsp/{$idsp->id}/{$fileOutput}.idsp\"");
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/audio/idsp/{$idsp->id}/{$fileOutput}.idsp\"");
             }
         }
 
@@ -116,7 +116,7 @@ class idspController extends Controller
 
         $idsp->save();
 
-        $status = '<p class="card-text">IDSP Conversion Complete! You can download it from <a class="return_link" href="/storage/idsp/' . $idsp->id . '/' . $fileOutput . '.idsp">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/idsp/' . $idsp->id . '">click here.</a></p>';
+        $status = '<p class="card-text">IDSP Conversion Complete! You can download it from <a class="return_link" href="/storage/audio/idsp/' . $idsp->id . '/' . $fileOutput . '.idsp">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/idsp/' . $idsp->id . '">click here.</a></p>';
 
         return redirect()->back()->with('success', $status);
     }
@@ -138,7 +138,7 @@ class idspController extends Controller
 
         $idsp->save();
 
-        $path = $file->storeAs('public/idspOG/' . $idsp->id, extraController::keep_english($file->getClientOriginalName()));
+        $path = $file->storeAs('public/audio/idspOG/' . $idsp->id, extraController::keep_english($file->getClientOriginalName()));
 
         $path = public_path() . '/' . str_replace("public", "storage", $path);
 
@@ -146,11 +146,11 @@ class idspController extends Controller
 
         $fileOutput = extraController::keep_english($request->input("filenameOutput"));
 
-        $idsp->log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/idsp/{$idsp->id}/{$fileOutput}.idsp\"");
+        $idsp->log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/audio/idsp/{$idsp->id}/{$fileOutput}.idsp\"");
 
         $idsp->save();
 
-        $status = '<p class="card-text">lopus -> IDSP Conversion Complete! You can download it from <a class="return_link" href="/storage/idsp/' . $idsp->id . '/' . $fileOutput . '.idsp">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/idsp/' . $idsp->id . '">click here.</a></p>';
+        $status = '<p class="card-text">lopus -> IDSP Conversion Complete! You can download it from <a class="return_link" href="/storage/audio/idsp/' . $idsp->id . '/' . $fileOutput . '.idsp">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/idsp/' . $idsp->id . '">click here.</a></p>';
 
         return redirect()->back()->with('success', $status);
     }

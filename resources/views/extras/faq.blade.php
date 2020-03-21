@@ -60,7 +60,7 @@
 <h4>I have some questions, but they aren't answered here / There's an error in your website. / Can you add _______?</h4>
 <p>Contact me on discord @ Coolsonickirby#4030.</p>
 
-<hr style="border-color:black;">
+<hr style="border-color:orangered;">
 
 <h3>Mini-tutorial for converting brstms (from Smash Custom Music) to nus3audio (with loops!)</h3>
 
@@ -68,10 +68,10 @@
     <li>Go to <a href="http://www.smashcustommusic.net/">SmashCustomMusic</a> and look for the game you want the audio from.</li>
     <li>Once you find the game, click on it and look for the song you want.</li>
     <li>Click on the song name, then click "Download BRSTM" (blue box in image below). Make sure you note down everything in the highlighted section.<br><img src="img/mini1.png" alt="Download BRSTM" style="height:512px; width:auto;"></li>
-    <li>Go to <a href="{{Request::root()}}/#music">"Music file"</a> and select the brstm file you downloaded</li>
-    <li>Enable the <a href="{{Request::root()}}/#loop">"Loop Samples"</a> checkbox</li>
+    <li>Go to <a href="{{Request::root()}}/audio/#music">"Music file"</a> and select the brstm file you downloaded</li>
+    <li>Enable the <a href="{{Request::root()}}/audio/#loop">"Loop Samples"</a> checkbox</li>
     <li>Set the Sampling Rate to the proper one. (Set it to "Auto" if you're not sure.)</li>
-    <li>Enter the loop samples you got from the notes into the proper fields.</li>
+    <li>Enter the loop samples you got from the notes into the proper fields (Not necessary anymore as it can auto-detect the loop points).</li>
     <li>Select the song you want to replace.</li>
     <li>Click "Convert"</li>
     <li>Profit</li>
@@ -79,7 +79,7 @@
 
 <p>You can only convert BRSTMs directly to nus3audio using the main converter.</p>
 
-<hr style="border-color:black;">
+<hr style="border-color:orangered;">
 
 
 <h2>Update as of 2/2/2020</h2>
@@ -109,5 +109,5 @@
 <h2>Update as of 2/24/2020</h2>
 <p>Fixed a problem with nus3audio replacment when invalid files were encountered. Also wanted to apologize for not being able to update this as frequently as I wanted to, as college exists :(
     <br>
-    An hour later and I finally added something else, a <a class="return_link" href="/compare">compare feature!</a>
+    An hour later and I finally added something else, a <a class="return_link" href="/audio/compare">compare feature!</a>
 </p>
