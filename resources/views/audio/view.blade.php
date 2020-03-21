@@ -252,7 +252,7 @@
             UpdateType(document.getElementById("type"));
         }
     </script>
-    <script src="./js/stages.js"></script>
+    <script src="../js/stages.js"></script>
 </body>
 
 </html>

@@ -16,7 +16,7 @@
                 var newlink = document.createElement("link");
                 newlink.setAttribute("rel", "stylesheet");
                 newlink.setAttribute("type", "text/css");
-                newlink.setAttribute("href", "./css/bootstrap.min.old.css");
+                newlink.setAttribute("href", "../css/bootstrap.min.old.css");
 
                 document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
 
@@ -25,7 +25,7 @@
                 var newlink = document.createElement("link");
                 newlink.setAttribute("rel", "stylesheet");
                 newlink.setAttribute("type", "text/css");
-                newlink.setAttribute("href", "./css/bootstrap.min.css");
+                newlink.setAttribute("href", "../css/bootstrap.min.css");
 
                 document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
 
@@ -43,7 +43,7 @@
             var newlink = document.createElement("link");
             newlink.setAttribute("rel", "stylesheet");
             newlink.setAttribute("type", "text/css");
-            newlink.setAttribute("href", "./css/bootstrap.min.old.css");
+            newlink.setAttribute("href", "../css/bootstrap.min.old.css");
 
             document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
 
@@ -55,7 +55,7 @@
             var newlink = document.createElement("link");
             newlink.setAttribute("rel", "stylesheet");
             newlink.setAttribute("type", "text/css");
-            newlink.setAttribute("href", "./css/bootstrap.min.css");
+            newlink.setAttribute("href", "../css/bootstrap.min.css");
 
             document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
 

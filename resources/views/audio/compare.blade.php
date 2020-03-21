@@ -87,7 +87,6 @@
         @include('extras/faq')
     </div>
 
-    <script src="./js/jquery-3.4.1.min.js"></script>
     <script>
         function AlertFilesize() {
             if (document.getElementById("music").files.length != 0) {
@@ -124,7 +123,7 @@
             }
         }
     </script>
-    <script src="./js/stages.js"></script>
+    <script src="../js/stages.js"></script>
 </body>
 
 </html>

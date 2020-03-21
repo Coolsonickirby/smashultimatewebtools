@@ -69,7 +69,6 @@
         @include('extras/faq')
     </div>
 
-    <script src="./js/jquery-3.4.1.min.js"></script>
     <script>
         function AlertFilesize(){
                     if(document.getElementById("music").files.length != 0){
