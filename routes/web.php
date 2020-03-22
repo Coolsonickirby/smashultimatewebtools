@@ -13,7 +13,7 @@
 
 //Main Section
 Route::get('/', function(){
-    return redirect('/audio');
+    return view('main');
 });
 
 //Audio Section

@@ -82,13 +82,9 @@
 
         <br>
 
-        @include('extras/credits')
+
         <h2>Extra Stuff:</h2>
         @include('extras/extras')
-
-        <br>
-
-        @include('extras/faq')
 
     </div>
     <script>

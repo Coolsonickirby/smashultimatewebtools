@@ -20,8 +20,6 @@
         <input name="json" id="jsonInput" hidden />
     </form>
 
-    </form>
-
     <div class="header">
         <button id="open">Open</button>
         <button id="find">Find</button>
@@ -55,14 +53,6 @@
                     <select class="listbox_holder" id="searchResults" size="5" onchange="changeTextArea(this)">
                     </select>
                 </div>
-            </div>
-
-            <div class="credits">
-                <h1>Credits:</h1>
-                <h2><a href="https://github.com/exelix11/3DLandMSBTeditor">MSBT Original Source Code</a> - <a href="https://github.com/exelix11/">exelix11</a></h2>
-                <h2><a href="https://github.com/IcySon55/3DLandMSBTeditor">MSBT Improved Source Code</a> - <a href="https://github.com/IcySon55/IcySon55">IcySon55</a></h2>
-                <h2><a href="https://github.com/Coolsonickirby/MSBTEditorCli">MSBTEditorCli</a> - <a href="https://github.com/Coolsonickirby/">Coolsonickirby/Random</a></h2>
-                <h2><a href="{{URL::current()}}">MSBTEditor Web Interface</a> - <a href="https://github.com/Coolsonickirby/">Coolsonickirby/Random</a></h2>
             </div>
         </div>
 
