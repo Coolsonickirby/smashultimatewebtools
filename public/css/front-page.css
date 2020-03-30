@@ -66,6 +66,7 @@ h1 {
     font-size: 30px;
     background-color: black;
     color: white;
+    margin: 5px;
 }
 
 .link-tool:hover {
