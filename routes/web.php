@@ -78,9 +78,26 @@ Route::prefix('msbt')->group(function () {
     ]);
 });
 
+//PRC Section
+Route::prefix('prc')->group(function () {
+    Route::get('/Chara/{id?}', function ($id = null) {
+        return view('prc/prcChara');
+    });
+
+
+    Route::post('/openCharaPRC', [
+        'uses' => 'prcController@StoreCharaPrc'
+    ]);
+
+    Route::post('/Chara/saveJSON', [
+        'uses' => 'prcController@JSONtoCharaPrc'
+    ]);
+});
+
 
 
 //Cheap api that could probably break fast
 Route::prefix('api')->group(function () {
     Route::get("/jsonMSBT/{id}", "MSBTController@GetJSON");
+    Route::get('/CharaJSON/{id}', "prcController@GetJSON");
 });

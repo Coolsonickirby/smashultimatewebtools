@@ -85,11 +85,11 @@ h1 {
 /* Style the tab */
 
 .tab {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     overflow: hidden;
 }
-
-
-/* Style the buttons that are used to open the tab content */
 
 .tab button {
     background-color: dodgerblue;
@@ -101,6 +101,9 @@ h1 {
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 

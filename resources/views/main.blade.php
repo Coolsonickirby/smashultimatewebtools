@@ -22,6 +22,9 @@
             <a class="link-tool" href="/audio">
                 Audio
             </a>
+            <a class="link-tool" href="/prc/Chara">
+                CSS Editor
+            </a>
         </div>
     </div>
 
@@ -109,9 +112,17 @@
             <div class="msbt_credits">
                 <h2>MSBT:</h2>
                 <h4><a href="https://github.com/exelix11/3DLandMSBTeditor">MSBT Original Source Code</a> - <a href="https://github.com/exelix11/">exelix11</a></h4>
-                <h4><a href="https://github.com/IcySon55/3DLandMSBTeditor">MSBT Improved Source Code</a> - <a href="https://github.com/IcySon55/IcySon55">IcySon55</a></h4>
+                <h4><a href="https://github.com/IcySon55/3DLandMSBTeditor">MSBT Improved Source Code</a> - <a href="https://github.com/IcySon55/">IcySon55</a></h4>
                 <h4><a href="https://github.com/Coolsonickirby/MSBTEditorCli">MSBTEditorCli</a> - <a href="https://github.com/Coolsonickirby/">Coolsonickirby/Random</a></h4>
                 <h4><a href="http://smashultimatetools.com/msbt">MSBTEditor Web Interface</a> - <a href="https://github.com/Coolsonickirby/">Coolsonickirby/Random</a></h4>
+            </div>
+            <hr>
+            <div class="msbt_credits">
+                <h2>CSS Editor:</h2>
+                <h4><a href="https://github.com/BenHall-7/paracobNET">ParamXML</a> - <a href="https://github.com/BenHall-7">Ben Hall</a></h4>
+                <h4><a href="https://github.com/lukasoppermann/html5sortable">html5sortable</a> - <a href="https://github.com/lukasoppermann">Lukas Oppermann</a></h4>
+                <h4>Helping me figure out how to sync animate child elements background (Unfortunatly not used because of preformance issues)</a> - <a href="https://github.com/jam1garner/">jam1garner</a></h4>
+                <h4><a href="http://smashultimatetools.com/prc/Chara">CSS Editor Web Interface</a> - <a href="https://github.com/Coolsonickirby/">Coolsonickirby/Random</a></h4>
             </div>
         </div>
 
@@ -232,6 +243,10 @@
         }, {
             date: `3/22/2020`,
             text: `After nearly a month of me not doing anything, I added a MSBT Editor (yay). Had to make a cli program for converting MSBTs<->json so I can implement it to the website!`
+        },
+        {
+            date: `3/29/2020`,
+            text: `Added a web interface CSS editor (yipee). To be honest, this was easier than the MSBT Editor as I only had to make ParamXML output the xml as a json file, then just create the web interface. The hardest part was making the background animated (which I gave up on because preformance was horrible.)`
         }];
 
         window.onload = function() {

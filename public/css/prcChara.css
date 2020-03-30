@@ -1,0 +1,108 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: darkgray;
+}
+
+.hide {
+    display: none !important;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -120% 0;
+    }
+}
+
+.header {
+    display: block;
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    margin: auto;
+    width: 80%;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.list-flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+
+.list-grid {
+    display: grid;
+    gap: .25%;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 115px));
+    grid-template-rows: auto;
+    /* justify-items: center;
+    align-items: end; */
+    justify-self: center;
+    align-self: center;
+    place-items: center;
+}
+
+.item {
+    margin-right: .25%;
+    margin-bottom: .20%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    border: 2px solid black;
+    flex: 0 1 auto;
+    color: white;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.item>p{
+    z-index: -1;
+}
+
+.item:hover {
+    border: 2px solid red;
+    background-image: url("../img/chara_mask.png");
+}
+
+.image {
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 112px auto;
+    min-width: 112px;
+    min-height: 60px;
+    max-width: 112px;
+    max-height: 60px;
+    background-color: lightblue;
+}
+
+.chara_name {
+    position: absolute;
+    bottom: -12px;
+    color: white;
+    font-size: 12px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: center;
+    word-wrap: anywhere;
+}
+
+
+/*Graident Animation that I just gave up on (goes in .list-flex or .list-grid)
+    background: rgb(242, 255, 0);
+    background: linear-gradient(158deg, rgba(242, 255, 0, 1) 0%, rgba(242, 255, 0, 1) 15%, rgba(0, 0, 255, 1) 25%, rgba(0, 212, 255, 1) 50%, rgba(242, 255, 0, 1) 75%);
+    background-size: 600% 100%;
+    animation: gradient 5s linear infinite;
+    background-attachment: fixed; */
