@@ -10,6 +10,7 @@ use App\AudioIDSP;
 use App\brstm;
 use App\brstmtonus3audio;
 use App\nus3audio_replace;
+use App\audioToBRSTM;
 
 class detailsController extends Controller
 {
@@ -57,5 +58,11 @@ class detailsController extends Controller
         $id = extraController::keepNumbers($id);
         $brstm_to_nus3audio = brstmtonus3audio::where("id", $id)->first();
         return $brstm_to_nus3audio;
+    }
+
+    public function audioToBRSTM($id){
+        $id = extraController::keepNumbers($id);
+        $audioToBrstm = audioToBRSTM::where("id", $id)->first();
+        return $audioToBrstm;
     }
 }

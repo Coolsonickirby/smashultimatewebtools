@@ -1215,7 +1215,7 @@ var VictoryThemes = [
     ["Normal Victory Theme", "bgm_crs24_vs_result", "648488"]
 ];
 
-var series = [SmashSeries, MarioSeries, MarioKartSeries, YoshiSeries, DKSeries, ZeldaSeries, MetroidSeries, KirbySeries, StarFoxSeries, PkmnSeries, FZeroSeries, EarthboundSeries, GameAndWatchSeries, FireEmblemSeries, WarioWareSeries, PikminSeries, AnimalCrossingSeries, WiiFitSeries, PunchOutSeries, XenobladeSeries, SplatoonSeries, MGSSeries, SonicSeries, MegaManSeries, PacManSeries, StreetFighterSeries, FFSeries, BayoSeries, CastleSeries, OtherSeries, PersonaSeries, DQSeries, BanjoSeries, FatalFurySeries, VictoryThemes];
+var series = [SmashSeries, MarioSeries, MarioKartSeries, YoshiSeries, DKSeries, ZeldaSeries, MetroidSeries, KirbySeries, StarFoxSeries, PkmnSeries, FZeroSeries, EarthboundSeries, GameAndWatchSeries, KidIcarusSeries,FireEmblemSeries, WarioWareSeries, PikminSeries, AnimalCrossingSeries, WiiFitSeries, PunchOutSeries, XenobladeSeries, SplatoonSeries, MGSSeries, SonicSeries, MegaManSeries, PacManSeries, StreetFighterSeries, FFSeries, BayoSeries, CastleSeries, OtherSeries, PersonaSeries, DQSeries, BanjoSeries, FatalFurySeries, VictoryThemes];
 
 window.onload = function () {
 

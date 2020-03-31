@@ -11,6 +11,7 @@
 <label class="label_sort" for="fzero"><input type="checkbox" id="fzero" onclick="orderBySelected()"> &nbsp F-Zero Series</label>
 <label class="label_sort" for="mother"><input type="checkbox" id="mother" onclick="orderBySelected()"> &nbsp Earthbound Series</label>
 <label class="label_sort" for="gnw"><input type="checkbox" id="gnw" onclick="orderBySelected()"> &nbsp Game & Watch Series</label>
+<label class="label_sort" for="kid"><input type="checkbox" id="kid" onclick="orderBySelected()"> &nbsp Kid Icarus Series</label>
 <label class="label_sort" for="fe"><input type="checkbox" id="fe" onclick="orderBySelected()"> &nbsp Fire Emblem Series</label>
 <label class="label_sort" for="wario"><input type="checkbox" id="wario" onclick="orderBySelected()"> &nbsp Wario Series</label>
 <label class="label_sort" for="pikmin"><input type="checkbox" id="pikmin" onclick="orderBySelected()"> &nbsp Pikmin Series</label>

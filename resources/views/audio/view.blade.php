@@ -67,6 +67,7 @@
                                 <option value="nus3audio">nus3audio</option>
                                 <option value="lopus">lopus</option>
                                 <option value="idsp">idsp</option>
+                                <option value="toBrstm">BRSTM</option>
                             </select>
                             <input type="hidden" class="form-control" id="filetype" name="filetype">
                         </div>

@@ -132,6 +132,8 @@ class MainController extends Controller
                 return lopusController::Createlopus($request, $looparray);
             } else if ($filetype == "idsp") {
                 return idspController::Createidsp($request, $looparray);
+            }else if ($filetype == "toBrstm") {
+                return brstmController::CreateBRSTM($request, $looparray);
             } else {
                 $status = '<p class="card-text">Please select a valid file type!</p>';
                 return redirect()->back()->with('error', $status);

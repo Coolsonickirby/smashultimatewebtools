@@ -2,7 +2,7 @@ var msbtArray = [
 
 ];
 
-window.onload = function() {
+window.onload = function () {
     this.setupMSBTItems();
 
     document.getElementById("searchResults").innerHTML = "";
@@ -25,7 +25,7 @@ function setupMSBTItems() {
         $.ajax({
             url: "../api/jsonMSBT/" + result,
             dataType: 'json',
-            success: function(data) {
+            success: function (data) {
 
                 msbtArray = data;
 
@@ -34,33 +34,39 @@ function setupMSBTItems() {
 
                 document.getElementById("lstStrings").setAttribute("size", msbtArray.strings.length);
 
-                msbtArray.strings.forEach(function(e, index) {
+                msbtArray.strings.forEach(function (e, index) {
                     var option = document.createElement("option");
                     option.value = index;
                     option.innerHTML = e.label;
                     document.getElementById("lstStrings").append(option);
                 });
 
-                /*
-                 * Thanks to Pointy for the code below
-                 * https://stackoverflow.com/questions/12073270/sorting-options-elements-alphabetically-using-jquery
-                 */
-                var options = $('#lstStrings option');
-                var arr = options.map(function(_, o) { return { t: $(o).text(), v: o.value }; }).get();
-                arr.sort(function(o1, o2) { return o1.t > o2.t ? 1 : o1.t < o2.t ? -1 : 0; });
-                options.each(function(i, o) {
-                    o.value = arr[i].v;
-                    $(o).text(arr[i].t);
-                });
+                sortAlphabetically("lstStrings");
+
+
 
                 document.getElementById("lstStrings").selectedIndex = 0;
                 changeTextArea(document.getElementById("lstStrings"));
             },
-            error: function(data) {
+            error: function (data) {
                 alert("Failed getting json!");
             }
         });
     }
+}
+
+function sortAlphabetically(elementID) {
+    /*
+    * Thanks to Pointy for the code below
+    * https://stackoverflow.com/questions/12073270/sorting-options-elements-alphabetically-using-jquery
+    */
+    var options = $(`#${elementID} option`);
+    var arr = options.map(function (_, o) { return { t: $(o).text(), v: o.value }; }).get();
+    arr.sort(function (o1, o2) { return o1.t > o2.t ? 1 : o1.t < o2.t ? -1 : 0; });
+    options.each(function (i, o) {
+        o.value = arr[i].v;
+        $(o).text(arr[i].t);
+    });
 }
 
 function changeTextArea(e) {
@@ -72,7 +78,7 @@ function changeTextArea(e) {
 
     area = document.getElementById("textarea");
     if (area.addEventListener) {
-        area.addEventListener('input', function() {
+        area.addEventListener('input', function () {
             msbtArray.strings[e.value].value = area.value.replace(new RegExp('\r\n', 'g'), "\r\r\n");
         }, false);
     }
@@ -121,7 +127,7 @@ function setup() {
             var reader = new FileReader();
 
             // If we use onloadend, we need to check the readyState.
-            reader.onloadend = function(evt) {
+            reader.onloadend = function (evt) {
                 if (evt.target.readyState == FileReader.DONE) { // DONE == 2
                     if (evt.target.result == "MsgStdBn") {
                         document.getElementById("openForm").submit();
@@ -156,14 +162,15 @@ function find() {
     document.getElementById("searchResults").innerHTML = "";
 
     if (search_value != null) {
-        msbtArray.strings.forEach(function(item, index) {
-            if (item.label == search_value || item.value.includes(search_value)) {
+        msbtArray.strings.forEach(function (item, index) {
+            if (item.label.includes(search_value) || item.value.includes(search_value)) {
                 var option = document.createElement("option");
                 option.value = index;
                 option.innerHTML = item.label;
                 document.getElementById("searchResults").append(option);
-                console.log("here");
             }
         });
+
+        sortAlphabetically("searchResults");
     }
 };

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <base href="{{Request::root()}}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1024">
     <title>Smash Ultimate CSS Editor</title>
     <link rel="stylesheet" href="./css/prcChara.css">
 </head>
@@ -24,6 +24,7 @@
     <div class="header">
         <button id="open" class="open">Open</button>
         <button id="save" class="save">Save</button>
+        <a href="./prc/Chara/0"><button>Load Default</button></a>
     </div>
 
     <div class="container" aria-hidden="true">

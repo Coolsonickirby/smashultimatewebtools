@@ -30,15 +30,12 @@ class prcController extends Controller
 
     public function GetJSON($id)
     {
-        // $file = fopen(public_path("/storage/prc/Chara/extract/output/{$id}/ui_chara_db.json"), "r");
 
-        $jsonText = file_get_contents(public_path("/storage/prc/Chara/extract/output/{$id}/ui_chara_db.json"));
-
-        // while (!feof($file)) {
-        //     $jsonText = $jsonText . fgets($file);
-        // }
-
-        // fclose($file);
+        if($id > 0){
+            $jsonText = file_get_contents(public_path("/storage/prc/Chara/extract/output/{$id}/ui_chara_db.json"));
+        }else{
+            $jsonText = file_get_contents(public_path("/convert/defaults/Chara/ui_chara_db.json"));
+        }
 
         return $jsonText;
     }

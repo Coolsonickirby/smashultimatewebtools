@@ -27,21 +27,6 @@ Route::prefix('audio')->group(function () {
 
     Route::get('/nus3audio_idsp', 'MainController@viewSoundBank');
 
-    //Details
-    Route::get('/details/nus3audio/{id}', 'detailsController@NUS3AUDIODetails');
-
-    Route::get('/details/lopus/{id}', 'detailsController@LopusDetails');
-
-    Route::get('/details/idsp/{id}', 'detailsController@IDSPDetails');
-
-    Route::get('/details/wav_hz_change/{id}', 'detailsController@CompatibleDetails');
-
-    Route::get('/details/brstm/{id}', 'detailsController@BrstmDetails');
-
-    Route::get('/details/brstm_to_nus3audio/{id}', 'detailsController@BrstmToNus3audioDetails');
-
-    Route::get('/details/nus3audio_replace/{id}', 'detailsController@replacement_nus3audio_details');
-
     Route::get('/compare', 'extraController@compareFileSize');
 
     //Post Requests
@@ -100,4 +85,24 @@ Route::prefix('prc')->group(function () {
 Route::prefix('api')->group(function () {
     Route::get("/jsonMSBT/{id}", "MSBTController@GetJSON");
     Route::get('/CharaJSON/{id}', "prcController@GetJSON");
+});
+
+//Details Route
+Route::prefix('details')->group(function () {
+    Route::get('/nus3audio/{id}', 'detailsController@NUS3AUDIODetails');
+
+    Route::get('/lopus/{id}', 'detailsController@LopusDetails');
+
+    Route::get('/idsp/{id}', 'detailsController@IDSPDetails');
+
+    Route::get('/wav_hz_change/{id}', 'detailsController@CompatibleDetails');
+
+    Route::get('/brstm/{id}', 'detailsController@BrstmDetails');
+
+    Route::get('/brstm_to_nus3audio/{id}', 'detailsController@BrstmToNus3audioDetails');
+
+    Route::get('/nus3audio_replace/{id}', 'detailsController@replacement_nus3audio_details');
+
+    Route::get('/brstm/{id}', 'detailsController@audioToBRSTM');
+
 });
