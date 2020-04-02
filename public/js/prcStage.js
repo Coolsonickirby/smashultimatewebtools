@@ -94,6 +94,11 @@ window.onload = function () {
                         document.getElementById("current_hover").innerHTML = name;
                     });
 
+                    node.addEventListener("contextmenu", function(e) {
+                        moveElement(node);
+                        return false;
+                    });
+
                     if (item.sbyte["#text"] == -1) {
                         document.getElementById("hidden").appendChild(node);
                     } else {
@@ -124,6 +129,15 @@ window.onload = function () {
         });
     }
 
+}
+
+function moveElement(element) {
+    var id = element.parentNode.id;
+    if (id == "non-hidden") {
+        $(element).appendTo("#hidden");
+    } else {
+        $(element).appendTo("#non-hidden");
+    }
 }
 
 function setupDropdowns() {

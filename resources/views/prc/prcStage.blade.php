@@ -94,7 +94,7 @@
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <div class="right_side">
+                    <div class="right_side" oncontextmenu="return false;">
                         <p style="text-align: center;"><strong>Non-Hidden</strong></p>
                         <div class="list-grid sortable" id="non-hidden">
                         </div>
