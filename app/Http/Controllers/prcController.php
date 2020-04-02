@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\prcCharaExtract;
-use App\prcCharaRepack;
+use App\Models\PRC\prcCharaExtract;
+use App\Models\PRC\prcCharaRepack;
 use Illuminate\Support\Facades\Storage;
 
 class prcController extends Controller
 {
+
+    #region CHARA PRC
     public function StoreCharaPrc(Request $request)
     {
         $prcCharaExtract = new prcCharaExtract;
@@ -52,4 +54,8 @@ class prcController extends Controller
 
         return redirect("/storage/prc/Chara/repack/output/{$prcRepack->id}/ui_chara_db.prc");
     }
+    #endregion
+
+
+
 }

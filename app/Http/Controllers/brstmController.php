@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\audioToBrstm;
+use App\Models\Audio\audioToBrstm;
 
 class brstmController extends Controller
 {

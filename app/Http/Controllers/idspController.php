@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\AudioIDSP;
+use App\Models\Audio\AudioIDSP;
 
 
 class idspController extends Controller

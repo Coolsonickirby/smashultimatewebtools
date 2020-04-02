@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\msbtExtract;
-use App\msbtRepack;
+use App\Models\MSBT\msbtExtract;
+use App\Models\MSBT\msbtRepack;
 use Illuminate\Support\Facades\Storage;
 
 class MSBTController extends Controller

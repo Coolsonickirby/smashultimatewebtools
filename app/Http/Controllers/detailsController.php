@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Audio;
-use App\AudioNUS3AUDIO;
-use App\AudioLopus;
-use App\AudioIDSP;
-use App\brstm;
-use App\brstmtonus3audio;
-use App\nus3audio_replace;
-use App\audioToBRSTM;
+use App\Models\Audio\Audio;
+use App\Models\Audio\AudioNUS3AUDIO;
+use App\Models\Audio\AudioLopus;
+use App\Models\Audio\AudioIDSP;
+use App\Models\Audio\brstm;
+use App\Models\Audio\brstmtonus3audio;
+use App\Models\Audio\nus3audio_replace;
+use App\Models\Audio\audioToBRSTM;
 
 class detailsController extends Controller
 {

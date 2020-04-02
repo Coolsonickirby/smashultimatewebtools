@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use App\Audio;
-use App\brstm;
-use App\brstmtonus3audio;
-use App\nus3audio_replace;
+use App\Models\Audio\Audio;
+use App\Models\Audio\brstm;
+use App\Models\Audio\brstmtonus3audio;
+use App\Models\Audio\nus3audio_replace;
 use File;
 use Validator;
 

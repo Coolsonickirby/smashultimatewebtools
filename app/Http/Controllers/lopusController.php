@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\AudioLopus;
+use App\Models\Audio\AudioLopus;
 
 class lopusController extends Controller
 {

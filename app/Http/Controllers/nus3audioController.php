@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Audio;
-use App\AudioNUS3AUDIO;
+use App\Models\Audio\Audio;
+use App\Models\Audio\AudioNUS3AUDIO;
 use File;
 use Illuminate\Support\Facades\Storage;
-use App\nus3audio_replace;
+use App\Models\Audio\nus3audio_replace;
 
 class nus3audioController extends Controller
 {
