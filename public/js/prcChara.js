@@ -81,6 +81,11 @@ function setupCSS() {
                     node.appendChild(imageNode);
                     node.appendChild(name);
 
+                    node.addEventListener("contextmenu", function(e) {
+                        moveElement(node);
+                        return false;
+                    });
+
                     if (chara_name == "random") {
                         node.classList.add("disabled");
                         randomId = index;
@@ -118,6 +123,15 @@ function setupCSS() {
                 alert("Failed getting json! (Please contact me on discord if this wasn't intentional @ Coolsonickirby#4030.)");
             }
         });
+    }
+}
+
+function moveElement(element) {
+    var id = element.parentNode.id;
+    if (id == "non_hidden") {
+        $(element).appendTo("#hidden");
+    } else {
+        $(element).appendTo("#non_hidden");
     }
 }
 

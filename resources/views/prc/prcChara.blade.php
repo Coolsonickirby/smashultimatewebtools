@@ -38,7 +38,7 @@
         </p>
 
         <div id="non_hidden_outer">
-            <div class="sortable" id="non_hidden">
+            <div class="sortable" id="non_hidden" oncontextmenu="return false;">
                 <!-- Sortable -->
             </div>
         </div>
@@ -50,7 +50,7 @@
             <label for="css_style_2_grid">Grid Layout</label>
             <input type="radio" id="css_style_2_grid" name="css_style_2" value="grid">
         </p>
-        <div class="sortable list-flex" id="hidden">
+        <div class="sortable list-flex" id="hidden" oncontextmenu="return false;">
             <!-- Sortable -->
         </div>
     </div>
