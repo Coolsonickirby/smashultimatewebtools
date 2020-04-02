@@ -49,7 +49,7 @@ function setupMSBTItems() {
                 changeTextArea(document.getElementById("lstStrings"));
             },
             error: function (data) {
-                alert("Failed getting json!");
+                alert("Failed getting json! (Please contact me on discord if this wasn't intentional @ Coolsonickirby#4030.)");
             }
         });
     }

@@ -76,7 +76,7 @@ function setupCSS() {
 
                     imageNode.setAttribute("class", "image");
 
-                    imageNode.setAttribute("style", `background-image: url("img/chara_7_${chara_name}_00.png");`);
+                    imageNode.setAttribute("style", `background-image: url("img/Chara/chara_7_${chara_name}_00.png");`);
 
                     node.appendChild(imageNode);
                     node.appendChild(name);
@@ -115,7 +115,7 @@ function setupCSS() {
 
             },
             error: function (data) {
-                alert("Failed getting json!");
+                alert("Failed getting json! (Please contact me on discord if this wasn't intentional @ Coolsonickirby#4030.)");
             }
         });
     }
@@ -131,34 +131,34 @@ function setup() {
         var display_characters = document.getElementById("non_hidden").children;
         var hidden_characters = document.getElementById("hidden").children;
 
-
-        var i = 0;
-        for (let chara of display_characters) {
-            chara_data.struct.list.struct[chara.id].sbyte[2]["#text"] = i;
-
-            if (chara_data.struct.list.struct[chara.id].string["#text"] == "random") {
-                chara_data.struct.list.struct[chara.id].bool[3]["#text"] = "False";
-            } else {
-                chara_data.struct.list.struct[chara.id].bool[3]["#text"] = "True";
-            }
-            i++;
-        }
-
-        for (let chara of hidden_characters) {
-            chara_data.struct.list.struct[chara.id].sbyte[2]["#text"] = -1;
-
-            chara_data.struct.list.struct[chara.id].bool[3]["#text"] = "False";
-        }
-
         if (chara_data.length <= 0) {
             alert("No prc file is loaded!");
         } else {
+            var i = 0;
+            for (let chara of display_characters) {
+                chara_data.struct.list.struct[chara.id].sbyte[2]["#text"] = i;
+
+                if (chara_data.struct.list.struct[chara.id].string["#text"] == "random") {
+                    chara_data.struct.list.struct[chara.id].bool[3]["#text"] = "False";
+                } else {
+                    chara_data.struct.list.struct[chara.id].bool[3]["#text"] = "True";
+                }
+                i++;
+            }
+
+            for (let chara of hidden_characters) {
+                chara_data.struct.list.struct[chara.id].sbyte[2]["#text"] = -1;
+
+                chara_data.struct.list.struct[chara.id].bool[3]["#text"] = "False";
+            }
+
             document.getElementById("jsonInput").value = JSON.stringify(chara_data);
 
             document.getElementById("saveForm").submit();
         }
 
     }
+
 
 
     function openDialog() {
@@ -203,7 +203,6 @@ function setup() {
 
     }
 }
-
 function RandomizeMain() {
     var answer = confirm("Are you sure you want to randomize the order (You will lose your current order)?");
 

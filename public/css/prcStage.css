@@ -1,0 +1,127 @@
+body {
+    line-height: 1.5;
+    background-color: #eee2dc;
+}
+
+h4{
+    color:black;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+
+.header {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+strong{
+    color:black;
+}
+
+label{
+    color:black;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+
+#current_hover {
+    color: #ac3b61;
+}
+
+#current_selected {
+    color: #123c69;
+}
+
+.big_img {
+    background-size: cover;
+    object-fit: cover;
+    /* clip-path: polygon(21% 0, 88% 0, 88% 100%, 50% 100%, 12% 100%, 12% 27%); */
+    min-width: 512px;
+    min-height: 256px;
+}
+
+.stage_text {
+    position: relative;
+    border: 2px solid gray;
+    background-color: gray;
+    bottom: 42px;
+    text-align: left;
+    padding-left: 5px;
+}
+
+.stage_text h4 {
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.image_holder {
+    clip-path: polygon(15% 0px, 99% 0px, 99% 85%, 50% 85%, 0% 85%, 0% 27.00%);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    float: right;
+    width: 516px;
+}
+
+.options {
+    text-align: right;
+    margin-top: 30px;
+}
+
+label {
+    font-size: large;
+}
+
+.form-field {
+    margin-bottom: 2.5%;
+}
+
+.outer {
+    display: inline-block;
+    margin: 50px;
+}
+
+.main {
+    transform: scale(0.95);
+}
+
+.left_side {
+    flex: 1;
+}
+
+.right_side {
+    margin-left: .5%;
+}
+
+.list-grid {
+    background-color: #bab2b5;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0px, 80px));
+    grid-row-gap: 0;
+    /* justify-items: center;
+    align-items: end; */
+    justify-self: center;
+    align-self: center;
+    place-items: center;
+    border: 5px solid black;
+    padding: 1%;
+}
+
+.item {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex: 0 1 auto;
+    color: white;
+    position: relative;
+    box-sizing: border-box;
+    width: 72px;
+    height: 60px;
+    background-size: cover;
+    margin-top: 2px;
+    background-color: black;
+}
+
+.item-hover {
+    border: 2px solid red;
+}

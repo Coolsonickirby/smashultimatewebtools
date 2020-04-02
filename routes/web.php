@@ -65,18 +65,33 @@ Route::prefix('msbt')->group(function () {
 
 //PRC Section
 Route::prefix('prc')->group(function () {
+    #region CHARA Routes
     Route::get('/Chara/{id?}', function ($id = null) {
         return view('prc/prcChara');
     });
 
-
-    Route::post('/openCharaPRC', [
+    Route::post('/Chara/openPRC', [
         'uses' => 'prcController@StoreCharaPrc'
     ]);
 
     Route::post('/Chara/saveJSON', [
         'uses' => 'prcController@JSONtoCharaPrc'
     ]);
+    #endregion
+
+    #region STAGE Routes
+    Route::get('/Stage/{id?}', function ($id = null) {
+        return view('prc/prcStage');
+    });
+
+    Route::post('/Stage/openPRC', [
+        'uses' => 'prcController@StoreStagePrc'
+    ]);
+
+    Route::post('/Stage/saveJSON', [
+        'uses' => 'prcController@JSONtoStagePrc'
+    ]);
+    #endregion
 });
 
 
@@ -84,7 +99,8 @@ Route::prefix('prc')->group(function () {
 //Cheap api that could probably break fast
 Route::prefix('api')->group(function () {
     Route::get("/jsonMSBT/{id}", "MSBTController@GetJSON");
-    Route::get('/CharaJSON/{id}', "prcController@GetJSON");
+    Route::get('/CharaJSON/{id}', "prcController@GetCharaJSON");
+    Route::get('/StageJSON/{id}', "prcController@GetStageJSON");
 });
 
 //Details Route
@@ -104,5 +120,4 @@ Route::prefix('details')->group(function () {
     Route::get('/nus3audio_replace/{id}', 'detailsController@replacement_nus3audio_details');
 
     Route::get('/brstm/{id}', 'detailsController@audioToBRSTM');
-
 });

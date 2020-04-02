@@ -91,4 +91,10 @@ Teaching me how to convert samples between sample rates - <a href="https://gameb
 <h4><a href="https://github.com/lukasoppermann/html5sortable">html5sortable</a> - <a href="https://github.com/lukasoppermann">Lukas Oppermann</a></h4>
 <h4>Helping me figure out how to sync animate child elements background (Unfortunatly not used because of preformance issues)</a> - <a href="https://github.com/jam1garner/">jam1garner</a></h4>
 <h4><a href="http://smashultimatetools.com/prc/Chara">CSS Editor Web Interface</a> - <a href="https://github.com/Coolsonickirby/">Coolsonickirby/Random</a></h4>
-
+<hr>
+<h2>SSS Editor:</h2>
+<h4><a href="https://github.com/BenHall-7/paracobNET">ParamXML</a> - <a href="https://github.com/BenHall-7">Ben Hall</a></h4>
+<h4><a href="https://github.com/lukasoppermann/html5sortable">html5sortable</a> - <a href="https://github.com/lukasoppermann">Lukas Oppermann</a></h4>
+<h4><a href="http://www.dhtmlgoodies.com/scripts/form_widget_editable_select/form_widget_editable_select.html">Editable Input Select</a> - <a href="http://www.dhtmlgoodies.com/">Alf Magne Kalleland</a></h4>
+<h4>Helping me get some stage icons and big images -  <a href="https://gamebanana.com/members/1537331">zrksyd</a> & <a href="https://gamebanana.com/members/1707207">A Mudkip</a></h4>
+<h4><a href="http://smashultimatetools.com/prc/Stage">Stage Editor Web Interface</a> - <a href="https://github.com/Coolsonickirby/">Coolsonickirby/Random</a></h4>

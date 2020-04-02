@@ -74,7 +74,7 @@ body {
 
 .item:hover {
     border: 2px solid red;
-    background-image: url("../img/chara_mask.png");
+    background-image: url("../img/Chara/chara_mask.png");
 }
 
 .image {
