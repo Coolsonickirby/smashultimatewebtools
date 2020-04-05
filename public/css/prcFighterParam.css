@@ -1,0 +1,106 @@
+.header {
+    margin-top: 8px;
+    text-align: center;
+}
+
+.header button{
+    margin:1%;
+}
+
+@keyframes fadein {
+    0% {
+        opacity:0;
+    }
+    50% {
+        opacity:1;
+    }
+    100%{
+        opacity:0;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    0% {
+        opacity:0;
+    }
+    50% {
+        opacity:1;
+    }
+    100%{
+        opacity:0;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    0% {
+        opacity:0;
+    }
+    50% {
+        opacity:1;
+    }
+    100%{
+        opacity:0;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    0% {
+        opacity:0;
+    }
+    50% {
+        opacity:1;
+    }
+    100%{
+        opacity:0;
+    }
+}
+
+.message{
+    display: none;
+}
+
+.loading{
+    display: none;
+    animation: fadein 2s infinite;
+    -moz-animation: fadein 2s infinite; /* Firefox */
+    -webkit-animation: fadein 2s infinite; /* Safari and Chrome */
+    -o-animation: fadein 2s infinite; /* Opera */
+}
+
+.main {
+    text-align: center;
+}
+
+.group {
+    display: inline;
+}
+
+.group-input label {
+    text-align: right;
+}
+
+.input-value {
+    float: right;
+    clear: both;
+    width: 75% !important;
+}
+
+#randomValues {
+    display: inline;
+    overflow: hidden;
+}
+
+hr {
+    border-color: black;
+}
+
+.form-check {
+    float: right;
+    clear: both;
+    margin-top: .45rem;
+}
+
+.form-check-input {
+    margin-top: 0 !important;
+}
+
+.random_input_section {
+    display: none;
+}

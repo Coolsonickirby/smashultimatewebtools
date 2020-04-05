@@ -64,6 +64,7 @@
     <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./js/html5sortable.min.js"></script>
 
+    <script src="./js/translate.js"></script>
     <script src="./js/prcChara.js"></script>
 
 </body>

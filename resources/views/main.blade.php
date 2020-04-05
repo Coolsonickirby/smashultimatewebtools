@@ -28,6 +28,9 @@
             <a class="link-tool" href="/prc/Stage/0">
                 SSS Editor
             </a>
+            <a class="link-tool" href="/prc/FighterParam/0">
+                Fighter Param Editor
+            </a>
         </div>
     </div>
 
@@ -134,6 +137,11 @@
                 <h4><a href="https://github.com/lukasoppermann/html5sortable">html5sortable</a> - <a href="https://github.com/lukasoppermann">Lukas Oppermann</a></h4>
                 <h4><a href="http://www.dhtmlgoodies.com/scripts/form_widget_editable_select/form_widget_editable_select.html">Editable Input Select</a> - <a href="http://www.dhtmlgoodies.com/">Alf Magne Kalleland</a></h4>
                 <h4>Helping me get some stage icons and big images -  <a href="https://gamebanana.com/members/1537331">zrksyd</a> & <a href="https://gamebanana.com/members/1707207">A Mudkip</a></h4>
+                <h4><a href="http://smashultimatetools.com/prc/Stage">Stage Editor Web Interface</a> - <a href="https://github.com/Coolsonickirby/">Coolsonickirby/Random</a></h4>
+            </div>
+            <div class="msbt_credits">
+                <h2>Fighter Param Editor:</h2>
+                <h4><a href="https://github.com/BenHall-7/paracobNET">ParamXML</a> - <a href="https://github.com/BenHall-7">Ben Hall</a></h4>
                 <h4><a href="http://smashultimatetools.com/prc/Stage">Stage Editor Web Interface</a> - <a href="https://github.com/Coolsonickirby/">Coolsonickirby/Random</a></h4>
             </div>
         </div>
@@ -268,7 +276,13 @@
             so with the downtime I have, I have nothing better to do than work on this website
             (college being sad in the background). Anyways, a SSS editor, yayyyy.
             I might slow down a bit for now cause I wanna do other stuff, but enjoy making SSS mods now!`
-        }];
+        },
+        {
+            date: `4/5/2020`,
+            text: `Ok, I'm done for now. I'll hopefully add something new next week, but I procrastinated on my college assignments for far too long.
+            Anyway added a fighter_param editor mostly because of the randomize feature. @ me on discord if anything needs changing or something. gnite.`
+        }
+    ];
 
         window.onload = function() {
             document.getElementById("default").click();

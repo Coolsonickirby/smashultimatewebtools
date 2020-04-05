@@ -92,6 +92,20 @@ Route::prefix('prc')->group(function () {
         'uses' => 'prcController@JSONtoStagePrc'
     ]);
     #endregion
+
+    #region FighterParam Routes
+    Route::get('/FighterParam/{id?}', function ($id = null) {
+        return view('prc/prcFighterParam');
+    });
+
+    Route::post('/FighterParam/openPRC', [
+        'uses' => 'prcController@StoreFighterParamPrc'
+    ]);
+
+    Route::post('/FighterParam/saveJSON', [
+        'uses' => 'prcController@JSONtoFighterParamPrc'
+    ]);
+    #endregion
 });
 
 
@@ -101,6 +115,7 @@ Route::prefix('api')->group(function () {
     Route::get("/jsonMSBT/{id}", "MSBTController@GetJSON");
     Route::get('/CharaJSON/{id}', "prcController@GetCharaJSON");
     Route::get('/StageJSON/{id}', "prcController@GetStageJSON");
+    Route::get('/FighterParamJSON/{id}', "prcController@GetFighterParamJSON");
 });
 
 //Details Route

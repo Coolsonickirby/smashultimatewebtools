@@ -7,6 +7,8 @@ use App\Models\PRC\prcCharaExtract;
 use App\Models\PRC\prcCharaRepack;
 use App\Models\PRC\prcStageExtract;
 use App\Models\PRC\prcStageRepack;
+use App\Models\PRC\prcFighterParamExtract;
+use App\Models\PRC\prcFighterParamRepack;
 use Illuminate\Support\Facades\Storage;
 
 class prcController extends Controller
@@ -103,6 +105,54 @@ class prcController extends Controller
         shell_exec("dotnet %CD%/convert/prc2json/prc2json.dll -a \"%CD%/storage/prc/Stage/repack/input/{$prcStageRepack->id}/{$prcStageRepack->id}.json\" -o %CD%/storage/prc/Stage/repack/output/{$prcStageRepack->id}/ui_stage_db.prc -l %CD%/convert/ParamLabels.csv");
 
         return redirect("/storage/prc/Stage/repack/output/{$prcStageRepack->id}/ui_stage_db.prc");
+    }
+    #endregion
+
+
+    #region FIGHTER PARAM PRC
+    public function StoreFighterParamPrc(Request $request)
+    {
+        $prcFighterParamExtract = new prcFighterParamExtract;
+
+        $file = $request->file('fileInput');
+
+        $prcFighterParamExtract->file = $file->getClientOriginalName();
+
+        $prcFighterParamExtract->save();
+
+        $path_tmp = $file->storeAs('public/prc/FighterParam/extract/input/' . $prcFighterParamExtract->id, extraController::keep_english($prcFighterParamExtract->file));
+
+        $path = str_replace("public", "storage", $path_tmp);
+
+        shell_exec("dotnet %CD%/convert/prc2json/prc2json.dll -d {$path} -o %CD%/storage/prc/FighterParam/extract/output/{$prcFighterParamExtract->id}/fighter_param.json -l %CD%/convert/ParamLabels.csv");
+
+        return redirect("/prc/FighterParam/{$prcFighterParamExtract->id}");
+    }
+
+    public function GetFighterParamJSON($id)
+    {
+
+        if($id > 0){
+            $jsonText = file_get_contents(public_path("/storage/prc/FighterParam/extract/output/{$id}/fighter_param.json"));
+        }else{
+            $jsonText = file_get_contents(public_path("/convert/defaults/FighterParam/fighter_param.json"));
+        }
+
+        return $jsonText;
+
+    }
+
+    public function JSONtoFighterParamPrc(Request $request)
+    {
+        $prcFighterParamRepack = new prcFighterParamRepack();
+
+        $prcFighterParamRepack->save();
+
+        Storage::put("/public/prc/FighterParam/repack/input/{$prcFighterParamRepack->id}/{$prcFighterParamRepack->id}.json", $request->input("json"));
+
+        shell_exec("dotnet %CD%/convert/prc2json/prc2json.dll -a \"%CD%/storage/prc/FighterParam/repack/input/{$prcFighterParamRepack->id}/{$prcFighterParamRepack->id}.json\" -o %CD%/storage/prc/FighterParam/repack/output/{$prcFighterParamRepack->id}/fighter_param.prc -l %CD%/convert/ParamLabels.csv");
+
+        return redirect("/storage/prc/FighterParam/repack/output/{$prcFighterParamRepack->id}/fighter_param.prc");
     }
     #endregion
 
