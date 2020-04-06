@@ -96,25 +96,15 @@ class idspController extends Controller
 
         $arr = explode(' ', $log);
 
-        if($arr[0] == "The" && $arr[1] == "loop"){
-            $idsp->log = $log;
-
-            $idsp->save();
-
-            $status = '<p class="card-text"><pre>' . $log . '</pre></p>';
-            return redirect()->back()->with('error', $status);
-        }else if($arr[0] == "Error" && $arr[1] == "parsing"){
-            $idsp->log = $log;
-
-            $idsp->save();
-
-            $status = '<p class="card-text"><pre>' . $log . '</pre></p>';
-            return redirect()->back()->with('error', $status);
-        }
-
         $idsp->log = $log;
 
         $idsp->save();
+
+        $errorCheck = extraController::errorCheck($arr, $log);
+
+        if($errorCheck[0]){
+            return redirect()->back()->with('error', $errorCheck[1]);
+        };
 
         $status = '<p class="card-text">IDSP Conversion Complete! You can download it from <a class="return_link" href="/storage/audio/idsp/' . $idsp->id . '/' . $fileOutput . '.idsp">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/idsp/' . $idsp->id . '">click here.</a></p>';
 

@@ -97,21 +97,15 @@ class nus3audioController extends Controller
 
         $arr = explode(' ', $log);
 
-        if($arr[0] == "The" && $arr[1] == "loop"){
-            $nus3audio->log = $log;
+        $nus3audio->log = $log;
 
-            $nus3audio->save();
+        $nus3audio->save();
 
-            $status = '<p class="card-text"><pre>' . $log . '</pre></p>';
-            return redirect()->back()->with('error', $status);
-        }else if($arr[0] == "Error" && $arr[1] == "parsing"){
-            $nus3audio->log = $log;
+        $errorCheck = extraController::errorCheck($arr, $log);
 
-            $nus3audio->save();
-
-            $status = '<p class="card-text"><pre>' . $log . '</pre></p>';
-            return redirect()->back()->with('error', $status);
-        }
+        if($errorCheck[0]){
+            return redirect()->back()->with('error', $errorCheck[1]);
+        };
 
         $fileOutput = extraController::keep_english($request->input("filenameOutput"));
 
