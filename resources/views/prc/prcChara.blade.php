@@ -6,6 +6,7 @@
     <base href="{{Request::root()}}">
     <meta name="viewport" content="width=1024">
     <title>Smash Ultimate CSS Editor</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/prcChara.css">
 </head>
 
@@ -22,19 +23,25 @@
     </form>
 
     <div class="header">
-        <button id="open" class="open">Open</button>
-        <button id="save" class="save">Save</button>
-        <a href="./prc/Chara/0"><button>Load Default</button></a>
+        <button type="button" class="btn btn-primary" id="open">
+            Open
+        </button>
+        <button type="button" class="btn btn-success" id="save">
+            Save
+        </button>
+        <a href="./prc/Chara/0"><button class="btn btn-secondary">Load Default</button></a>
     </div>
 
-    <div class="container" aria-hidden="true">
+    <br>
+
+    <div class="container_chara" aria-hidden="true">
 
         <p class="title"><strong>Not Hidden</strong><br>
             <label for="css_style_1_flex">Flex Layout</label>
             <input type="radio" id="css_style_1_flex" name="css_style_1" value="flex">
             <label for="css_style_1_grid">Grid Layout</label>
             <input type="radio" id="css_style_1_grid" name="css_style_1" value="grid">
-            <button onClick="RandomizeMain();">Randomize!</button>
+            <button onClick="RandomizeMain();" class="btn btn-danger">Randomize!</button>
         </p>
 
         <div id="non_hidden_outer">

@@ -1,10 +1,13 @@
 body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background: darkgray;
 }
 
 .hide {
     display: none !important;
+}
+
+.btn{
+    margin:5px;
 }
 
 @keyframes gradient {
@@ -21,7 +24,7 @@ body {
     text-align: center;
 }
 
-.container {
+.container_chara {
     position: relative;
     margin: auto;
     width: 80%;
@@ -70,6 +73,7 @@ body {
 
 .item>p{
     z-index: -1;
+    margin-bottom: 12px;
 }
 
 .item:hover {
@@ -86,7 +90,7 @@ body {
     min-height: 60px;
     max-width: 112px;
     max-height: 60px;
-    background-color: lightblue;
+    background-color: #ffe680;
 }
 
 .chara_name {

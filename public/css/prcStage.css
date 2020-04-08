@@ -1,11 +1,10 @@
 body {
     line-height: 1.5;
-    background-color: #eee2dc;
 }
 
 h4{
-    color:black;
-    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+    color:white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .header {
@@ -14,13 +13,17 @@ h4{
     margin-top: 10px;
 }
 
+.btn {
+    margin:9px;
+}
+
 strong{
-    color:black;
+    color:white;
 }
 
 label{
-    color:black;
-    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+    color:white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 #current_hover {
@@ -28,7 +31,8 @@ label{
 }
 
 #current_selected {
-    color: #123c69;
+    color: #0a7cf5;
+
 }
 
 .big_img {
@@ -92,7 +96,7 @@ label {
 }
 
 .list-grid {
-    background-color: #bab2b5;
+    background-color: #5d5659;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(0px, 80px));
     grid-row-gap: 0;
