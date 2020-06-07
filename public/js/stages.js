@@ -622,7 +622,8 @@ var PikminSeries = [
 
 var AnimalCrossingSeries = [
     ["Animal Crossing Series", "ac"],
-    ["Title Theme - Animal Crossing: Wild World", "bgm_n01_dnm_title", "792824"],
+    ["Title Theme - Animal Crossing", "bgm_n21_dmp_title", "2024888"]
+    ["Title Theme - Animal Crossing: Wild World (Brawl)", "bgm_n01_dnm_title", "792824"],
     ["Go K.K. Rider!", "bgm_n02_dnm_yuke_kekerider", "1285352"],
     ["2:00 a.m. - Animal Crossing: Wild World", "bgm_n03_dnm_200am", "1572784"],
     ["The Roost - Animal Crossing: Wild World", "bgm_n05_oid_junkissa_hatonosu", "1218656"],
@@ -640,7 +641,7 @@ var AnimalCrossingSeries = [
     ["Tour - Animal Crossing: New Leaf", "bgm_n17_tbd_tour", "1582704"],
     ["Bubblegum K.K.", "bgm_n18_tbd_kekeidol", "1442584"],
     ["Title Theme - Animal Crossing: Happy Home Designer", "bgm_n19_hhd_title", "1827976"],
-    ["Title Theme - Animal Crossing", "bgm_n20_dnm_title", "1939328"],
+    ["Title Theme - Animal Crossing: Wild World", "bgm_n20_dnm_title", "1939328"],
     ["House Preview", "bgm_n24_hhd_kanseidemo", "835728"]
 ];
 

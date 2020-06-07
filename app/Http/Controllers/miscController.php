@@ -222,7 +222,9 @@ class miscController extends Controller
 
             $nus3audio_replace->save();
 
-            $path_tmp = $file->storeAs('public/audio/nus3audio_replace/' . $nus3audio_replace->id, extraController::keep_english($file->getClientOriginalName()));
+            $clean_filename = extraController::keep_english($file->getClientOriginalName());
+
+            $path_tmp = $file->storeAs('public/audio/nus3audio_replace/' . $nus3audio_replace->id, $clean_filename);
 
             $path = public_path() . '/' . str_replace("public", "storage", $path_tmp);
 
@@ -274,7 +276,7 @@ class miscController extends Controller
 
             $status = "
             <p class=\"card-text\">
-            Replacment complete! You can download the file from <a class=\"return_link\" href=\"/storage/audio/nus3audio_replace/{$nus3audio_replace->id}/{$nus3audio_replace->filename}\">here!</a>
+            Replacment complete! You can download the file from <a class=\"return_link\" href=\"/storage/audio/nus3audio_replace/{$nus3audio_replace->id}/{$clean_filename}\">here!</a>
             <br>
             For more information, you can click <a class=\"return_link\" href=\"/details/nus3audio_replace/{$nus3audio_replace->id}\">here!</a>
             </p>";

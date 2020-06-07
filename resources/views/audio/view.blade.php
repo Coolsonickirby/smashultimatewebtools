@@ -147,7 +147,7 @@
                             <label for="filenameOutput">Output File Name:</label>
                             <input type="text" class="form-control" id="filenameOutput" name="filenameOutput">
                             <br>
-                            <label for="hz">Audio HZ:</label>
+                            <label for="hz">Audio Bitrate (VGAudioCli):</label>
                             <input type="text" class="form-control" id="hz" name="hz" value="48000">
                         </div>
                         <br>

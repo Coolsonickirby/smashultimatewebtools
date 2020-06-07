@@ -281,7 +281,7 @@ function UpdateInputs(e) {
             if (item.value == "") {
                 return;
             } else {
-                fighter_data.struct.list.struct[e.value].float[item.id.replace("int", "")]["#text"] = item.value;
+                fighter_data.struct.list.struct[e.value].int[item.id.replace("int", "")]["#text"] = item.value;
             };
         });
     });

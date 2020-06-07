@@ -82,9 +82,23 @@ class MainController extends Controller
                 if(!empty($request->input("sampleHZinput"))){
                     $hz_convert = 48000 / floatval($request->input("sampleHZinput"));
 
-                    $looparray[0] = intval($request->input("start_loop") * $hz_convert);
+                    $start = $request->input("start_loop");
 
-                    $looparray[1] = intval($request->input("end_loop") * $hz_convert);
+                    $end = $request->input("end_loop");
+
+                    if(strpos($start, ":") !== false || strpos($start, ".") !== false){
+                        $start = extraController::time_to_samples($start, intval($request->input("sampleHZinput")));
+                        $looparray[0] = $start * $hz_convert;
+                    }else{
+                        $looparray[0] = intval(extraController::keepNumbers($start) * $hz_convert);
+                    }
+
+                    if(strpos($end, ":") !== false || strpos($end, ".") !== false){
+                        $end = extraController::time_to_samples($end, intval($request->input("sampleHZinput")));
+                        $looparray[1] = $end * $hz_convert;
+                    }else{
+                        $looparray[1] = intval(extraController::keepNumbers($end) * $hz_convert);
+                    }
                 }else{
                     $looparray[0] = 0;
                     $looparray[1] = 0;
