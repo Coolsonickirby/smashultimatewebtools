@@ -66,11 +66,21 @@ class brstmController extends Controller
             }
         }
 
-        if($file_ext != "wav"){
-            $path = extraController::resample48($brstm->id, "brstmRE", $path);
-        }else if($sample_rate != "48000"){
-            $path = extraController::resample48($brstm->id, "brstmRE", $path);
+        if ($request->input("advanced") == "on") {
+
+            $path = extraController::resample48($brstm->id, "brstmRE", $path, $request->input("sample_rate"));
+
+        }else{
+
+            if($file_ext != "wav"){
+                $path = extraController::resample48($brstm->id, "brstmRE", $path);
+            }else if($sample_rate != "48000"){
+                $path = extraController::resample48($brstm->id, "brstmRE", $path);
+            };
+
         };
+
+
 
         if($brstm->end_loop == 0){
             $brstm->end_loop = extraController::getSamples($path);

@@ -622,7 +622,7 @@ var PikminSeries = [
 
 var AnimalCrossingSeries = [
     ["Animal Crossing Series", "ac"],
-    ["Title Theme - Animal Crossing", "bgm_n21_dmp_title", "2024888"]
+    ["Title Theme - Animal Crossing", "bgm_n21_dmp_title", "2024888"],
     ["Title Theme - Animal Crossing: Wild World (Brawl)", "bgm_n01_dnm_title", "792824"],
     ["Go K.K. Rider!", "bgm_n02_dnm_yuke_kekerider", "1285352"],
     ["2:00 a.m. - Animal Crossing: Wild World", "bgm_n03_dnm_200am", "1572784"],
@@ -1039,7 +1039,8 @@ var OtherSeries = [
     ["Frontier Battle", "bgm_rr13_dhb_kaitakuchinotatakai", "927760"],
     ["MEGALOVANIA", "bgm_rr14_ut_megalovania", "1210152"],
     ["Ice Climber (Melee)", "bgm_w13_ice_iciclemountain", "1482760"],
-    ["Mach Rider", "bgm_w18_mrd_machrider", "1606760"]
+    ["Mach Rider", "bgm_w18_mrd_machrider", "1606760"],
+    ["Floral Fury", "bgm_rr15_chd_floralfury_rekkanogotoku", "1875952"]
 ];
 
 var PersonaSeries = [
@@ -1255,6 +1256,10 @@ window.onload = function () {
         return /^-?\d*$/.test(value);
     });
 
+    setInputFilter(document.getElementById("sample_rate"), function (value) {
+        return /^-?\d*$/.test(value);
+    });
+
 }
 
 function LoopSamples(checkbox) {
@@ -1322,6 +1327,11 @@ function UpdateStage(e) {
 
 function UpdateType(e) {
     document.getElementById("filetype").value = e.value;
+    if(e.value == "idsp" || e.value == "toBrstm"){
+        document.getElementById("sample_rate_section").style.display = "block";
+    }else{
+        document.getElementById("sample_rate_section").style.display = "none";
+    }
 }
 
 function UpdateHZ(e) {

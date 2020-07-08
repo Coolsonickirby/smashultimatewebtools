@@ -83,13 +83,6 @@ body {
 
 .image {
     z-index: -1;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 112px auto;
-    min-width: 112px;
-    min-height: 60px;
-    max-width: 112px;
-    max-height: 60px;
     background-color: #ffe680;
 }
 
@@ -101,6 +94,17 @@ body {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     text-align: center;
     word-wrap: anywhere;
+}
+
+.chara_icon{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 112px auto;
+    min-width: 112px;
+    min-height: 60px;
+    max-width: 112px;
+    max-height: 60px;
+    filter: contrast(102%);
 }
 
 

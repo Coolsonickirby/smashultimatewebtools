@@ -41,7 +41,7 @@ class detailsController extends Controller
         return $audio;
     }
 
-    public function BrstmDetails($id)
+    public function vgmstream($id)
     {
         $id = extraController::keepNumbers($id);
         $brstm = brstm::where("id", $id)->first();

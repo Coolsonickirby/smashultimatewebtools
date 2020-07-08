@@ -148,7 +148,12 @@
                             <input type="text" class="form-control" id="filenameOutput" name="filenameOutput">
                             <br>
                             <label for="hz">Audio Bitrate (VGAudioCli):</label>
-                            <input type="text" class="form-control" id="hz" name="hz" value="48000">
+                            <input type="text" class="form-control" id="hz" name="hz" value="64000">
+                            <br>
+                            <div id="sample_rate_section" style="display:none;">
+                                <label for="sample_rate">SoX Sample Rate:</label>
+                                <input type="text" class="form-control" id="sample_rate" name="sample_rate" value="48000">
+                            </div>
                         </div>
                         <br>
                         <button type="submit" class="btn btn-primary">Convert!</button>
@@ -201,9 +206,7 @@
                 if (file_name.includes(".brstm")) {
 
                     document.getElementById("type_div").style.display = "none";
-
                     document.getElementById("loop_container").style.display = "block";
-
                     document.getElementById("loop_samples_select_container").style.display = "block";
 
                 } else if (file_name.includes(".opus")) {

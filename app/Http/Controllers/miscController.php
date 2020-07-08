@@ -44,50 +44,52 @@ class miscController extends Controller
         return redirect()->back()->with('success', $status);
     }
 
-    public static function ConvertBrstm(Request $request){
+    public static function ConvertVGMStream(Request $request){
         if($request->file('music') == null){
             $status = '<p class="card-text">Please upload a file!</p>';
             return redirect()->back()->with('error', $status);
         }
 
-        if($request->file('music')->getClientOriginalExtension() == "brstm" || $request->file('music')->getClientOriginalExtension() == "idsp" || $request->file('music')->getClientOriginalExtension() == "lopus"){
-            $brstm = new brstm;
+        $brstm = new brstm;
 
-            $file = $request->file('music');
+        $file = $request->file('music');
 
-            $brstm->filename = $file->getClientOriginalName();
+        $brstm->filename = $file->getClientOriginalName();
 
-            $brstm->save();
+        $brstm->save();
 
-            $path_tmp = $file->storeAs('public/audio/normalbrstm/' . $brstm->id, extraController::keep_english($file->getClientOriginalName()));
+        $path_tmp = $file->storeAs('public/audio/normalbrstm/' . $brstm->id, extraController::keep_english($file->getClientOriginalName()));
 
-            $path = public_path() . '/' . str_replace("public", "storage", $path_tmp);
+        $path = public_path() . '/' . str_replace("public", "storage", $path_tmp);
 
-            $filename = pathinfo($path_tmp, PATHINFO_FILENAME);
+        $filename = pathinfo($path_tmp, PATHINFO_FILENAME);
 
-            $tmp_path_1 = shell_exec("echo %CD%/storage/audio/fixedbrstm/{$brstm->id}/");
+        $tmp_path_1 = shell_exec("echo %CD%/storage/audio/fixedbrstm/{$brstm->id}/");
 
-            $tmp_path_2 = shell_exec("echo %CD%/storage/audio/tmpbrstm/{$brstm->id}/");
+        $tmp_path_2 = shell_exec("echo %CD%/storage/audio/tmpbrstm/{$brstm->id}/");
 
-            $tmp_path_2 = str_replace(' ', '', $tmp_path_2);
+        $tmp_path_2 = str_replace(' ', '', $tmp_path_2);
 
-            File::makeDirectory($tmp_path_1, 0777, true, true);
+        File::makeDirectory($tmp_path_1, 0777, true, true);
 
-            File::makeDirectory($tmp_path_2, 0777, true, true);
+        File::makeDirectory($tmp_path_2, 0777, true, true);
 
-            $brstm->log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/audio/tmpbrstm/{$brstm->id}/{$filename}.wav\"");
+        $subSong = intval($request->input("subSong"));
 
-            $brstm->log2 = shell_exec("%CD%/convert/sox/sox.exe \"%CD%/storage/audio/tmpbrstm/{$brstm->id}/{$filename}.wav\" -r 48000 \"%CD%/storage/audio/fixedbrstm/{$brstm->id}/{$filename}.wav\"");
+        $brstm->log = shell_exec("%CD%/convert/test/test.exe -o \"%CD%/storage/audio/tmpbrstm/{$brstm->id}/{$filename}.wav\" -s {$subSong} -i \"{$path}\"");
 
-            $brstm->save();
+        $array_log = [
+            "Original Song Filename", $filename,
+            "Sub Song" => $subSong
+        ];
 
-            $status = '<p class="card-text">Music Conversion Complete! You can download it from <a class="return_link" href="/storage/audio/fixedbrstm/' . $brstm->id . '/' . $filename . '.wav">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/brstm/' . $brstm->id . '">click here.</a></p>';
+        $brstm->log2 = json_encode($array_log);
+        $brstm->save();
 
-            return redirect()->back()->with('success', $status);
-        }else{
-            $status = '<p class="card-text">Please upload a valid file type (brstm, idsp, lopus)!</p>';
-            return redirect()->back()->with('error', $status);
-        }
+        $status = '<p class="card-text">Music Conversion Complete! You can download it from <a class="return_link" href="/storage/audio/fixedbrstm/' . $brstm->id . '/' . $filename . '.wav">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/vgmstream/' . $brstm->id . '">click here.</a></p><br> <label>vgmstream log:</label><pre>' . $brstm->log . '</pre>';
+
+        return redirect()->back()->with('success', $status);
+
 
     }
 
@@ -115,7 +117,10 @@ class miscController extends Controller
 
         File::makeDirectory($tmp_path_2, 0777, true, true);
 
-        $BTN->log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o \"%CD%/storage/audio/tmpBTN/{$BTN->id}/{$filename}.wav\"");
+
+        if($request->input("hz") == "test")
+
+        $BTN->log = shell_exec("%CD%/convert/test/test.exe -o \"%CD%/storage/audio/tmpBTN/{$BTN->id}/{$filename}.wav\" -i \"{$path}\" ");
 
         $BTN->log2 = shell_exec("%CD%/convert/sox/sox.exe \"%CD%/storage/audio/tmpBTN/{$BTN->id}/{$filename}.wav\" -r 48000 \"%CD%/storage/audio/fixedBTN/{$BTN->id}/{$filename}.wav\"");
 

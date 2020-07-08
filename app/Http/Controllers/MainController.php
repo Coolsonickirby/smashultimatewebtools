@@ -24,8 +24,8 @@ class MainController extends Controller
         return view('audio/song_compatible');
     }
 
-    public function viewBrstm(){
-        return view('audio/brstm_to_wav');
+    public function viewVGMStream(){
+        return view('audio/vgmstream_wav');
     }
 
     public function viewSoundBank(){
@@ -37,6 +37,23 @@ class MainController extends Controller
         if($request->file('music') == null){
             $status = '<p class="card-text">Please upload a file!</p>';
             return redirect()->back()->with('error', $status);
+        }
+
+        if($request->input("hz") == "test"){
+            // $file = fopen($request->file('music'), "rb");
+
+            // $data = fread($file, 5);
+
+            // fclose($file);
+
+            // if(preg_match('/\s/', $request->file('music')->getClientOriginalExtension())){
+            //     return "Whitespace found!\n" . $request->file('music')->getClientOriginalExtension();
+            // }else{
+            //     return "No whitespace found!\n" . $request->file('music')->getClientOriginalExtension();
+            // }
+
+            return "hi";
+
         }
 
         $looparray = array();
@@ -56,6 +73,12 @@ class MainController extends Controller
         if($request->input("hz") == ""){
             $request->merge([
                 'hz' => "48000",
+            ]);
+        }
+
+        if($request->input("sample_rate") == ""){
+            $request->merge([
+                'sample_rate' => "48000",
             ]);
         }
 

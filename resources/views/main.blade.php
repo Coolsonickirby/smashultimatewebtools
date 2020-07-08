@@ -43,6 +43,7 @@
             <button class="tablinks" onclick="openTab(event, 'Credits')">Credits</button>
             <button class="tablinks" onclick="openTab(event, 'MiniGuides')">Mini-Guides</button>
             <button class="tablinks" onclick="openTab(event, 'PAQ')">PAQ</button>
+            <button class="tablinks" onclick="openTab(event, 'ToDo')">To-Do List</button>
         </div>
 
         <!-- Tab content -->
@@ -139,10 +140,16 @@
                 <h4>Helping me get some stage icons and big images -  <a href="https://gamebanana.com/members/1537331">zrksyd</a> & <a href="https://gamebanana.com/members/1707207">A Mudkip</a></h4>
                 <h4><a href="http://smashultimatetools.com/prc/Stage">Stage Editor Web Interface</a> - <a href="https://github.com/Coolsonickirby/">Coolsonickirby/Random</a></h4>
             </div>
+            <hr>
             <div class="msbt_credits">
                 <h2>Fighter Param Editor:</h2>
                 <h4><a href="https://github.com/BenHall-7/paracobNET">ParamXML</a> - <a href="https://github.com/BenHall-7">Ben Hall</a></h4>
-                <h4><a href="http://smashultimatetools.com/prc/Stage">Stage Editor Web Interface</a> - <a href="https://github.com/Coolsonickirby/">Coolsonickirby/Random</a></h4>
+                <h4><a href="http://smashultimatetools.com/prc/FighterParam">Fighter Param Editor Web Interface</a> - <a href="https://github.com/Coolsonickirby/">Coolsonickirby/Random</a></h4>
+            </div>
+            <hr>
+            <div class="msbt_credits">
+                <h2>Special Thanks:</h2>
+                <h4>Getting me the updated files - <a href="https://twitter.com/BruhLookAtThis">BruhLookAtThis</a> & <a href="https://www.youtube.com/channel/UCm4vgCpCYLHkGwldLPNpSQw">AGhostsPumpkinSoup</a></h4>
             </div>
         </div>
 
@@ -155,11 +162,11 @@
                     <li>Go to <a href="http://www.smashcustommusic.net/">SmashCustomMusic</a> and look for the game you want the audio from.
                     </li>
                     <li>Once you find the game, click on it and look for the song you want.</li>
-                    <li>Click on the song name, then click "Download BRSTM" (blue box in image below). Make sure you note down everything in the highlighted section.<br><img src="./img/mini1.png" alt="Download BRSTM" style="height:512px; width:auto;"></li>
+                    <li>Click on the song name, then click "Download BRSTM" (blue box in image below). <span class="strike">Make sure you note down everything in the highlighted section.</span> Not necessary anymore.<br><img src="./img/mini1.png" alt="Download BRSTM" style="height:512px; width:auto;"></li>
                     <li>Go to <a href="{{Request::root()}}/audio/#music">"Music file"</a> and select the brstm file you downloaded</li>
                     <li>Enable the <a href="{{Request::root()}}/audio/#loop">"Loop Samples"</a> checkbox</li>
                     <li>Set the Sampling Rate to the proper one. (Set it to "Auto" if you're not sure.)</li>
-                    <li><span style="text-decoration: line-through;">Enter the loop samples you got from the notes into the proper fields</span> Not necessary anymore as it can auto-detect the loop points.</li>
+                    <li><span class="strike">Enter the loop samples you got from the notes into the proper fields</span> Not necessary anymore as it can auto-detect the loop points.</li>
                     <li>Select the song you want to replace.</li>
                     <li>Click "Convert"</li>
                     <li>Profit</li>
@@ -210,7 +217,7 @@
 
             <h4>How are you converting music online?</h4>
             <p>The website stores the file, then uses shell_exec to convert the file to lopus/idsp (if lopus/idsp was selected, it would return the file), then it injects it into a base nus3audio I have saved somewhere. For compatible wav, I store the file,
-                then use shell_exec with SoX to resample the audio file, then return it. <span style="text-decoration: line-through;">Right now, it's on a Windows Server, but once I figure out
+                then use shell_exec with SoX to resample the audio file, then return it. <span class="strike">Right now, it's on a Windows Server, but once I figure out
                     how to get VGAudio to work on a linux server, I'll move the server over there for more space,
                     bandwidth,
                     and speed at a cheaper price.</span> Change of plans: MSBTEditorCli only works with .NET 4.0 and I don't know how to get that to work with Linux.</p>
@@ -221,7 +228,7 @@
                 sends the server the array stringified. The server then stores the json string to a file, then sends the file through MSBTEditorCli to convert the json back to MSBT, then it returns the new MSBT file.</p>
 
             <h4>Is this website only for audio?</h4>
-            <p><span style="text-decoration: line-through;">Right now, it's only audio, but I will work on adding more tools and making the website look nicer on my free time. My main goal was audio, but the only good domain name I could've thought of was smashultimatetools.com and that wasn't taken.</span>                MSBTEditor now yayyyyyyy.</p>
+            <p><span class="strike">Right now, it's only audio, but I will work on adding more tools and making the website look nicer on my free time. My main goal was audio, but the only good domain name I could've thought of was smashultimatetools.com and that wasn't taken.</span>                MSBTEditor now yayyyyyyy.</p>
 
             <h4>Where can I find this website's source code?</h4>
             <p><a href="https://github.com/Coolsonickirby/smashultimatewebtools">Here.</a></p>
@@ -231,6 +238,66 @@
             <p>Contact me on discord @ Coolsonickirby#4030.</p>
         </div>
 
+    </div>
+
+    <div id="ToDo" class="tabcontent">
+    <h4>
+        <ol>
+            <li><span class="strike">Add the To-Do List</span> Done</li>
+            <li>
+                MSBTEditor:
+                <ul>
+                    <li>Nothing as of now</li>
+                </ul>
+            </li>
+            <li>
+                Audio:
+                <ul>
+                    <li><span class="strike">Allow custom sample rate instead of 48000 for idsp</span> Done</li>
+                </ul>
+            </li>
+            <li>
+                CSS Editor:
+                <ul>
+                    <li>Revamp the design and make it look nicer (cleaner? can't find a better term)</li>
+                    <li>Add Echo Character Selection</li>
+                    <li>Add Sopo, Sana, proper Ivy, proper Squirtle, and proper Charizard slots</li>
+                    <li>Add announcer voice selection</li>
+                    <li>Fix Gamma Issue? (not sure if the fix I applied to it is good or not.)</li>
+                    <li>Add Ability to Change Costume Amount</li>
+                </ul>
+            </li>
+            <li>
+                SSS Editor:
+                <ul>
+                    <li>Fix Gamma Issue</li>
+                </ul>
+            </li>
+            <li>
+                Fighter Param Editor:
+                <ul>
+                    <li>Add More Options</li>
+                    <li>Add More Randomization Options</li>
+                    <li>Improve Randomizer</li>
+                </ul>
+            </li>
+            <li>
+                The Site Itself:
+                <ul>
+                    <li>Make the front-page look nice instead of being garbage</li>
+                    <li>Add more stuff
+                    <ul>
+                        <li>BGM DB Editor</li>
+                        <li>Damage Color Editor (Thanks to zrksyd for the idea)</li>
+                    </ul>
+                    </li>
+                    <li>Fill in the About Tab</li>
+                    <li>Clean up any bugs (tbh I didn't encounter as much as I thought I would)</li>
+                    <li><span class="strike">Add CSS to make the To-Do List look more cleaner</span> Done</li>
+                </ul>
+            </li>
+        </ol>
+        </h4>
     </div>
 
     <script>
@@ -281,6 +348,11 @@
             date: `4/5/2020`,
             text: `Ok, I'm done for now. I'll hopefully add something new next week, but I procrastinated on my college assignments for far too long.
             Anyway added a fighter_param editor mostly because of the randomize feature. @ me on discord if anything needs changing or something. gnite.`
+        },
+        {
+            date: `7/1/2020`,
+            text: `Uhh, just realized I added nothing new at all for the past 2 months. Pretty sorry about that. I added a To-Do List today, so I'll start by doing everything
+            in the To-Do List. Sorry if you were expecting anything new soon. I promise I'll bring something new soon after I finish with everything I need to do tho.`
         }
     ];
 

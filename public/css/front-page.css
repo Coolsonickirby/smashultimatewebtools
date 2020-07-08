@@ -158,3 +158,20 @@ p {
 li {
     color: white;
 }
+
+#ToDo>h4>ol>li{
+    margin-bottom: 20px;
+    color:skyblue;
+}
+
+#ToDo>h4>ol>li>ul>li{
+    color:lightgreen;
+}
+
+#ToDo>h4>ol>li>ul>li>ul>li{
+    color: orangered;
+}
+
+.strike{
+    text-decoration: line-through;
+}

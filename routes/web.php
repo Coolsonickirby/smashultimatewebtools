@@ -23,7 +23,7 @@ Route::prefix('audio')->group(function () {
 
     Route::get('/wav_hz_change', 'MainController@viewConvert');
 
-    Route::get('/brstm_to_wav', 'MainController@viewBrstm');
+    Route::get('/vgmstream', 'MainController@viewVGMStream');
 
     Route::get('/nus3audio_idsp', 'MainController@viewSoundBank');
 
@@ -38,8 +38,8 @@ Route::prefix('audio')->group(function () {
         'uses' => 'miscController@ConvertMusic'
     ]);
 
-    Route::post('/brstm_to_wav/change', [
-        'uses' => 'miscController@ConvertBRSTM'
+    Route::post('/vgmstream/change', [
+        'uses' => 'miscController@ConvertVGMStream'
     ]);
 
     Route::post('/nus3audio_idsp/replace', [
@@ -128,7 +128,7 @@ Route::prefix('details')->group(function () {
 
     Route::get('/wav_hz_change/{id}', 'detailsController@CompatibleDetails');
 
-    Route::get('/brstm/{id}', 'detailsController@BrstmDetails');
+    Route::get('/vgmstream/{id}', 'detailsController@vgmstream');
 
     Route::get('/brstm_to_nus3audio/{id}', 'detailsController@BrstmToNus3audioDetails');
 

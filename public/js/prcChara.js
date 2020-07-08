@@ -62,6 +62,7 @@ function setupCSS() {
 
                 chara_data.struct.list.struct.forEach(function (item, index) {
                     var node = document.createElement("div");
+                    var mainImageNode = document.createElement("div");
                     var imageNode = document.createElement("div");
                     var name = document.createElement("p");
 
@@ -74,11 +75,14 @@ function setupCSS() {
                     node.setAttribute("id", index);
                     node.setAttribute("data-disp_order", item.sbyte[2]["#text"]);
 
-                    imageNode.setAttribute("class", "image");
+                    mainImageNode.setAttribute("class", "image");
 
+                    imageNode.setAttribute("class", "chara_icon");
                     imageNode.setAttribute("style", `background-image: url("img/Chara/chara_7_${chara_name}_00.png");`);
 
-                    node.appendChild(imageNode);
+                    mainImageNode.appendChild(imageNode);
+
+                    node.appendChild(mainImageNode);
                     node.appendChild(name);
 
                     node.addEventListener("contextmenu", function(e) {

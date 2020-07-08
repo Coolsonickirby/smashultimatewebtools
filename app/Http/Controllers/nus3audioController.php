@@ -81,17 +81,19 @@ class nus3audioController extends Controller
             $nus3audio->end_loop = extraController::getSamples($path);
         }
 
+        $default = config('audio.lopus_bitrate');
+
         if ($request->input("loop") == "on") {
             if ($request->input("advanced") == "on") {
                 $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/audio/lopustmp/{$nus3audio->id}/output.lopus -l {$nus3audio->start_loop}-{$nus3audio->end_loop} --bitrate \"{$request->input("hz")}\" --CBR --opusheader namco ");
             } else {
-                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/audio/lopustmp/{$nus3audio->id}/output.lopus -l {$nus3audio->start_loop}-{$nus3audio->end_loop} --bitrate \"48000\" --CBR --opusheader namco");
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/audio/lopustmp/{$nus3audio->id}/output.lopus -l {$nus3audio->start_loop}-{$nus3audio->end_loop} --bitrate \"{$default}\" --CBR --opusheader namco");
             }
         } else {
             if ($request->input("advanced") == "on") {
                 $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/audio/lopustmp/{$nus3audio->id}/output.lopus --bitrate \"{$request->input("hz")}\" --CBR --opusheader namco ");
             } else {
-                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/audio/lopustmp/{$nus3audio->id}/output.lopus --bitrate \"48000\" --CBR --opusheader namco ");
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$path}\" -o %CD%/storage/audio/lopustmp/{$nus3audio->id}/output.lopus --bitrate \"{$default}\" --CBR --opusheader namco ");
             }
         }
 

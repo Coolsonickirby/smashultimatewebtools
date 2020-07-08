@@ -180,6 +180,8 @@ function TranslateName(name) {
             return "Giga Bowser";
         case "0x13edfdb2d3":
             return "Byleth";
+        case "tantan":
+            return "Min Min"
         default:
             return name;
     }

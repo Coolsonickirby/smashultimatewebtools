@@ -68,10 +68,18 @@ class idspController extends Controller
             }
         }
 
-        if($file_ext != "wav"){
-            $path = extraController::resample48($idsp->id, "idspRE", $path);
-        }else if($sample_rate != "48000"){
-            $path = extraController::resample48($idsp->id, "idspRE", $path);
+        if ($request->input("advanced") == "on") {
+
+            $path = extraController::resample48($idsp->id, "idspRE", $path, $request->input("sample_rate"));
+
+        }else{
+
+            if($file_ext != "wav"){
+                $path = extraController::resample48($idsp->id, "idspRE", $path);
+            }else if($sample_rate != "48000"){
+                $path = extraController::resample48($idsp->id, "idspRE", $path);
+            };
+
         };
 
         if($idsp->end_loop == 0){
