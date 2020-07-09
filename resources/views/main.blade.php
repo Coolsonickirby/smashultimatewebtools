@@ -254,6 +254,7 @@
                 Audio:
                 <ul>
                     <li><span class="strike">Allow custom sample rate instead of 48000 for idsp</span> Done</li>
+                    <li>Fix error with nus3audio_replace not working with 14+ clips</li>
                 </ul>
             </li>
             <li>
@@ -265,6 +266,7 @@
                     <li>Add announcer voice selection</li>
                     <li>Fix Gamma Issue? (not sure if the fix I applied to it is good or not.)</li>
                     <li>Add Ability to Change Costume Amount</li>
+                    <li>Add Ability to change Character Tips order</li>
                 </ul>
             </li>
             <li>

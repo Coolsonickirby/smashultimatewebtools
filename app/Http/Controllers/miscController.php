@@ -117,9 +117,6 @@ class miscController extends Controller
 
         File::makeDirectory($tmp_path_2, 0777, true, true);
 
-
-        if($request->input("hz") == "test")
-
         $BTN->log = shell_exec("%CD%/convert/test/test.exe -o \"%CD%/storage/audio/tmpBTN/{$BTN->id}/{$filename}.wav\" -i \"{$path}\" ");
 
         $BTN->log2 = shell_exec("%CD%/convert/sox/sox.exe \"%CD%/storage/audio/tmpBTN/{$BTN->id}/{$filename}.wav\" -r 48000 \"%CD%/storage/audio/fixedBTN/{$BTN->id}/{$filename}.wav\"");
