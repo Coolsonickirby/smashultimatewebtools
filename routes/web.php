@@ -29,6 +29,10 @@ Route::prefix('audio')->group(function () {
 
     Route::get('/compare', 'extraController@compareFileSize');
 
+    Route::get('/zipToIdsp', 'MainController@viewZipToIdsp');
+
+    Route::get('/zipToNus3audio', 'MainController@viewZipToNus3audio');
+
     //Post Requests
     Route::post('/create', [
         'uses' => 'MainController@FindType'
@@ -44,6 +48,14 @@ Route::prefix('audio')->group(function () {
 
     Route::post('/nus3audio_idsp/replace', [
         'uses' => 'miscController@replacement_nus3audio'
+    ]);
+
+    Route::post('/zipToIdsp/convert', [
+        'uses' => 'miscController@zipToIdsp'
+    ]);
+
+    Route::post('/zipToNus3audio/replace', [
+        'uses' => 'miscController@zipToNus3audio'
     ]);
 });
 
@@ -135,4 +147,8 @@ Route::prefix('details')->group(function () {
     Route::get('/nus3audio_replace/{id}', 'detailsController@replacement_nus3audio_details');
 
     Route::get('/brstm/{id}', 'detailsController@audioToBRSTM');
+
+    Route::get('/zipToIdsp/{id}', 'detailsController@zipToIdsp');
+
+    Route::get('/zipToNus3audio/{id}', 'detailsController@zipToNus3audio');
 });

@@ -8,6 +8,8 @@ use App\Models\Audio\Audio;
 use App\Models\Audio\brstm;
 use App\Models\Audio\brstmtonus3audio;
 use App\Models\Audio\nus3audio_replace;
+use App\zipToIDSP;
+use App\zipToNus3audio;
 use File;
 use Validator;
 
@@ -66,17 +68,11 @@ class miscController extends Controller
 
         $tmp_path_1 = shell_exec("echo %CD%/storage/audio/fixedbrstm/{$brstm->id}/");
 
-        $tmp_path_2 = shell_exec("echo %CD%/storage/audio/tmpbrstm/{$brstm->id}/");
-
-        $tmp_path_2 = str_replace(' ', '', $tmp_path_2);
-
         File::makeDirectory($tmp_path_1, 0777, true, true);
-
-        File::makeDirectory($tmp_path_2, 0777, true, true);
 
         $subSong = intval($request->input("subSong"));
 
-        $brstm->log = shell_exec("%CD%/convert/test/test.exe -o \"%CD%/storage/audio/tmpbrstm/{$brstm->id}/{$filename}.wav\" -s {$subSong} -i \"{$path}\"");
+        $brstm->log = shell_exec("%CD%/convert/test/test.exe -o \"%CD%/storage/audio/fixedbrstm/{$brstm->id}/{$filename}.wav\" -s {$subSong} -i \"{$path}\"");
 
         $array_log = [
             "Original Song Filename", $filename,
@@ -89,8 +85,6 @@ class miscController extends Controller
         $status = '<p class="card-text">Music Conversion Complete! You can download it from <a class="return_link" href="/storage/audio/fixedbrstm/' . $brstm->id . '/' . $filename . '.wav">here!</a></p> <br> <p class="card-text">For more information about the conversion, <a class="return_link" href="/details/vgmstream/' . $brstm->id . '">click here.</a></p><br> <label>vgmstream log:</label><pre>' . $brstm->log . '</pre>';
 
         return redirect()->back()->with('success', $status);
-
-
     }
 
     public static function CreateNus3audioFromBRSTM($request, $looparray){
@@ -289,5 +283,105 @@ class miscController extends Controller
             $status = '<p class="card-text">Please upload a valid file (nus3audio)!</p>';
             return redirect()->back()->with('error', $status);
         }
+    }
+
+    public static function zipToIDSP(Request $request){
+        $zipToIdsp = new zipToIDSP;
+
+        $file = $request->file('zipFile');
+
+        $zipToIdsp->filename = $file->getClientOriginalName();
+
+        $zipToIdsp->hz = $request->input("sample_rate");
+
+        $zipToIdsp->save();
+
+        $clean_filename = extraController::keep_english($file->getClientOriginalName());
+
+        $path_tmp = $file->storeAs('public/audio/zipToIdsp/' . $zipToIdsp->id, $clean_filename);
+
+        $path = public_path() . '/' . str_replace("public", "storage", $path_tmp);
+
+        $zipToIdspOut = public_path() . "/storage/audio/zipToIdspOut/{$zipToIdsp->id}/out";
+
+        $zipToIdspTmp = public_path() . "/storage/audio/zipToIdspOut/{$zipToIdsp->id}/tmp";
+
+        $zipToIdspRepack = public_path() . "/storage/audio/zipToIdspRepack/{$zipToIdsp->id}/idsp";
+
+        File::MakeDirectory($zipToIdspOut, 0777, true, true);
+        File::MakeDirectory($zipToIdspRepack, 0777, true, true);
+        File::MakeDirectory($zipToIdspTmp, 0777, true, true);
+
+        $log = [];
+
+        array_push($log, shell_exec("%CD%/convert/tar/bsdtar.exe -x -f \"{$path}\" -C \"{$zipToIdspOut}\""));
+
+        foreach(scandir($zipToIdspOut) as $file){
+            array_push($log, shell_exec("%CD%/convert/sox/sox.exe \"{$zipToIdspOut}/{$file}\" -r {$zipToIdsp->hz} \"{$zipToIdspTmp}/tmp.wav\""));
+            array_push($log, shell_exec("%CD%/convert/VGAudioCli.exe -i  \"{$zipToIdspTmp}/tmp.wav\" -o \"{$zipToIdspRepack}/{$file}.idsp\""));
+        }
+
+        array_push($log, shell_exec("%CD%/convert/tar/bsdtar.exe -a -c -C \"{$zipToIdspRepack}/..\" -f \"{$zipToIdspRepack}/../out.zip\" \"idsp\""));
+
+
+        $zipToIdsp->log = $log;
+
+        $status = "
+            <p class=\"card-text\">
+            Batch Conversion complete! You can download the file from <a class=\"return_link\" href=\"/storage/audio/zipToIdspRepack/{$zipToIdsp->id}/out.zip\">here!</a>
+            <br>
+            For more information, you can click <a class=\"return_link\" href=\"/details/zipToIdsp/{$zipToIdsp->id}\">here!</a>
+            </p>";
+
+        //return $status;
+        return redirect()->back()->with('success', $status);
+    }
+
+    public static function zipToNus3audio(Request $request){
+
+
+        $zipToNus3 = new zipToNus3audio;
+
+        $zipFile = $request->file('zipFile');
+        $nus3File = $request->file('nus3File');
+
+        $zipToNus3->zipFilename = $zipFile->getClientOriginalName();
+        $zipToNus3->nus3Filename = $nus3File->getClientOriginalName();
+
+        $zipToNus3->save();
+
+
+        $clean_zipFilename = extraController::keep_english($zipFile->getClientOriginalName());
+
+        $clean_nus3Filename = extraController::keep_english($nus3File->getClientOriginalName());
+
+        $path_zip = $zipFile->storeAs('public/audio/zipToNus3audio/' . $zipToNus3->id, $clean_zipFilename);
+        $path_zip = public_path() . '/' . str_replace("public", "storage", $path_zip);
+
+
+        $path_nus3 = $nus3File->storeAs('public/audio/zipToNus3audio/' . $zipToNus3->id, $clean_nus3Filename);
+        $path_nus3 = public_path() . '/' . str_replace("public", "storage", $path_nus3);
+
+        $zipToNus3Out = public_path() . "/storage/audio/zipToNus3audio/{$zipToNus3->id}/out";
+        File::MakeDirectory($zipToNus3Out, 0777, true, true);
+
+        $log = [];
+
+        array_push($log, shell_exec("%CD%/convert/tar/bsdtar.exe -x -f \"{$path_zip}\" -C \"{$zipToNus3Out}\""));
+        array_push($log, shell_exec("%CD%/convert/nus3audio.exe \"{$path_nus3}\" -a \"{$zipToNus3Out}\" -w \"{$path_nus3}\""));
+
+        $zipToNus3->log = $log;
+
+        $zipToNus3->save();
+
+        $status = "
+        <p class=\"card-text\">
+        Batch Replacement complete! You can download the file from <a class=\"return_link\" href=\"/storage/audio/zipToNus3audio/{$zipToNus3->id}/{$clean_nus3Filename}\">here!</a>
+        <br>
+        For more information, you can click <a class=\"return_link\" href=\"/details/zipToNus3audio/{$zipToNus3->id}\">here!</a>
+        </p>";
+
+        //return $status;
+        return redirect()->back()->with('success', $status);
     }
 }

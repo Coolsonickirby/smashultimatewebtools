@@ -32,6 +32,14 @@ class MainController extends Controller
         return view('audio/audio_replacement');
     }
 
+    public function viewZipToIdsp(){
+        return view('audio/zip_to_idsp');
+    }
+
+    public function viewZipToNus3audio(){
+        return view('audio/zip_to_nus3audio');
+    }
+
     public function FindType(Request $request)
     {
         if($request->file('music') == null){

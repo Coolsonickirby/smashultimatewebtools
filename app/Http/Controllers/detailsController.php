@@ -11,6 +11,8 @@ use App\Models\Audio\brstm;
 use App\Models\Audio\brstmtonus3audio;
 use App\Models\Audio\nus3audio_replace;
 use App\Models\Audio\audioToBRSTM;
+use App\zipToNus3audio;
+use App\zipToIdsp;
 
 class detailsController extends Controller
 {
@@ -64,5 +66,17 @@ class detailsController extends Controller
         $id = extraController::keepNumbers($id);
         $audioToBrstm = audioToBRSTM::where("id", $id)->first();
         return $audioToBrstm;
+    }
+
+    public function zipToIdsp($id){
+        $id = extraController::keepNumbers($id);
+        $zipToIdsp = zipToIdsp::where("id", $id)->first();
+        return $zipToIdsp;
+    }
+
+    public function zipToNus3audio($id){
+        $id = extraController::keepNumbers($id);
+        $zipToNus3audio = zipToNus3audio::where("id", $id)->first();
+        return $zipToNus3audio;
     }
 }
