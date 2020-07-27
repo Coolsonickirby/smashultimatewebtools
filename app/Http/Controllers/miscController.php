@@ -266,7 +266,7 @@ class miscController extends Controller
 
             $nus3audio_replace->replace_ids = serialize($files_id);
 
-            $nus3audio_replace->log2 = shell_exec("%CD%/convert/nus3audio.exe \"{$path}\" -a \"{$folder_path}\" -w \"{$path}\"");
+            $nus3audio_replace->log2 = shell_exec("%CD%/convert/nus3audio.exe \"{$path}\" --rebuild-id \"{$folder_path}\" -w \"{$path}\"");
 
             $nus3audio_replace->save();
 
@@ -368,7 +368,7 @@ class miscController extends Controller
         $log = [];
 
         array_push($log, shell_exec("%CD%/convert/tar/bsdtar.exe -x -f \"{$path_zip}\" -C \"{$zipToNus3Out}\""));
-        array_push($log, shell_exec("%CD%/convert/nus3audio.exe \"{$path_nus3}\" -a \"{$zipToNus3Out}\" -w \"{$path_nus3}\""));
+        array_push($log, shell_exec("%CD%/convert/nus3audio.exe \"{$path_nus3}\" --rebuild-id \"{$zipToNus3Out}\" -w \"{$path_nus3}\""));
 
         $zipToNus3->log = $log;
 
