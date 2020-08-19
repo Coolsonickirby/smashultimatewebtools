@@ -104,7 +104,7 @@ body {
     min-height: 60px;
     max-width: 112px;
     max-height: 60px;
-    filter: contrast(102%);
+    /* filter: contrast(102%); */
 }
 
 

@@ -78,10 +78,10 @@
                                 onclick="resetFilters();">Reset</a>
                             <a href="javascript:void(0)" style="display:inline; float:right; padding-right:2%;"
                                 id="more" onclick="displayFilters();">More Options</a>
-                            <a href="javascript:void(0)" style="display:inline; float:right; padding-right:2%;" id="h2l"
+                            <!-- <a href="javascript:void(0)" style="display:inline; float:right; padding-right:2%;" id="h2l"
                                 onclick="orderBySizeH2L()">Order by Size (H to L)</a>
                             <a href="javascript:void(0)" style="display:none; float:right; padding-right:2%;;" id="l2h"
-                                onclick="orderBySizeL2H()">Order by Size (L to H)</a>
+                                onclick="orderBySizeL2H()">Order by Size (L to H)</a> -->
                         </div>
                         <br style="margin-bottom:6px;">
                         <div id="filters" style="display:none;">
@@ -90,7 +90,7 @@
                         </div>
                         <select class="custom-select" id="stages" onchange="UpdateStage(this)"></select>
                         <br style="margin-bottom:3%;">
-                        <p class="form-text" style="color:green;" id="og_size">Original File Size: </p>
+                        <!-- <p class="form-text" style="color:green;" id="og_size">Original File Size: </p> -->
 
                         <div id="loop_container">
                             <input type="checkbox" class="checkbox-rounded" id="loop" name="loop"

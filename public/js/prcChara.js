@@ -155,6 +155,7 @@ function setup() {
             var i = 0;
             for (let chara of display_characters) {
                 chara_data.struct.list.struct[chara.id].sbyte[2]["#text"] = i;
+                chara_data.struct.list.struct[chara.id].sbyte[1]["#text"] = i;
 
                 if (chara_data.struct.list.struct[chara.id].string["#text"] == "random") {
                     chara_data.struct.list.struct[chara.id].bool[3]["#text"] = "False";

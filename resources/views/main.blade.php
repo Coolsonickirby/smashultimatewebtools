@@ -105,6 +105,10 @@
                 </h4>
 
                 <h4>
+                    <a href="https://docs.google.com/spreadsheets/d/1LD9qmlV_MxJ8Lm-Dxi3QmH_ZU1LBXHpKFHRuPycmkfw/edit#gid=0">ARMS Songs</a> - <a href="https://gamebanana.com/members/1513589">Mowjoh</a>
+                </h4>
+
+                <h4>
                     <a href="https://cdn.discordapp.com/attachments/516449848057135124/662099184584753152/smashAudio.zip">Python
                         script
                         to convert audio (Used as refrence for getting the sample rate)</a> -
@@ -264,7 +268,7 @@
                     <li>Add Echo Character Selection</li>
                     <li>Add Sopo, Sana, proper Ivy, proper Squirtle, and proper Charizard slots</li>
                     <li>Add announcer voice selection</li>
-                    <li>Fix Gamma Issue? (not sure if the fix I applied to it is good or not.)</li>
+                    <li><span class="strike">Fix Gamma Issue? (not sure if the fix I applied to it is good or not.)</span> Done</li>
                     <li>Add Ability to Change Costume Amount</li>
                     <li>Add Ability to change Character Tips order</li>
                 </ul>
@@ -272,7 +276,7 @@
             <li>
                 SSS Editor:
                 <ul>
-                    <li>Fix Gamma Issue</li>
+                    <li><span class="strike">Fix Gamma Issue</span> Done</li>
                 </ul>
             </li>
             <li>
