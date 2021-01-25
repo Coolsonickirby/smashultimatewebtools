@@ -167,17 +167,19 @@ class miscController extends Controller
 
         $BTN->save();
 
+        $default = config('audio.lopus_bitrate');
+
         if ($request->input("loop") == "on") {
             if ($request->input("advanced") == "on") {
                 $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$tmp_path_1}/{$filename}.wav\" -o \"%CD%/storage/audio/lopusBTN/{$BTN->id}/output.lopus\" -l {$BTN->start_loop}-{$BTN->end_loop} --bitrate \"{$request->input("hz")}\" --CBR --opusheader namco ");
             } else {
-                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$tmp_path_1}/{$filename}.wav\" -o \"%CD%/storage/audio/lopusBTN/{$BTN->id}/output.lopus\" -l {$BTN->start_loop}-{$BTN->end_loop} --bitrate \"48000\" --CBR --opusheader namco ");
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$tmp_path_1}/{$filename}.wav\" -o \"%CD%/storage/audio/lopusBTN/{$BTN->id}/output.lopus\" -l {$BTN->start_loop}-{$BTN->end_loop} --bitrate \"{$default}\" --CBR --opusheader namco ");
             }
         } else {
             if ($request->input("advanced") == "on") {
                 $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$tmp_path_1}/{$filename}.wav\" -o \"%CD%/storage/audio/lopusBTN/{$BTN->id}/output.lopus\" --bitrate \"{$request->input("hz")}\" --CBR --opusheader namco ");
             } else {
-                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$tmp_path_1}/{$filename}.wav\" -o \"%CD%/storage/audio/lopusBTN/{$BTN->id}/output.lopus\" --bitrate \"48000\" --CBR --opusheader namco ");
+                $log = shell_exec("%CD%/convert/VGAudioCli.exe -i \"{$tmp_path_1}/{$filename}.wav\" -o \"%CD%/storage/audio/lopusBTN/{$BTN->id}/output.lopus\" --bitrate \"{$default}\" --CBR --opusheader namco ");
             }
         }
 
@@ -187,7 +189,9 @@ class miscController extends Controller
 
         File::makeDirectory($tmp_path, 0777, true, true);
 
-        $log2 = shell_exec("%CD%/convert/nus3audio.exe %CD%/convert/base.nus3audio -r 0 %CD%/storage/audio/lopusBTN/{$BTN->id}/output.lopus -w %CD%/storage/audio/BTN/{$BTN->id}/{$fileOutput}.nus3audio");
+        $nus3audio_name = str_replace("bgm_", "", $fileOutput);
+
+        $log2 = shell_exec("%CD%/convert/nus3audio.exe -n -A \"{$nus3audio_name}\" \"%CD%/storage/audio/lopusBTN/{$BTN->id}/output.lopus\" -w \"%CD%/storage/audio/BTN/{$BTN->id}/{$fileOutput}.nus3audio\"");
 
         $BTN->log = $log;
 
@@ -316,9 +320,20 @@ class miscController extends Controller
 
         array_push($log, shell_exec("%CD%/convert/tar/bsdtar.exe -x -f \"{$path}\" -C \"{$zipToIdspOut}\""));
 
+        $volume = 0.0;
+
+        if($request->input("volume_control") != ""){
+            $volume = floatval($request->input("volume_control"));
+        }else{
+            $volume = 1;
+        }
+
+        array_push($log, $volume);
+
         foreach(scandir($zipToIdspOut) as $file){
-            array_push($log, shell_exec("%CD%/convert/sox/sox.exe \"{$zipToIdspOut}/{$file}\" -r {$zipToIdsp->hz} \"{$zipToIdspTmp}/tmp.wav\""));
-            array_push($log, shell_exec("%CD%/convert/VGAudioCli.exe -i  \"{$zipToIdspTmp}/tmp.wav\" -o \"{$zipToIdspRepack}/{$file}.idsp\""));
+            $file_name = pathinfo($file)['filename'];
+            array_push($log, shell_exec("%CD%/convert/sox/sox.exe -v {$volume} \"{$zipToIdspOut}/{$file}\" -r {$zipToIdsp->hz} \"{$zipToIdspTmp}/tmp.wav\""));
+            array_push($log, shell_exec("%CD%/convert/VGAudioCli.exe -i  \"{$zipToIdspTmp}/tmp.wav\" -o \"{$zipToIdspRepack}/{$file_name}.idsp\""));
         }
 
         array_push($log, shell_exec("%CD%/convert/tar/bsdtar.exe -a -c -C \"{$zipToIdspRepack}/..\" -f \"{$zipToIdspRepack}/../out.zip\" \"idsp\""));

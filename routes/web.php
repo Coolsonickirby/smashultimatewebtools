@@ -13,8 +13,21 @@
 
 //Main Section
 Route::get('/', function(){
+    return view('new-main');
+});
+
+Route::get('/old', function(){
     return view('main');
 });
+
+Route::get('/skinConverter', function(){
+    return view('skins/javaToSmash');
+});
+
+Route::post('/skinConverter/convert', [
+    'uses' => 'extraController@javaToSmash'
+]);
+
 
 //Audio Section
 Route::prefix('audio')->group(function () {
@@ -32,6 +45,8 @@ Route::prefix('audio')->group(function () {
     Route::get('/zipToIdsp', 'MainController@viewZipToIdsp');
 
     Route::get('/zipToNus3audio', 'MainController@viewZipToNus3audio');
+
+    Route::get('/smc/{id}/{loop}/', 'MainController@smashCustomMusicExt');
 
     //Post Requests
     Route::post('/create', [
@@ -65,6 +80,10 @@ Route::prefix('msbt')->group(function () {
         return view('msbt/msbt_view');
     });
 
+    Route::get('/update/main', function () {
+        return view('msbt/msbt_updater');
+    });
+
 
     Route::post('/openMSBT', [
         'uses' => 'MSBTController@StoreMSBT'
@@ -72,6 +91,10 @@ Route::prefix('msbt')->group(function () {
 
     Route::post('/saveMSBT', [
         'uses' => 'MSBTController@JSONtoMSBT'
+    ]);
+
+    Route::post('/update/updateMSBT', [
+        'uses' => 'MSBTController@UpdateMSBT'
     ]);
 });
 
@@ -118,6 +141,15 @@ Route::prefix('prc')->group(function () {
         'uses' => 'prcController@JSONtoFighterParamPrc'
     ]);
     #endregion
+
+    Route::get('/updater/', function () {
+        return view('prc/prcUpdater');
+        // return redirect("https://youtu.be/dQw4w9WgXcQ");
+    });
+
+    Route::post('/updater/submit', [
+        'uses' => 'prcController@UpdatePrc'
+    ]);
 });
 
 

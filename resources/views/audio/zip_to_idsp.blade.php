@@ -55,6 +55,9 @@
                         <label for="sample_rate">Sample Rate (Default is 48000):</label>
                         <input class="form-control" id="sample_rate" type="text" name="sample_rate" value="48000">
                         <br>
+                        <label for="volume_control">Volume Control (Default is 1):</label>
+                        <input class="form-control" id="volume_control" type="text" name="volume_control" value="1">
+                        <br>
                         <button type="submit" class="btn btn-primary">Convert!</button>
                     </form>
                     <br>

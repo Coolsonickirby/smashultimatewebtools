@@ -1265,6 +1265,40 @@ var series = [
 
 window.onload = function () {
 
+    $("#search_box").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+
+        var index_value = 0;
+
+        $("#stages option").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+        });
+
+        $("#stages optgroup").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+        });
+
+        try {
+            index_value = $('#stages').children().filter(':visible:first')[0].index;
+        }
+        catch(err) {
+            $("#stages option").filter(function() {
+                $(this).toggle($(this).val().toLowerCase().indexOf(value) > -1);
+            });
+
+            $("#stages optgroup").filter(function() {
+                $(this).toggle($(this).val().toLowerCase().indexOf(value) > -1);
+            });
+
+            index_value = $('#stages').children().filter(':visible:first')[0].index;
+            console.log(err);
+        }
+
+
+        $("#stages").prop("selectedIndex", index_value).val();
+        document.getElementById("filenameOutput").value = $("#stages").val();
+    });
+
     orderBySelected();
 
     AlertFilesize();
@@ -1362,7 +1396,7 @@ function SetupStageList(series) {
             var option = document.createElement("option");
             option.value = element[1];
             record_result = recordTypeColor(element[2])
-            option.innerHTML = element[0] + record_result[1];
+            option.innerHTML = `${element[0]} ${record_result[1]}`;
             option.style.color = record_result[0];
             option.setAttribute('data-size', element[2]);
             document.getElementById("stages").append(option);
@@ -1388,10 +1422,23 @@ function UpdateStage(e) {
 
 function UpdateType(e) {
     document.getElementById("filetype").value = e.value;
+
     if (e.value == "idsp" || e.value == "toBrstm") {
         document.getElementById("sample_rate_section").style.display = "block";
     } else {
         document.getElementById("sample_rate_section").style.display = "none";
+    }
+
+    if(e.value == "youtube"){
+        document.getElementById("music_label").innerHTML = "YouTube Link:";
+        document.getElementById("yt_link").style.display = "block";
+        document.getElementById("music").style.display = "none";
+        document.getElementById("loop_hz_options").style.display = "none";
+    }else{
+        document.getElementById("music_label").innerHTML = "Music File:";
+        document.getElementById("yt_link").style.display = "none";
+        document.getElementById("music").style.display = "block";
+        document.getElementById("loop_hz_options").style.display = "block";
     }
 }
 

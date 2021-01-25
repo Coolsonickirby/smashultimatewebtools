@@ -181,7 +181,13 @@ function TranslateName(name) {
         case "0x13edfdb2d3":
             return "Byleth";
         case "tantan":
-            return "Min Min"
+            return "Min Min";
+        case "pickel":
+            return "Steve";
+        case "0x13dfa966e6":
+            return "Steve";
+        case "edge":
+            return "Sephiroth";
         default:
             return name;
     }

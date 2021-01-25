@@ -53,9 +53,10 @@
 
                     <form method="post" action="{{ action('MainController@FindType') }}" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <label for="music">Music File:</label>
+                        <label for="music" id="music_label">Music File:</label>
                         <input type="file" class="form-control" id="music" name="music"
                             accept="audio/*, .brstm, .lopus, .idsp" onchange="AlertFilesize();">
+                        <input type="text" class="form-control" id="yt_link" name="yt_link">
                         <small class="form-text text-muted">File Size Limit: 100mb</small>
                         <small class="form-text" style="color:red; display:none;" id="fileerror">File too big!</small>
                         <small class="form-text" style="color:coral;">Supported Formats: Everything SoX natively
@@ -68,6 +69,7 @@
                                 <option value="lopus">lopus</option>
                                 <option value="idsp">idsp</option>
                                 <option value="toBrstm">BRSTM</option>
+                                <option value="youtube">shame on you</option>
                             </select>
                             <input type="hidden" class="form-control" id="filetype" name="filetype">
                         </div>
@@ -85,6 +87,7 @@
                         </div>
                         <br style="margin-bottom:6px;">
                         <div id="filters" style="display:none;">
+                            <input class="form-control" id="search_box">
                             @include('extras/filters_checkbox')
                             <br style="margin-bottom:6px;">
                         </div>
@@ -103,31 +106,33 @@
                                     song.</small>
                                 <small class="form-text" style="color:red;">Use either samples, MM:SS.ms, or
                                     SS.ms</small>
-                                <label>Samples Rate:</label>
-                                <select class="custom-select" id="sampleHZ" onchange="UpdateHZ(this)">
-                                    <option value="auto">Auto Detect</option>
-                                    <option value="48">48000hz - Smash Ultimate</option>
-                                    <option value="441">44100hz - Smash Custom Music / Brstm</option>
-                                    <option>Custom hz</option>
-                                </select>
-                                <br>
-                                <br>
-                                <div id="sampleHZdiv" style="display: none;">
-                                    <label for="sampleHZ">Sample HZ:</label>
-                                    <input type="text" class="form-control" id="sampleHZinput" name="sampleHZinput">
-                                    <br>
-                                </div>
-
-                                <div id="loop_samples_select_container" style="display: none;">
-                                    <label>Loop Samples:</label>
-                                    <select class="custom-select" id="loop_samples_select"
-                                        onchange="UpdateLoopSelect(this)" >
-                                        <option value="auto">Auto Detect (Reads from file)</option>
-                                        <option value="custom">Custom (Input custom loop samples)</option>
+                                <div id="loop_hz_options">
+                                    <label for="sampleHZ">Samples Rate:</label>
+                                    <select class="custom-select" id="sampleHZ" name="sampleHZ" onchange="UpdateHZ(this)">
+                                        <option value="auto">Auto Detect</option>
+                                        <option value="48">48000hz - Smash Ultimate</option>
+                                        <option value="441">44100hz - Smash Custom Music / Brstm</option>
+                                        <option>Custom hz</option>
                                     </select>
-                                    <input type="text" name="loop_type" id="loop_type" style="display: none;">
                                     <br>
                                     <br>
+                                    <div id="sampleHZdiv" style="display: none;">
+                                        <label for="sampleHZ">Sample HZ:</label>
+                                        <input type="text" class="form-control" id="sampleHZinput" name="sampleHZinput">
+                                        <br>
+                                    </div>
+
+                                    <div id="loop_samples_select_container" style="display: none;">
+                                        <label>Loop Samples:</label>
+                                        <select class="custom-select" id="loop_samples_select"
+                                            onchange="UpdateLoopSelect(this)" >
+                                            <option value="auto">Auto Detect (Reads from file)</option>
+                                            <option value="custom">Custom (Input custom loop samples)</option>
+                                        </select>
+                                        <input type="text" name="loop_type" id="loop_type" style="display: none;">
+                                        <br>
+                                        <br>
+                                    </div>
                                 </div>
                                 <div id="loop_samples">
                                     <label for="start_loop">Loop Sample Start:</label>
@@ -153,7 +158,13 @@
                             <div id="sample_rate_section" style="display:none;">
                                 <label for="sample_rate">SoX Sample Rate:</label>
                                 <input type="text" class="form-control" id="sample_rate" name="sample_rate" value="48000">
+                                <br>
+                                <div id="fix_audio_section">
+                                    <input type="checkbox" class="checkbox-rounded" id="fix_audio" name="fix_audio">
+                                    <label for="fix_audio">Audio Fix (use if first try fails)</label>
+                                </div>
                             </div>
+
                         </div>
                         <br>
                         <button type="submit" class="btn btn-primary">Convert!</button>
@@ -174,6 +185,7 @@
 
     </div>
     <script>
+
         function UpdateLoopSelect(e){
             if(e.value == "auto" && document.getElementById("loop_samples_select_container").style.display != "none"){
                 document.getElementById("loop_samples").style.display = "none";

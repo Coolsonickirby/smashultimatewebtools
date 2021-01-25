@@ -55,6 +55,7 @@
                     </div>
                     <br style="margin-bottom:6px;">
                     <div id="filters" style="display:none;">
+                        <input class="form-control" id="search_box">
                         @include('extras/filters_checkbox')
                         <br style="margin-bottom:6px;">
                     </div>

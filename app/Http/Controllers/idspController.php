@@ -78,6 +78,8 @@ class idspController extends Controller
                 $path = extraController::resample48($idsp->id, "idspRE", $path);
             }else if($sample_rate != "48000"){
                 $path = extraController::resample48($idsp->id, "idspRE", $path);
+            }else if ($request->input("advanced") == "on" & $request->input("fix_audio") == "on"){
+                $path = extraController::resample48($idsp->id, "idspRE", $path);
             };
 
         };

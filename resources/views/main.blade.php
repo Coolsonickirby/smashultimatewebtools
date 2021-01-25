@@ -31,6 +31,9 @@
             <a class="link-tool" href="/prc/FighterParam/0">
                 Fighter Param Editor
             </a>
+            <a class="link-tool" href="/skinConverter">
+                Minecraft Java Skin Converter
+            </a>
         </div>
     </div>
 
@@ -152,8 +155,14 @@
             </div>
             <hr>
             <div class="msbt_credits">
+                <h2>Minecraft Java Skin Converter:</h2>
+                <h4><a href="https://github.com/jam1garner/img2nutexb">img2nutexb</a> - <a href="https://github.com/jam1garner">jam1garner</a></h4>
+                <h4><a href="http://smashultimatetools.com/skinConverter">Minecraft Java Skin Converter Web Interface</a> - <a href="https://github.com/Coolsonickirby/">Coolsonickirby/Random</a></h4>
+            </div>
+            <hr>
+            <div class="msbt_credits">
                 <h2>Special Thanks:</h2>
-                <h4>Getting me the updated files - <a href="https://twitter.com/BruhLookAtThis">BruhLookAtThis</a> & <a href="https://www.youtube.com/channel/UCm4vgCpCYLHkGwldLPNpSQw">AGhostsPumpkinSoup</a></h4>
+                <h4>Getting me the updated files - <a href="https://twitter.com/BruhLookAtThis">BruhLookAtThis</a>, <a href="https://www.youtube.com/channel/UCm4vgCpCYLHkGwldLPNpSQw">AGhostsPumpkinSoup</a>, & æostal568</h4>
             </div>
         </div>
 
@@ -359,6 +368,11 @@
             date: `7/1/2020`,
             text: `Uhh, just realized I added nothing new at all for the past 2 months. Pretty sorry about that. I added a To-Do List today, so I'll start by doing everything
             in the To-Do List. Sorry if you were expecting anything new soon. I promise I'll bring something new soon after I finish with everything I need to do tho.`
+        },
+        {
+            date: `10/14/2020`,
+            text: `MINECRAFT STEVE HYPE LETS GOOOOOOOOOOOOOOOOOOOOOO! Sorry about not doing anything, I've been busy for a long while now. Anyways I added a Minecraft Java Skin -> Smash Skin converter!
+            Hopefully y'all have fun with this! I'll try and add something else soon, but I can't promise anything rn since I'm pretty busy.`
         }
     ];
 
@@ -375,6 +389,8 @@
                 }
 
             });
+
+            stan();
         }
 
         function openTab(evt, type) {
@@ -396,6 +412,17 @@
             // Show the current tab, and add an "active" class to the button that opened the tab
             document.getElementById(type).style.display = "block";
             evt.currentTarget.className += " active";
+        }
+
+        function stan(){
+            document.getElementsByClassName("tab-text")[0].innerHTML = "WE ONLY STAN JACK FROST IN THIS HOUSE 😤😤😤😤😤😤😤😤<br><br>";
+            let amount_of_pics = 13;
+            for(let i = 1; i < amount_of_pics + 1; i++){
+                var node = document.createElement("img");
+                node.setAttribute("src", `/img/stan_jack_frost/${i}.jpg`);
+                node.style.width = "25%";
+                document.getElementsByClassName("tab-text")[0].appendChild(node);
+            }
         }
     </script>
 
