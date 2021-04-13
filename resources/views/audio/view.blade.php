@@ -4,193 +4,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Smash Ultimate Audio</title>
-    <link rel="stylesheet" href="{{URL::asset('../css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="../css/custom.css">
+    <title>Audio Conversion - Smash Ultimate Tools</title>
+    <link rel="stylesheet" href="{{URL::asset('../css/audio.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('../css/new-front-page.css')}}">
+
     <script src="{{URL::asset('..//js/jquery-3.4.1.min.js')}}"></script>
     <script src="{{URL::asset('..//js/popper.min.js')}}"></script>
     <script src="{{URL::asset('../js/bootstrap.min.js')}}"></script>
-
-    <style>
-        select>option:disabled {
-            color: #fc1735;
-        }
-
-        .label_sort {
-            padding-right: 2%;
-        }
-    </style>
 </head>
 
 <body>
+    <div class="header-desktop">
+        <div class="tab">
+        </div>
+        <img src="../img/front-page/tools_header.webp" alt="Smash Ultimate Tools" style="width: 100%; cursor: pointer;"
+            onclick="window.location.href = this.getAttribute('data-href')" id="main-header-img" data-href="https://smashultimatetools.com/" />
+        <div class="tab">
+        </div>
+    </div>
+
+    <div class="header-mobile">
+        <img src="../img/front-page/tools_header.webp" alt="Smash Ultimate Tools" style="width: 100%; cursor: pointer;"
+        onclick="window.location.href = this.getAttribute('data-href')" id="main-header-img" data-href="https://smashultimatetools.com/" />
+    </div>
+
+    @if (session()->has('success'))
+    <div class="card">
+        <div>
+            <h2 class="text-success">Success!</h2>
+            {!! session()->get('success') !!}
+        </div>
+    </div>
     <br>
+    @endif
+
+    @if (session()->has('error'))
+    <div class="card">
+        <div>
+            <h2 class="text-error">Error!</h2>
+            {!! session()->get('error') !!}
+        </div>
+    </div>
+    <br>
+    @endif
+
+    <br>
+
     <div class="container">
-        @if (session()->has('success'))
-        <div class="card text-white bg-success mb-3">
-            <div class="card-body">
-                <h5 class="card-title">Success!</h5>
-                {!! session()->get('success') !!}
-            </div>
-        </div>
-        <br>
-        @endif
+        <div class="Left">
+            <form method="post" action="{{ action('MainController@FindType') }}" enctype="multipart/form-data">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-        @if (session()->has('error'))
-        <div class="card text-white bg-danger mb-3">
-            <div class="card-body">
-                <h5 class="card-title">Error!</h5>
-                {!! session()->get('error') !!}
-            </div>
-        </div>
-        <br>
-        @endif
-
-        <div class="container-fluid">
-            @include("extras/change_style")
-            <div class="row">
-                <div class="col-md-6">
-
-                    <form method="post" action="{{ action('MainController@FindType') }}" enctype="multipart/form-data">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <label for="music" id="music_label">Music File:</label>
-                        <input type="file" class="form-control" id="music" name="music"
-                            accept="audio/*, .brstm, .lopus, .idsp" onchange="AlertFilesize();">
-                        <input type="text" class="form-control" id="yt_link" name="yt_link">
-                        <small class="form-text text-muted">File Size Limit: 100mb</small>
-                        <small class="form-text" style="color:red; display:none;" id="fileerror">File too big!</small>
-                        <small class="form-text" style="color:coral;">Supported Formats: Everything SoX natively
-                            supports + mp3, brstm</small>
-                        <div id="type_div">
-                            <br>
-                            <label for="type">Select a file type:</label>
-                            <select class="custom-select" id="type" onchange="UpdateType(this)">
-                                <option value="nus3audio">nus3audio</option>
-                                <option value="lopus">lopus</option>
-                                <option value="idsp">idsp</option>
-                                <option value="toBrstm">BRSTM</option>
-                                <option value="youtube">shame on you</option>
-                            </select>
-                            <input type="hidden" class="form-control" id="filetype" name="filetype">
-                        </div>
-                        <br>
-                        <div style="display:inline;">
-                            <label for="stages" style="display:inline;">Select a song:</label>
-                            <a href="javascript:void(0)" style="display:inline; float:right;" id="reset"
-                                onclick="resetFilters();">Reset</a>
-                            <a href="javascript:void(0)" style="display:inline; float:right; padding-right:2%;"
-                                id="more" onclick="displayFilters();">More Options</a>
-                            <!-- <a href="javascript:void(0)" style="display:inline; float:right; padding-right:2%;" id="h2l"
-                                onclick="orderBySizeH2L()">Order by Size (H to L)</a>
-                            <a href="javascript:void(0)" style="display:none; float:right; padding-right:2%;;" id="l2h"
-                                onclick="orderBySizeL2H()">Order by Size (L to H)</a> -->
-                        </div>
-                        <br style="margin-bottom:6px;">
-                        <div id="filters" style="display:none;">
-                            <input class="form-control" id="search_box">
+                <div class="form-file-input">
+                    <label for="music" id="music_label">Music File:</label>
+                    <input type="file" id="music" name="music" accept="audio/*, .brstm, .lopus, .idsp"
+                        onchange="AlertFilesize();">
+                    <small class="form-text text-muted">File Size Limit: 100mb</small>
+                    <small class="form-text" style="color:red; display:none;" id="fileerror">File too big!</small>
+                    <br>
+                    <small class="form-text" style="color:blue; font-weight: bold;">Supported Formats: Everything SoX
+                        natively supports + mp3, brstm</small>
+                </div>
+                <div id="type_div" class="form-type-input">
+                    <br>
+                    <label for="type">Select a file type:</label>
+                    <select class="custom-select" id="type" onchange="UpdateType(this)">
+                        <option value="nus3audio">nus3audio</option>
+                        <option value="lopus">lopus</option>
+                        <option value="idsp">idsp</option>
+                        <option value="toBrstm">BRSTM</option>
+                        <option value="toBfstm">BFSTM</option>
+                    </select>
+                    <input type="hidden" id="filetype" name="filetype">
+                </div>
+                <br>
+                <div class="form-type-input">
+                    <div style="display:inline;">
+                        <label for="stages" style="display:inline;">Select a song:</label>
+                        <a href="javascript:void(0)" style="display:inline; float:right;" id="reset"
+                            onclick="resetFilters();">Reset</a>
+                        <a href="javascript:void(0)" style="display:inline; float:right; padding-right:2%;" id="more"
+                            onclick="displayFilters();">More Options</a>
+                    </div>
+                    <div id="filters" style="display:none;">
+                        <input id="search_box" style="display: none;">
+                        <div>
                             @include('extras/filters_checkbox')
                             <br style="margin-bottom:6px;">
                         </div>
-                        <select class="custom-select" id="stages" onchange="UpdateStage(this)"></select>
-                        <br style="margin-bottom:3%;">
-                        <!-- <p class="form-text" style="color:green;" id="og_size">Original File Size: </p> -->
+                    </div>
+                    <select class="custom-select" id="stages" onchange="UpdateStage(this)"></select>
 
-                        <div id="loop_container">
-                            <input type="checkbox" class="checkbox-rounded" id="loop" name="loop"
-                                onchange="LoopSamples(this);" checked>
-                            <label for="loop">Enable Loop Samples</label>
-
-                            <br>
-                            <div id="loopsection">
-                                <small class="form-text" style="color:orangered;">Leave the fields empty to loop full
-                                    song.</small>
-                                <small class="form-text" style="color:red;">Use either samples, MM:SS.ms, or
-                                    SS.ms</small>
-                                <div id="loop_hz_options">
-                                    <label for="sampleHZ">Samples Rate:</label>
-                                    <select class="custom-select" id="sampleHZ" name="sampleHZ" onchange="UpdateHZ(this)">
-                                        <option value="auto">Auto Detect</option>
-                                        <option value="48">48000hz - Smash Ultimate</option>
-                                        <option value="441">44100hz - Smash Custom Music / Brstm</option>
-                                        <option>Custom hz</option>
-                                    </select>
-                                    <br>
-                                    <br>
-                                    <div id="sampleHZdiv" style="display: none;">
-                                        <label for="sampleHZ">Sample HZ:</label>
-                                        <input type="text" class="form-control" id="sampleHZinput" name="sampleHZinput">
-                                        <br>
-                                    </div>
-
-                                    <div id="loop_samples_select_container" style="display: none;">
-                                        <label>Loop Samples:</label>
-                                        <select class="custom-select" id="loop_samples_select"
-                                            onchange="UpdateLoopSelect(this)" >
-                                            <option value="auto">Auto Detect (Reads from file)</option>
-                                            <option value="custom">Custom (Input custom loop samples)</option>
-                                        </select>
-                                        <input type="text" name="loop_type" id="loop_type" style="display: none;">
-                                        <br>
-                                        <br>
-                                    </div>
-                                </div>
-                                <div id="loop_samples">
-                                    <label for="start_loop">Loop Sample Start:</label>
-                                    <input type="text" class="form-control" id="start_loop" name="start_loop">
-                                    <br>
-                                    <label for="end_loop">Loop Sample End:</label>
-                                    <input type="text" class="form-control" name="end_loop" id="end_loop">
-                                </div>
-                            </div>
-                            <br>
-                        </div>
-                        <input type="checkbox" class="checkbox-rounded" id="advanced" name="advanced"
-                            onchange="AdvancedOptions(this);">
-                        <label for="advanced">Enable Advanced Options</label>
-                        <br>
-                        <div id="advancedoptions">
-                            <label for="filenameOutput">Output File Name:</label>
-                            <input type="text" class="form-control" id="filenameOutput" name="filenameOutput">
-                            <br>
-                            <label for="hz">Audio Bitrate (VGAudioCli):</label>
-                            <input type="text" class="form-control" id="hz" name="hz" value="64000">
-                            <br>
-                            <div id="sample_rate_section" style="display:none;">
-                                <label for="sample_rate">SoX Sample Rate:</label>
-                                <input type="text" class="form-control" id="sample_rate" name="sample_rate" value="48000">
-                                <br>
-                                <div id="fix_audio_section">
-                                    <input type="checkbox" class="checkbox-rounded" id="fix_audio" name="fix_audio">
-                                    <label for="fix_audio">Audio Fix (use if first try fails)</label>
-                                </div>
-                            </div>
-
-                        </div>
-                        <br>
-                        <button type="submit" class="btn btn-primary">Convert!</button>
-                    </form>
-                    <br>
                 </div>
-                <div class="col-md-6">
-
-                    <h2>Extra Stuff:</h2>
-                    @include('extras/extras')
-                </div>
-            </div>
         </div>
 
-        <br>
+        <div class="Right">
+            <div id="loop_container">
+                <div class="form-check-input">
+                    <input type="checkbox" class="checkbox-rounded" id="loop" name="loop" onchange="LoopSamples(this);">
+                    <label for="loop">Enable Looping</label>
+                </div>
+                <br>
+                <div id="loopsection" style="display: none;">
+                    <div id="loop_hz_options">
+                        <div class="form-type-input">
+                            <label for="sampleHZ">Samples Rate:</label>
+                            <select class="custom-select" id="sampleHZ" name="sampleHZ" onchange="UpdateHZ(this)">
+                                <option value="auto">Auto Detect</option>
+                                <option value="48">48000hz - Smash Ultimate</option>
+                                <option value="441">44100hz - Smash Custom Music / Brstm</option>
+                                <option>Custom hz</option>
+                            </select>
+                        </div>
+                        <div id="sampleHZdiv" style="display: none; margin-top: 10px; margin-bottom: 10px;"
+                            class="form-text-input">
+                            <label for="sampleHZ">Sample HZ:</label>
+                            <input type="text" id="sampleHZinput" name="sampleHZinput">
+                        </div>
 
+                        <div id="loop_samples_select_container" class="form-type-input"
+                            style="display: none; margin-top: 10px; margin-bottom: 10px;">
+                            <label>Loop Samples:</label>
+                            <select class="custom-select" id="loop_samples_select" onchange="UpdateLoopSelect(this)">
+                                <option value="auto">Auto Detect (Reads from file)</option>
+                                <option value="custom">Custom (Input custom loop samples)</option>
+                            </select>
+                            <input type="text" name="loop_type" id="loop_type" style="display: none;">
+                        </div>
+                    </div>
+                    <div id="loop_samples" style="margin-top: 10px;">
+                        <small class="form-text" style="color:orangered; font-weight: bold;">Leave the fields empty to
+                            loop full
+                            song.</small>
+                        <small class="form-text" style="color:red; font-weight: bold;">Use either samples, MM:SS.ms, or
+                            SS.ms</small>
 
+                        <div class="form-text-input">
+                            <label for="start_loop">Loop Sample Start:</label>
+                            <br>
+                            <input type="text" id="start_loop" name="start_loop">
+                        </div>
+                        <br>
+                        <div class="form-text-input">
+                            <label for="end_loop">Loop Sample End:</label>
+                            <br>
+                            <input type="text" name="end_loop" id="end_loop">
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
 
+            <div class="form-check-input">
+                <input type="checkbox" class="checkbox-rounded" id="advanced" name="advanced"
+                    onchange="AdvancedOptions(this);">
+                <label for="advanced">Enable Advanced Options</label>
+            </div>
+            <br>
+            <div id="advancedoptions" style="display: none;">
+                <div class="form-text-input">
+                    <label for="filenameOutput">Output File Name:</label>
+                    <input type="text" id="filenameOutput" name="filenameOutput">
+                </div>
+                <br>
+                <div class="form-text-input">
+                    <label for="hz">Audio Bitrate (VGAudioCli):</label>
+                    <input type="text" id="hz" name="hz" value="64000">
+                </div>
+                <div id="sample_rate_section" style="display:none;">
+                    <label for="sample_rate">SoX Sample Rate:</label>
+                    <input type="text" id="sample_rate" name="sample_rate" value="48000">
+                    <br>
+                    <div id="fix_audio_section">
+                        <input type="checkbox" class="checkbox-rounded" id="fix_audio" name="fix_audio">
+                        <label for="fix_audio">Audio Fix (use if first try fails)</label>
+                    </div>
+                </div>
+
+            </div>
+            <br>
+            <div style="float:right; margin-right: 0;" class="button-parent">
+                <button class="tablinks" type="submit">Convert!</button>
+            </div>
+        </div>
+        </form>
+        <div class="Extras" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            <br>
+            <hr><br>
+            <h2>Extra Stuff:</h2>
+            @include('extras/extras')
+        </div>
     </div>
     <script>
 
-        function UpdateLoopSelect(e){
-            if(e.value == "auto" && document.getElementById("loop_samples_select_container").style.display != "none"){
+        function UpdateLoopSelect(e) {
+            if (e.value == "auto" && document.getElementById("loop_samples_select_container").style.display != "none") {
                 document.getElementById("loop_samples").style.display = "none";
                 document.getElementById("loop_type").value = "auto";
-            }else{
+            } else {
                 document.getElementById("loop_samples").style.display = "block";
                 document.getElementById("loop_type").value = "custom";
             }
@@ -268,7 +279,7 @@
             UpdateType(document.getElementById("type"));
         }
     </script>
-    <script src="../js/stages.js"></script>
+    <script src="https://smashultimatetools.com/js/stages.js"></script>
 </body>
 
 </html>

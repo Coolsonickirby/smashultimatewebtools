@@ -16,6 +16,10 @@ Route::get('/', function(){
     return view('new-main');
 });
 
+Route::get('/file-unshared-and-addition', function(){
+    return redirect("https://youtu.be/dQw4w9WgXcQ");
+});
+
 Route::get('/old', function(){
     return view('main');
 });

@@ -1428,18 +1428,6 @@ function UpdateType(e) {
     } else {
         document.getElementById("sample_rate_section").style.display = "none";
     }
-
-    if(e.value == "youtube"){
-        document.getElementById("music_label").innerHTML = "YouTube Link:";
-        document.getElementById("yt_link").style.display = "block";
-        document.getElementById("music").style.display = "none";
-        document.getElementById("loop_hz_options").style.display = "none";
-    }else{
-        document.getElementById("music_label").innerHTML = "Music File:";
-        document.getElementById("yt_link").style.display = "none";
-        document.getElementById("music").style.display = "block";
-        document.getElementById("loop_hz_options").style.display = "block";
-    }
 }
 
 function UpdateHZ(e) {

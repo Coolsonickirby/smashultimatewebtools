@@ -6,9 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smash Ultimate Tools</title>
     <link rel="stylesheet" href="./css/new-front-page.css">
+    <style>
+        .hide{
+            display: none;
+        }
+
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: white;
+            margin: auto;
+            padding: 20px;
+            border: 2px solid black;
+            width: 24%;
+            max-height: calc(100vh - 210px);
+            overflow-y: auto;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    </style>
+    <script src="./js/jquery-3.4.1.min.js"></script>
+
 </head>
 
 <body>
+
+        <div id="softturnip" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" onclick="HideModal('softturnip')">&times;</span>
+                <img src="https://play.nintendo.com/images/profile-mk-peach.7bf2a8f2.aead314d58b63e27.png" alt="Princess Peach" />
+            </div>
+        </div>
 
     <div class="header-desktop">
         <div class="tab">
@@ -79,8 +137,7 @@
             <h1>About</h1>
             <hr>
             <p class="tab-text">
-                I'll write this one later<br> Also join the <a href="https://discord.gg/ASJyTrZ">Super Smash Bros.
-                    Ultimate Modding Discord</a>
+                I'll write this one later<br>Also join the <a href="https://discord.gg/ASJyTrZ">Super Smash Bros. Ultimate Modding Discord</a> and/or the <a href="https://discord.gg/x9Zss4hkH3">Smash Ultimate Modding Group</a>
             </p>
         </div>
 
@@ -249,8 +306,12 @@
                 <button type="button" class="collapsible-credits">Special Thanks</button>
                 <div class="content">
                     <h4>Getting me the updated files - <a href="https://twitter.com/BruhLookAtThis">BruhLookAtThis</a>,
-                        <a href="https://www.youtube.com/channel/UCm4vgCpCYLHkGwldLPNpSQw">AGhostsPumpkinSoup</a>, &
-                        æostal568
+                        <a href="https://www.youtube.com/channel/UCm4vgCpCYLHkGwldLPNpSQw">AGhostsPumpkinSoup</a>,
+                        æostal568,
+                        <a href="https://twitter.com/Demonslayerx8">DemonSlayerx8</a>,
+                        <a href="https://twitter.com/Lizar_Doug">Nin10Doug</a>,
+                        <a href="https://twitter.com/Rman4100">Rman41</a>,
+                        <a href="https://www.reddit.com/user/getsome2198">flamecrest920</a>
                     </h4>
                 </div>
             </div>
@@ -555,10 +616,10 @@
                 <button type="button" class="collapsible-ToDo">The Site Itself</button>
                 <div class="content">
                     <ul>
-                        <li>Make the front-page look nice instead of being garbage</li>
+                        <li><span class="strike">Make the front-page look nice instead of being garbage</span> Done (Thanks to pizza!)</li>
                         <li>Add more stuff
                             <ul>
-                                <li>BGM DB Editor</li>
+                                <li>BGM DB Editor (On Hold for now since Sma5hMusic exists)</li>
                                 <li>Damage Color Editor (Thanks to zrksyd for the idea)</li>
                             </ul>
                         </li>
@@ -571,6 +632,10 @@
             <br>
         </div>
     </div>
+
+    <br>
+    <br>
+    <br>
 
     <script>
         var updates = [{
@@ -632,7 +697,7 @@
             Hopefully y'all have fun with this! I'll try and add something else soon, but I can't promise anything rn since I'm pretty busy.`
         },
         {
-            date: `1/25/2020`,
+            date: `1/25/2021`,
             text: `Happy 1 year anniversary! This was my first project that I released to the public.
                 I'll be honest, even though progress on it slowed down, I still learned a lot from it! It helped me
                 improve my CSS, JS, PHP, and even my C# skills. It also taught me how to maintain and handle a server,
@@ -769,6 +834,36 @@
                 node.style.width = "25%";
                 document.getElementsByClassName("tab-text")[0].appendChild(node);
             }
+        }
+
+        var softturnip = "";
+
+        window.addEventListener("keypress", (e) => {
+            var char = e.which || e.keyCode;
+            var charStr = String.fromCharCode(char);
+            var combined = softturnip + charStr.toLowerCase();
+            var re = new RegExp(combined,"g");
+
+            if(re.test("softturnip")){
+                softturnip = combined;
+            }else{
+                softturnip = "";
+            }
+
+            if(softturnip == "softturnip"){
+                ShowModal("softturnip");
+            }
+        });
+
+        function ShowModal(id){
+            $(`#${id}`).fadeIn(100);
+            document.getElementById(id).style.overflow = "auto";
+            document.body.style.overflow = "hidden";
+        }
+
+        function HideModal(id){
+            $(`#${id}`).fadeOut(100);
+            document.body.style.overflow = "auto";
         }
     </script>
 

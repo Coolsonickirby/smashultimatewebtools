@@ -6,9 +6,6 @@ body {
     display: none !important;
 }
 
-.btn{
-    margin:5px;
-}
 
 @keyframes gradient {
     0% {
@@ -19,9 +16,20 @@ body {
     }
 }
 
-.header {
-    display: block;
-    text-align: center;
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    gap: 12px;
+}
+
+.button-parent:hover .open{
+    background-color: greenyellow !important;
+}
+
+.button-parent:hover .save{
+    background-color: skyblue !important;
 }
 
 .container_chara {
@@ -57,18 +65,19 @@ body {
 }
 
 .item {
-    margin-right: .25%;
-    margin-bottom: .20%;
+    margin-right: 0.25%;
+    margin-bottom: 0.25%;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-content: center;
     align-items: center;
-    border: 2px solid black;
+    border: 2px solid transparent;
     flex: 0 1 auto;
     color: white;
     position: relative;
     box-sizing: border-box;
+    box-shadow: 5px 5px 5px black;
 }
 
 .item>p{
@@ -78,12 +87,12 @@ body {
 
 .item:hover {
     border: 2px solid red;
-    background-image: url("../img/Chara/chara_mask.png");
+    background-image: url("https://smashultimatetools.com/img/Chara/chara_mask.png");
 }
 
 .image {
     z-index: -1;
-    background-color: #ffe680;
+    background-color: transparent;
 }
 
 .chara_name {
@@ -105,6 +114,54 @@ body {
     max-width: 112px;
     max-height: 60px;
     /* filter: contrast(102%); */
+}
+
+#context-menu-controller{
+    display: none;
+    position: absolute;
+    z-index: 999;
+}
+
+#character-context-menu{
+    margin-left: 40px;
+    margin-right: 40px;
+    background-color: white;
+    border: 2px solid black;
+    width: 316px;
+    padding: 20px;
+    font-weight: bold;
+}
+
+#left-arrow{
+    position: absolute;
+    clip-path: polygon(100% 20%, 100% 80%, 0% 50%);
+    height: 50px;
+    width: 28px;
+    margin: 0 auto;
+    background-color: red;
+    top: 116px;
+    background: linear-gradient(
+        90deg
+        , rgb(255, 109, 0) 0%, rgb(255, 255, 0) 65%, rgb(255, 109, 0) 70%);
+            background-size: 200% 1px;
+            animation: cursor-anim 650ms linear infinite normal;
+            border-color: transparent;
+}
+
+.context-input-text{
+    border: 2px solid black;
+    width: 100%;
+    background-color: white;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.context-input-select{
+    display:inline-block;
+    border: 2px solid black;
+    width: 100%;
+    background-color: white;
 }
 
 

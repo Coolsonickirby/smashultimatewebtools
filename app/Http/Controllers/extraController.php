@@ -77,7 +77,7 @@ class extraController extends Controller
     }
 
     public static function clean_brstm($string){
-        return preg_replace('/[$+,:;=?@#|\'<>\/\.\-\^*()%!]/', ' ', $string);
+        return preg_replace('/[\:\?\#\|\<\>\/\.\-\^\*\%\\\]/', ' ', $string);
     }
 
     public static function compareFileSize(){

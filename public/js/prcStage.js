@@ -8,9 +8,7 @@ const disableL_Loading = "0x1a08271a76";
 const api_url = "./api/StageJSON/";
 
 //Not sure if I should keep this as one line or not. One Line makes it look cleaner though.
-const StagesName = { "75m": "75 m", "Animal_City": "Town and City", "Animal_Island": "Tortimer Island", "Animal_Village": "Smashville", "BalloonFight": "Balloon Fight", "BattleField": "Battlefield", "BattleFieldL": "Big Battlefield", "Bayo_Clock": "Umbra Clock Tower", "Brave_Altar": "Yggdrasil's Altar ", "Buddy_Spiral": "Spiral Mountain", "DK_Jungle": "Kongo Jungle", "DK_Lodge": "Jungle Japes", "DK_WaterFall": "Kongo Falls", "Dolly_Stadium": "King of Fighters Stadium", "Dracula_Castle": "Dracula's Castle", "DuckHunt": "Duck Hunt", "End": "Final Destination", "FE_Arena": "Arena Ferox", "FE_Colloseum": "Coliseum", "FE_Shrine": "Garreg Mach Monastery", "FE_Siege": "Castle Siege", "FF_Midgar": "Midgar", "FlatZoneX": "Flat Zone X", "Fox_Corneria": "Corneria", "Fox_LylatCruise": "Lylat Cruise", "Fox_Venom": "Venom", "Fzero_Bigblue": "Big Blue", "Fzero_Mutecity3DS": "Mute City SNES", "Fzero_Porttown": "Port Town Aero Dive", "GeneralAll": "ALL", "HomerunContest": "Home-Run Contest", "Icarus_Angeland": "Palutena's Temple", "Icarus_SkyWorld": "Skyworld", "Icarus_Uprising": "Reset Bomb Forest", "Ice_Top": "Summit", "Jack_Mementoes": "Mementos", "Kart_CircuitFor": "Mario Circuit", "Kart_CircuitX": "Figure-8 Circuit", "Kirby_Cave": "The Great Cave Offensive", "Kirby_Fountain": "Fountain of Dreams", "Kirby_Gameboy": "Dream Land GB", "Kirby_Greens": "Green Greens", "Kirby_Halberd": "Halberd", "Kirby_Pupupu64": "Dream Land", "LuigiMansion": "Luigi's Mansion", "MG_Shadowmoses": "Shadow Moses Island", "MarioBros": "Mario Bros.", "Mario_3DLand": "3D Land", "Mario_Castle64": "Peach's Castle", "Mario_CastleDx": "Princess Peach's Castle", "Mario_Dolpic": "Delfino Plaza", "Mario_Galaxy": "Mario Galaxy", "Mario_Maker": "Super Mario Maker", "Mario_NewBros2": "Golden Plains", "Mario_Odyssey": "New Donk City Hall", "Mario_Paper": "Paper Mario", "Mario_Past64": "Mushroom Kingdom", "Mario_PastUsa": "Mushroom Kingdom II", "Mario_PastX": "Mushroomy Kingdom", "Mario_Rainbow": "Rainbow Cruise", "Mario_Uworld": "Mushroom Kingdom U", "MenuMusic": "Menu", "Metroid_Kraid": "Brinstar Depths", "Metroid_Norfair": "Norfair", "Metroid_Orpheon": "Frigate Orpheon", "Metroid_ZebesDx": "Brinstar", "Mother_Fourside": "Fourside", "Mother_Magicant": "Magicant", "Mother_Newpork": "New Pork City", "Mother_Onett": "Onett", "NintenDogs": "Living Room", "Pac_Land": "PAC-LAND", "Pictochat2": "PictoChat 2", "Pikmin_Garden": "Garden of Hope", "Pikmin_Planet": "Distant Planet", "Pilotwings": "Pilotwings", "Plankton": "Hanenbow", "Poke_Kalos": "Kalos Pokémon League", "Poke_Stadium": "Pokémon Stadium", "Poke_Stadium2": "Pokémon Stadium 2", "Poke_Tengam": "Spear Pillar", "Poke_Tower": "Prism Tower", "Poke_Unova": "Unova Pokémon League", "Poke_Yamabuki": "Saffron City", "PunchOutSB": "Boxing Ring", "PunchOutW": "Boxing Ring", "Random": "Random", "Rock_Wily": "Wily Castle", "SF_Suzaku": "Suzaku Castle", "SP_Edit": "Custom Stage", "SP_Edit_plural": "Custom Stages", "Sonic_Greenhill": "Green Hill Zone", "Sonic_Windyhill": "Windy Hill Zone", "Spla_Parking": "Moray Towers", "StreetPass": "Find Mii", "Tomodachi": "Tomodachi Life", "Training": "Training", "Wario_Gamer": "Gamer", "Wario_Madein": "WarioWare, Inc.", "WiiFit": "Wii Fit Studio", "WreckingCrew": "Wrecking Crew", "WufuIsland": "Wuhu Island", "Xeno_Gaur": "Gaur Plain", "Yoshi_CartBoard": "Yoshi's Story", "Yoshi_Island": "Yoshi's Island", "Yoshi_Story": "Super Happy Tree", "Yoshi_Yoster": "Yoshi's Island (Melee)", "Zelda_Gerudo": "Gerudo Valley", "Zelda_Greatbay": "Great Bay", "Zelda_Hyrule": "Hyrule Castle", "Zelda_Oldin": "Bridge of Eldin", "Zelda_Pirates": "Pirate Ship", "Zelda_Skyward": "Skyloft", "Zelda_Temple": "Temple", "Zelda_Tower": "Great Plateau Tower", "Zelda_Train": "Spirit Train", "Tantan_Spring": "Spring Stadium", "Pickel_World": "Minecraft World" }
-
-
+const StagesName = { "75m": "75 m", "Animal_City": "Town and City", "Animal_Island": "Tortimer Island", "Animal_Village": "Smashville", "BalloonFight": "Balloon Fight", "BattleField": "Battlefield", "BattleFieldL": "Big Battlefield", "Bayo_Clock": "Umbra Clock Tower", "Brave_Altar": "Yggdrasil's Altar ", "Buddy_Spiral": "Spiral Mountain", "DK_Jungle": "Kongo Jungle", "DK_Lodge": "Jungle Japes", "DK_WaterFall": "Kongo Falls", "Dolly_Stadium": "King of Fighters Stadium", "Dracula_Castle": "Dracula's Castle", "DuckHunt": "Duck Hunt", "End": "Final Destination", "FE_Arena": "Arena Ferox", "FE_Colloseum": "Coliseum", "FE_Shrine": "Garreg Mach Monastery", "FE_Siege": "Castle Siege", "FF_Midgar": "Midgar", "FlatZoneX": "Flat Zone X", "Fox_Corneria": "Corneria", "Fox_LylatCruise": "Lylat Cruise", "Fox_Venom": "Venom", "Fzero_Bigblue": "Big Blue", "Fzero_Mutecity3DS": "Mute City SNES", "Fzero_Porttown": "Port Town Aero Dive", "GeneralAll": "ALL", "HomerunContest": "Home-Run Contest", "Icarus_Angeland": "Palutena's Temple", "Icarus_SkyWorld": "Skyworld", "Icarus_Uprising": "Reset Bomb Forest", "Ice_Top": "Summit", "Jack_Mementoes": "Mementos", "Kart_CircuitFor": "Mario Circuit", "Kart_CircuitX": "Figure-8 Circuit", "Kirby_Cave": "The Great Cave Offensive", "Kirby_Fountain": "Fountain of Dreams", "Kirby_Gameboy": "Dream Land GB", "Kirby_Greens": "Green Greens", "Kirby_Halberd": "Halberd", "Kirby_Pupupu64": "Dream Land", "LuigiMansion": "Luigi's Mansion", "MG_Shadowmoses": "Shadow Moses Island", "MarioBros": "Mario Bros.", "Mario_3DLand": "3D Land", "Mario_Castle64": "Peach's Castle", "Mario_CastleDx": "Princess Peach's Castle", "Mario_Dolpic": "Delfino Plaza", "Mario_Galaxy": "Mario Galaxy", "Mario_Maker": "Super Mario Maker", "Mario_NewBros2": "Golden Plains", "Mario_Odyssey": "New Donk City Hall", "Mario_Paper": "Paper Mario", "Mario_Past64": "Mushroom Kingdom", "Mario_PastUsa": "Mushroom Kingdom II", "Mario_PastX": "Mushroomy Kingdom", "Mario_Rainbow": "Rainbow Cruise", "Mario_Uworld": "Mushroom Kingdom U", "MenuMusic": "Menu", "Metroid_Kraid": "Brinstar Depths", "Metroid_Norfair": "Norfair", "Metroid_Orpheon": "Frigate Orpheon", "Metroid_ZebesDx": "Brinstar", "Mother_Fourside": "Fourside", "Mother_Magicant": "Magicant", "Mother_Newpork": "New Pork City", "Mother_Onett": "Onett", "NintenDogs": "Living Room", "Pac_Land": "PAC-LAND", "Pictochat2": "PictoChat 2", "Pikmin_Garden": "Garden of Hope", "Pikmin_Planet": "Distant Planet", "Pilotwings": "Pilotwings", "Plankton": "Hanenbow", "Poke_Kalos": "Kalos Pokémon League", "Poke_Stadium": "Pokémon Stadium", "Poke_Stadium2": "Pokémon Stadium 2", "Poke_Tengam": "Spear Pillar", "Poke_Tower": "Prism Tower", "Poke_Unova": "Unova Pokémon League", "Poke_Yamabuki": "Saffron City", "PunchOutSB": "Boxing Ring", "PunchOutW": "Boxing Ring", "Random": "Random", "Rock_Wily": "Wily Castle", "SF_Suzaku": "Suzaku Castle", "SP_Edit": "Custom Stage", "SP_Edit_plural": "Custom Stages", "Sonic_Greenhill": "Green Hill Zone", "Sonic_Windyhill": "Windy Hill Zone", "Spla_Parking": "Moray Towers", "StreetPass": "Find Mii", "Tomodachi": "Tomodachi Life", "Training": "Training", "Wario_Gamer": "Gamer", "Wario_Madein": "WarioWare, Inc.", "WiiFit": "Wii Fit Studio", "WreckingCrew": "Wrecking Crew", "WufuIsland": "Wuhu Island", "Xeno_Gaur": "Gaur Plain", "Yoshi_CartBoard": "Yoshi's Story", "Yoshi_Island": "Yoshi's Island", "Yoshi_Story": "Super Happy Tree", "Yoshi_Yoster": "Yoshi's Island (Melee)", "Zelda_Gerudo": "Gerudo Valley", "Zelda_Greatbay": "Great Bay", "Zelda_Hyrule": "Hyrule Castle", "Zelda_Oldin": "Bridge of Eldin", "Zelda_Pirates": "Pirate Ship", "Zelda_Skyward": "Skyloft", "Zelda_Temple": "Temple", "Zelda_Tower": "Great Plateau Tower", "Zelda_Train": "Spirit Train", "Tantan_Spring": "Spring Stadium", "Pickel_World": "Minecraft World", "FF_Cave": "Northern Cave", "Xeno_Alst": "Cloud Sea of Alrest" };
 //#endregion
 
 //#region Variables for adding dropdown options (to avoid duplicates)
@@ -27,6 +25,8 @@ var stagePlaceIds = {"resultstage": "resultstage", "resultstage_jack": "resultst
 var secretStagePlaceIds = {"resultstage": "resultstage", "resultstage_jack": "resultstage_jack"};
 
 var bgmSetIds = {};
+
+var bgmSettingIds = {};
 //#endregion
 
 var currentlySelected = 0;
@@ -52,7 +52,7 @@ window.onload = function () {
 
                     var bgName = item.string["#text"].toLowerCase();
 
-                    //#region Inseting Info to array
+                    //#region Inserting Info to array
 
                     uiStageIds[item.hash40[0]["#text"]] = item.hash40[0]["#text"];
 
@@ -72,7 +72,7 @@ window.onload = function () {
                     node.setAttribute("id", index);
                     node.setAttribute("data-disp_order", item.sbyte["#text"]);
 
-                    node.setAttribute("style", `background-image: url("img/Stage/stage_1_${bgName}.png"), url("img/Stage/stage_1_missing.png");`);
+                    node.setAttribute("style", `background-image: url("./img/Stage/stage_1_${bgName}.png"), url("./img/Stage/stage_1_missing.png");`);
 
                     node.style.cursor = 'pointer';
 
@@ -153,6 +153,8 @@ function setupDropdowns() {
     var secret_stage_place_id = document.getElementById("secret_stage_place_id");
 
     var bgm_set_id = document.getElementById("bgm_set_id");
+
+    var bgm_setting_id = document.getElementById("bgm_setting_id");
     //#endregion
 
     //#region Setting up dropdown inputs
@@ -190,11 +192,23 @@ function setupDropdowns() {
         stageData.struct.list.struct[currentlySelected].hash40[6]["#text"] = e.target.value;
     });
 
+    bgm_setting_id.addEventListener("input", function (e) {
+        stageData.struct.list.struct[currentlySelected].byte["#text"] = e.target.value;
+    });
+
     can_demo.addEventListener("input", function (e) {
         if (e.target.checked == true) {
             stageData.struct.list.struct[currentlySelected].bool[1]["#text"] = "True";;
         } else {
             stageData.struct.list.struct[currentlySelected].bool[1]["#text"] = "False";;
+        }
+    });
+
+    can_select.addEventListener("input", function (e) {
+        if (e.target.checked == true) {
+            stageData.struct.list.struct[currentlySelected].bool[0]["#text"] = "True";;
+        } else {
+            stageData.struct.list.struct[currentlySelected].bool[0]["#text"] = "False";;
         }
     });
     //#endregion
@@ -217,6 +231,7 @@ function setupDrowdown(element, array) {
 function updateFields(id) {
     item = stageData.struct.list.struct[id];
     demo = item.bool[1]["#text"];
+    select = item.bool[0]["#text"];
 
     document.getElementById("ui_stage_id").value = item.hash40[0]["#text"];
     document.getElementById("name_id").value = item.string["#text"];
@@ -224,17 +239,23 @@ function updateFields(id) {
     document.getElementById("stage_place_id").value = item.hash40[2]["#text"];
     document.getElementById("secret_stage_place_id").value = item.hash40[3]["#text"];
     document.getElementById("bgm_set_id").value = item.hash40[6]["#text"];
+    document.getElementById("bgm_setting_id").value = item.byte["#text"];
     if (demo == "True") {
         document.getElementById("can_demo").checked = true;
     } else {
         document.getElementById("can_demo").checked = false;
     }
 
+    if (select == "True") {
+        can_select.checked = true;
+    } else {
+        can_select.checked = false;
+    }
+
 }
 
 
 function setup() {
-
     cleanInputs();
 
     document.getElementById('open').addEventListener('click', openDialog);
@@ -254,6 +275,11 @@ function setup() {
             var display_stages = document.getElementById("non-hidden").children;
             var hidden_stages = document.getElementById("hidden").children;
 
+
+            if(display_stages.length > 128 || hidden_stages.length > 128 ){
+                alert("The max amount of stages a section can have is 128!");
+                return;
+            }
 
             var i = 0;
             //#region Set the order of the stages
@@ -356,6 +382,7 @@ function cleanInputs() {
     document.getElementById("secret_stage_place_id").value = "";
     document.getElementById("bgm_set_id").value = "";
     document.getElementById("can_demo").checked = false;
+    document.getElementById("can_select").checked = false;
 }
 
 

@@ -188,6 +188,18 @@ function TranslateName(name) {
             return "Steve";
         case "edge":
             return "Sephiroth";
+        case "eflame_first":
+            return "Pyra";
+        case "0x13ea13c533":
+            return "Pyra";
+        case "elight_first":
+            return "Mythra";
+        case "0x13843785a5":
+            return "Mythra";
+        case "eflame_only":
+            return "Pyra (Only)";
+        case "elight_only":
+            return "Mythra (Only)";
         default:
             return name;
     }

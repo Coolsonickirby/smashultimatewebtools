@@ -2,6 +2,52 @@ body {
     line-height: 1.5;
 }
 
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    gap: 12px;
+}
+
+.button-parent{
+    width: 90px;
+}
+
+.button-parent button{
+    width: 90px;
+}
+
+.button-parent:hover #open{
+    background-color: skyblue !important;
+}
+
+.button-parent:hover #save{
+    background-color: lightgreen !important;
+}
+
+.button-parent:hover #default{
+    background-color: gray !important;
+}
+
+.button-parent:hover #randomize{
+    background-color: red !important;
+}
+
+.container{
+    width: 99%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 0.05fr;
+    gap: 0px 50px;
+    grid-template-areas:
+      "Left Right";
+}
+
+.Left { grid-area: Left; }
+.Right { grid-area: Right; }
+
 h4{
     color:white;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
@@ -27,11 +73,11 @@ label{
 }
 
 #current_hover {
-    color: #ac3b61;
+    color: hotpink;
 }
 
 #current_selected {
-    color: #0a7cf5;
+    color: skyblue;
 
 }
 
@@ -45,16 +91,22 @@ label{
 
 .stage_text {
     position: relative;
-    border: 2px solid gray;
-    background-color: gray;
+    background-color: #546275;
     bottom: 42px;
     text-align: left;
     padding-left: 5px;
+    min-height: 75px;
 }
 
+
 .stage_text h4 {
-    color: white;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: left;
+    position: relative;
+    z-index: 999999999999;
+    top: 10px;
+    font-size: 25px;
+    margin: 0;
+
 }
 
 .image_holder {
@@ -70,12 +122,17 @@ label{
     margin-top: 30px;
 }
 
+.options > h4{
+    margin: 0;
+    margin-bottom: 10px;
+}
+
 label {
     font-size: large;
 }
 
 .form-field {
-    margin-bottom: 2.5%;
+    margin-bottom: 13px;
 }
 
 .outer {
@@ -96,7 +153,7 @@ label {
 }
 
 .list-grid {
-    background-color: #5d5659;
+    background-color: transparent;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(0px, 80px));
     grid-row-gap: 0;
@@ -105,7 +162,7 @@ label {
     justify-self: center;
     align-self: center;
     place-items: center;
-    border: 5px solid black;
+    border: 5px solid transparent;
     padding: 1%;
 }
 
@@ -122,10 +179,20 @@ label {
     width: 72px;
     height: 60px;
     background-size: cover;
-    margin-top: 2px;
+    margin: 5px;
     background-color: black;
+    box-shadow: 5px 5px 5px black;
 }
 
 .item-hover {
     border: 2px solid red;
+}
+
+.left-side-angle{
+    position: absolute;
+    min-height: 100%;
+    width: 25%;
+    clip-path: polygon(0 0, 88% 0, 63% 100%, 0% 100%);
+    background-color: #384159;
+    left: 0;
 }

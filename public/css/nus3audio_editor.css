@@ -1,0 +1,82 @@
+.button-parent:hover #open{
+    background-color: #375A7F;
+}
+
+.button-parent:hover #save{
+    background-color: #00BC8C;
+}
+
+.button-parent:hover #default{
+    background-color: darkgray;
+}
+
+.button-parent:hover #randomizeBtn{
+    background-color: #E74C3C;
+}
+
+.button-parent:hover #optionsBtn{
+    background-color: #3498DB;
+}
+
+#new-main{
+    display: none;
+}
+
+#old-main{
+    display: none;
+}
+
+.container{
+    height: 100%;
+}
+
+#main-section{
+    display: none;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border: 2px solid black;
+    margin-bottom: 20px;
+}
+
+.active{
+    display: block !important;
+}
+
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.button-parent{
+    width: 85px;
+}
+
+.button-parent button{
+    width: 85px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table td{
+    width: 25%;
+}
+
+table tr:not(:last-child){
+    border-bottom: 2px solid black;
+}
+
+table tr{
+    line-height: 3;
+}
+
+td input[type=file]{
+    border: none;
+}

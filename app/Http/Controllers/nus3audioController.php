@@ -20,6 +20,8 @@ class nus3audioController extends Controller
 
         $nus3audio->filename = $file->getClientOriginalName();
 
+        $ext = pathinfo($nus3audio->filename, PATHINFO_EXTENSION);
+
         $nus3audio->start_loop = $looparray[0];
 
         $nus3audio->end_loop = $looparray[1];
@@ -116,7 +118,7 @@ class nus3audioController extends Controller
         File::makeDirectory($tmp_path, 0777, true, true);
 
         // $nus3audio_name = str_replace("bgm_", "", $fileOutput);
-        $nus3audio_name = "smashultimatetools";
+        $nus3audio_name = "SmashUltimateTools (Converted from {$ext})";
 
         $log2 = shell_exec("%CD%/convert/nus3audio.exe -n -A \"{$nus3audio_name}\" \"%CD%/storage/audio/lopustmp/{$nus3audio->id}/output.lopus\" -w %CD%/storage/audio/nus3audio/{$nus3audio->id}/{$fileOutput}.nus3audio");
 

@@ -3,90 +3,171 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Smash Ultimate Audio</title>
-    <link rel="stylesheet" href="{{URL::asset('../css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="../css/custom.css">
-    <script src="{{URL::asset('..//js/jquery-3.4.1.min.js')}}"></script>
-    <script src="{{URL::asset('..//js/popper.min.js')}}"></script>
-    <script src="{{URL::asset('../js/bootstrap.min.js')}}"></script>
+    <title>nus3audio Editor</title>
+    <meta name="viewport" content="width=1024">
+    <link rel="stylesheet" href="{{URL::asset('../css/audio.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('../css/new-front-page.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('../css/nus3audio_editor.css')}}">
     <style>
-        .margin-custom{
-            margin-top:10px;
+        .header-mobile {
+            grid-template-rows: 1fr !important;
+            grid-template-areas: "." !important;
+            margin-bottom: 40px !important;
         }
 
-        .breathing-space{
-            margin-right:15px;
-            margin-left: 5px;
+        @media only screen and (max-width:920px) {
+            .container {
+                width: 60%;
+                grid-template-columns: 1fr !important;
+                grid-template-rows: 0.5fr 1fr !important;
+                gap: 20px 0px !important;
+                grid-template-areas:
+                    "Left"
+                    "Extras" !important;
+            }
+        }
+
+        .container {
+            grid-template-columns: 1fr !important;
+            grid-template-rows: 0.5fr 1fr !important;
+            grid-template-areas:
+                    "Left Left"
+                    "Extras Extras" !important;
+        }
+
+        .small{
+            width: 25px;
+            height: 25px;
+            margin: 0;
             margin-bottom: 5px;
         }
 
-        hr{
-            border-color:green;
+        .small > button{
+            width: 25px;
+            height: 25px;
+            min-height: 25px;
         }
     </style>
-    </script>
 </head>
 
 <body>
+
+    <div class="header-desktop">
+        <div class="tab">
+        </div>
+        <img src="../img/front-page/tools_header.webp" alt="Smash Ultimate Tools" style="width: 100%; cursor: pointer;"
+            onclick="window.location.href = this.getAttribute('data-href')" id="main-header-img" data-href="./" />
+        <div class="tab">
+        </div>
+    </div>
+
+    <div class="header-mobile">
+        <img src="../img/front-page/tools_header.webp" alt="Smash Ultimate Tools" style="width: 100%; cursor: pointer;"
+            onclick="window.location.href = this.getAttribute('data-href')" id="main-header-img" data-href="./" />
+    </div>
+
+    <div style="text-align: center;">
+        <a href="javascript:toggleEditors()" style="text-decoration: none; font-weight: bold; margin-right: 13px;">Switch Editors</a>
+    </div>
+
     <br>
+
+    @if (session()->has('success'))
+    <div class="card">
+        <div>
+            <h2 class="text-success">Success!</h2>
+            {!! session()->get('success') !!}
+        </div>
+    </div>
+    <br>
+    @endif
+
+    @if (session()->has('error'))
+    <div class="card">
+        <div>
+            <h2 class="text-error">Error!</h2>
+            {!! session()->get('error') !!}
+        </div>
+    </div>
+    <br>
+    @endif
+
+
     <div class="container">
+        <div class="Left">
 
-        @if (session()->has('success'))
-        <div class="card text-white bg-success mb-3">
-            <div class="card-body">
-                <h5 class="card-title">Success!</h5>
-                {!! session()->get('success') !!}
-            </div>
-        </div>
-        <br>
-        @endif
 
-        @if (session()->has('error'))
-        <div class="card text-white bg-danger mb-3">
-            <div class="card-body">
-                <h5 class="card-title">Error!</h5>
-                {!! session()->get('error') !!}
-            </div>
-        </div>
-        <br>
-        @endif
+            <div id="new-main">
+                <div class="buttons">
+                    <div class="button-parent">
+                        <button class="tablinks" id="open">Open</button>
+                        <input type="file" id="file" accept=".nus3audio" hidden>
+                    </div>
 
-        <div class="container">
-            @include("extras/change_style")
-
-            <form method="post" action="{{ action('miscController@replacement_nus3audio') }}" enctype="multipart/form-data">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <label for="music">nus3audio File:</label>
-                <input type="file" class="form-control" id="music" name="music" accept=".nus3audio"
-                    onchange="AlertFilesize();">
-                <small class="form-text text-muted">File Size Limit: 100mb</small>
-                <small class="form-text" style="color:red; display:none;" id="fileerror">File too big!</small>
-                <small class="form-text" style="color:coral;">Supported Formats: nus3audio</small>
-                <br>
-                <div id="files">
-                    <div id="file_0" class="form-inline">
-                        <label for="id">ID: &nbsp;</label>
-                        <input class="form-control breathing-space" name="files_id[]" id="files_id_0">
-                        <input type="file" class="form-control" name="files[]"
-                            accept=".idsp, .lopus">
+                    <div class="button-parent">
+                        <button class="tablinks" id="save">Save</button>
                     </div>
                 </div>
-                <hr>
+                <div style="text-align: center;">
+                    <h1 id="prog">Please open a nus3audio file!</h1>
+                </div>
                 <br>
-                <button type="button" class="btn btn-primary" onclick="add_field()">Add Field</button>
-                <button type="submit" class="btn btn-success" style="float:right;">Submit</button>
-            </form>
+                <div id="main-section">
+                    <table>
+                        <tbody id="main-entries">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <div id="old-main">
+                <form method="post" action="{{ action('miscController@replacement_nus3audio') }}" enctype="multipart/form-data">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <div class="form-file-input">
+                        <label for="music">nus3audio File:</label>
+                        <input type="file" class="form-control" id="music" name="music" accept=".nus3audio"
+                            onchange="AlertFilesize();">
+                        <small class="form-text text-muted">File Size Limit: 100mb</small>
+                        <small class="form-text" style="color:red; display:none;" id="fileerror">File too big!</small>
+                        <small class="form-text" style="color:coral;">Supported Formats: nus3audio</small>
+                    </div>
+                    <br>
+
+                    <div id="files">
+                        <div id="file_0">
+                            <label for="id">ID:</label>
+                            <div class="form-text-input">
+                                <input name="files_id[]" id="files_id_0">
+                            </div>
+                            <br>
+                            <div class="form-file-input">
+                                <input type="file" name="files[]" accept=".idsp, .lopus">
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="button-parent">
+                        <button type="button" class="btn btn-primary" onclick="add_field()">Add Field</button>
+                    </div>
+
+                    <div class="button-parent" style="margin-right: 0; float: right;">
+                        <button type="submit" class="btn btn-success" style="float:right;">Submit</button>
+                    </div>
+                </form>
+            </div>
         </div>
-
-        <br>
-
-
-        <h2>Extra Stuff:</h2>
-        @include('extras/extras')
-
+        <div class="Extras">
+            <br>
+            <hr>
+            <br>
+            <h2>Extra Stuff:</h2>
+            @include('extras/extras')
+        </div>
     </div>
+
     <script>
         function AlertFilesize() {
             if (document.getElementById("music").files.length != 0) {
@@ -120,20 +201,27 @@
             var new_input = document.createElement("div");
 
             new_input.innerHTML = `
-            <div id="` + id + `">
+            <div id="${id}">
                 <hr>
-                <div class="form-inline margin-custom">
-                    <button type="button" class="close" aria-label="Close" onclick="remove_field('` + id + `')">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <input class="form-control breathing-space" name="files_id[]" id="files_id_` + id + `" style="display:inline;">
-                    <input type="file" class="form-control" style="display:inline;" name="files[]" accept=".idsp, .lopus">
-                </div>
-            </div>
+                    <div class="button-parent small">
+                        <button type="button" class="close" aria-label="Close" onclick="remove_field('${id}')">
+                           &times;
+                        </button>
+
+                        </div>
+                        <div class="form-text-input">
+                            <input name="files_id[]" id="files_id_${fields_amount}">
+                        </div>
+                        <br>
+                        <div class="form-file-input">
+                            <input type="file" name="files[]" accept=".idsp, .lopus">
+                        </div>
+                    </div>
             `;
+
             document.getElementById("files").appendChild(new_input);
 
-            setInputFilter(document.getElementById("files_id_" + id), function (value) {
+            setInputFilter(document.getElementById("files_id_" + fields_amount), function (value) {
                 return /^-?\d*$/.test(value);
             });
 
@@ -143,15 +231,6 @@
             var element = document.getElementById(elementId);
             element.parentNode.removeChild(element);
         }
-
-        window.onload = function () {
-            AlertFilesize();
-
-            setInputFilter(document.getElementById("files_id_0"), function (value) {
-                return /^-?\d*$/.test(value);
-            });
-        }
-
 
         /*
             Thanks to the Stackoverflow community wiki
@@ -175,6 +254,11 @@
         }
 
     </script>
+
+
+    <script src="{{URL::asset('../js/md5.min.js')}}"></script>
+    <script src="{{URL::asset('../js/nus3audio.js')}}"></script>
+    <script src="{{URL::asset('../js/nus3audio_editor.js')}}"></script>
 </body>
 
 </html>

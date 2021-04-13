@@ -1,4 +1,8 @@
 var chara_data = [];
+var chara_context_menu = document.getElementById("context-menu-controller");
+var current_selected_index = 0;
+var chara_ids = [];
+var fighter_types = [];
 
 window.onload = function () {
     var radios = document.getElementsByName("css_style_1");
@@ -78,7 +82,7 @@ function setupCSS() {
                     mainImageNode.setAttribute("class", "image");
 
                     imageNode.setAttribute("class", "chara_icon");
-                    imageNode.setAttribute("style", `background-image: url("img/Chara/chara_7_${chara_name}_00.png");`);
+                    imageNode.setAttribute("style", `background-image: url("./img/Chara/chara_7_${chara_name}_00.png");`);
 
                     mainImageNode.appendChild(imageNode);
 
@@ -87,6 +91,11 @@ function setupCSS() {
 
                     node.addEventListener("contextmenu", function(e) {
                         moveElement(node);
+                        return false;
+                    });
+
+                    node.addEventListener("click", function(e) {
+                        showCustomContextMenu(node, e);
                         return false;
                     });
 
@@ -102,6 +111,10 @@ function setupCSS() {
                         document.getElementById("non_hidden").appendChild(node);
                     }
 
+                    chara_ids.push(item["hash40"][0]["#text"]);
+                    if(!fighter_types.includes(item["hash40"][4]["#text"])){
+                        fighter_types.push(item["hash40"][4]["#text"]);
+                    }
                 });
 
 
@@ -115,15 +128,27 @@ function setupCSS() {
                 divs.forEach(div => main.appendChild(div));
 
 
-                sortable('.sortable', {
+                var sorted = sortable('.sortable', {
                     acceptFrom: '.list-grid, .list-flex', // Defaults to null
                     hoverClass: 'item-hover',
-                })[0];
+                })
 
+                for(var i = 0; i < sorted.length; i++){
+                    sorted[i].addEventListener('sortstart', function(e) {
+                        chara_context_menu.style.display = "none";
+                    });
+                }
 
+                for(var i = 0; i < chara_ids.length; i++){
+                    document.getElementById("echo_fighters").innerHTML += `<option value="${chara_ids[i]}">${chara_ids[i]}</option>`;
+                }
 
+                for(var i = 0; i < fighter_types.length; i++){
+                    document.getElementById("fighter_types").innerHTML += `<option value="${fighter_types[i]}">${fighter_types[i]}</option>`;
+                }
             },
             error: function (data) {
+                console.log(data);
                 alert("Failed getting json! (Please contact me on discord if this wasn't intentional @ Coolsonickirby#4030.)");
             }
         });
@@ -131,6 +156,7 @@ function setupCSS() {
 }
 
 function moveElement(element) {
+    chara_context_menu.style.display = "none";
     var id = element.parentNode.id;
     if (id == "non_hidden") {
         $(element).appendTo("#hidden");
@@ -139,7 +165,87 @@ function moveElement(element) {
     }
 }
 
+function showCustomContextMenu(element, e){
+    var chara_index = element.id;
+    current_selected_index = chara_index;
+    var char_info = chara_data.struct.list.struct[current_selected_index];
+
+    //#region Display Character Context Menu
+    var bodyRect = document.body.getBoundingClientRect(),
+    elemRect = element.getBoundingClientRect(),
+    offset   = elemRect.top - bodyRect.top;
+    console.log(offset);
+
+    chara_context_menu.style.display = "none";
+
+    chara_context_menu.style.left = `${elemRect.left + element.offsetWidth + 5}px`;
+    chara_context_menu.style.top = `${offset - 110}px`;
+    chara_context_menu.style.display = "block";
+    //#endregion
+
+    //#region Setup Character Context Menu
+    document.getElementById("chara_name").innerHTML = TranslateName(char_info.string["#text"]);
+    document.getElementById("ui_chara_id").value = char_info["hash40"][0]["#text"];
+    document.getElementById("echo_fighters").value = char_info["hash40"][5]["#text"];
+    document.getElementById("fighter_types").value = char_info["hash40"][4]["#text"];
+    document.getElementById("exhibit_year").value = char_info["short"]["#text"];
+    document.getElementById("can_select").checked = char_info["bool"][3]["#text"] == "True" ? true : false;
+    document.getElementById("is_mii").checked = char_info["bool"][6]["#text"] == "True" ? true : false;
+    document.getElementById("is_boss").checked = char_info["bool"][7]["#text"] == "True" ? true : false;
+    document.getElementById("is_hidden_boss").checked = char_info["bool"][8]["#text"] == "True" ? true : false;
+    //#endregion
+}
+
 function setup() {
+    window.addEventListener("click", function(e){
+        var hide_menu = true;
+        for(var i = 0; i < e.path.length; i++){
+            if(e.path[i].classList != undefined){
+                if(e.path[i].classList.contains("item")){
+                    hide_menu = false;
+                }else if(e.path[i].id == "context-menu-controller"){
+                    hide_menu = false;
+                }
+            }
+        }
+        if(hide_menu){
+            chara_context_menu.style.display = "none";
+        }
+    })
+
+    //#region Setup Character Context Menu Listeners
+    document.getElementById("ui_chara_id").addEventListener("input", function(e){
+        chara_data.struct.list.struct[current_selected_index]["hash40"][0]["#text"] = this.value;
+    });
+
+    document.getElementById("echo_fighters").addEventListener("change", function(e){
+        chara_data.struct.list.struct[current_selected_index]["hash40"][5]["#text"] = this.value;
+    });
+
+    document.getElementById("fighter_types").addEventListener("change", function(e){
+        chara_data.struct.list.struct[current_selected_index]["hash40"][4]["#text"] = this.value;
+    });
+
+    document.getElementById("exhibit_year").addEventListener("input", function(e){
+        chara_data.struct.list.struct[current_selected_index]["short"]["#text"] = this.value;
+    });
+
+    document.getElementById("can_select").addEventListener("change", function(e){
+        chara_data.struct.list.struct[current_selected_index]["bool"][3]["#text"] = this.checked == true ? "True" : "False";
+    });
+
+    document.getElementById("is_mii").addEventListener("change", function(e){
+        chara_data.struct.list.struct[current_selected_index]["bool"][6]["#text"] = this.checked == true ? "True" : "False";
+    });
+
+    document.getElementById("is_boss").addEventListener("change", function(e){
+        chara_data.struct.list.struct[current_selected_index]["bool"][7]["#text"] = this.checked == true ? "True" : "False";
+    });
+
+    document.getElementById("is_hidden_boss").addEventListener("change", function(e){
+        chara_data.struct.list.struct[current_selected_index]["bool"][8]["#text"] = this.checked == true ? "True" : "False";
+    });
+    //#endregion
 
     document.getElementById('open').addEventListener('click', openDialog);
 
@@ -222,12 +328,32 @@ function setup() {
 
     }
 }
-function RandomizeMain() {
-    var answer = confirm("Are you sure you want to randomize the order (You will lose your current order)?");
 
-    if (answer) {
-        $("#non_hidden").randomize(".item");
-    }
+function RandomizeMain() {
+    chara_context_menu.style.display = "none";
+
+    setTimeout(function(){
+        var answer = confirm("Are you sure you want to randomize the order (You will lose your current order)?");
+
+        if (answer) {
+            var amount = prompt("How many do you want to keep? (0 for all)");
+            if(amount){
+
+                if(amount == 0){
+                    amount = 999;
+                }
+                $("#non_hidden").randomize(".item");
+
+                $("#non_hidden>div").slice(amount).each(function(){
+                    if($(this, ".class_name").text() != "RANDOM"){
+                        moveElement(this);
+                    }
+                });
+            }
+
+
+        }
+    }, 50);
 }
 
 /*

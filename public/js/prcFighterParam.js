@@ -21,43 +21,43 @@ var maxDecimal = 2;
 const form_data = [
     [
         ["walk_random_section", "walk_checkbox", "Walk Randomizer"],
-        ["walkMinInput", "Walk Minimum:"],
-        ["walkMaxInput", "Walk Maximum:"],
+        ["walkMinInput", "Walk Minimum"],
+        ["walkMaxInput", "Walk Maximum"],
     ],
     [
         ["dash_random_section", "dash_checkbox", "Dash Randomizer"],
-        ["dashMinInput", "Dash Minimum::"],
-        ["dashMaxInput", "Dash Maximum:"],
+        ["dashMinInput", "Dash Minimum"],
+        ["dashMaxInput", "Dash Maximum"],
     ],
     [
         ["run_random_section", "run_checkbox", "Run Randomizer"],
-        ["runMinInput", "Run Minimum:"],
-        ["runMaxInput", "Run Maximum:"],
+        ["runMinInput", "Run Minimum"],
+        ["runMaxInput", "Run Maximum"],
     ],
     [
         ["jump_speed_random_section", "jumpSpeed_checkbox", "Jump Speed Randomizer"],
-        ["jumpSpeedMinInput", "Jump Speed X Minimum:"],
-        ["jumpSpeedMaxInput", "Jump Speed X Maximum:"],
+        ["jumpSpeedMinInput", "Jump Speed X Minimum"],
+        ["jumpSpeedMaxInput", "Jump Speed X Maximum"],
     ],
     [
         ["jump_y_random_section", "jump_checkbox", "Jump Y Randomizer"],
-        ["jumpMinInput", "Jump Y Minimum:"],
-        ["jumpMaxInput", "Jump Y Maximum:"],
+        ["jumpMinInput", "Jump Y Minimum"],
+        ["jumpMaxInput", "Jump Y Maximum"],
     ],
     [
         ["jump_count_random_section", "jump_count_checkbox", "Jump Count Randomizer"],
-        ["jumpCountMinInput", "Jump Count Minimum:"],
-        ["jumpCountMaxInput", "Jump Count Maximum:"],
+        ["jumpCountMinInput", "Jump Count Minimum"],
+        ["jumpCountMaxInput", "Jump Count Maximum"],
     ],
     [
         ["weight_random_section", "weight_checkbox", "Weight Randomizer"],
-        ["weightMinInput", "Weight Minimum:"],
-        ["weightMaxInput", "Weight Maximum:"],
+        ["weightMinInput", "Weight Minimum"],
+        ["weightMaxInput", "Weight Maximum"],
     ],
     [
         ["scale_random_section", "scale_checkbox", "Scale Randomizer"],
-        ["scaleMinInput", "Scale Minimum:"],
-        ["scaleMaxInput", "Scale Maximum:"],
+        ["scaleMinInput", "Scale Minimum"],
+        ["scaleMaxInput", "Scale Maximum"],
     ]
 ];
 
@@ -87,7 +87,7 @@ window.onload = function () {
                 UpdateInputs(document.getElementById("characters"));
 
                 $(".loading").fadeOut('slow', function() {
-                    $(".main").fadeIn();
+                    $(".main-section").fadeIn();
                 });
 
             },
@@ -99,6 +99,12 @@ window.onload = function () {
 
         document.getElementById("start_random").addEventListener("click", function () {
             randomizeValues();
+            HideModal("randomizeOptions");
+        });
+
+        document.getElementById("start_shuffle").addEventListener("click", function(){
+            shuffleValues();
+            HideModal("shuffler");
         });
     }else{
         $(".message").show();
@@ -180,16 +186,12 @@ function setupForm() {
         item.forEach(function (innerItem, index) {
             if (index == 0) {
                 var template = `
-                    <div class="form-group row">
-                        <div class="col-sm-6">${innerItem[2]}</div>
-                        <div class="col-sm-6">
-                            <div class="form-check">
-                                <input class="form-check-input random_select" type="checkbox" id="${innerItem[1]}" value="${innerItem[0]}">
-                            </div>
-                        </div>
-                    </div>
-                    <div id="${innerItem[0]}" class="random_input_section">
-                    </div>
+                <div class="form-group-check">
+                        <label>${innerItem[2]}</label>
+                        <input class="form-check-input random_select" type="checkbox" id="${innerItem[1]}" value="${innerItem[0]}">
+                </div>
+                <div id="${innerItem[0]}" class="random_input_section">
+                </div>
                 `;
                 document.getElementById("form-append").innerHTML = document.getElementById("form-append").innerHTML + template;
 
@@ -212,18 +214,13 @@ function setupForm() {
     });
 
     var chara_base = `
-    <div class="form-group row">
-        <div class="col-sm-6">Enable Character Selection</div>
-        <div class="col-sm-6">
-            <div class="form-check">
-                <input class="form-check-input chara_select" type="checkbox" id="chara_select_enable">
-            </div>
-        </div>
+    <div class="form-group-check">
+        <label>Enable Character Selection</label>
+        <input class="form-check-input chara_select" type="checkbox" id="chara_select_enable">
     </div>
-    <div class="form-group row" id="chara_select_options" style="display: none;">
-        <div class="col-sm-6">Select the characters you want randomized (Leave all blank for everyone)</div>
-        <div class="col-sm-6" id="chara-append">
-
+    <div class="form-group-multiple-chara" id="chara_select_options" style="display: none;">
+        <label>Select the characters you want randomized (Leave all blank for everyone)</label>
+        <div id="chara-append">
         </div>
     </div>`;
 
@@ -231,9 +228,9 @@ function setupForm() {
 
     chara_select.forEach(function (item, index) {
         var template = `
-            <div class="form-check">
-                <input class="form-check-input-chara chara_select" type="checkbox" id="${item[0]}">
-                <label class="form-check-label" for="gridCheck1">
+            <div class="form-chara-check">
+                <input type="checkbox" id="${item[0]}">
+                <label for="${item[0]}">
                     ${item[1]}
                 </label>
             </div>
@@ -312,12 +309,10 @@ function setupHideListener(checkbox) {
 
 
 function generateRandomFormInput(id, text) {
-    return `<div class="form-group row">
-                    <label for="${id}" class="col-sm-6 col-form-label">${text}</label>
-                    <div class="col-sm-6">
-                        <input name=${id} id="${id}" class="form-control input-value">
-                    </div>
-                </div>`;
+    return `<div class="form-group-inline">
+                <label for="${id}" class="col-sm-6 col-form-label">${text}</label>
+                <input name=${id} id="${id}" class="form-control input-value">
+            </div>`;
 };
 
 
@@ -362,8 +357,52 @@ function changeJumpY(e) {
     };
 
     return;
-
 }
+
+let blacklist = {
+    "bool": [
+        1,
+        3,
+        4,
+    ]
+}
+
+function shuffleValues() {
+    let val = $('input[name="shuffle_type"]:checked').val();
+    let original_fighters = [];
+    switch(val){
+        case "all":
+            let cache = [];
+            for(let i = 0; i < fighter_data.struct.list.struct.length; i++){
+                // original_fighters.push(JSON.parse(JSON.stringify(fighter_data.struct.list.struct[i])));
+
+                let rand = getRandomInt(0, fighter_data.struct.list.struct.length);
+
+                while(cache.includes(rand) || i == rand){
+                    rand = getRandomInt(0, fighter_data.struct.list.struct.length);
+                }
+
+                cache.push(rand);
+                console.log(`Shuffling ${fighter_data.struct.list.struct[i].hash40[0]["#text"]} with ${fighter_data.struct.list.struct[rand].hash40[0]["#text"]}`);
+
+
+                fighter_data.struct.list.struct[i].bool = fighter_data.struct.list.struct[rand].bool;
+                fighter_data.struct.list.struct[i].float = fighter_data.struct.list.struct[rand].float;
+                fighter_data.struct.list.struct[i].int = fighter_data.struct.list.struct[rand].int;
+            }
+            break;
+    }
+
+    // for(let i = 0; i < fighter_data.struct.list.struct.length; i++){
+    //     blacklist["bool"].forEach((black_index) => {
+    //         fighter_data.struct.list.struct[i].bool[black_index]["#text"] = original_fighters[i].bool[black_index]["#text"];
+    //     });
+    // }
+
+
+    UpdateInputs(document.getElementById("characters"));
+}
+
 
 function randomizeValues() {
 
@@ -600,4 +639,38 @@ function randomizeValues() {
 
     alert("Randomization Complete!");
     return;
+}
+
+
+function ShowModal(id){
+    $(`#${id}`).fadeIn(100);
+    document.getElementById(id).style.overflow = "auto";
+    document.body.style.overflow = "hidden";
+}
+
+function HideModal(id){
+    $(`#${id}`).fadeOut(100);
+    document.body.style.overflow = "auto";
+}
+
+function openTab(evt, type, display_type) {
+    display_type = (typeof display_type !== 'undefined') ? display_type : "grid"
+
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    tabcontent = document.getElementsByClassName("tab-page");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(type).style.display = display_type;
+    evt.currentTarget.className += " active";
 }

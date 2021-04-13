@@ -179,7 +179,9 @@ class MainController extends Controller
                 return idspController::Createidsp($request, $looparray);
             }else if ($filetype == "toBrstm") {
                 return brstmController::CreateBRSTM($request, $looparray);
-            } else {
+            }else if ($filetype == "toBfstm") {
+                return brstmController::CreateBFSTM($request, $looparray);
+            }else {
                 $status = '<p class="card-text">Please select a valid file type!</p>';
                 return redirect()->back()->with('error', $status);
             };
@@ -208,6 +210,8 @@ class MainController extends Controller
             die("Failed getting json! Error Code: {$json_output->{"error"}}");
         }
 
+        $loop = !($json_output->{"loop_type"} == "None");
+
         $name = $id;
 
         $BTN = new brstmtonus3audio();
@@ -232,7 +236,6 @@ class MainController extends Controller
         $brstm_file = file_get_contents("https://smashcustommusic.net/brstm/{$id}", false, $context);
 
         file_put_contents($path, $brstm_file);
-
         $BTN->save();
 
         $filename = $name;

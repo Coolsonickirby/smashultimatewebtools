@@ -1,17 +1,28 @@
 html{
     height: 100%;
-    background-color: #222222;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
     /* overflow: hidden; */
-    filter: invert();
+}
+
+.button-parent:hover #open{
+    background-color: skyblue !important;
+}
+
+.button-parent:hover #save{
+    background-color: lightgreen !important;
+}
+
+.button-parent:hover #searchBtn{
+    background-color: darkgray !important;
 }
 
 .main {
-    display: flex;
-    margin-top: .3rem;
+    display: flex !important;
+    margin-top: 5.5% !important;
+    width: 99% !important;
 }
 
 .main div {
@@ -34,9 +45,8 @@ body {
 }
 
 #searchBtn {
-    margin-top: 1.5rem;
-    width: 5rem;
-    height: 2rem;
+    /* width: 5rem;
+    height: 2rem;*/
     font-size: 1.2rem;
 }
 
@@ -47,7 +57,7 @@ body {
 
 .listbox_holder {
     max-height: 95vh;
-    width: 20rem;
+    width: 100%;
     font-size: 1.5rem;
 }
 
@@ -58,13 +68,15 @@ body {
 #textarea {
     font-size: 1.5rem;
     font-family: Arial, Helvetica, sans-serif;
-    width: 96rem;
+    width:  92rem;
     height: 20rem;
     resize: none;
 }
 
-.header {
+.buttons {
     display: block;
+    width: 99%;
+    margin: 0 auto;
 }
 
 a {
