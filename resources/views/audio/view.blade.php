@@ -80,7 +80,7 @@
                 <br>
                 <div class="form-type-input">
                     <div style="display:inline;">
-                        <label for="stages" style="display:inline;">Select a song:</label>
+                        <label for="songs" style="display:inline;">Select a song:</label>
                         <a href="javascript:void(0)" style="display:inline; float:right;" id="reset"
                             onclick="resetFilters();">Reset</a>
                         <a href="javascript:void(0)" style="display:inline; float:right; padding-right:2%;" id="more"
@@ -88,13 +88,11 @@
                     </div>
                     <div id="filters" style="display:none;">
                         <input id="search_box" style="display: none;">
-                        <div>
-                            @include('extras/filters_checkbox')
-                            <br style="margin-bottom:6px;">
-                        </div>
+                        <br style="margin-bottom:6px;">
+                        <div id="filter"></div>
                     </div>
-                    <select class="custom-select" id="stages" onchange="UpdateStage(this)"></select>
-
+                    <select class="custom-select" id="songs" onchange="UpdateStage(this)"></select>
+                    <h4>Selected File Name: <span id='selected_name'>...</span></h4>
                 </div>
         </div>
 

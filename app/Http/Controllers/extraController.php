@@ -80,10 +80,6 @@ class extraController extends Controller
         return preg_replace('/[\:\?\#\|\<\>\/\.\-\^\*\%\\\]/', ' ', $string);
     }
 
-    public static function compareFileSize(){
-        return view('audio/compare');
-    }
-
     public static function errorCheck($arr, $log){
         if($arr[0] == "The" && $arr[1] == "loop"){
             $status = '<p class="card-text"><pre>' . $log . '</pre></p>';
@@ -92,6 +88,9 @@ class extraController extends Controller
             $status = '<p class="card-text"><pre>' . $log . '</pre></p>';
             return [true, $status];
         }else if($arr[0] == "Error" && $arr[1] == "parsing"){
+            $status = '<p class="card-text"><pre>' . $log . '</pre></p>';
+            return [true, $status];
+        }else if($arr[0] == "Must" && $arr[1] == "have"){
             $status = '<p class="card-text"><pre>' . $log . '</pre></p>';
             return [true, $status];
         }else{

@@ -44,8 +44,6 @@ Route::prefix('audio')->group(function () {
 
     Route::get('/nus3audio_idsp', 'MainController@viewSoundBank');
 
-    Route::get('/compare', 'extraController@compareFileSize');
-
     Route::get('/zipToIdsp', 'MainController@viewZipToIdsp');
 
     Route::get('/zipToNus3audio', 'MainController@viewZipToNus3audio');

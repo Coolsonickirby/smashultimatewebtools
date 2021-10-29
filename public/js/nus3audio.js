@@ -428,7 +428,7 @@ class NUS3AUDIO {
         }else{
             for(let i = 0; i < files_to_pack.length; i++){
                 this.WriteBytes(files_to_pack[i].data);
-                let fill = this.position % 16;
+                let fill = 16 - (this.position % 16);
                 for(let x = 0; x < fill; x++){
                     this.WriteByte(0);
                 }

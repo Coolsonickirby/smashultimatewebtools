@@ -60,13 +60,20 @@
 
 <body>
 
-        <div id="softturnip" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
-                <span class="close" onclick="HideModal('softturnip')">&times;</span>
-                <img src="https://play.nintendo.com/images/profile-mk-peach.7bf2a8f2.aead314d58b63e27.png" alt="Princess Peach" />
-            </div>
+    <div id="softturnip" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="HideModal('softturnip')">&times;</span>
+            <img src="https://play.nintendo.com/images/profile-mk-peach.7bf2a8f2.aead314d58b63e27.png" alt="Princess Peach" />
         </div>
+    </div>
+
+    <div id="jack" class="modal">
+        <!-- Modal content -->
+        <div id="stan" class="modal-content">
+            <span class="close" onclick="HideModal('jack')">&times;</span>
+        </div>
+    </div>
 
     <div class="header-desktop">
         <div class="tab">
@@ -137,7 +144,31 @@
             <h1>About</h1>
             <hr>
             <p class="tab-text">
-                I'll write this one later<br>Also join the <a href="https://discord.gg/ASJyTrZ">Super Smash Bros. Ultimate Modding Discord</a> and/or the <a href="https://discord.gg/x9Zss4hkH3">Smash Ultimate Modding Group</a>
+                Welcome to SmashUltimateTools!
+                <br>
+                <br>
+                This is a site that I made for fun to improve my skills with PHP, HTML, JS, and CSS.
+                It features a couple of different tools I made over time for modding Smash Ultimate (it's already been a year and a couple of months now!)
+                <br>
+                <br>
+                Currently, progress is slow since I'm busy with College, but hopefully when I'm done I should have time to work on this site more.
+                <br>
+                <br>
+                If you have the time, then please check out my <a href="https://www.youtube.com/channel/UCUp-3P4BdmQWYCJ7rRyzrbQ/">YouTube Channel</a> where I upload random stuff I'm currently working on (mostly Smush mods, but sometimes other stuff)!
+                <br>
+                <br>
+                If you want to donate to me, then feel free to do so using either my <a href="https://ko-fi.com/coolsonickirby">Ko-Fi</a> link or my <a href="https://paypal.me/coolsonickirby">Paypal</a> link!
+                <br>
+                <br>
+                If you're interested in talking about Smush Modding with other people, then feel free to join either of these 2 discords:<br>
+                <ul style="font-weight: bold; line-height: 2;">
+                    <li>
+                        <a href="https://discord.gg/ASJyTrZ">Super Smash Bros. Ultimate Modding Discord</a>
+                    </li>
+                    <li>
+                        <a href="https://discord.gg/x9Zss4hkH3">Smash Ultimate Modding Group</a>
+                    </li>
+                </ul>
             </p>
         </div>
 
@@ -707,7 +738,15 @@
         }
         ];
 
+        var passwords = [
+            "softturnip",
+            "jack"
+        ];
+
+        var password = "";
+
         window.onload = function () {
+            stan();
             document.getElementById("main-header-img").click();
 
             updates.reverse();
@@ -826,32 +865,38 @@
         }
 
         function stan() {
-            document.getElementsByClassName("tab-text")[0].innerHTML = "WE ONLY STAN JACK FROST IN THIS HOUSE 😤😤😤😤😤😤😤😤<br><br>";
+            document.getElementById("stan").innerHTML += "WE ONLY STAN JACK FROST IN THIS HOUSE 😤😤😤😤😤😤😤😤<br><br>";
             let amount_of_pics = 13;
             for (let i = 1; i < amount_of_pics + 1; i++) {
                 var node = document.createElement("img");
                 node.setAttribute("src", `/img/stan_jack_frost/${i}.jpg`);
                 node.style.width = "25%";
-                document.getElementsByClassName("tab-text")[0].appendChild(node);
+                document.getElementById("stan").appendChild(node);
             }
         }
-
-        var softturnip = "";
 
         window.addEventListener("keypress", (e) => {
             var char = e.which || e.keyCode;
             var charStr = String.fromCharCode(char);
-            var combined = softturnip + charStr.toLowerCase();
+            var combined = password + charStr.toLowerCase();
             var re = new RegExp(combined,"g");
-
-            if(re.test("softturnip")){
-                softturnip = combined;
-            }else{
-                softturnip = "";
+            var passed = false;
+            for(let i = 0; i < passwords.length; i++){
+                if(re.test(passwords[i]) && password.length <= passwords[i].length){
+                    password = combined;
+                    passed = true;
+                }
             }
 
-            if(softturnip == "softturnip"){
-                ShowModal("softturnip");
+            if(!passed){
+                password = "";
+            }
+
+            for(let i = 0; i < passwords.length; i++){
+                if(password == passwords[i]){
+                    ShowModal(passwords[i]);
+                    password = "";
+                }
             }
         });
 

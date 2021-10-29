@@ -55,6 +55,7 @@ function setupForm(){
     `
     <tr>
         <td>ID</td>
+        <td>NUS3Bank ID</td>
         <td>Name</td>
         <td>Size</td>
         <td>Export</td>
@@ -63,6 +64,8 @@ function setupForm(){
     </tr>
     `;
 
+    var nus3bank_id = 0;
+
     for(let i = 0; i < nus3audio.entries.length; i++){
         let tableRow = document.createElement("tr");
 
@@ -70,6 +73,16 @@ function setupForm(){
         id.innerHTML = i;
 
         tableRow.appendChild(id);
+
+        let bank_id = document.createElement("td");
+        if (nus3audio.GetSize(i) == 0){
+            bank_id.innerHTML = "None";
+        } else {
+            bank_id.innerHTML = nus3bank_id;
+            nus3bank_id += 1;
+        }
+
+        tableRow.appendChild(bank_id);
 
         let nameHolder = document.createElement("td");
 

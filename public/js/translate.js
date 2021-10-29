@@ -196,10 +196,18 @@ function TranslateName(name) {
             return "Mythra";
         case "0x13843785a5":
             return "Mythra";
+        case "eflame":
+            return "Pyra";
+        case "elight":
+            return "Mythra";
         case "eflame_only":
             return "Pyra (Only)";
         case "elight_only":
             return "Mythra (Only)";
+        case "demon":
+            return "Kazuya";
+        case "trail":
+            return "Sora";
         default:
             return name;
     }

@@ -121,6 +121,11 @@
                     <label for="can_select">Can Select (Random): </label>
                     <input id="can_select" type="checkbox">
                 </div>
+
+                <div class="form-field">
+                    <label for="bgm_selector">BGM Selector (Album Menu): </label>
+                    <input id="bgm_selector" type="checkbox">
+                </div>
             </div>
             <div class="image_holder">
                 <img class="big_img" id="big_img" src="./img/default.png" width="512" height="256"
