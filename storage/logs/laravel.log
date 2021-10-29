@@ -7572,3 +7572,40 @@ us3audioController::Createnus3audio()
 #40 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
 #41 {main}
 "} 
+[2021-10-29 15:51:13] production.ERROR: include(C:\inetpub\wwwroot\SmashUltimateAudioOnline\vendor\nesbot\carbon\src\Carbon\Laravel\ServiceProvider.php): failed to open stream: No such file or directory {"exception":"[object] (ErrorException(code: 0): include(C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\
+esbot\\carbon\\src\\Carbon\\Laravel\\ServiceProvider.php): failed to open stream: No such file or directory at C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\composer\\ClassLoader.php:444)
+[stacktrace]
+#0 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\composer\\ClassLoader.php(444): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\composer\\ClassLoader.php(444): include()
+#2 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\composer\\ClassLoader.php(322): Composer\\Autoload\\includeFile()
+#3 [internal function]: Composer\\Autoload\\ClassLoader->loadClass()
+#4 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(679): spl_autoload_call()
+#5 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(613): Illuminate\\Foundation\\Application->resolveProvider()
+#6 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(75): Illuminate\\Foundation\\Application->register()
+#7 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(593): Illuminate\\Foundation\\ProviderRepository->load()
+#8 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#9 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(219): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap()
+#10 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(156): Illuminate\\Foundation\\Application->bootstrapWith()
+#11 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(140): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#12 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#13 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\public\\index.php(56): Illuminate\\Foundation\\Http\\Kernel->handle()
+#14 {main}
+"} 
+[2021-10-29 15:51:13] production.ERROR: Uncaught ReflectionException: Class translator does not exist in C:\inetpub\wwwroot\SmashUltimateAudioOnline\vendor\laravel\framework\src\Illuminate\Container\Container.php:803
+Stack trace:
+#0 C:\inetpub\wwwroot\SmashUltimateAudioOnline\vendor\laravel\framework\src\Illuminate\Container\Container.php(803): ReflectionClass->__construct()
+#1 C:\inetpub\wwwroot\SmashUltimateAudioOnline\vendor\laravel\framework\src\Illuminate\Container\Container.php(681): Illuminate\Container\Container->build()
+#2 C:\inetpub\wwwroot\SmashUltimateAudioOnline\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(785): Illuminate\Container\Container->resolve()
+#3 C:\inetpub\wwwroot\SmashUltimateAudioOnline\vendor\laravel\framework\src\Illuminate\Container\Container.php(629): Illuminate\Foundation\Application->resolve()
+#4 C:\inetpub\wwwroot\SmashUltimateAudioOnline\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(770): Illuminate\Container\Container->make()
+#5 C:\inetpub\wwwroot\SmashUltimateAudioOnline {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Uncaught ReflectionException: Class translator does not exist in C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php:803
+Stack trace:
+#0 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(803): ReflectionClass->__construct()
+#1 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(681): Illuminate\\Container\\Container->build()
+#2 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(785): Illuminate\\Container\\Container->resolve()
+#3 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(629): Illuminate\\Foundation\\Application->resolve()
+#4 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(770): Illuminate\\Container\\Container->make()
+#5 C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline at C:\\inetpub\\wwwroot\\SmashUltimateAudioOnline\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php:805)
+[stacktrace]
+#0 {main}
+"} 

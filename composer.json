@@ -10,11 +10,10 @@
     "require": {
         "php": "^7.2",
         "fideloper/proxy": "^4.0",
-        "laravel/framework": "^6.2",
+        "laravel/framework": "6.20.26",
         "laravel/tinker": "^2.0",
-        "paquettg/php-html-parser": "^3.1",
         "league/flysystem": "1.1.4",
-        "facade/ignition": "2.0.5"
+        "paquettg/php-html-parser": "^3.1"
     },
     "require-dev": {
         "facade/ignition": "^1.4",
