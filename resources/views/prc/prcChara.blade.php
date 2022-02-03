@@ -33,6 +33,10 @@
                     <td><input id="ui_chara_id" class="context-input-text" type="textbox"></td>
                 </tr>
                 <tr>
+                    <td>Series ID:</td>
+                    <td><input id="ui_series_id" class="context-input-text" type="textbox"></td>
+                </tr>
+                <tr>
                     <td>Echo Fighter:</td>
                     <td>
                         <select id="echo_fighters" class="context-input-select">

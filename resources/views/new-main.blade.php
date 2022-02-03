@@ -130,6 +130,13 @@
     </div>
 
     <div class="main">
+    <div class="main">
+        <br>
+            <div class="about">
+                <h3>Notice: Smash Ultimate Tools will be going down by the end of Feburary due to me not wanting to spend anymore money on the server. SmashCustomMusic conversion will still work.</h3>
+            </div>
+        <br>
+
         <div class="grid-container tabcontent" id="Main">
             <img src="./img/front-page/tools_audio.webp" alt="Audio"
                 onclick="window.location.href = this.getAttribute('data-href')" data-href="/audio">

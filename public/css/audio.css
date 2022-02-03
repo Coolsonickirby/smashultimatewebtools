@@ -1,5 +1,5 @@
 @media only screen and (max-width:1460px) {
-    .container, .card{
+    .container, .card, .warning-container{
         width: 90% !important;
         font-size: 20px;
     }
@@ -93,6 +93,11 @@ select>option:disabled {
     grid-template-areas:
       "Left Right"
       "Extras Extras";
+}
+
+.warning-container {
+    width: 60%;
+    margin: 0 auto;
 }
 
 .Extras { grid-area: Extras; }

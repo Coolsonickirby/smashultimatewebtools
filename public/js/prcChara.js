@@ -186,6 +186,7 @@ function showCustomContextMenu(element, e){
     //#region Setup Character Context Menu
     document.getElementById("chara_name").innerHTML = TranslateName(char_info.string["#text"]);
     document.getElementById("ui_chara_id").value = char_info["hash40"][0]["#text"];
+    document.getElementById("ui_series_id").value = char_info["hash40"][3]["#text"];
     document.getElementById("echo_fighters").value = char_info["hash40"][5]["#text"];
     document.getElementById("fighter_types").value = char_info["hash40"][4]["#text"];
     document.getElementById("exhibit_year").value = char_info["short"]["#text"];
@@ -216,6 +217,10 @@ function setup() {
     //#region Setup Character Context Menu Listeners
     document.getElementById("ui_chara_id").addEventListener("input", function(e){
         chara_data.struct.list.struct[current_selected_index]["hash40"][0]["#text"] = this.value;
+    });
+
+    document.getElementById("ui_series_id").addEventListener("input", function(e){
+        chara_data.struct.list.struct[current_selected_index]["hash40"][3]["#text"] = this.value;
     });
 
     document.getElementById("echo_fighters").addEventListener("change", function(e){

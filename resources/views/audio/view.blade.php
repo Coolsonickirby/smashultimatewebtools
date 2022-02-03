@@ -49,7 +49,10 @@
     @endif
 
     <br>
-
+    <div class="warning-container">
+        <h3 style="color: orangered;">Notice: If the song list does not load, then do a hard refresh by hitting Ctrl + F5 on a PC, or clearing the browser's cache on a phone.</h3>
+        <h3 style="color: orangered;">Notice: Some mp3s from websites like ytmp3.cc won't work with this for unknown reasons.</h3>
+    </div>
     <div class="container">
         <div class="Left">
             <form method="post" action="{{ action('MainController@FindType') }}" enctype="multipart/form-data">
