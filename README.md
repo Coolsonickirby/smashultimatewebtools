@@ -1,3 +1,5 @@
+<h1>THIS PROJECT IS DEPRECATED! PLEASE USE THE RE-WRITE VERSION FOUND <a href="https://github.com/Coolsonickirby/SmashUltimateToolsRewrite">HERE!</a></h1>
+
 <h2>Smash Ultimate Web Tools (Currently supports only Audio)</h2>
 
 <h3><strong>Setup</strong></h3>
